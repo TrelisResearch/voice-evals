@@ -4,7 +4,7 @@
 Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](https://studio.trelis.com) for dataset creation and evaluation.
 
 ## Environment
-- `.env` in root contains `TRELIS_API_KEY` and `HF_TOKEN`
+- `.env` in root contains `TRELIS_STUDIO_API_KEY` and `HF_TOKEN`
 - Use `uv` for all Python operations
 
 ## Trelis Studio API
