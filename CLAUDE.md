@@ -53,3 +53,4 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 - Run entity/n-gram overlap detection between public, semi-private, and private splits before publishing
 - For synthetic code-switching: use different topic seeds / prompt templates per split
 - For Trelis-OOD: source non-web data (radio recordings, ATC, in-person recordings) to avoid web contamination
+- **NEVER run evaluation with proprietary/closed-source models on `-private` splits.** The private split must only be evaluated with open-source models run locally or via Trelis. This prevents any risk of private data leaking to third-party APIs.
