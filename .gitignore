@@ -1,5 +1,9 @@
 .env
 tmp/
+
+# Dataset text and audio files (stored locally, not in git)
+**/text/
+**/audio/
 __pycache__/
 *.pyc
 .DS_Store

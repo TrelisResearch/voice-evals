@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR Model Comparison | Trelis Research</title>
+    <style>
+        :root {
+            --trelis-dark: #1a1a2e;
+            --trelis-accent: #e94560;
+            --trelis-blue: #0f3460;
+            --trelis-light: #16213e;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #2d3436;
+            --text-muted: #636e72;
+            --border: #dfe6e9;
+            --green: #00b894;
+            --orange: #fdcb6e;
+            --red: #d63031;
+            --open-badge: #00b894;
+            --closed-badge: #d63031;
+            --api-badge: #6c5ce7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--trelis-dark), var(--trelis-blue));
+            color: white;
+            padding: 2.5rem 2rem 2rem;
+            text-align: center;
+        }
+
+        header .brand {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--trelis-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #b2bec3;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--trelis-dark);
+            border-bottom: 3px solid var(--trelis-accent);
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-open { background: var(--open-badge); color: white; }
+        .badge-proprietary { background: var(--closed-badge); color: white; }
+        .badge-api { background: var(--api-badge); color: white; }
+        .badge-yes { background: var(--green); color: white; }
+        .badge-no { background: #b2bec3; color: white; }
+        .badge-pending { background: var(--orange); color: var(--text); }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            font-size: 0.88rem;
+        }
+
+        thead {
+            background: var(--trelis-dark);
+            color: #ffffff;
+        }
+
+        th {
+            padding: 0.9rem 0.7rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 0.7rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        tr:hover { background: #f1f3f5; }
+
+        .model-name {
+            font-weight: 700;
+            color: var(--trelis-blue);
+            white-space: nowrap;
+        }
+
+        .provider { color: var(--text-muted); font-size: 0.82rem; }
+
+        .wer-cell {
+            font-weight: 700;
+            font-size: 1rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .wer-best { color: var(--green); }
+        .wer-good { color: #00cec9; }
+        .wer-ok { color: var(--orange); }
+        .wer-poor { color: var(--red); }
+
+        .price-cell {
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .features-list {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            max-width: 220px;
+        }
+
+        .notes {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .notes h3 {
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
+            color: var(--trelis-dark);
+        }
+
+        .notes ul {
+            padding-left: 1.3rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .notes li { margin-bottom: 0.4rem; }
+
+        .wer-na { color: var(--text-muted); }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .group-header td {
+            background: #edf2f7;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--trelis-blue);
+            padding: 0.5rem 0.7rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            .container { padding: 1rem; }
+            th, td { padding: 0.5rem 0.4rem; font-size: 0.78rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand"><a href="https://trelis.com" style="color: var(--trelis-accent); text-decoration: none;">Trelis Research</a></div>
+    <h1>ASR Model Comparison</h1>
+    <p>Open weights vs proprietary, WER benchmarks, pricing, and fine-tuning support for production ASR models.</p>
+</header>
+
+<div class="container">
+
+    <div class="legend">
+        <div class="legend-item"><span class="badge badge-open">Open Weights</span> Weights available for download</div>
+        <div class="legend-item"><span class="badge badge-proprietary">Proprietary</span> API-only access</div>
+        <div class="legend-item"><span class="badge badge-api">API-Optimized</span> Optimized variant, API-only</div>
+        <div class="legend-item"><span class="badge badge-yes">Yes</span> Supported</div>
+        <div class="legend-item"><span class="badge badge-pending">Pending</span> Coming soon</div>
+        <div class="legend-item"><span class="badge badge-no">No</span> Not supported</div>
+    </div>
+
+    <h2 class="section-title">Model Comparison</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Access</th>
+                    <th>License</th>
+                    <th>Params</th>
+                    <th>FLEURS WER (multilingual avg)</th>
+                    <th>API Price/min</th>
+                    <th>Key Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Voxtral Family -->
+                <tr class="group-header"><td colspan="8">Voxtral Family (Mistral AI)</td></tr>
+
+                <tr>
+                    <td class="model-name">Voxtral Mini Transcribe V2</td>
+                    <td class="provider">Mistral AI</td>
+                    <td><span class="badge badge-api">API-Optimized</span></td>
+                    <td>Proprietary</td>
+                    <td>~3B</td>
+                    <td class="wer-cell wer-best">~4.0%</td>
+                    <td class="price-cell">$0.003</td>
+                    <td class="features-list">Diarization, word timestamps, context biasing, 13 languages, 3hr audio</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Voxtral Realtime</td>
+                    <td class="provider">Mistral AI</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>Apache 2.0</td>
+                    <td>4B</td>
+                    <td class="wer-cell wer-best">~4.0%</td>
+                    <td class="price-cell">$0.006</td>
+                    <td class="features-list">Streaming, sub-200ms latency, 13 languages, edge-deployable</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Voxtral Small (24B)</td>
+                    <td class="provider">Mistral AI</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>Apache 2.0</td>
+                    <td>24B</td>
+                    <td class="wer-cell wer-best">~4.9%</td>
+                    <td class="price-cell">$0.003</td>
+                    <td class="features-list">Audio understanding, Q&A, summarization, function calling, 32k context</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Voxtral Mini Transcribe</td>
+                    <td class="provider">Mistral AI</td>
+                    <td><span class="badge badge-api">API-Optimized</span></td>
+                    <td>Proprietary</td>
+                    <td>~3B</td>
+                    <td class="wer-cell wer-good">~5.3%</td>
+                    <td class="price-cell">$0.001</td>
+                    <td class="features-list">Cheapest option, transcription-optimized</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Voxtral Mini (3B)</td>
+                    <td class="provider">Mistral AI</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>Apache 2.0</td>
+                    <td>3B</td>
+                    <td class="wer-cell wer-good">~6.9%</td>
+                    <td class="price-cell">$0.001</td>
+                    <td class="features-list">Audio understanding, Q&A, summarization, edge-friendly, 32k context</td>
+                </tr>
+
+                <!-- Whisper Family -->
+                <tr class="group-header"><td colspan="8">Whisper Family (OpenAI)</td></tr>
+
+                <tr>
+                    <td class="model-name">Whisper large-v3</td>
+                    <td class="provider">OpenAI</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>MIT</td>
+                    <td>1.5B</td>
+                    <td class="wer-cell wer-poor">~8.3%</td>
+                    <td class="price-cell">Self-hosted</td>
+                    <td class="features-list">Word timestamps, 99 languages, mature ecosystem, whisper.cpp, faster-whisper</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Whisper large-v3-turbo</td>
+                    <td class="provider">OpenAI</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>MIT</td>
+                    <td>809M</td>
+                    <td class="wer-cell wer-poor">~8.5%</td>
+                    <td class="price-cell">Self-hosted</td>
+                    <td class="features-list">2x faster than v3, word timestamps, 99 languages, great for fine-tuning</td>
+                </tr>
+
+                <!-- Proprietary APIs -->
+                <tr class="group-header"><td colspan="8">Proprietary APIs</td></tr>
+
+                <tr>
+                    <td class="model-name">GPT-4o mini Transcribe</td>
+                    <td class="provider">OpenAI</td>
+                    <td><span class="badge badge-proprietary">Proprietary</span></td>
+                    <td>Proprietary</td>
+                    <td>N/A</td>
+                    <td class="wer-cell wer-good">~5.7%</td>
+                    <td class="price-cell">$0.003</td>
+                    <td class="features-list">OpenAI API, easy integration</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Gemini 2.5 Flash</td>
+                    <td class="provider">Google</td>
+                    <td><span class="badge badge-proprietary">Proprietary</span></td>
+                    <td>Proprietary</td>
+                    <td>N/A</td>
+                    <td class="wer-cell wer-ok">~7.0%</td>
+                    <td class="price-cell">~$0.003</td>
+                    <td class="features-list">Multimodal, long context, audio understanding</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">ElevenLabs Scribe v2</td>
+                    <td class="provider">ElevenLabs</td>
+                    <td><span class="badge badge-proprietary">Proprietary</span></td>
+                    <td>Proprietary</td>
+                    <td>N/A</td>
+                    <td class="wer-cell wer-best">~4.9%</td>
+                    <td class="price-cell">$0.010</td>
+                    <td class="features-list">Diarization, word timestamps, 99 languages</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Deepgram Nova</td>
+                    <td class="provider">Deepgram</td>
+                    <td><span class="badge badge-proprietary">Proprietary</span></td>
+                    <td>Proprietary</td>
+                    <td>N/A</td>
+                    <td class="wer-cell wer-na">N/A</td>
+                    <td class="price-cell">~$0.008</td>
+                    <td class="features-list">Diarization, streaming, custom vocabulary</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">AssemblyAI Universal</td>
+                    <td class="provider">AssemblyAI</td>
+                    <td><span class="badge badge-proprietary">Proprietary</span></td>
+                    <td>Proprietary</td>
+                    <td>N/A</td>
+                    <td class="wer-cell wer-na">N/A</td>
+                    <td class="price-cell">~$0.002</td>
+                    <td class="features-list">Diarization, sentiment, topic detection</td>
+                </tr>
+
+                <!-- Qwen Family -->
+                <tr class="group-header"><td colspan="8">Qwen Family (Alibaba)</td></tr>
+
+                <tr>
+                    <td class="model-name">Qwen3-ASR-1.7B</td>
+                    <td class="provider">Alibaba / Qwen</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>Apache 2.0</td>
+                    <td>1.7B</td>
+                    <td class="wer-cell wer-na">N/A</td>
+                    <td class="price-cell">Self-hosted</td>
+                    <td class="features-list">52 languages/dialects, language detection, singing/music recognition, streaming</td>
+                </tr>
+
+                <tr>
+                    <td class="model-name">Qwen3-ASR-0.6B</td>
+                    <td class="provider">Alibaba / Qwen</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>Apache 2.0</td>
+                    <td>0.6B</td>
+                    <td class="wer-cell wer-na">N/A</td>
+                    <td class="price-cell">Self-hosted</td>
+                    <td class="features-list">Lightweight variant, 52 languages/dialects, edge-deployable</td>
+                </tr>
+
+                <!-- Other Open Models -->
+                <tr class="group-header"><td colspan="8">Other Open Models</td></tr>
+
+                <tr>
+                    <td class="model-name">Kyutai STT (1B / 2.6B)</td>
+                    <td class="provider">Kyutai</td>
+                    <td><span class="badge badge-open">Open Weights</span></td>
+                    <td>CC-BY 4.0</td>
+                    <td>1B / 2.6B</td>
+                    <td class="wer-cell wer-na">N/A</td>
+                    <td class="price-cell">Self-hosted</td>
+                    <td class="features-list">Streaming, word timestamps, voice prompting, Rust server</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="section-title">Fine-Tuning Support</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Transformers (Inference)</th>
+                    <th>Transformers (Fine-tuning)</th>
+                    <th>Unsloth</th>
+                    <th>PEFT / LoRA</th>
+                    <th>Trainer Type</th>
+                    <th><a href="https://studio.trelis.com" target="_blank" style="color:white;text-decoration:underline;">Trelis Studio</a></th>
+                    <th><a href="https://trelis.com/ADVANCED-audio" target="_blank" style="color:white;text-decoration:underline;">ADVANCED-audio</a></th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="model-name">Whisper large-v3 / Turbo</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td>Seq2SeqTrainer</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Most mature fine-tuning ecosystem. Unsloth gives ~30% VRAM savings. Target modules: q_proj, v_proj, k_proj, out_proj, fc1, fc2</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Voxtral Mini (3B)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td>Trainer (causal LM)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Requires custom data collator with apply_transcription_request. Target modules: q/k/v/o_proj + gate/up/down_proj. Audio tower frozen.</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Voxtral Small (24B)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td>Trainer (causal LM)</td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Same approach as Mini but requires more VRAM. Multi-GPU recommended.</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Voxtral Realtime (4B)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td>N/A</td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td class="features-list">Transformers supports inference only, not fine-tuning yet. Streaming architecture.</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Qwen3-ASR-1.7B</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td>Trainer (custom)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Uses qwen-asr package (not standard AutoModel). Full SFT with CastFloatInputsTrainer, audio tower frozen. WAV+JSONL data format.</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Qwen3-ASR-0.6B</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td>Trainer (custom)</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Same approach as 1.7B. Lighter model, suitable for edge deployment.</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Kyutai STT</td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td>Custom (Trelis)</td>
+                    <td><span class="badge badge-no">No</span></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td class="features-list">Custom fine-tuning script by Trelis (not standard transformers/Unsloth). Candle conversion needed for Rust server deployment.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="notes">
+        <h3>Notes</h3>
+        <ul>
+            <li><strong>FLEURS WER</strong> values are macro-averages across top languages (English, French, German, Spanish, Italian, Portuguese, Dutch, Hindi, Arabic). Lower is better. Source: Mistral AI blog posts (Jul 2025, Feb 2026).</li>
+            <li><strong>Whisper FLEURS WER</strong> (~8.3%) is as reported by Mistral. Whisper excels on English-only benchmarks (LibriSpeech clean WER ~2%) but the multilingual FLEURS average is higher.</li>
+            <li><strong>API prices</strong> are per minute of audio, based on official API documentation as of Feb 2026.</li>
+            <li><strong>Unsloth "Pending"</strong> for Voxtral means support is tracked at <a href="https://github.com/unslothai/unsloth/issues/3013" target="_blank">github.com/unslothai/unsloth/issues/3013</a>.</li>
+            <li><strong>Self-hosted</strong> models have no API cost but require your own GPU infrastructure (e.g., Modal, RunPod, on-premise).</li>
+            <li><strong>Voxtral Mini Transcribe</strong> variants are transcription-optimized versions of Voxtral Mini, available only via Mistral's API (not downloadable).</li>
+            <li><strong>Voxtral Realtime</strong> is a streaming model released Feb 2026 under Apache 2.0, purpose-built for low-latency applications. Transformers supports inference only; fine-tuning support is not yet available.</li>
+            <li><strong>Qwen3-ASR</strong> uses the <code>qwen-asr</code> package (not standard transformers AutoModel). Fine-tuning uses full SFT with a custom Trainer subclass. The audio tower is frozen for small-dataset training. See <code>qwen3-asr/modal-training/</code> in the <a href="https://trelis.com/ADVANCED-audio" target="_blank">ADVANCED-audio</a> repo.</li>
+            <li><strong>Kyutai STT</strong> fine-tuning uses a custom training script by Trelis (not standard transformers/Unsloth). See <code>kyutai/</code> in the <a href="https://trelis.com/ADVANCED-audio" target="_blank">ADVANCED-audio</a> repo.</li>
+            <li><strong><a href="https://studio.trelis.com" target="_blank">Trelis Studio</a></strong> provides a managed fine-tuning platform with no-code setup for supported models.</li>
+            <li><strong><a href="https://trelis.com/ADVANCED-audio" target="_blank">ADVANCED-audio</a></strong> is a paid repo from Trelis Research with fine-tuning and serving scripts.</li>
+        </ul>
+    </div>
+
+    <div class="notes">
+        <h3>Trelis Fine-Tuning Results (Trelis/llm-lingo, 6 validation samples)</h3>
+        <ul>
+            <li><strong>Voxtral Mini 3B</strong>: Baseline 30.6% WER &rarr; Fine-tuned 14.6% WER (16.0pp improvement). Config: LoRA rank=32, RSLoRA, 3 epochs, lr=5e-5.</li>
+            <li><strong>Whisper large-v3-turbo</strong>: Baseline 37.0% WER &rarr; Fine-tuned 15.1% WER (21.9pp improvement). Config: LoRA rank=32, RSLoRA, 2 epochs, lr=1e-4.</li>
+            <li><strong>Qwen3-ASR-1.7B</strong>: Baseline 28.8% WER &rarr; Fine-tuned 20.5% WER (8.2pp improvement). Config: Full SFT (audio tower frozen), 3 epochs, lr=1e-5.</li>
+            <li>All trained on Modal H100 GPUs. Scripts available in the <a href="https://trelis.com/ADVANCED-audio" target="_blank">ADVANCED-audio</a> repo under <code>voxtral/modal-training/</code>, <code>whisper/modal-training/</code>, and <code>qwen3-asr/modal-training/</code>.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <a href="https://trelis.com" target="_blank" style="color:var(--trelis-accent);text-decoration:none;">Trelis Research</a> &middot; Mar 2026 &middot; Data sourced from Mistral AI, OpenAI, Alibaba/Qwen, and official API docs. FLEURS WER values are approximate macro-averages.
+</footer>
+
+</body>
+</html>
