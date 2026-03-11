@@ -332,12 +332,13 @@
                     <th class="sortable" data-col="8" data-type="num">API Price/min</th>
                     <th><a href="https://studio.trelis.com" target="_blank" style="color:white;text-decoration:underline;">Trelis Eval</a></th>
                     <th><a href="https://studio.trelis.com" target="_blank" style="color:white;text-decoration:underline;">Trelis Training</a></th>
+                    <th><a href="https://docs.vllm.ai/en/stable/models/supported_models/" target="_blank" style="color:white;text-decoration:underline;">vLLM</a></th>
                     <th>Key Features</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Voxtral Family -->
-                <tr class="group-header"><td colspan="12">Voxtral Family (Mistral AI)</td></tr>
+                <tr class="group-header"><td colspan="13">Voxtral Family (Mistral AI)</td></tr>
 
                 <tr data-access="Proprietary" data-provider="Mistral AI" data-studio="">
                     <td class="model-name">Voxtral Mini Transcribe V2</td>
@@ -349,6 +350,7 @@
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="price-cell" data-sort="0.003">$0.003</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">Diarization, word timestamps, context biasing, 13 languages, 3hr audio</td>
@@ -366,6 +368,7 @@
                     <td class="price-cell" data-sort="0.006">$0.006</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">Streaming, sub-200ms latency, 13 languages, edge-deployable</td>
                 </tr>
 
@@ -381,6 +384,7 @@
                     <td class="price-cell" data-sort="0.003">$0.003</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">Audio understanding, Q&A, summarization, function calling, 32k context</td>
                 </tr>
 
@@ -394,6 +398,7 @@
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="price-cell" data-sort="0.001">$0.001</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">Cheapest option, transcription-optimized</td>
@@ -411,11 +416,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">Audio understanding, Q&A, summarization, edge-friendly, 32k context</td>
                 </tr>
 
                 <!-- Whisper Family -->
-                <tr class="group-header"><td colspan="12">Whisper Family (OpenAI)</td></tr>
+                <tr class="group-header"><td colspan="13">Whisper Family (OpenAI)</td></tr>
 
                 <tr data-access="Open Weights" data-provider="OpenAI" data-studio="Eval + FT">
                     <td class="model-name">Whisper large-v3</td>
@@ -427,6 +433,7 @@
                     <td class="wer-cell wer-best" data-sort="3.1">3.1%</td>
                     <td class="wer-cell wer-ok" data-sort="6.2">6.2%</td>
                     <td class="price-cell" data-sort="999">Self-hosted</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">Word timestamps, 99 languages, mature ecosystem, whisper.cpp, faster-whisper</td>
@@ -444,6 +451,7 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">2x faster than v3, word timestamps, 99 languages, great for fine-tuning</td>
                 </tr>
 
@@ -459,11 +467,12 @@
                     <td class="price-cell" data-sort="0.0015">~$0.0015</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center">—</td>
                     <td class="features-list">Whisper v3 hosted by Fireworks, 99+ languages, lowest cost API. Via Trelis Router.</td>
                 </tr>
 
                 <!-- Proprietary APIs -->
-                <tr class="group-header"><td colspan="12">Proprietary APIs</td></tr>
+                <tr class="group-header"><td colspan="13">Proprietary APIs</td></tr>
 
                 <tr data-access="Proprietary" data-provider="OpenAI" data-studio="">
                     <td class="model-name">GPT-4o mini Transcribe</td>
@@ -475,6 +484,7 @@
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="price-cell" data-sort="0.003">$0.003</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">OpenAI API, easy integration</td>
@@ -492,6 +502,7 @@
                     <td class="price-cell" data-sort="0.003">~$0.003</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center">—</td>
                     <td class="features-list">Multimodal, long context, audio understanding. Via Trelis Router.</td>
                 </tr>
 
@@ -505,6 +516,7 @@
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="price-cell" data-sort="0.003">~$0.003</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">Multimodal, long context, audio understanding</td>
@@ -522,6 +534,7 @@
                     <td class="price-cell" data-sort="0.010">$0.010</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center">—</td>
                     <td class="features-list">Diarization, word timestamps, 99 languages. Via Trelis Router.</td>
                 </tr>
 
@@ -536,6 +549,7 @@
                     <td class="wer-cell wer-poor" data-sort="8.2">8.2%</td>
                     <td class="price-cell" data-sort="0.008">~$0.008</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">Diarization, streaming, custom vocabulary. Via Trelis Router.</td>
                 </tr>
@@ -552,6 +566,7 @@
                     <td class="price-cell" data-sort="0.0035">~$0.0035</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center">—</td>
                     <td class="features-list">Word timestamps, 6 languages, prompting. Via Trelis Router.</td>
                 </tr>
 
@@ -567,11 +582,12 @@
                     <td class="price-cell" data-sort="0.0125">~$0.0125</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center">—</td>
                     <td class="features-list">Enterprise-grade, 70 languages, best-in-class accuracy. Via Trelis Router.</td>
                 </tr>
 
                 <!-- Qwen Family -->
-                <tr class="group-header"><td colspan="12">Qwen Family (Alibaba)</td></tr>
+                <tr class="group-header"><td colspan="13">Qwen Family (Alibaba)</td></tr>
 
                 <tr data-access="Open Weights" data-provider="Alibaba / Qwen" data-studio="Eval + FT">
                     <td class="model-name">Qwen3-ASR-1.7B</td>
@@ -583,6 +599,7 @@
                     <td class="wer-cell wer-poor" data-sort="8.2">8.2%</td>
                     <td class="wer-cell wer-ok" data-sort="6.3">6.3%</td>
                     <td class="price-cell" data-sort="999">Self-hosted</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">52 languages/dialects, language detection, singing/music recognition, streaming</td>
@@ -600,11 +617,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td class="features-list">Lightweight variant, 52 languages/dialects, edge-deployable</td>
                 </tr>
 
                 <!-- NVIDIA -->
-                <tr class="group-header"><td colspan="12">NVIDIA</td></tr>
+                <tr class="group-header"><td colspan="13">NVIDIA</td></tr>
 
                 <tr data-access="Open Weights" data-provider="NVIDIA" data-studio="Eval + FT">
                     <td class="model-name">Parakeet TDT 0.6B v3</td>
@@ -618,11 +636,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:#b2bec3">&#10007;</td>
                     <td class="features-list">NeMo framework, CTC/TDT decoder, 25 European languages, word timestamps</td>
                 </tr>
 
                 <!-- Meta -->
-                <tr class="group-header"><td colspan="12">Meta</td></tr>
+                <tr class="group-header"><td colspan="13">Meta</td></tr>
 
                 <tr data-access="Open Weights" data-provider="Meta" data-studio="Eval">
                     <td class="model-name">OmniASR-LLM-7B</td>
@@ -636,11 +655,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center;color:#b2bec3">&#10007;</td>
                     <td class="features-list">LLM-based ASR, 1600+ languages, also available in 300M/1B/3B sizes</td>
                 </tr>
 
                 <!-- Microsoft -->
-                <tr class="group-header"><td colspan="12">Microsoft</td></tr>
+                <tr class="group-header"><td colspan="13">Microsoft</td></tr>
 
                 <tr data-access="Open Weights" data-provider="Microsoft" data-studio="Eval">
                     <td class="model-name">VibeVoice-ASR</td>
@@ -654,11 +674,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center">—</td>
+                    <td style="text-align:center;color:#b2bec3">&#10007;</td>
                     <td class="features-list">50+ languages, code-switching support, word timestamps</td>
                 </tr>
 
                 <!-- Moonshine -->
-                <tr class="group-header"><td colspan="12">Moonshine (Useful Sensors)</td></tr>
+                <tr class="group-header"><td colspan="13">Moonshine (Useful Sensors)</td></tr>
 
                 <tr data-access="Open Weights" data-provider="Useful Sensors" data-studio="Eval + FT">
                     <td class="model-name">Moonshine Base</td>
@@ -672,6 +693,7 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:#b2bec3">&#10007;</td>
                     <td class="features-list">Ultra-lightweight, edge-first, English-only</td>
                 </tr>
 
@@ -687,11 +709,12 @@
                     <td class="price-cell" data-sort="999">Self-hosted</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
                     <td style="text-align:center;color:var(--green);font-size:1.1rem">&#10003;</td>
+                    <td style="text-align:center;color:#b2bec3">&#10007;</td>
                     <td class="features-list">Smallest model, IoT/mobile edge, English-only</td>
                 </tr>
 
                 <!-- Other Open Models -->
-                <tr class="group-header"><td colspan="12">Other Open Models</td></tr>
+                <tr class="group-header"><td colspan="13">Other Open Models</td></tr>
 
                 <tr data-access="Open Weights" data-provider="Kyutai" data-studio="">
                     <td class="model-name">Kyutai STT (1B / 2.6B)</td>
@@ -703,6 +726,7 @@
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="wer-cell wer-na" data-sort="999">—</td>
                     <td class="price-cell" data-sort="999">Self-hosted</td>
+                    <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td style="text-align:center">—</td>
                     <td class="features-list">Streaming, word timestamps, voice prompting, Rust server</td>
@@ -720,6 +744,7 @@
             <li><strong>API prices</strong> are per minute of audio, based on official API documentation as of Feb 2026.</li>
             <li><strong>Self-hosted</strong> models have no API cost but require your own GPU infrastructure (e.g., Modal, RunPod, on-premise).</li>
             <li><strong>Trelis Studio</strong>: <strong>Eval</strong> = model supported for evaluation, <strong>FT</strong> = fine-tuning supported. See <a href="https://studio.trelis.com" target="_blank">studio.trelis.com</a>.</li>
+            <li><strong>vLLM</strong>: Whether the model has native <a href="https://docs.vllm.ai/en/stable/models/supported_models/" target="_blank">vLLM</a> support for self-hosted serving. "Chat-based" means the model is served as a multimodal chat model, not via a dedicated transcription endpoint. As of Mar 2026.</li>
         </ul>
     </div>
 
