@@ -5,6 +5,7 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 
 ## Environment
 - `.env` in root contains `TRELIS_STUDIO_API_KEY` and `HF_TOKEN`
+- `GITHUB_PAT` is available in `/home/claude/TR/.env` for pushing to GitHub
 - Use `uv` for all Python operations
 
 ## Trelis Studio API
