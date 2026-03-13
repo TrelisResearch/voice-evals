@@ -33,9 +33,23 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 
 ### Planned Datasets
 
-#### Technical AI (`voice-evals-ai-technical`)
+#### Technical AI v1 (`Trelis/ai-terms-{public,semi-private,private}`)
+- **Status: Complete (v0 eval results in `docs/eval-results-ai-terms-v0.md`)**
+- 12 samples per split, 6 entity categories, 25+ models evaluated
 - Sources: AI News articles (with permission), YouTube transcripts, rewrites of transcripts
+
+#### Technical AI v2 (`ai-terms-v2-{public,semi-private,private}`)
+- **Status: Planning**
+- Goal: harder dataset — filter out "easy" rows that most models already handle well
+- Sources: AI News articles from **Jan 1 – Feb 28, 2026** only (contamination avoidance)
+- **Difficulty filtering**: run 3 diverse open-source models, compute per-row entity CER, take median, drop rows below threshold
+- Filter models: Whisper Large-v3-Turbo, Parakeet TDT 0.6B v3, Qwen3-ASR 1.7B
+- **Audio pipeline (hybrid TTS + human)**:
+  1. Generate TTS audio for candidate texts (once Studio TTS integration is available)
+  2. Run 3 filter models on TTS audio to identify hard rows
+  3. If TTS audio quality is sufficient, keep it; otherwise re-record hard rows manually
 - Requires entity-based deduplication across splits to prevent leakage
+- Larger initial pool (~50+ rows) to allow filtering down to ~15-20 per split
 
 #### Code-Switching (`voice-evals-code-switching`)
 - Languages: French, English, German, Spanish
