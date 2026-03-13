@@ -22,21 +22,21 @@
 
 ## Phase 3: TTS Audio Generation (Complete)
 - Used Trelis Studio TTS evaluation endpoint (Orpheus 3B model, speaker: tara)
-- Generated audio for 34/60 rows (remaining rows still generating)
+- Generated audio for all **60/60 rows**
 - **Bug filed**: TTS `prompts` array only processes first element (workaround: 1 job per prompt)
 - **Bug filed**: Studio evaluation can't access private HF datasets
-- Individual TTS datasets at `Trelis/ai-terms-v2-tts-{001..034}`
-- Merged dataset at `ronanarraig/ai-terms-v2-candidates-with-audio` (private)
+- Individual TTS datasets at `Trelis/ai-terms-v2-tts-{001..060}`
+- Data-prep upload created `Trelis/ai-terms-v2-eval-ready` (60 rows, Studio-accessible)
 
 ## Phase 4: Difficulty Filtering (Complete)
-- Evaluated 34 rows with 3 ASR models:
-  - Whisper Large-v3-Turbo: 31.7% CER, 24.9% entity CER
-  - Parakeet TDT 0.6B v3: 31.6% CER, 25.4% entity CER
-  - Qwen3-ASR 1.7B: 29.6% CER, 24.8% entity CER
-- High CER partly due to TTS pronunciation issues and number normalization (written-out numbers vs digits)
-- Per-row median CER range: 0.071 – 0.580
-- Dropped bottom 25% (9 easiest rows, median CER < 0.213)
-- Kept 25 harder rows
+- Evaluated all **60 rows** with 3 ASR models on `Trelis/ai-terms-v2-eval-ready`:
+  - Whisper Large-v3-Turbo: 23.1% CER
+  - Parakeet TDT 0.6B v3: 22.8% CER
+  - Qwen3-ASR 1.7B: 21.5% CER
+- Entity CER computed locally using entity annotations from `v2_entities_by_row.json`
+- Per-row median CER range: 0.031 – 0.540
+- Dropped bottom 25% (**15 easiest rows**, median CER < 0.100)
+- Kept **45 harder rows**
 
 ### Key observations
 - Hardest rows: funding amounts with large written-out numbers, Chinese company/model names
@@ -45,28 +45,27 @@
 
 ## Phase 5: Split Assignment & Dedup (Complete)
 - Greedy assignment minimizing entity overlap between splits
-- **Entity overlap**: Jaccard < 0.02 between all split pairs
-  - public vs semi_private: 0 overlapping entities
-  - private vs public: 1 overlap ("claude opus 4.5")
-  - private vs semi_private: 1 overlap ("gemini 3 pro")
+- **Entity overlap** (Jaccard, excluding ubiquitous terms):
+  - public vs semi_private: 0.076 (9 overlapping entities)
+  - private vs public: 0.060 (7 overlapping entities)
+  - private vs semi_private: 0.057 (6 overlapping entities)
 
 ### Split contents
 | Split | Rows | Median CER range |
 |-------|------|-----------------|
-| public | 9 | 0.239 – 0.580 |
-| semi_private | 8 | 0.250 – 0.556 |
-| private | 8 | 0.250 – 0.535 |
+| public | 16 | 0.100 – 0.540 |
+| semi_private | 15 | 0.108 – 0.510 |
+| private | 14 | 0.127 – 0.490 |
 
 ## Phase 6: Push to HuggingFace (Complete)
-- `ronanarraig/ai-terms-v2-public` (9 rows, private, split=test)
-- `ronanarraig/ai-terms-v2-semi-private` (8 rows, private, split=test)
-- `ronanarraig/ai-terms-v2-private` (8 rows, private, split=test)
+- `ronanarraig/ai-terms-v2-public` (16 rows, private, split=test)
+- `ronanarraig/ai-terms-v2-semi-private` (15 rows, private, split=test)
+- `ronanarraig/ai-terms-v2-private` (14 rows, private, split=test)
 - All datasets include: audio, text, entities (JSON with char offsets), duration_s
 
 ## Known Issues & Next Steps
 1. **TTS audio quality**: Orpheus model mispronounces many entity names → consider re-recording hard rows manually
 2. **Number normalization**: Written-out numbers ("one hundred and ten billion") cause inflated CER when ASR outputs digits — need normalizer that handles this
-3. **Remaining 26 rows**: TTS generation for rows v2-035 to v2-060 was interrupted; can be resumed later to expand the dataset
-4. **Studio bugs filed**:
+3. **Studio bugs filed**:
    - TTS prompts array only generates first prompt
    - Evaluation can't access private HF datasets
