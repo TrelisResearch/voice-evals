@@ -1,0 +1,352 @@
+[
+  {
+    "text": "My neighbor (the one with the golden retriever) just won the lottery.",
+    "category": "punctuation",
+    "transcript": "My neighbor, the one with the golden retriever, just won the lottery.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "She had to tear up the contract with tears streaming down her face.",
+    "category": "phonetic",
+    "transcript": "She had to tear up the contract with tears streaming down her face.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The radiologist identified a subcutaneous hematoma in the right temporoparietal region and recommended immediate administration of amoxicillin to prevent secondary infection.",
+    "category": "domain_specific",
+    "transcript": "The radiologist identified a subcutaneous hematoma in the right temporoparietal region and recommended immediate administration of amoxicillin to prevent secondary infection.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The court found prima facie evidence of breach of contract, noting that the defendant's actions constituted a material violation of the non-compete clause under common law principles.",
+    "category": "domain_specific",
+    "transcript": "The court found prima facie evidence of breach of contract, noting that the defendant's actions constituted a material violation of the non-compete clause under common law principles.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Visit www.museum.org to see artifacts from the 1890s, with admission priced at just £5.75 for seniors.",
+    "category": "edge_cases",
+    "transcript": "Visit www.museum.org to see artifacts from the 1890s, with admission priced at just $5.75 for seniors.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Beautiful, isn't it, the way the light hits the water at this exact angle, creating those shimmering patterns that dance and shift with every gentle wave?",
+    "category": "robustness",
+    "transcript": "Beautiful, isn't it? The way the light hits the water at this exact angle, creating those shimmering patterns that dance and shift with every gentle wave.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "No no no, I told you three times already, no means no.",
+    "category": "robustness",
+    "transcript": "No, no, no. I told you 3 times already. No means no.",
+    "wer": 0.083,
+    "cer": 0.125
+  },
+  {
+    "text": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "category": "prosody",
+    "transcript": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The manuscript revealed secrets that historians had been searching for throughout the entire twentieth century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "category": "prosody",
+    "transcript": "The manuscript revealed secrets that historians had been searching for throughout the entire 20th century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "wer": 0.026,
+    "cer": 0.028
+  },
+  {
+    "text": "Wojciech and Niamh stood in a long queue waiting to tour Ptolemy's ancient observatory.",
+    "category": "phonetic",
+    "transcript": "Wojciech and Niamh stood in a long queue waiting to tour Ptolemy's ancient observatory.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The spacecraft's attitude control system employs three reaction wheels operating at 6000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "category": "domain_specific",
+    "transcript": "The spacecraft's attitude control system employs 3 reaction wheels operating at 6,000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "wer": 0.107,
+    "cer": 0.03
+  },
+  {
+    "text": "The circuit utilizes a 555 timer IC configured in astable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "category": "domain_specific",
+    "transcript": "The circuit utilizes a 555 timer IC configured in a stable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "wer": 0.062,
+    "cer": 0.0
+  },
+  {
+    "text": "The entrepreneur submitted her résumé highlighting her expertise in the horror genre.",
+    "category": "phonetic",
+    "transcript": "The entrepreneur submitted her resume highlighting her expertise in the horror genre.",
+    "wer": 0.083,
+    "cer": 0.027
+  },
+  {
+    "text": "The conference agenda includes presentations on artificial intelligence in healthcare, a workshop on sustainable urban planning, a panel discussion about renewable energy solutions, and finally, a networking reception where attendees can share their insights and experiences.",
+    "category": "prosody",
+    "transcript": "The conference agenda includes presentations on artificial intelligence in healthcare, a workshop on sustainable urban planning, a panel discussion about renewable energy solutions, and finally, a networking reception where attendees can share their insights and experiences.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "She couldn't believe what she was hearing—after years of dedication, countless late nights, and unwavering commitment to excellence, the promotion she had been promised was suddenly being offered to someone who had joined the company only six months earlier.",
+    "category": "prosody",
+    "transcript": "She couldn't believe what she was hearing. After years of dedication, countless late nights, and unwavering commitment to excellence, the promotion she had been promised was suddenly being offered to someone who had joined the company only 6 months earlier.",
+    "wer": 0.024,
+    "cer": 0.014
+  },
+  {
+    "text": "The 1st place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "category": "edge_cases",
+    "transcript": "The first-place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "wer": 0.05,
+    "cer": 0.031
+  },
+  {
+    "text": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "category": "prosody",
+    "transcript": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The loan agreement stipulates a 30-year amortization schedule with a fixed interest rate, requiring the borrower to pledge residential property as collateral to the fiduciary.",
+    "category": "domain_specific",
+    "transcript": "The loan agreement stipulates a 30-year amortization schedule with a fixed interest rate, requiring the borrower to pledge residential property as collateral to the fiduciary.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Prof. Williams from Oxford St. mentioned that the 1980s saw the 3rd largest economic boom in British history.",
+    "category": "edge_cases",
+    "transcript": "Professor Williams from Oxford Saint mentioned that the 1980s saw the third largest economic boom in British history.",
+    "wer": 0.167,
+    "cer": 0.124
+  },
+  {
+    "text": "The concert—scheduled for months—was cancelled due to the storm.",
+    "category": "punctuation",
+    "transcript": "The concert, scheduled for months, was canceled due to the storm.",
+    "wer": 0.091,
+    "cer": 0.019
+  },
+  {
+    "text": "This is URGENT and needs immediate attention.",
+    "category": "robustness",
+    "transcript": "This is urgent and needs immediate attention.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "To prepare the traditional recipe, you'll need fresh basil leaves, ripe tomatoes, imported olive oil, aged parmesan cheese, crushed garlic cloves, sea salt, black pepper, and lastly, a generous handful of toasted pine nuts.",
+    "category": "prosody",
+    "transcript": "To prepare the traditional recipe, you'll need fresh basil leaves, ripe tomatoes, imported olive oil, aged Parmesan cheese, crushed garlic cloves, sea salt, black pepper, and lastly, a generous handful of toasted pine nuts.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The museum features works from several periods: Renaissance, Baroque, and Modern.",
+    "category": "punctuation",
+    "transcript": "The museum features works from several periods: Renaissance, Baroque, and Modern.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "category": "prosody",
+    "transcript": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "I thought about calling her back, but... maybe tomorrow would be better.",
+    "category": "punctuation",
+    "transcript": "I thought about calling her back, but maybe tomorrow would be better.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "category": "prosody",
+    "transcript": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The lead singer used a lead pipe to bow dramatically before taking a bow.",
+    "category": "phonetic",
+    "transcript": "The lead singer used a lead pipe to bow dramatically before taking a bow.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The taxonomic classification places the organism in the family Enterobacteriaceae, genus Escherichia, with 16S ribosomal RNA sequencing confirming 99.7 percent homology to the reference strain.",
+    "category": "domain_specific",
+    "transcript": "The taxonomic classification places the organism in the family Enterobacteriaceae, genus Escherichia, with 16S ribosomal RNA sequencing confirming 99.7% homology to the reference strain.",
+    "wer": 0.038,
+    "cer": 0.042
+  },
+  {
+    "text": "The defendant's attorney filed a writ of habeas corpus arguing that the prosecution failed to establish mens rea beyond a reasonable doubt.",
+    "category": "domain_specific",
+    "transcript": "The defendant's attorney filed a writ of habeas corpus arguing that the prosecution failed to establish mens rea beyond a reasonable doubt.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "In the early morning hours, just as the sun began to peek over the distant mountains and cast its golden rays across the valley below, the small village started to come alive with the sounds of daily life—roosters crowing, dogs barking, children laughing as they ran through cobblestone streets, merchants setting up their colorful stalls in the market square with fruits and vegetables and handmade crafts, elderly residents greeting each other with warm smiles and familiar waves, the aroma of freshly baked bread wafting from the corner bakery where the baker had been working since well before dawn, and the gentle ringing of church bells calling the faithful to morning prayer, all combining to create that perfect symphony of community and tradition that had remained unchanged for generations.",
+    "category": "robustness",
+    "transcript": "In the early morning hours, just as the sun began to peek over the distant mountains and cast its golden rays across the valley below, the small village started to come alive with the sounds of daily life. Roosters crowing, dogs barking, children laughing as they ran through cobblestone streets, merchants setting up their colorful stalls in the market square with fruits and vegetables and handmade crafts, elderly residents greeting each other with warm smiles and familiar waves, the aroma of freshly baked bread wafting from the corner bakery where the baker had been working since well before dawn, and the gentle ringing of church bells calling the faithful to morning prayer—all combining to create that perfect symphony of community and tradition that had remained unchanged for generations.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The conference is scheduled for April 2nd at approx. 9:30 AM, and tickets cost only €0.50 for students.",
+    "category": "edge_cases",
+    "transcript": "The conference is scheduled for April 2nd at approx. 9:30 AM, and tickets cost only 0,50 for students.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200 degrees Celsius under high pressure.",
+    "category": "domain_specific",
+    "transcript": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200°C under high pressure.",
+    "wer": 0.095,
+    "cer": 0.082
+  },
+  {
+    "text": "Gone. Just gone.",
+    "category": "robustness",
+    "transcript": "Gone. Just gone.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Wait, wait, wait—I said wait!",
+    "category": "robustness",
+    "transcript": "Wait, wait, wait, I said wait!",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Ngozi cleared the phlegm from her throat before reading Goethe's poetry, which she had read many times before.",
+    "category": "phonetic",
+    "transcript": "Ngozi cleared the phlegm from her throat before reading Goethe's poetry, which she had read many times before.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "He whispered, \"Meet me at the old bridge,\" before disappearing into the crowd.",
+    "category": "punctuation",
+    "transcript": "He whispered, \"Meet me at the old bridge,\" before disappearing into the crowd.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The recipe requires three ingredients: flour, sugar, and vanilla extract.",
+    "category": "punctuation",
+    "transcript": "The recipe requires 3 ingredients: flour, sugar, and vanilla extract.",
+    "wer": 0.1,
+    "cer": 0.083
+  },
+  {
+    "text": "According to the report from DataCorp Ltd., the company's 42nd quarterly revenue reached $3,456,789.12 in Q4.",
+    "category": "edge_cases",
+    "transcript": "According to the report from DataCorp Limited, the company's 42nd quarterly revenue reached 3,456,789.12 in Q4.",
+    "wer": 0.05,
+    "cer": 0.047
+  },
+  {
+    "text": "The patient was prescribed metformin hydrochloride 500 milligrams twice daily for type 2 diabetes mellitus, along with acetaminophen for post-operative analgesia.",
+    "category": "domain_specific",
+    "transcript": "The patient was prescribed metformin hydrochloride 500 mg twice daily for type 2 diabetes mellitus, along with acetaminophen for postoperative analgesia.",
+    "wer": 0.136,
+    "cer": 0.058
+  },
+  {
+    "text": "The project failed; we simply didn't have enough time to complete it properly.",
+    "category": "punctuation",
+    "transcript": "The project failed. We simply didn't have enough time to complete it properly.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The soldier received a purple wound on his arm while trying to wound the enemy's flag around the pole.",
+    "category": "phonetic",
+    "transcript": "The soldier received a purple wound on his arm while trying to wound the enemy's flag around the pole.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Dr. Martinez announced that NASA's budget for the 2030s will exceed $45.7 billion, approximately 15% more than the previous decade.",
+    "category": "edge_cases",
+    "transcript": "Dr. Martinez announced that NASA's budget for the 2030s will exceed $45.7 billion, approximately 15% more than the previous decade.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Siobhan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "category": "phonetic",
+    "transcript": "Shivan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "wer": 0.067,
+    "cer": 0.053
+  },
+  {
+    "text": "The CEO of PayPal sent an email to investors@company.com confirming the acquisition would close on 03/15/2025 for £892.3 million.",
+    "category": "edge_cases",
+    "transcript": "The CEO of PayPal sent an email to investors iCompany.com confirming the acquisition would close on 03/15/2025 for $892.3 million.",
+    "wer": 0.042,
+    "cer": 0.01
+  },
+  {
+    "text": "First, we visited the ancient cathedral with its stunning stained glass windows, then we explored the bustling marketplace filled with local artisans, next we enjoyed lunch at a charming bistro overlooking the river, and finally, we watched the sunset from the historic fortress walls.",
+    "category": "prosody",
+    "transcript": "First, we visited the ancient cathedral with its stunning stained glass windows. Then we explored the bustling marketplace filled with local artisans. Next, we enjoyed lunch at a charming bistro overlooking the river. And finally, we watched the sunset from the historic fortress walls.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Saoirse watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "category": "phonetic",
+    "transcript": "Sawersa watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "wer": 0.067,
+    "cer": 0.035
+  },
+  {
+    "text": "Absolutely not.",
+    "category": "robustness",
+    "transcript": "Absolutely not.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "I wanted to tell him the truth, but... some secrets are better left buried.",
+    "category": "punctuation",
+    "transcript": "I wanted to tell him the truth, but some secrets are better left buried.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Very very very carefully, she placed the antique vase back on the shelf, holding her breath the entire time.",
+    "category": "robustness",
+    "transcript": "Very, very, very carefully. She placed the antique vase back on the shelf, holding her breath the entire time.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Every Wednesday, Colonel Patterson takes his yacht out to the harbor at dawn.",
+    "category": "phonetic",
+    "transcript": "Every Wednesday, Colonel Patterson takes his yacht out to the harbor at dawn.",
+    "wer": 0.0,
+    "cer": 0.0
+  }
+]

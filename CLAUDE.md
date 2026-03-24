@@ -52,6 +52,16 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 - Requires entity-based deduplication across splits to prevent leakage
 - Larger initial pool (~50+ rows) to allow filtering down to ~15-20 per split
 
+#### Tricky TTS (`ronanarraig/tricky-tts-{public,semi-private,private}`)
+- **Status: Phase 1 Complete** — see `tricky-tts/roadmap.md`
+- Purpose: evaluate TTS models on linguistically and typographically challenging English text
+- Text-only dataset (no audio); TTS models generate audio at eval time
+- ~50 rows per split, with a `text` + `category` column
+- Categories: prosody, edge_cases, phonetic, punctuation, robustness, domain_specific
+- Evaluation via Trelis Studio: UTMOS (naturalness) + Round Trip ASR (accuracy)
+- Phase 2: median-of-N filtering to ensure difficulty and avoid unfairly penalising any single model
+- English only; will migrate to `Trelis/` org once on Trelis infrastructure
+
 #### Code-Switching (`voice-evals-code-switching`)
 - Languages: French, English, German, Spanish
 - Synthetic data mixing languages within utterances

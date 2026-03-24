@@ -1,0 +1,752 @@
+[
+  {
+    "text": "My neighbor (the one with the golden retriever) just won the lottery.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "She had to tear up the contract with tears streaming down her face.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The radiologist identified a subcutaneous hematoma in the right temporoparietal region and recommended immediate administration of amoxicillin to prevent secondary infection.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The court found prima facie evidence of breach of contract, noting that the defendant's actions constituted a material violation of the non-compete clause under common law principles.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Visit www.museum.org to see artifacts from the 1890s, with admission priced at just £5.75 for seniors.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Beautiful, isn't it, the way the light hits the water at this exact angle, creating those shimmering patterns that dance and shift with every gentle wave?",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "No no no, I told you three times already, no means no.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The manuscript revealed secrets that historians had been searching for throughout the entire twentieth century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "Wojciech and Niamh stood in a long queue waiting to tour Ptolemy's ancient observatory.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The spacecraft's attitude control system employs three reaction wheels operating at 6000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The circuit utilizes a 555 timer IC configured in astable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The entrepreneur submitted her résumé highlighting her expertise in the horror genre.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The conference agenda includes presentations on artificial intelligence in healthcare, a workshop on sustainable urban planning, a panel discussion about renewable energy solutions, and finally, a networking reception where attendees can share their insights and experiences.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "She couldn't believe what she was hearing—after years of dedication, countless late nights, and unwavering commitment to excellence, the promotion she had been promised was suddenly being offered to someone who had joined the company only six months earlier.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The 1st place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The loan agreement stipulates a 30-year amortization schedule with a fixed interest rate, requiring the borrower to pledge residential property as collateral to the fiduciary.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Prof. Williams from Oxford St. mentioned that the 1980s saw the 3rd largest economic boom in British history.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The concert—scheduled for months—was cancelled due to the storm.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "This is URGENT and needs immediate attention.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "To prepare the traditional recipe, you'll need fresh basil leaves, ripe tomatoes, imported olive oil, aged parmesan cheese, crushed garlic cloves, sea salt, black pepper, and lastly, a generous handful of toasted pine nuts.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The museum features works from several periods: Renaissance, Baroque, and Modern.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "I thought about calling her back, but... maybe tomorrow would be better.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The lead singer used a lead pipe to bow dramatically before taking a bow.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The taxonomic classification places the organism in the family Enterobacteriaceae, genus Escherichia, with 16S ribosomal RNA sequencing confirming 99.7 percent homology to the reference strain.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The defendant's attorney filed a writ of habeas corpus arguing that the prosecution failed to establish mens rea beyond a reasonable doubt.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "In the early morning hours, just as the sun began to peek over the distant mountains and cast its golden rays across the valley below, the small village started to come alive with the sounds of daily life—roosters crowing, dogs barking, children laughing as they ran through cobblestone streets, merchants setting up their colorful stalls in the market square with fruits and vegetables and handmade crafts, elderly residents greeting each other with warm smiles and familiar waves, the aroma of freshly baked bread wafting from the corner bakery where the baker had been working since well before dawn, and the gentle ringing of church bells calling the faithful to morning prayer, all combining to create that perfect symphony of community and tradition that had remained unchanged for generations.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The conference is scheduled for April 2nd at approx. 9:30 AM, and tickets cost only €0.50 for students.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200 degrees Celsius under high pressure.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Gone. Just gone.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "Wait, wait, wait—I said wait!",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "Ngozi cleared the phlegm from her throat before reading Goethe's poetry, which she had read many times before.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "He whispered, \"Meet me at the old bridge,\" before disappearing into the crowd.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The recipe requires three ingredients: flour, sugar, and vanilla extract.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "According to the report from DataCorp Ltd., the company's 42nd quarterly revenue reached $3,456,789.12 in Q4.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The patient was prescribed metformin hydrochloride 500 milligrams twice daily for type 2 diabetes mellitus, along with acetaminophen for post-operative analgesia.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The project failed; we simply didn't have enough time to complete it properly.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The soldier received a purple wound on his arm while trying to wound the enemy's flag around the pole.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Dr. Martinez announced that NASA's budget for the 2030s will exceed $45.7 billion, approximately 15% more than the previous decade.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Siobhan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The CEO of PayPal sent an email to investors@company.com confirming the acquisition would close on 03/15/2025 for £892.3 million.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "First, we visited the ancient cathedral with its stunning stained glass windows, then we explored the bustling marketplace filled with local artisans, next we enjoyed lunch at a charming bistro overlooking the river, and finally, we watched the sunset from the historic fortress walls.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "Saoirse watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Absolutely not.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "I wanted to tell him the truth, but... some secrets are better left buried.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "Very very very carefully, she placed the antique vase back on the shelf, holding her breath the entire time.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "Every Wednesday, Colonel Patterson takes his yacht out to the harbor at dawn.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The the problem with that approach is it assumes we have unlimited resources.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "The chef's signature dish requires fresh basil from the garden, heirloom tomatoes harvested at peak ripeness, extra virgin olive oil imported from Tuscany, aged parmesan cheese, and lastly, a delicate touch of sea salt gathered from the Mediterranean coast.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "After the tornado, debris from the façade was scattered across the entire neighborhood.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The phenomenon of nostalgia marketing has become increasingly prevalent in contemporary advertising strategies, particularly as brands recognize the powerful emotional connections that consumers maintain with cultural touchstones from their formative years, whether those memories involve childhood television programs, iconic product packaging, beloved cartoon characters, or music that defined particular eras of their lives, and by strategically incorporating these nostalgic elements into modern campaigns, companies tap into a psychological mechanism that associates positive emotions from the past with present-day purchasing decisions, creating what researchers call a 'memory-driven value proposition' that transcends rational cost-benefit analyses and instead operates on deeply personal, affective levels that influence behavior in ways traditional advertising often cannot achieve.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "CloudTech Ltd. reported that their macOS application had been downloaded approximately 156,000 times via their website at cloudtech-apps.io.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The CEO announced that approximately £847,293.50 would be invested in R&D by Q3 2025.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Understanding the intricate relationship between climate change and global economic systems requires examining multiple interconnected factors that span decades of industrial development, policy decisions, and shifting societal values, and when we consider how rising temperatures affect agricultural productivity in developing nations while simultaneously influencing migration patterns and urban infrastructure demands in coastal cities, we begin to see that the challenge before us is not merely environmental but fundamentally about reimagining how human civilization organizes itself around principles of sustainability, equity, and long-term resilience, which means that any proposed solution must address not only carbon emissions and renewable energy transitions but also questions of international cooperation, technological innovation, financial mechanisms for supporting vulnerable populations, and the political will necessary to implement transformative changes that may require short-term sacrifices for the sake of future generations who will inherit the consequences of decisions we make today.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "My fiancé and I met an entrepreneur named Siobhan at a café in Dublin last Wednesday.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "He looked at me and asked, \"Are you absolutely certain about this decision?\" before signing the papers.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "You'll need three things for the recipe: fresh basil, ripe tomatoes, and extra virgin olive oil.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "Dr. Martinez scheduled our 3rd consultation for 09/17/2025 at the clinic on Jefferson St.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The lead singer refused to lead the band through another grueling tour schedule.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The museum closes at six; we should leave by four to avoid the rush hour traffic.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "ChatGPT became the 1st AI assistant to reach 100 million users in under 2 months, according to the WSJ article.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The evidence—though circumstantial—pointed unmistakably toward a single conclusion.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "This is very very very important, so please pay attention.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "Under the doctrine of res ipsa loquitur, the plaintiff may establish prima facie negligence without direct evidence of the defendant's breach of duty.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "The bond's amortization schedule indicates a duration of 7.3 years with a yield to maturity of 4.85 percent, assuming semi-annual coupon payments.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "The taxonomic classification places this specimen in the family Asteraceae, genus Helianthus, with morphological characteristics consistent with Helianthus annuus.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "No no no, I specifically said no pickles on my burger.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "I absolutely CANNOT believe what just happened.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "Her latest novel (published just last week) has already topped three bestseller lists.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "Prof. Chen's research team at MIT published their findings on YouTube, garnering over 2.4 million views since the 1990s dataset comparison.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The investigation uncovered discrepancies in financial records, irregularities in procurement processes, unauthorized access to confidential databases, falsified performance reports, and finally, a systematic pattern of misconduct spanning nearly five years.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "We're implementing OAuth 2.0 authentication with JSON Web Tokens across our microservices architecture, utilizing TLS 1.3 for transport layer security.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "NASA's latest rover discovered that temperatures on Mars fluctuate between -125°C and 20°C during the 2020s missions.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The spectrometer detected significant concentrations of polytetrafluoroethylene degradation products, including hexafluoropropylene oxide dimer acid.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "The defendant's counsel argued that the prosecution failed to establish mens rea beyond a reasonable doubt, rendering the indictment insufficient on its face.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Ngozi submitted her résumé for the position, highlighting her expertise in the horror genre.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The research team examined factors including climate variability, soil composition, irrigation methods, pest management strategies, and finally, the socioeconomic conditions affecting farming communities across seven different regions.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "The live orchestra performed a live broadcast of Goethe's dramatic works at the concert hall.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The conference—scheduled for next month—has been postponed indefinitely due to unforeseen circumstances.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "The fiduciary must ensure that collateralized loan obligations in the portfolio maintain investment-grade ratings to comply with the prudent investor rule.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Could anyone have predicted that a simple miscommunication during the morning briefing would cascade into a series of misunderstandings affecting three departments, delaying the project timeline, and ultimately requiring executive intervention to resolve?",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "The iPhone 15 Pro costs $999.99, but you can find refurbished units on eBay for roughly $749.00.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "They promised to arrive early... yet here we are, still waiting in the empty parking lot.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "The colonel ordered his troops to queue near the yacht at dawn.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "I thought about calling him back... but then again, maybe silence says enough.",
+    "category": "punctuation",
+    "split": "semi_private"
+  },
+  {
+    "text": "Why do some people thrive under pressure while others crumble when faced with identical challenges, and what role do genetics, upbringing, and personal experience play in determining our individual responses to stress?",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "Wojciech had to wound the bandage carefully around his wound to stop the bleeding.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "When the museum curator carefully opened the ancient manuscript, she discovered not only intricate illustrations depicting medieval life but also marginal notes written by scholars who had studied the document centuries before her own examination.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "Have you ever wondered why certain memories from childhood remain crystal clear decades later while yesterday's conversations fade into obscurity, as if our brains selectively choose which moments deserve permanent storage in our consciousness?",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "Into the woods, alone, without telling anyone—brilliant idea that was.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "Niamh's naïve assumption was that eating a croissant every morning wouldn't affect her health.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Wait.",
+    "category": "robustness",
+    "split": "semi_private"
+  },
+  {
+    "text": "Throughout history, revolutionary scientific discoveries have often been met with skepticism, ridicule, and outright hostility from established institutions that felt threatened by ideas challenging their fundamental understanding of natural phenomena.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "The patient was prescribed lisinopril twenty milligrams once daily for hypertension, along with metformin extended-release for glycemic control.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Saoirse gave a tear-jerking performance that brought a tear to every eye in the theater.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Despite the overwhelming evidence presented by the prosecution, including multiple eyewitness testimonies and forensic analysis conducted by three independent laboratories, the defense attorney maintained that her client had been wrongly accused and deserved immediate acquittal.",
+    "category": "prosody",
+    "split": "semi_private"
+  },
+  {
+    "text": "Please forward the invoice to accounts@techsolutions.co.uk before the 22nd of next month.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Ngozi took a live scorpion onto the live broadcast, causing several audience members to bow their heads in fear.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "The experiment failed; however, we learned valuable lessons from the process.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "This message is URGENT and requires immediate attention.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "Did anyone actually believe that the elaborate surprise party, complete with a jazz band, custom decorations, and guests flying in from three different continents, could remain a secret in an office where even the smallest rumor spreads faster than wildfire?",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "Goethe's influence on Ptolemy's philosophical writings became clear after I read what the ancient scholars had read centuries ago.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Never ever ever make that mistake again.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "Saoirse felt naive thinking the facade of the old building could hide such a modern genre of architecture.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Our network infrastructure utilizes Border Gateway Protocol with redundant fiber optic connections operating at ten gigabits per second between data centers.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "What possible explanation could there be for the mysterious disappearance of seventeen ships in that particular stretch of ocean over the course of just two decades, especially when weather records show no unusual storms and all vessels were equipped with modern navigation and emergency systems?",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "The UNESCO report stated that approx. 2,340 schools received grants totaling ¥156.4 billion during Q1 2025.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "The museum (located in the old district) houses over three thousand artifacts.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "Prof. Williams explained that YouTube's algorithm changes in the early 2000s transformed digital marketing forever.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Behind the cabinet, somehow, inexplicably wedged there.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "The CEO of TechVision Ltd. confirmed via email at contact@techvision.co.uk that their new iPhone app would cost approximately £2.99.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "By the 31st attempt, researchers at MIT successfully transferred $0.01 using the experimental macOS blockchain protocol.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "The concert—despite the rain and traffic—was absolutely worth attending.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "The decision—one that took months to make—finally brought him peace of mind.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "While the committee members debated the merits of implementing a four-day work week, considering both the potential boost to employee morale and the logistical challenges of maintaining productivity across distributed teams, the CEO quietly reviewed the quarterly financial projections that would ultimately determine the feasibility of such a radical policy shift.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "The bond's amortization schedule indicates accelerated principal repayment, while the collateralized debt obligation tranches carry varying credit ratings from triple-A to mezzanine.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Haven't we learned by now that rushing through critical decisions without consulting experts, gathering sufficient data, considering long-term consequences, or allowing time for public input inevitably leads to policies that must be revised, amended, or completely abandoned within months?",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "No no no, I specifically said no pickles.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "St. Catherine's Hospital reported that 73% of patients born in the 1990s now prefer using PayPal for copayments.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "The report (submitted two weeks early) impressed everyone at the board meeting.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "The archaeological expedition uncovered fragments of pottery, ancient tools, preserved seeds, remnants of textile materials, fossilized animal bones, traces of primitive writing systems, architectural foundation stones, and lastly, a chamber that appeared to have been deliberately sealed thousands of years ago.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "Absolutely not.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "Spectroscopic analysis revealed significant absorption peaks at 1650 wavenumbers, consistent with carbonyl stretching in the synthesized polyethylene terephthalate polymer.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Despite having meticulously planned every aspect of their cross-country road trip, including detailed maps, hotel reservations, restaurant recommendations from locals, emergency supplies, and a carefully curated playlist, the family discovered that their most cherished memories came from completely unplanned detours and spontaneous conversations at roadside diners.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "She needed three things for the recipe: fresh basil, ripe tomatoes, and good olive oil.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "Under the doctrine of res judicata, the appellate court determined that the plaintiff was estopped from relitigating claims previously adjudicated with finality.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "The wound on his leg had barely begun to heal when he wound the bandage too tightly around it.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "When examining the intersection of artificial intelligence and creative expression, scholars must grapple with fundamental questions about consciousness, originality, and whether machines that generate poetry or compose symphonies are truly creating art or merely executing sophisticated pattern recognition algorithms based on training data.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "The bow of the ship cut through the waves while phlegm-inducing fog rolled across the water each Wednesday morning.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "The startup's Series A funding of $12.5 million was announced on their blog at www.innovatefast.io last Tuesday.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Wait, WAIT!",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "Gone. All of it, just gone.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "I thought about calling him but... maybe it's better to wait until tomorrow.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "I could explain the whole situation, or... we could just pretend it never happened.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "The fiduciary must ensure that beneficiaries receive distributions according to the testamentary trust provisions, while maintaining adequate liquidity for estate tax obligations.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "To prepare the perfect holiday feast, you'll need to marinate the turkey overnight, roast the vegetables at precisely four hundred degrees, bake three different types of bread, prepare the cranberry sauce from scratch, set the table with your finest china, and finally, take a deep breath before your relatives arrive.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "Throughout the evolution of maritime navigation, sailors have relied upon an intricate combination of celestial observation, magnetic compass readings, and dead reckoning calculations to traverse vast oceanic expanses, but the introduction of satellite-based positioning systems revolutionized this ancient practice by providing unprecedented accuracy and real-time location data accessible to vessels of all sizes, from massive container ships carrying thousands of tons of cargo across international shipping lanes to small recreational boats exploring coastal waters, fundamentally altering not only the technical aspects of navigation but also the very nature of seafaring culture itself, as modern mariners can now focus less on the mathematical and observational skills that once defined their profession and more on route optimization, weather pattern analysis, and fuel efficiency strategies.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "The lead guitarist had to lead the band through their most challenging performance on Wednesday evening.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "The investigation revealed discrepancies in the accounting records, unauthorized access to secure databases, suspicious wire transfers to offshore accounts, falsified inventory reports, missing documentation for major purchases, and finally, a pattern of behavior suggesting deliberate fraud rather than simple clerical errors.",
+    "category": "prosody",
+    "split": "private"
+  },
+  {
+    "text": "The radiologist identified a lesion in the left temporal lobe measuring approximately three centimeters, recommending magnetic resonance angiography for further evaluation.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "The innovation of sustainable architecture has fundamentally transformed how we approach urban development in the twenty-first century, moving beyond mere aesthetic considerations to embrace comprehensive environmental strategies that integrate renewable energy systems, green roofing technologies, rainwater harvesting mechanisms, and passive heating and cooling designs that work in harmony with local climate patterns, while simultaneously addressing the social dimensions of community building through the creation of shared spaces that foster interaction and collective well-being, all while maintaining economic viability through reduced operational costs and increased property values that make such developments attractive to investors and residents alike, thereby creating a virtuous cycle where environmental responsibility, social cohesion, and financial sustainability reinforce one another in ways that previous generations of architects and urban planners could scarcely have imagined possible.",
+    "category": "robustness",
+    "split": "private"
+  },
+  {
+    "text": "ChatGPT's 4th major update was released on 09/08/2024, according to the CTO's statement on the company website.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "The patient was prescribed lisinopril ten milligrams daily for hypertension, along with atorvastatin to manage hyperlipidemia and reduce cardiovascular risk.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "The colonel stood in the queue at the yacht club, watching debris float past the dock.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "He whispered, \"Don't forget the keys,\" before disappearing into the crowd.",
+    "category": "punctuation",
+    "split": "private"
+  },
+  {
+    "text": "Dr. Martinez announced that NASA's 3rd lunar mission will launch on 11/15/2026 with an estimated budget of $847.3 million.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Wojciech tried not to tear up as he read the tear-stained letter from his fiancé Niamh.",
+    "category": "phonetic",
+    "split": "private"
+  }
+]
