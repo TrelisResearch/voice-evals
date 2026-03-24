@@ -216,3 +216,89 @@ You raised whether to include the `category` column in published datasets. Asses
 | `ronanarraig/tricky-tts-v2-public` | v2 (Phase 1d) | 48 | 0.174 |
 | `ronanarraig/tricky-tts-v2-semi-private` | v2 (Phase 1d) | 48 | uncalibrated |
 | `ronanarraig/tricky-tts-v2-private` | v2 (Phase 1d) | 48 | uncalibrated |
+
+---
+
+## Round-Trip ASR Evaluation — Fundamental Limitations & Mitigations
+
+### The core problem
+
+Round-trip ASR (TTS → ASR → WER against written reference) conflates two independent failure modes:
+
+1. **TTS failure**: the TTS model mispronounced the text
+2. **ASR failure**: the ASR model can't transcribe the spoken word even when the TTS pronounced it correctly
+
+These are indistinguishable with a single WER measurement. High WER on a row like "Caoilfhinn" or "01-ai/Yi-1.5-34B-Chat-16K" may reflect excellent TTS that simply exceeds AssemblyAI's vocabulary. A second problem is **reference mismatch**: the written reference "£1,234.56" bears no lexical resemblance to the spoken form "one thousand two hundred and thirty four pounds fifty six pence" — so any ASR-transcribed output will produce artificially high WER even when TTS handled it perfectly.
+
+This is well-documented in the TTS evaluation literature. From research:
+
+> "Traditional ASR-based metrics fundamentally cannot distinguish between correct pronunciation that ASR still fails to recognize, incorrect pronunciation that ASR happens to recognize, and rare words pronounced correctly but outside ASR's training vocabulary."
+
+### How it affects our specific categories
+
+| Category | Problem type | Severity |
+|---|---|---|
+| `edge_cases` | Reference mismatch (£, ±, abbreviation expansion) | High — WER is systematically inflated by format differences |
+| `ai_tech` | ASR OOV (out-of-vocabulary model paths/names) | Medium — some rows WER=0, others high, hard to tell why |
+| `domain_specific` | Both OOV + reference mismatch | Medium |
+| `phonetic` | ASR OOV (Celtic names like Caoilfhinn) | Medium — ASR may consistently fail regardless of TTS quality |
+| `number_format` | Reference mismatch (Roman numerals, fractions) | High — "LVIII" vs "fifty-eight" always high WER |
+| `paralinguistics` | Neither — spoken form ≈ written form | Low |
+
+### Mitigation options (evaluated)
+
+**Option 1: Spoken form normalization (recommended for Phase 2)**
+Convert the written reference to its expected spoken form *before* computing WER. Tools:
+- **PolyNorm** (arxiv 2511.03080) — few-shot LLM-based text normalizer designed for TTS; handles currencies, abbreviations, dates, symbols
+- **NVIDIA NeMo text normalization** — WFST + hybrid LM approach; includes audio-based TN that uses CER comparisons against ASR transcripts to pick the acoustically appropriate normalization
+- **Custom LLM prompt** — cheapest to implement; prompt an LLM with "convert this text to how it would be spoken aloud" and use that as the WER reference
+
+This directly fixes the reference mismatch problem. Instead of comparing ASR("one thousand two hundred pounds") against "£1,200", compare it against "one thousand two hundred pounds".
+
+Limitation: doesn't fix ASR OOV failures (Caoilfhinn, Yi-1.5-34B); and for ambiguous abbreviations (St. = street vs saint), we'd need context-aware normalization.
+
+**Option 2: Model-as-judge (recommended for ambiguous rows)**
+EmergentTTS-Eval (NeurIPS 2025) uses a large audio language model (LALM) as the evaluator instead of WER. The judge receives the audio and the original text, then uses chain-of-thought reasoning to assess whether pronunciation is correct — achieving 90.5% Spearman correlation with human preferences.
+
+This sidesteps both problems: ASR OOV doesn't matter (the judge "hears" the audio directly), and reference mismatch doesn't matter (the judge understands context).
+
+Practical options:
+- Gemini 2.5 Pro with audio input (most capable)
+- GPT-4o audio
+- A smaller LALM fine-tuned for TTS assessment
+
+Cost is the main concern — this is per-sample inference at frontier model prices.
+
+**Option 3: Multiple ASR models + consensus**
+Run 3 diverse ASR models. If all 3 produce similar (high or low) WER for a given row, confidence is higher that it reflects TTS quality rather than a single model's OOV. Useful as a noise reduction layer, but doesn't solve the structural issues above. Also: ASR models share vocabulary gaps for rare proper names.
+
+**Option 4: SP-MCQA (comprehension-based)**
+SP-MCQA (arxiv 2510.26190) evaluates whether listeners (human or model) can correctly answer multiple-choice questions about the content of synthesized speech. Shown to reveal failures invisible to WER — "low WER does not guarantee high key-information accuracy". Works well for domain-specific content but harder to apply to short utterances.
+
+**Option 5: Per-row WER reliability tagging**
+Label each dataset row with its expected WER reliability:
+- `wer_reliable: true` — reference has unambiguous spoken form (e.g., simple prose, paralinguistics)
+- `wer_reliable: false` — reference mismatch expected (e.g., edge_cases, number_format)
+
+Rows tagged `false` are excluded from WER aggregation and evaluated only via UTMOS or model-as-judge. Simple to implement; honest about limitations.
+
+### Recommended Phase 2 approach
+
+A pragmatic two-layer strategy:
+
+1. **Spoken form normalization for WER reference**: Use an LLM (or NeMo) to generate expected spoken forms for all rows before running WER. This fixes reference mismatch for currencies, abbreviations, numbers — the biggest source of WER inflation — at low cost.
+
+2. **Model-as-judge for phonetically hard rows**: For categories where ASR OOV is likely (`phonetic`, `ai_tech`, rows with Celtic names or model paths), supplement WER with a LALM judge call. Gemini 2.5 Pro with audio input is the practical choice given Router/Studio access.
+
+3. **UTMOS for naturalness**: Unchanged from current plan — covers prosody and paralinguistics where WER is uninformative.
+
+The combination of (1) + (2) + UTMOS gives three independently-motivated signals that together cover all six dataset categories without the confounds in pure round-trip WER.
+
+### Implementation notes for Phase 2
+
+- **Spoken form normalization**: can be scripted with OpenRouter (LLM prompt) before running evaluation
+- **LALM judge**: needs audio files as input; could use Router TTS output cached to disk temporarily
+- **Per-row reliability tag**: add `wer_reliable` boolean column to dataset schema now, populate based on category
+- **WER reference column**: optionally add `spoken_reference` column to dataset for pre-computed spoken forms
+
+Sources: EmergentTTS-Eval (arxiv 2505.23009), SP-MCQA (arxiv 2510.26190), PolyNorm (arxiv 2511.03080), NVIDIA NeMo TN blog, "An ASR Guided Speech Intelligibility Measure for TTS" (arxiv 2006.01463)
