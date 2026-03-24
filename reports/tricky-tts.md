@@ -302,3 +302,50 @@ The combination of (1) + (2) + UTMOS gives three independently-motivated signals
 - **WER reference column**: optionally add `spoken_reference` column to dataset for pre-computed spoken forms
 
 Sources: EmergentTTS-Eval (arxiv 2505.23009), SP-MCQA (arxiv 2510.26190), PolyNorm (arxiv 2511.03080), NVIDIA NeMo TN blog, "An ASR Guided Speech Intelligibility Measure for TTS" (arxiv 2006.01463)
+
+---
+
+## Phase 2 Evaluation Methodology (Final Plan)
+
+### On CER vs WER
+Studio uses CER (character error rate) for round-trip evaluation. This is the right choice for this benchmark:
+- CER gives partial credit for near-correct transcriptions ("Keelin" vs "Caoilfhinn" scores better than total failure)
+- For technical strings (model paths, IUPAC names), single character differences are meaningful
+- WER over-penalises multi-word expansions of single tokens ("£1,234.56" → one word in WER, many words in spoken form)
+
+All WER figures in this report are proxies only; Phase 2 will use CER throughout.
+
+### The reference-TTS ground truth approach
+
+The three-layer fix described earlier (spoken form normalization + LALM judge + UTMOS) is replaced by a simpler and more principled single approach:
+
+**Pipeline:**
+1. For each row, use an LLM to generate the canonical **spoken form** of the reference text
+   - "£1,234.56" → "one thousand two hundred and thirty-four pounds and fifty-six pence"
+   - "01-ai/Yi-1.5-34B-Chat-16K" → "zero one dash A I slash Yi one point five dash thirty-four B dash chat dash sixteen K"
+   - "Caoilfhinn" → "Keelin" (its pronunciation)
+2. Run a **strong reference TTS** (e.g. ElevenLabs) on the spoken form → reference audio
+3. Run the **fixed ASR model** (AssemblyAI Universal-3 Pro) on reference audio → **ground truth transcript**
+4. Run the **test TTS** on the original written text → test audio
+5. Run the **same ASR** on test audio → test transcript
+6. Compute **CER(ground_truth, test_transcript)**
+
+**Why this works:**
+- ASR OOV errors cancel: if ASR consistently transcribes a rare name as "Keelin" regardless of TTS, both ground truth and test paths produce "Keelin", CER = 0 for a correct pronunciation
+- Reference mismatch is resolved: the LLM spoken form bridges the written/spoken gap before any audio is involved
+- The reference TTS reads plain English (the spoken form), which any competent TTS handles correctly — so reference TTS errors are negligible
+- No LALM judge needed for most rows; UTMOS still covers naturalness
+
+**What it doesn't solve:**
+- If the test TTS is genuinely ambiguous (e.g., "St." could be "Street" or "Saint"), the LLM must pick one canonical form. The test TTS may choose differently — this is a legitimate failure to penalise.
+- Rows where even the spoken form is hard to generate unambiguously (e.g., mathematical notation) may still need a judge call.
+
+**Note on novelty:** A search of the TTS evaluation literature found no prior work using this exact "reference TTS → ASR → ground truth" structure. Related approaches use human transcriptions as multi-reference ground truths (Style-agnostic evaluation, arxiv 2412.07937) or WER of ASR-trained-on-TTS-data, but the specific cancellation of ASR vocabulary gaps via a shared ASR path appears to be a novel contribution. PolyNorm (arxiv 2511.03080) covers the spoken form generation step independently.
+
+### Phase 2 checklist
+- [ ] Add `spoken_form` column to dataset: LLM-generated canonical spoken form for each row
+- [ ] Tag `wer_reliable` boolean per row (false for edge_cases, number_format, ai_tech where reference mismatch was observed)
+- [ ] Implement reference TTS → ASR → ground truth pipeline
+- [ ] Run evaluation via Trelis Studio (CER, UTMOS) across multiple TTS models
+- [ ] Apply median-of-N difficulty filtering once ≥3 TTS models are available on Router
+- [ ] Calibrate semi-private and private splits using same round-trip methodology
