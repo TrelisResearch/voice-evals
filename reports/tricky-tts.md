@@ -3,9 +3,11 @@
 ## Overview
 Text-only benchmark for evaluating TTS models on linguistically and typographically challenging English inputs. 48 rows per split across 6 categories. Models are evaluated at inference time; no audio is stored in the dataset.
 
-**Final public dataset:** `ronanarraig/tricky-tts-public` — 48 rows, 8 per category
+**v1 dataset:** `ronanarraig/tricky-tts-{public,semi-private,private}` — 48 rows, 8 per category (Phase 1a–1c)
+**v2 dataset:** `ronanarraig/tricky-tts-v2-{public,semi-private,private}` — 48 rows, 6 research-backed categories (Phase 1d)
 **ASR measurement model:** `assemblyai/universal-3-pro` (standardized; single model to avoid inconsistency)
 **TTS used for calibration:** `elevenlabs/eleven-multilingual-v2` via Trelis Router
+**Filtering note:** Single TTS model calibration only (ElevenLabs). Median-of-N filtering across multiple TTS models deferred to Phase 2 (only one TTS model currently available via Router).
 
 ---
 
@@ -139,3 +141,78 @@ Key insight from Phase 1b: **punctuation rows with WER=0 were clever structurall
 - Median-of-N filtering to ensure difficulty holds across models (not just ElevenLabs)
 - Semi-private and private splits need the same calibration treatment (currently still initial draft quality)
 - Blocked on: Trelis Studio UTMOS/RT-ASR API availability and pipeline stability
+
+---
+
+## Phase 1d — Research-Backed Category Redesign
+
+### Motivation
+Phase 1c showed that `prosody` (WER=0.003) and `robustness` (grammar novelties) were weak WER discriminators. Online research into TTS failure modes, including the **EmergentTTS-Eval benchmark (NeurIPS 2025)** and ElevenLabs/NVIDIA documentation, revealed three well-evidenced categories not yet covered:
+- **AI/ML technical text** — model names, HuggingFace paths, version strings (highly domain-relevant)
+- **Number format ambiguity** — Roman numerals, Unicode fractions, scientific notation, mixed systems
+- **Paralinguistics** — interjections, elongation, stutters, onomatopoeia (from EmergentTTS-Eval)
+
+### Category redesign (v2 dataset)
+| Category | Replaces | Rationale |
+|---|---|---|
+| `edge_cases` | kept | Proven strongest WER discriminator |
+| `domain_specific` | kept | Consistently hard |
+| `phonetic` | kept | Good WER + naturalness signal |
+| `ai_tech` | NEW (replaces `prosody`) | Domain-relevant; model name/path formats trip up TTS |
+| `number_format` | NEW (replaces `robustness`) | Roman numerals, fractions, ambiguous number reading |
+| `paralinguistics` | NEW (replaces `punctuation`) | UTMOS-focused; interjections, elongation, stutters |
+
+### Phase 1d results (public split, ElevenLabs + AssemblyAI)
+
+**First-pass WER (before calibration): 0.142** — already better than Phase 1c's post-calibration 0.127.
+
+| Category | Avg WER | Max WER | Notes |
+|---|---|---|---|
+| edge_cases | **0.315** | 0.444 | St./credential chains, unit clusters, IBAN numbers |
+| domain_specific | **0.241** | 0.381 | Dosage chains, legal citations, microbial strain names |
+| ai_tech | 0.217 | 0.389 | HuggingFace paths, Mixtral/DeepSeek/Yi names; some clean rows needed replacement |
+| number_format | 0.153 | 0.450 | King Henry III/VIII/XXIInd (0.45!), ⅔/¾ fractions, Act III Scene iv |
+| phonetic | 0.096 | 0.200 | Celtic names + loanwords + heteronym combos |
+| paralinguistics | **0.022** | 0.067 | Intentionally low — UTMOS-only |
+| **Overall** | **0.174** | | After calibration replacing 4 easy rows |
+
+Easy (WER<0.05): 9/48 | Hard (WER>0.30): 10/48
+
+**Improvement over v1 (Phase 1c):**
+| Metric | v1 (Phase 1c) | v2 (Phase 1d) |
+|---|---|---|
+| Overall avg WER | 0.127 | **0.174** |
+| Easy rows (WER<0.05) | 14/48 | **9/48** |
+| Hard rows (WER>0.30) | 6/48 | **10/48** |
+
+### Standout rows
+| Row | WER | Why |
+|---|---|---|
+| `King Henry the 3rd (III), King Henry the 8th (VIII), and the XXIInd amendment...` | 0.450 | TTS confused by parallel Roman + ordinal forms |
+| `The property at 789 St. Clair Ave., measuring 2,450ft² (227.6m²), sold for $875K` | 0.444 | Unit cluster + St. ambiguity + currency |
+| `Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf., ISBN 978-0...` | 0.417 | Dense credential chain + ISBN |
+| `We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct` | 0.389 | HuggingFace paths with unusual org names |
+| `Titrate 2.5mg/kg/min of (±)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6)...` | 0.381 | IUPAC + CAS + dosage notation |
+
+### Key new findings
+1. **`ai_tech` is a strong category** — HuggingFace-style paths (org/model-version) are genuinely tricky because TTS must infer how to split and pronounce e.g. `01-ai/Yi-1.5-34B-Chat-16K`. Arrow chains (`LLaMA → fine-tuned → RLHF'd`) also scored high (0.37).
+2. **Roman numerals are harder than expected in mixed context** — "Henry the 3rd (III)...XXIInd" hit WER=0.45 because parallel ordinal + Roman forms created confusion about which to expand.
+3. **Standard citations are easy** — "Vaswani et al. (2017)" scored WER=0.00. The hard cases are paths and version strings, not conventional academic prose.
+4. **`paralinguistics` confirms UTMOS-only role** — WER=0 rows like "DO NOT open that attachment" and "Oh sure, that went REALLY well" are handled perfectly by pipeline. They exist for naturalness/affect scoring.
+5. **`number_format` needs a calibration split** — some rows (blood pressure ranges, Henry VIII) are easy for ElevenLabs; fractions and mixed systems are much harder.
+
+### Category disclosure question
+You raised whether to include the `category` column in published datasets. Assessment:
+- **Arguments for hiding:** Prevents evaluators from cherry-picking easy categories; categories may be inferable from text anyway
+- **Arguments for keeping:** Enables per-category analysis; useful for debugging model weaknesses; EmergentTTS-Eval publishes its categories
+- **Recommendation:** Keep `category` column in the dataset. The texts are distinctive enough that categories would be obvious. Withholding adds friction without meaningful blinding benefit — unlike held-out test sets, the category label doesn't help a TTS model perform better.
+
+---
+
+## Datasets
+| Repo | Version | Rows | Avg WER |
+|---|---|---|---|
+| `ronanarraig/tricky-tts-public` | v1 (Phase 1c) | 48 | 0.127 |
+| `ronanarraig/tricky-tts-v2-public` | v2 (Phase 1d) | 48 | 0.174 |
+| `ronanarraig/tricky-tts-v2-semi-private` | v2 (Phase 1d) | 48 | uncalibrated |
+| `ronanarraig/tricky-tts-v2-private` | v2 (Phase 1d) | 48 | uncalibrated |
