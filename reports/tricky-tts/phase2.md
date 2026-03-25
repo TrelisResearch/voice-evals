@@ -129,17 +129,48 @@ Schema: `text`, `category`, `spoken_form`, `cer_reliable`
 
 ---
 
+## CER Reliability Notes
+
+### CER is inflated for technical categories
+
+CER is currently computed as `CER(original_written_text, asr_transcript_of_tts_audio)`. For `edge_cases`, `number_format`, and `ai_tech`, there are many equally valid spoken forms — e.g. `"£1,234.56"` might be spoken as *"one thousand two hundred thirty-four pounds fifty-six pence"* or *"twelve thirty-four point five six pounds"*. The ASR transcribes whichever form the TTS chose, so CER measures disagreement between two valid spoken forms rather than TTS failure. This inflates CER for these categories.
+
+### CER may be deflated for phonetic categories
+
+For phonetic rows, if a TTS model mispronounces "Saoirse" as "Sa-oir-se" but ASR still outputs "Saoirse" (strong spelling prior), the error is invisible to round-trip CER. This understates phonetic difficulty.
+
+### Fix: reference-TTS ground truth pipeline (Phase 3)
+
+The `spoken_form` column was generated this phase but not yet used as the CER reference. Phase 3 should implement:
+1. Run Kokoro TTS on `spoken_form` → reference audio
+2. Run ASR on reference audio → ground truth transcript
+3. CER(ground_truth, test_asr_transcript)
+
+This replaces the ambiguous written text reference with a consistent spoken-form reference, making CER meaningful for technical rows.
+
+**Studio feature request filed** (ID: `6814128c`): add `reference_column` parameter to TTS eval API so Studio can compute CER against `spoken_form` instead of `text` natively.
+
+---
+
 ## Trelis Studio Experience
 
 **Positives:**
 - TTS eval API is smooth: `dataset_id` + `asr_model_id` + `push_results: true` does exactly what's needed
-- Per-row `asr_cer` and `asr_transcription` in pushed HF datasets is very useful for analysis
+- Per-row `asr_cer` and `asr_transcription` in pushed HF datasets is very useful for difficulty analysis
 - Kokoro and all 3 Router proprietary models worked well
 - Job submission and polling are reliable
 
 **Issues:**
-- Orpheus was temporarily failing in evaluation (user confirmed fix went live during session)
-- CER can exceed 1.0 for complex domain_specific rows — this is expected but worth noting in docs
+
+**Orpheus temporary failure** — Orpheus was failing in evaluation at session start; fix went live mid-session.
+
+**CER > 1.0 for complex domain_specific rows** — expected when TTS loops or generates extra tokens (e.g. "Titrate 2.5mg/kg/min..." scored CER=2.72 for ElevenLabs). The ASR transcript is much longer than the reference text. Not a bug — a genuine failure mode worth keeping in the dataset.
+
+**Torch dependency in pushed eval datasets** (bug filed, ID: `5e8a3902`) — Loading a pushed TTS eval dataset via `datasets` library raises `No module named torch` even when only accessing non-audio columns (`asr_cer`, `asr_transcription`, etc.), because the Audio feature type registers at schema load time. Workaround: load the parquet directly with `pyarrow.parquet` and select only needed columns:
+```python
+import pyarrow.parquet as pq
+table = pq.read_table(local_path, columns=["text_prompt", "asr_cer", "asr_transcription"])
+```
 
 ---
 
@@ -148,4 +179,4 @@ Schema: `text`, `category`, `spoken_form`, `cer_reliable`
 - Calibrate semi-private and private splits with same methodology
 - Apply entity-based n-gram overlap check between splits (leakage prevention)
 - Migrate from `ronanarraig/` to `Trelis/` org once on Trelis infrastructure
-- Consider reference-TTS ground truth pipeline (spoken_form → Kokoro → ASR) for more accurate CER on ai_tech/edge_cases rows where written text ≠ spoken reference
+- Implement reference-TTS ground truth pipeline once Studio supports `reference_column` parameter (or manually via spoken_form → Kokoro → ASR)
