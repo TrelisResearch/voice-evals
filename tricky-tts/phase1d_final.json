@@ -1,0 +1,194 @@
+[
+  {
+    "text": "Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf. on Cardiology (ISBN: 978-0-12-345678-9) data showing LDL reductions of 42%±7% using 20mg/dL dosing protocols.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234–89 of the J. Phys. Chem., noting that samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "The property at 789 St. Clair Ave., measuring 2,450ft² (227.6m²), sold for £875,000.50 to Mr. & Mrs. St. John-Smythe, Esq., C.Eng., F.I.C.E. on Feb. 14th at 2:15pm.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67–142, the circuit required 3.3V±5%, 150mA max., with capacitance ≤10μF and operating temps between −40°C and +85°C per MIL-STD-883.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "The athlete, standing 6ft 3in and weighing 195lb, completed the 100m in 9.58sec at the 23rd Int'l Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., who lives at 123 St. George St., reported that the solution's pH was 7.4±0.2 at 25°C, with CO₂ levels ≥400ppm.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "Send $1.25M to account GB29-NWBK-6016-1331-9268-19 by 3:00pm EST or contact Ms. St. Claire, B.Sc.(Hons), M.B.A. at extension x5847 before the Q3 deadline.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James Pl., announced services at 10:30am and 6:45pm; call 0800-PRAYERS or visit www.st-aug.org.uk.",
+    "category": "edge_cases"
+  },
+  {
+    "text": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring blaCTX-M-15 require meropenem 2g IV q8h when MIC values reach 8-16μg/mL per EUCAST v.13.0 breakpoints.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Streptococcus pneumoniae strain TIGR4 expressing pbp2b mutations and Haemophilus influenzae type b require ceftriaxone 50mg/kg/day IV divided q12h not exceeding 4g/24h, with CSF penetration verified at 2.5-7.5μg/mL per General Electric v. Joiner, 522 U.S. 136 (1997) causation standards.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "In Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999), expert testimony regarding (R)-2-acetamido-N-(2,6-dimethylphenyl)propanamide (CAS 53994-73-3) metabolism via CYP2D6*17 allele variants was challenged under Fed.R.Evid. 702.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0°C ± 0.2°C maintaining pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Administer 15mg/kg IV q6h of piperacillin-tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring oprD mutations, per Daubert v. Merrell Dow, 509 U.S. 579 (1993) evidentiary standards.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Per Frye v. United States, 293 F. 1013 (D.C. Cir. 1923), analysis of (S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid (CAS 59-92-7) degradation via COMT Val158Met polymorphism requires HPLC-MS/MS sensitivity ≤0.5ng/mL conforming to FDA Guidance 2018.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Titrate 2.5mg/kg/min of (±)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6) IV maintaining MAP ≥65mmHg per RFC 2616 §14.9 cache-control directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61:2017.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128μg/mL when tested per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C.",
+    "category": "domain_specific"
+  },
+  {
+    "text": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "category": "phonetic"
+  },
+  {
+    "text": "The present study will present evidence that Caoimhe experienced schadenfreude watching her rival's failure in Loughborough.",
+    "category": "phonetic"
+  },
+  {
+    "text": "When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhán's Welsh compositions.",
+    "category": "phonetic"
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "category": "phonetic"
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gemütlichkeit.",
+    "category": "phonetic"
+  },
+  {
+    "text": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "category": "phonetic"
+  },
+  {
+    "text": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "category": "phonetic"
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic"
+  },
+  {
+    "text": "We fine-tuned LLaMA 3.1 405B using LoRA on the meta-llama/Llama-3.1-405B-Instruct-hf checkpoint with rank 64 adapters.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "The claude-sonnet-4-5 model outperformed Gemma-2-27B-it on coding benchmarks as described in §3.2 of the technical report.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "Comparing meta-llama/Llama-2-7b-chat-hf versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "Our pipeline is based on LLaMA-3.1-8B → fine-tuned on ShareGPT4 → RLHF’d with DPO, then merged into the mistralai/Mixtral-8×7B-Instruct-v0.1 architecture.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4×A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "We loaded mistralai/Mistral-7B-Instruct-v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint-5000 with 3.2B parameters.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "Our experiments with Gemma-2-27B-it and INT8 quantization on the mistralai/Mistral-7B-Instruct-v0.1 checkpoint-5000 achieved 87.6% accuracy on MMLU.",
+    "category": "ai_tech"
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format"
+  },
+  {
+    "text": "Henry VIII's reign from 1509–1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "category": "number_format"
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format"
+  },
+  {
+    "text": "The emergency contact is +44 (0)20 7946 0958, reference number NI: AB 12 34 56 C, dated 15/04/1989.",
+    "category": "number_format"
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format"
+  },
+  {
+    "text": "King Henry the 3rd (III), King Henry the 8th (VIII), and the XXIInd amendment were all discussed in the IVth century BC symposium.",
+    "category": "number_format"
+  },
+  {
+    "text": "The Apollo XI mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "category": "number_format"
+  },
+  {
+    "text": "The study spanning pp. 234–89 in Volume XXIII shows that ⅘ of the 1,984 participants were born between 1984 and 1999.",
+    "category": "number_format"
+  },
+  {
+    "text": "DO NOT—and I mean DO NOT—open that email attachment under ANY circumstances whatsoever.",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "Hmm... I'm not so sure about that. She said—well, she SAID she'd be here, but...",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "category": "paralinguistics"
+  },
+  {
+    "text": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "category": "paralinguistics"
+  }
+]

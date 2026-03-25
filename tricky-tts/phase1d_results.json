@@ -1,0 +1,290 @@
+[
+  {
+    "text": "Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf. on Cardiology (ISBN: 978-0-12-345678-9) data showing LDL reductions of 42%±7% using 20mg/dL dosing protocols.",
+    "category": "edge_cases",
+    "transcript": "Dr. Zhang, MD, PhD, FACC, presented at the 5th Annals of Cardiology, ISBN 978-0E123369, data showing LDL reductions of 42%+7% using 20mg/dL dosing protocols.",
+    "wer": 0.417
+  },
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234–89 of the J. Phys. Chem., noting that samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases",
+    "transcript": "The manuscript cited Volume 47, Number 3, pp. 1234-89 of the \"J. Phys. Chem.\", noting that samples required 99.9% purity and storage at 80°C in 50 mL aliquots.",
+    "wer": 0.152
+  },
+  {
+    "text": "The property at 789 St. Clair Ave., measuring 2,450ft² (227.6m²), sold for £875,000.50 to Mr. & Mrs. St. John-Smythe, Esq., C.Eng., F.I.C.E. on Feb. 14th at 2:15pm.",
+    "category": "edge_cases",
+    "transcript": "The property at 789 St. Clair Ave., measuring 2,492 ft² (227.6 m²), sold for $875,050 to Mr. and Mrs. St. John Smythe, Esq., CEng, FICE, on February 14th at 2:15 PM.",
+    "wer": 0.444
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67–142, the circuit required 3.3V±5%, 150mA max., with capacitance ≤10μF and operating temps between −40°C and +85°C per MIL-STD-883.",
+    "category": "edge_cases",
+    "transcript": "According to IEEE Trans. Vol. 15, PPIKO 67142, the circuit required 3.3V ±5%, 150mA max, with capacitance no more than 10μF and operating temps between 40°C and +185°C per mil STD 883.",
+    "wer": 0.212
+  },
+  {
+    "text": "The athlete, standing 6ft 3in and weighing 195lb, completed the 100m in 9.58sec at the 23rd Int'l Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "category": "edge_cases",
+    "transcript": "The athlete, standing 6'3\" and weighing 195 lb, completed the 100 meters in 9.58 sec at the 23rd Intel Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "wer": 0.323
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., who lives at 123 St. George St., reported that the solution's pH was 7.4±0.2 at 25°C, with CO₂ levels ≥400ppm.",
+    "category": "edge_cases",
+    "transcript": "Dr. St. James, PhD, FRS, who lives at 123 St. George St., reported that the solution's pH was 7.4+0.2 at 25°C, with CO2 levels in water 400 ppm.",
+    "wer": 0.303
+  },
+  {
+    "text": "Send $1.25M to account GB29-NWBK-6016-1331-9268-19 by 3:00pm EST or contact Ms. St. Claire, B.Sc.(Hons), M.B.A. at extension x5847 before the Q3 deadline.",
+    "category": "edge_cases",
+    "transcript": "send $125 to account GB29 NWBK 60160 1331 9268.19 by 3:00 PM EST or contact Mrs. St. Clair, BSc, Honors, MBA, at extension X5847 before the Q3 deadline.",
+    "wer": 0.394
+  },
+  {
+    "text": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James Pl., announced services at 10:30am and 6:45pm; call 0800-PRAYERS or visit www.st-aug.org.uk.",
+    "category": "edge_cases",
+    "transcript": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James's Pell, announce services at 10:30 AM and 6:45 PM. Call 800-PRAYERS or visit www.staug.org.uk.",
+    "wer": 0.278
+  },
+  {
+    "text": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring blaCTX-M-15 require meropenem 2g IV q8h when MIC values reach 8-16μg/mL per EUCAST v.13.0 breakpoints.",
+    "category": "domain_specific",
+    "transcript": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring BLACTXm15 require meropenem 2g IV/IVQ8H when MIC values reach 8-16 μg/mL per EUCAST V13.0 breakpoints.",
+    "wer": 0.235
+  },
+  {
+    "text": "Streptococcus pneumoniae strain TIGR4 expressing pbp2b mutations and Haemophilus influenzae type b require ceftriaxone 50mg/kg/day IV divided q12h not exceeding 4g/24h, with CSF penetration verified at 2.5-7.5μg/mL per General Electric v. Joiner, 522 U.S. 136 (1997) causation standards.",
+    "category": "domain_specific",
+    "transcript": "Streptococcus pneumoniae strain TIGR4 expressing pBP2b mutations and Haemophilus influenzae type B require ceftriaxone 50 mg/kg/d IV divided q12h not exceeding 4 g/24 h, with CSF penetration verified at 2.5-7.5 mL per General Electric Weyden-Joyner (522 US 136, 1997) causation standards.",
+    "wer": 0.261
+  },
+  {
+    "text": "In Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999), expert testimony regarding (R)-2-acetamido-N-(2,6-dimethylphenyl)propanamide (CAS 53994-73-3) metabolism via CYP2D6*17 allele variants was challenged under Fed.R.Evid. 702.",
+    "category": "domain_specific",
+    "transcript": "In Kumho Tire, Combrevey, Carmichael, 526 U.S. 137, 1999, expert testimony regarding R-(SO₂)-acetamido-N-(2,6)-dimethylphenylpropanamide (CAS 53994733) metabolism via CYP2D6 gene 17 allele variants was challenged under Fed. DRR EVID 702.",
+    "wer": 0.256
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0°C ± 0.2°C maintaining pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "transcript": "Administer 0.25 mL of 1x10���� mL 2R, 3S, 4R, 5R, 2,3,4,5,6-pentahydroxyhexanal (EKS 509927) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0 °C +0.2 °C maintaining pH 5.5 +0.05 per ASTM E2149-13A.",
+    "wer": 0.22
+  },
+  {
+    "text": "Administer 15mg/kg IV q6h of piperacillin-tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring oprD mutations, per Daubert v. Merrell Dow, 509 U.S. 579 (1993) evidentiary standards.",
+    "category": "domain_specific",
+    "transcript": "Administer 15 mg/kg IV (qSKH) of piperacillin/tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring OPRD mutations (Perdauber v. Merrill-Dow, 509 US 579, 1993; Evidentiary Standards).",
+    "wer": 0.267
+  },
+  {
+    "text": "Per Frye v. United States, 293 F. 1013 (D.C. Cir. 1923), analysis of (S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid (CAS 59-92-7) degradation via COMT Val158Met polymorphism requires HPLC-MS/MS sensitivity ≤0.5ng/mL conforming to FDA Guidance 2018.",
+    "category": "domain_specific",
+    "transcript": "Prof. Fry v. United States, 293 F. 1013, D.C., 19-23. Analysis of S-(2-amino-3,3,4-dihydroxyphenyl)propanoic acid, K.S. 5992-7. Degradation via COMT/VAL158Met polymorphism requires HPLC-MS/MS sensitivity. 0.5 ng/mL, conforming to FDA guidance 2018.",
+    "wer": 0.2
+  },
+  {
+    "text": "Titrate 2.5mg/kg/min of (±)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6) IV maintaining MAP ≥65mmHg per RFC 2616 §14.9 cache-control directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61:2017.",
+    "category": "domain_specific",
+    "transcript": "titrate 2.5 mg/kg/min of IOM+. IV: 2-aminoethylbenzene 1,2-diol (CAS 516126). IV: maintaining mappi, josh 65 mL/hr per RFC 2616. Par 14.9: CASH control directives for real-time hemodynamic monitoring systems compliant with ISO 80601:2:61:2017.",
+    "wer": 0.381
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128μg/mL when tested per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C.",
+    "category": "domain_specific",
+    "transcript": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis (BCG) expressing RpoB S531L mutations demonstrate rifampicin MIC 128 μmol/mL when tested per CLSI M24A2 (2011) at pH 6.8 (+0.1) and 37.0°C (+0.5°C).",
+    "wer": 0.108
+  },
+  {
+    "text": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "category": "phonetic",
+    "transcript": "The conduct of the Leicester Conference will conduct attendees through Todgy's analysis of Schadenfreude in German literature.",
+    "wer": 0.056
+  },
+  {
+    "text": "The present study will present evidence that Caoimhe experienced schadenfreude watching her rival's failure in Loughborough.",
+    "category": "phonetic",
+    "transcript": "The present study will present evidence that Kaoime experienced schadenfreude watching her rival's failure in Loughborough.",
+    "wer": 0.059
+  },
+  {
+    "text": "When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhán's Welsh compositions.",
+    "category": "phonetic",
+    "transcript": "When they present the present to Eowyn at Lothborough, they'll record her record collection featuring Siobhan's Welsh compositions.",
+    "wer": 0.15
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "category": "phonetic",
+    "transcript": "Dr. Nguyen's Bildungsroman explores how Todd must conduct himself with proper conduct while studying at Magdalen College.",
+    "wer": 0.056
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gemütlichkeit.",
+    "category": "phonetic",
+    "transcript": "Professor Mbeki will record Nieves' record-breaking translation of Nahuatl poetry with remarkable Gemütlichkeit.",
+    "wer": 0.133
+  },
+  {
+    "text": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "category": "phonetic",
+    "transcript": "Awaiyaf needed a permit to film, but the Leicester Council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "wer": 0.053
+  },
+  {
+    "text": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "category": "phonetic",
+    "transcript": "The content of Sayers's thesis made her content, exploring Weltanschauung in Gloucester's medieval texts.",
+    "wer": 0.062
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "transcript": "Aithne and Cao Ailfín debated the Mise en Scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "wer": 0.2
+  },
+  {
+    "text": "We fine-tuned LLaMA 3.1 405B using LoRA on the meta-llama/Llama-3.1-405B-Instruct-hf checkpoint with rank 64 adapters.",
+    "category": "ai_tech",
+    "transcript": "We fine-tuned LLaMA 3.1 4Rotom 5B using LoRA on the Meta LLaMA, LLaMA 3.1 4Rotom 5B Instruct A-HF checkpoint with rank 64 adapters.",
+    "wer": 0.208
+  },
+  {
+    "text": "According to Vaswani et al. (2017), the transformer architecture enabled GPT-4o to achieve 89.3% on MMLU with FP16 quantization.",
+    "category": "ai_tech",
+    "transcript": "According to Vaswani et al., 2017, the transformer architecture enabled GPT-4o to achieve 89.3% on MMLU with FP16 quantization.",
+    "wer": 0.0
+  },
+  {
+    "text": "The claude-sonnet-4-5 model outperformed Gemma-2-27B-it on coding benchmarks as described in §3.2 of the technical report.",
+    "category": "ai_tech",
+    "transcript": "The Claude-Sanneh 4-5 model outperformed Gemma 2-27BiT on coding benchmarks as described in paragraph 3.2 of the technical report.",
+    "wer": 0.174
+  },
+  {
+    "text": "Comparing meta-llama/Llama-2-7b-chat-hf versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "category": "ai_tech",
+    "transcript": "Comparing Meta LLaMA, LLaMA 2, 7B-Chat-HHF versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "wer": 0.045
+  },
+  {
+    "text": "The model trained on 1.4T tokens reached convergence at epoch-12 using the v2.1.3-rc training framework from Cohere.",
+    "category": "ai_tech",
+    "transcript": "The model trained on 1.4T tokens reached convergence at epoch 12 using the v2.1.3-rc training framework from Cohere.",
+    "wer": 0.0
+  },
+  {
+    "text": "Our RAG pipeline uses Mistral 7B v0.3 with INT8 quantization and KV-cache optimization for 2x throughput improvement.",
+    "category": "ai_tech",
+    "transcript": "Our RAG pipeline uses Mistral 7B v0.3 with INT8 quantization and KV cache optimization for 2x throughput improvement.",
+    "wer": 0.0
+  },
+  {
+    "text": "We loaded mistralai/Mistral-7B-Instruct-v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint-5000 with 3.2B parameters.",
+    "category": "ai_tech",
+    "transcript": "We loaded Mistraline Mistral 7B Instruct v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint 5000 with 3.2B parameters.",
+    "wer": 0.043
+  },
+  {
+    "text": "Our experiments with Gemma-2-27B-it and INT8 quantization on the mistralai/Mistral-7B-Instruct-v0.1 checkpoint-5000 achieved 87.6% accuracy on MMLU.",
+    "category": "ai_tech",
+    "transcript": "Our experiments with Gemma 2 27-bit and INT8 quantization on the Mistral AI 7B instruct v0.1 checkpoint 5000 achieved 87.6% accuracy on MMLU.",
+    "wer": 0.154
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format",
+    "transcript": "For participants ages 18 to 65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "wer": 0.038
+  },
+  {
+    "text": "Henry VIII's reign from 1509–1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "category": "number_format",
+    "transcript": "Henry VIII's reign from 1509 to 1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "wer": 0.045
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format",
+    "transcript": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XIII in 1415.",
+    "wer": 0.059
+  },
+  {
+    "text": "The emergency contact is +44 (0)20 7946 0958, reference number NI: AB 12 34 56 C, dated 15/04/1989.",
+    "category": "number_format",
+    "transcript": "The emergency contact is +44 002 20 7946 0958, reference number NI AB 123456C, dated 15/04/1989.",
+    "wer": 0.238
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "transcript": "The spacecraft traveled 2.5 out of 109 miles at temperatures from 40°C to +120°C, covering the distance in approximately 3.2 the predicted time.",
+    "wer": 0.12
+  },
+  {
+    "text": "Super Bowl LVIII drew over 123.7 million viewers, making it the most-watched program in U.S. television history.",
+    "category": "number_format",
+    "transcript": "Super Bowl LVIII drew over 123.7 million viewers, making it the most watched program in U.S. television history.",
+    "wer": 0.0
+  },
+  {
+    "text": "The Apollo XI mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "category": "number_format",
+    "transcript": "The Apollo 11 mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "wer": 0.056
+  },
+  {
+    "text": "The study spanning pp. 234–89 in Volume XXIII shows that ⅘ of the 1,984 participants were born between 1984 and 1999.",
+    "category": "number_format",
+    "transcript": "The study spanning pp. 234-289 in volume 43 shows that 4/5 of the 1,184 participants were born between 1984 and 1999.",
+    "wer": 0.217
+  },
+  {
+    "text": "DO NOT—and I mean DO NOT—open that email attachment under ANY circumstances whatsoever.",
+    "category": "paralinguistics",
+    "transcript": "Do not, and I mean do not, open that email attachment under any circumstances whatsoever.",
+    "wer": 0.0
+  },
+  {
+    "text": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "category": "paralinguistics",
+    "transcript": "Seriously? I've told you like, I don't know, a million times already.",
+    "wer": 0.067
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "transcript": "He started snoring, \"Zzz, zzz,\" and I just thought, \"You know what? Forget it. Not worth it.\"",
+    "wer": 0.0
+  },
+  {
+    "text": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "category": "paralinguistics",
+    "transcript": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "wer": 0.0
+  },
+  {
+    "text": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "category": "paralinguistics",
+    "transcript": "She whispered, \"Maybe we should leave,\" then suddenly yelled, \"Run! Now!\"",
+    "wer": 0.0
+  },
+  {
+    "text": "Hmm... I'm not so sure about that. She said—well, she SAID she'd be here, but...",
+    "category": "paralinguistics",
+    "transcript": "Hmm, I'm not so sure about that. She said— well, she said she'd be here, but",
+    "wer": 0.0
+  },
+  {
+    "text": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "category": "paralinguistics",
+    "transcript": "The balloon went pop and scared everyone. Then the baby went wah for like an hour straight.",
+    "wer": 0.059
+  },
+  {
+    "text": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "category": "paralinguistics",
+    "transcript": "Ooh, that's disgusting! How long has this been sitting in the fridge? It smells like— ugh, never mind.",
+    "wer": 0.053
+  }
+]

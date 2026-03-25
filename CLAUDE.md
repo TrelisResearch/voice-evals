@@ -51,6 +51,16 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 - Key open issue: **number formatting** — need to confirm Orpheus reads digits correctly, else add a separate TTS transcript column with numbers spelled out
 - Key open issue: **30s max_duration cap** causes sample dropout (9–15 of 21 rows evaluated); request limit increase from Studio
 
+#### Tricky TTS (`ronanarraig/tricky-tts-{public,semi-private,private}`)
+- **Status: Phase 1 Complete** — see `tricky-tts/roadmap.md`
+- Purpose: evaluate TTS models on linguistically and typographically challenging English text
+- Text-only dataset (no audio); TTS models generate audio at eval time
+- ~50 rows per split, with a `text` + `category` column
+- Categories: prosody, edge_cases, phonetic, punctuation, robustness, domain_specific
+- Evaluation via Trelis Studio: UTMOS (naturalness) + Round Trip ASR (accuracy)
+- Phase 2: median-of-N filtering to ensure difficulty and avoid unfairly penalising any single model
+- English only; will migrate to `Trelis/` org once on Trelis infrastructure
+
 #### Code-Switching (`voice-evals-code-switching`)
 - **Status: Planned**
 - Languages: French, English, German, Spanish

@@ -1,0 +1,242 @@
+[
+  {
+    "text": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The manuscript revealed secrets that historians had been searching for throughout the entire twentieth century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "First, we visited the ancient cathedral with its stunning stained glass windows, then we explored the bustling marketplace filled with local artisans, next we enjoyed lunch at a charming bistro overlooking the river, and finally, we watched the sunset from the historic fortress walls.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The lawyer, who my sister met at the conference in Prague where she presented her research on climate policy, not the one who handled our parents' estate, recommended we reconsider the merger.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "I never said SHE stole the money—I said he SUSPECTED she might have BORROWED it without asking first, Maria, which is completely different from stealing.",
+    "category": "prosody",
+    "split": "public"
+  },
+  {
+    "text": "The 1st place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Prof. Williams from Oxford St. mentioned that the 1980s saw the 3rd largest economic boom in British history.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "According to the report from DataCorp Ltd., the company's 42nd quarterly revenue reached $3,456,789.12 in Q4.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The CEO of PayPal sent an email to investors@company.com confirming the acquisition would close on 03/15/2025 for £892.3 million.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Dr. St. James lives at 123 St. George St. in St. Louis, MO, where he treats patients Mon.–Fri. from 9:00 a.m.–5:00 p.m.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The MacBook Pro's M3 chip processes data at 5GHz, stores 2TB on its SSD, and costs £2,499.99 or approximately €2,899.00 in the EU.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "On 03/04/2025, the 1,001st participant received 500μg of the compound at -80°C, with results showing a 15.5% improvement over baseline.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Prof. O'Brien, Ph.D., M.D., teaches at UCLA and says the area is 25km² with temps ranging from -5°F to 105°F throughout the year.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The entrepreneur submitted her résumé highlighting her expertise in the horror genre.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Siobhan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Saoirse watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The Polish researcher Przemysław read the lead article about lead contamination while visiting Versailles, expressing schadenfreude at his rival's flawed paradigm.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Caoilfhinn from Edinburgh and Aadhya from Leicester will read the Bildungsroman that explores the Zeitgeist of our era with subtle psychological nuance.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The colonel acknowledged that Mairéad's weltanschauung, though influenced by her time in Cannes and Gloucester, remained rooted in the ouroboros symbol's ancient meaning.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Lachlan tried to read the minute details in the minute handwriting, feeling schadenfreude when his colleague couldn't discern the subtle differences either.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "At the Versailles reception, Przemysław wound the antique wound clock while discussing how the Bildungsroman's protagonist embodied the era's Zeitgeist with Caoilfhinn.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The concert—scheduled for months—was cancelled due to the storm.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The recipe requires three ingredients: flour, sugar, and vanilla extract.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The discovery—unprecedented in its scope—the analysis—which took months to complete—and the implications—far-reaching beyond anyone's imagination—forced the committee to reconsider everything.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "'I understand your concern,' he interrupted coldly, 'but the decision, frankly, isn't yours to make.'",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "She wondered, what's the point of trying?; he believed effort mattered regardless of outcome; they would never agree.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The recipe requires: three cups of flour, sifted twice; two eggs, beaten until frothy; one cup of sugar, preferably organic; half a teaspoon of salt; and a tablespoon of vanilla extract, pure if possible.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "He started to explain... then stopped, realizing the truth was worse than the lie... much worse.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "The defendant (who had previously denied everything (even under oath)) suddenly admitted his role—partial though it was—in the conspiracy.",
+    "category": "punctuation",
+    "split": "public"
+  },
+  {
+    "text": "No no no, I told you three times already, no means no.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The fact that that that that that student used in his essay was grammatically incorrect prompted the professor to explain that that that is different from that that.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "She sells seashells by the seashore, but nobody knows whether the weather will be better for beachside shell-selling businesses when wetter weather approaches the weathered shoreline.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The comprehensive metropolitan transportation infrastructure development initiative, which had been under consideration by the municipal planning committee for approximately eighteen months following extensive community consultation sessions involving stakeholders from residential neighborhoods, commercial districts, industrial zones, and environmental advocacy groups, finally received preliminary approval from the city council last Thursday evening, though several council members expressed reservations about the projected costs, the proposed timeline for implementation, the potential disruption to existing traffic patterns during the construction phase, and the long-term maintenance obligations that would inevitably fall upon future administrations, while supporters of the initiative argued passionately that the benefits of reduced congestion, improved air quality, enhanced connectivity between previously isolated communities, and increased economic opportunities for local businesses would far outweigh any temporary inconveniences or financial expenditures.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "Perhaps.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The snake moved slowly, very slowly, almost imperceptibly slowly through the grass, then suddenly, shockingly suddenly, explosively suddenly, it struck.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The sixth sick sheikh's sixth sheep's sick, and the rural juror struggled with the specificities of the statistical analysis while the prosecutor's proposal prompted prolonged protestations.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "James, while John had had had, had had had had; had had had had the teacher's approval.",
+    "category": "robustness",
+    "split": "public"
+  },
+  {
+    "text": "The spacecraft's attitude control system employs three reaction wheels operating at 6000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The circuit utilizes a 555 timer IC configured in astable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The taxonomic classification places the organism in the family Enterobacteriaceae, genus Escherichia, with 16S ribosomal RNA sequencing confirming 99.7 percent homology to the reference strain.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200 degrees Celsius under high pressure.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The patient was prescribed metformin hydrochloride 500 milligrams twice daily for type 2 diabetes mellitus, along with acetaminophen for post-operative analgesia.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The patient was administered 5mg of rivaroxaban and 150mg of fluconazole intravenously, while cultures confirmed Pseudomonas aeruginosa and Clostridium difficile colonization requiring vancomycin titration per IDSA guidelines.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The synthesis of 2-acetoxybenzoic acid from salicylic acid requires careful pH monitoring, whereas ethylenediaminetetraacetic acid disodium salt dihydrate demonstrates superior chelation at physiological pH of 7.4 according to ASTM E70 specifications.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Per the res judicata doctrine and citing IEEE 802.11ax amendment ratification, the appellant argued that Saccharomyces cerevisiae strain BY4741 expressed recombinant proteins at x squared plus 3x minus 10 equals zero micromolar concentration as validated under ISO/IEC 17025 accreditation.",
+    "category": "domain_specific",
+    "split": "public"
+  }
+]

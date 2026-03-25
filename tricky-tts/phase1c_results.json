@@ -1,0 +1,348 @@
+[
+  {
+    "text": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "category": "prosody",
+    "transcript": "Have you ever wondered why some people can effortlessly remember the lyrics to hundreds of songs from decades ago, yet struggle to recall where they placed their car keys just moments before leaving the house?",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The manuscript revealed secrets that historians had been searching for throughout the entire twentieth century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "category": "prosody",
+    "transcript": "The manuscript revealed secrets that historians had been searching for throughout the entire 20th century, fundamentally changing our understanding of medieval trade routes, diplomatic relationships, and the cultural exchanges that shaped modern European civilization as we know it today.",
+    "wer": 0.026,
+    "cer": 0.028
+  },
+  {
+    "text": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "category": "prosody",
+    "transcript": "When the afternoon sun finally broke through the dense morning fog that had blanketed the entire valley since dawn, the hikers decided to continue their journey up the winding mountain trail, carefully navigating the slippery rocks and fallen branches that littered their path.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "category": "prosody",
+    "transcript": "The breakthrough discovery wasn't made in a state-of-the-art laboratory with millions of dollars in funding, but rather in a modest university basement by a determined graduate student who refused to give up despite facing repeated failures and skepticism from her peers.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "category": "prosody",
+    "transcript": "Why would anyone choose to spend their entire vacation sitting inside a hotel room watching television when there's a magnificent beach, vibrant local markets, historic landmarks, and incredible restaurants waiting to be explored just outside their door?",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "First, we visited the ancient cathedral with its stunning stained glass windows, then we explored the bustling marketplace filled with local artisans, next we enjoyed lunch at a charming bistro overlooking the river, and finally, we watched the sunset from the historic fortress walls.",
+    "category": "prosody",
+    "transcript": "First, we visited the ancient cathedral with its stunning stained glass windows. Then we explored the bustling marketplace filled with local artisans. Next, we enjoyed lunch at a charming bistro overlooking the river. And finally, we watched the sunset from the historic fortress walls.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The 1st place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "category": "edge_cases",
+    "transcript": "The first-place winner, representing UNESCO, will receive approximately $10,000 and present at the symposium on 12/31/2025.",
+    "wer": 0.05,
+    "cer": 0.031
+  },
+  {
+    "text": "Prof. Williams from Oxford St. mentioned that the 1980s saw the 3rd largest economic boom in British history.",
+    "category": "edge_cases",
+    "transcript": "Professor Williams from Oxford Saint mentioned that the 1980s saw the third largest economic boom in British history.",
+    "wer": 0.167,
+    "cer": 0.124
+  },
+  {
+    "text": "According to the report from DataCorp Ltd., the company's 42nd quarterly revenue reached $3,456,789.12 in Q4.",
+    "category": "edge_cases",
+    "transcript": "According to the report from DataCorp Limited, the company's 42nd quarterly revenue reached 3,456,789.12 in Q4.",
+    "wer": 0.05,
+    "cer": 0.047
+  },
+  {
+    "text": "The pH was 7.2±0.1 @ 25°C; add ≥50 mL H₂SO₄ (conc. ≈98% w/w) per Fig. 3(b) in Rev. Mod. Phys. Vol. 89 No. 2 (DOI: 10.1103/RevModPhys.89.025003).",
+    "category": "edge_cases",
+    "wer": 0.771,
+    "cer": 0.556,
+    "transcript": "The pH was 7.2 0.1. Add 1/50 mmol H2SO4 (98% at Jabal Jawabu) per kg. 3b. In RevMod Fison volume 89, number 2. DE 10.1 wide on 103 RevMod Fison, 9.02, 5003.",
+    "source_key": "edge_cases_denser"
+  },
+  {
+    "text": "The entrepreneur submitted her résumé highlighting her expertise in the horror genre.",
+    "category": "phonetic",
+    "transcript": "The entrepreneur submitted her resume highlighting her expertise in the horror genre.",
+    "wer": 0.083,
+    "cer": 0.027
+  },
+  {
+    "text": "Siobhan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "category": "phonetic",
+    "transcript": "Shivan ordered a fresh croissant and café au lait at the charming French bakery downtown.",
+    "wer": 0.067,
+    "cer": 0.053
+  },
+  {
+    "text": "Saoirse watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "category": "phonetic",
+    "transcript": "Sawersa watched the live jazz performance while studying the live specimens in her biology textbook.",
+    "wer": 0.067,
+    "cer": 0.035
+  },
+  {
+    "text": "The concert—scheduled for months—was cancelled due to the storm.",
+    "category": "punctuation",
+    "transcript": "The concert, scheduled for months, was canceled due to the storm.",
+    "wer": 0.091,
+    "cer": 0.019
+  },
+  {
+    "text": "The recipe requires three ingredients: flour, sugar, and vanilla extract.",
+    "category": "punctuation",
+    "transcript": "The recipe requires 3 ingredients: flour, sugar, and vanilla extract.",
+    "wer": 0.1,
+    "cer": 0.083
+  },
+  {
+    "text": "No no no, I told you three times already, no means no.",
+    "category": "robustness",
+    "transcript": "No, no, no. I told you 3 times already. No means no.",
+    "wer": 0.083,
+    "cer": 0.125
+  },
+  {
+    "text": "The spacecraft's attitude control system employs three reaction wheels operating at 6000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "category": "domain_specific",
+    "transcript": "The spacecraft's attitude control system employs 3 reaction wheels operating at 6,000 revolutions per minute, with gyroscopic sensors providing angular momentum data via the CAN bus protocol.",
+    "wer": 0.107,
+    "cer": 0.03
+  },
+  {
+    "text": "The circuit utilizes a 555 timer IC configured in astable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "category": "domain_specific",
+    "transcript": "The circuit utilizes a 555 timer IC configured in a stable mode with a capacitance of 10 microfarads and resistance of 47 kiloohms to generate a square wave at approximately 1.4 kilohertz.",
+    "wer": 0.062,
+    "cer": 0.0
+  },
+  {
+    "text": "The patient received 1g/m² BSA of cyclophosphamide plus 50mg/m² doxorubicin hydrochloride IV push followed by 750mg/m² 5-fluorouracil per modified CAF protocol q21d for ER+/PR+/HER2- invasive ductal carcinoma staged T2N1M0 (AJCC 8th edition)",
+    "category": "domain_specific",
+    "wer": 0.237,
+    "cer": 0.025,
+    "transcript": "The patient received 1 g/m² BSA of cyclophosphamide plus 50 mg/m² doxorubicin hydrochloride IV push followed by 750 mg/m² 5-fluorouracil per modified KeyF protocol, Q21d for ER+ PR+1 HER2 invasive ductal carcinoma stage T2N1M0 AJCC 8th edition.",
+    "source_key": "domain_denser"
+  },
+  {
+    "text": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200 degrees Celsius under high pressure.",
+    "category": "domain_specific",
+    "transcript": "The synthesis of polytetrafluoroethylene involves the free radical polymerization of tetrafluoroethylene monomers at temperatures exceeding 200°C under high pressure.",
+    "wer": 0.095,
+    "cer": 0.082
+  },
+  {
+    "text": "The patient was prescribed metformin hydrochloride 500 milligrams twice daily for type 2 diabetes mellitus, along with acetaminophen for post-operative analgesia.",
+    "category": "domain_specific",
+    "transcript": "The patient was prescribed metformin hydrochloride 500 mg twice daily for type 2 diabetes mellitus, along with acetaminophen for postoperative analgesia.",
+    "wer": 0.136,
+    "cer": 0.058
+  },
+  {
+    "text": "The lawyer, who my sister met at the conference in Prague where she presented her research on climate policy, not the one who handled our parents' estate, recommended we reconsider the merger.",
+    "category": "prosody",
+    "transcript": "The lawyer, who my sister met at the conference in Prague where she presented her research on climate policy, not the one who handled our parents' estate, recommended we reconsider the merger.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "I never said SHE stole the money—I said he SUSPECTED she might have BORROWED it without asking first, Maria, which is completely different from stealing.",
+    "category": "prosody",
+    "transcript": "I never said she stole the money. I said he suspected she might have borrowed it without asking first, Maria, which is completely different from stealing.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "Dr. St. James lives at 123 St. George St. in St. Louis, MO, where he treats patients Mon.–Fri. from 9:00 a.m.–5:00 p.m.",
+    "category": "edge_cases",
+    "transcript": "Dr. St. James lives at 123 St. George St. in St. Louis, MO, where he treats patients, mon fry, from 9x00 AM, 5x05 PM.",
+    "wer": 0.321,
+    "cer": 0.049
+  },
+  {
+    "text": "The MacBook Pro's M3 chip processes data at 5GHz, stores 2TB on its SSD, and costs £2,499.99 or approximately €2,899.00 in the EU.",
+    "category": "edge_cases",
+    "transcript": "The MacBook Pro's M3 chip processes data at 5 GHz, stores 2 TB on its SSD, and costs €2,499 or approximately €2,999 in the EU.",
+    "wer": 0.25,
+    "cer": 0.051
+  },
+  {
+    "text": "On 03/04/2025, the 1,001st participant received 500μg of the compound at -80°C, with results showing a 15.5% improvement over baseline.",
+    "category": "edge_cases",
+    "transcript": "On 03/04/2025, the 1,001st participant received 500 mL of the compound at 80°C, with results showing a 15.5% improvement over baseline.",
+    "wer": 0.08,
+    "cer": 0.019
+  },
+  {
+    "text": "Prof. O'Brien, Ph.D., M.D., teaches at UCLA and says the area is 25km² with temps ranging from -5°F to 105°F throughout the year.",
+    "category": "edge_cases",
+    "transcript": "Professor O'Brien, PhD, MD, teaches at UCLA and says the area is 25 km² with temps ranging from 5°C to 105°C throughout the year.",
+    "wer": 0.321,
+    "cer": 0.074
+  },
+  {
+    "text": "The Polish researcher Przemysław read the lead article about lead contamination while visiting Versailles, expressing schadenfreude at his rival's flawed paradigm.",
+    "category": "phonetic",
+    "transcript": "The Polish researcher Przemyśław read the lead article about lead contamination while visiting Versailles, expressing schadenfreude at his rival's flawed paradigm.",
+    "wer": 0.045,
+    "cer": 0.007
+  },
+  {
+    "text": "Caoilfhinn from Edinburgh and Aadhya from Leicester will read the Bildungsroman that explores the Zeitgeist of our era with subtle psychological nuance.",
+    "category": "phonetic",
+    "transcript": "Cao Ilfyn from Edinburgh and Adya from Leicester will read the Bildungsroman that explores the Zeitgeist of our era with subtle psychological nuance.",
+    "wer": 0.136,
+    "cer": 0.038
+  },
+  {
+    "text": "The colonel acknowledged that Mairéad's weltanschauung, though influenced by her time in Cannes and Gloucester, remained rooted in the ouroboros symbol's ancient meaning.",
+    "category": "phonetic",
+    "transcript": "The Colonel acknowledged that Mireille's Weltanschauung, though influenced by her time in Cannes and Gloucester, remained rooted in the Ouroboros symbol's ancient meaning.",
+    "wer": 0.04,
+    "cer": 0.042
+  },
+  {
+    "text": "When Caoilfhinn tried to console the grieving widow, her schadenfreude was so close to the surface that even Tadhg's Weltanschauung couldn't excuse it.",
+    "category": "phonetic",
+    "wer": 0.2,
+    "cer": 0.032,
+    "transcript": "When Kao Il-Finn tried to console the grieving widow, her Schadenfreude was so close to the surface that even Todgs Weltanschauung couldn't excuse it.",
+    "source_key": "phonetic_hard"
+  },
+  {
+    "text": "At the Versailles reception, Przemysław wound the antique wound clock while discussing how the Bildungsroman's protagonist embodied the era's Zeitgeist with Caoilfhinn.",
+    "category": "phonetic",
+    "transcript": "At the Versailles reception, Przemyśław wound the antique wound clock while discussing how the Bildungsroman's protagonist embodied the era's Zeitgeist with Kauilfin.",
+    "wer": 0.083,
+    "cer": 0.035
+  },
+  {
+    "text": "Schedule updates (effective Sept. 1st): Mon.–Wed. sessions run 9:00 AM–5:30 PM; Thurs.–Fri. end @ 3:45 PM—except for Dr. Patel, M.D., whose clinic hours remain 8:00 AM–7:00 PM w/ no appt. needed.",
+    "category": "punctuation",
+    "wer": 0.317,
+    "cer": 0.182,
+    "transcript": "Schedule updates: effective September 1st, Monwed sessions run 9 AM, 5:30 PM, Thursdays and Fridays end at 3:45 PM, except for Dr. Patel, MD, whose clinic hours remain 8 AM, 7 PM, no APPT needed.",
+    "source_key": "punctuation_with_numbers"
+  },
+  {
+    "text": "The invoice—Ref. No. INV-2025/03/441—lists: (a) 12 units @ €89.99/ea., (b) shipping to the U.K. via FedEx, and (c) a 15% VAT totaling £1,458.32.",
+    "category": "punctuation",
+    "wer": 0.219,
+    "cer": 0.043,
+    "transcript": "The invoice, ref. INV-2025-03-441, lists: a) 12 units O89-99EA, b) shipping to the UK via FedEx, and c) a 15% VAT totaling £1,158.32.",
+    "source_key": "punctuation_with_numbers"
+  },
+  {
+    "text": "'The GDP grew 4.2%—not the predicted 3.8%,' noted Prof. Chen, Ph.D. (MIT Econ. Dept.), 'making FY2024-25 the 3rd consecutive yr. of gains exceeding $2T.'",
+    "category": "punctuation",
+    "wer": 0.207,
+    "cer": 0.131,
+    "transcript": "\"The GDP grew 4.2%, not the predicted 3.8%,\" noted Professor Chen, PhD, MIT Econ. \"Making FY2024-25 the third consecutive year of gains exceeding 2T.\"",
+    "source_key": "punctuation_with_numbers"
+  },
+  {
+    "text": "The recipe requires: three cups of flour, sifted twice; two eggs, beaten until frothy; one cup of sugar, preferably organic; half a teaspoon of salt; and a tablespoon of vanilla extract, pure if possible.",
+    "category": "punctuation",
+    "transcript": "The recipe requires 3 cups of flour, sifted twice, 2 eggs, beaten until frothy, 1 cup of sugar, preferably organic, 1/2 teaspoon of salt, and 1 tablespoon of vanilla extract, pure if possible.",
+    "wer": 0.176,
+    "cer": 0.106
+  },
+  {
+    "text": "'Approximately 2,347 patients,' Dr. Martinez explained, '(roughly 68% of whom are age 65+) received the Rx between Feb. 2nd–Mar. 30th at St. Mary's Hosp.'",
+    "category": "punctuation",
+    "wer": 0.185,
+    "cer": 0.124,
+    "transcript": "Approximately 2,347 patients, Dr. Martinez explained, roughly 68% of whom are age 65+, received the Rx between February 22nd and March 30th at St. Mary's Hospice.",
+    "source_key": "punctuation_with_numbers"
+  },
+  {
+    "text": "The merger—valued at $47.3B and approved by the SEC on Jan. 15th, 2025—involves three Fortune 500 cos. (IBM, Gen. Electric, & AT&T Inc.) with a projected ROI of 18.5% by Q4.",
+    "category": "punctuation",
+    "wer": 0.114,
+    "cer": 0.12,
+    "transcript": "The merger, valued at $47.3B and approved by the SEC on Jan. 15, 2025, involves three Fortune 500 cosaturns—IBM, General Electric, and AT&T Inc.—with a projected ROI of 18.5% by Q4.",
+    "source_key": "punctuation_with_numbers"
+  },
+  {
+    "text": "Please call 0800 759 3421 extension 47 and enter PIN 9-1-7-3 when prompted.",
+    "category": "robustness",
+    "wer": 0.375,
+    "cer": 0.017,
+    "transcript": "Please call 1-800-759-3421 extension 47 and enter PIN 9173 when prompted.",
+    "source_key": "robustness_hard"
+  },
+  {
+    "text": "She sells seashells by the seashore, but nobody knows whether the weather will be better for beachside shell-selling businesses when wetter weather approaches the weathered shoreline.",
+    "category": "robustness",
+    "transcript": "She sells seashells by the seashore, but nobody knows whether the weather will be better for beachside shell-selling businesses when wetter weather approaches the weathered shoreline.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The comprehensive metropolitan transportation infrastructure development initiative, which had been under consideration by the municipal planning committee for approximately eighteen months following extensive community consultation sessions involving stakeholders from residential neighborhoods, commercial districts, industrial zones, and environmental advocacy groups, finally received preliminary approval from the city council last Thursday evening, though several council members expressed reservations about the projected costs, the proposed timeline for implementation, the potential disruption to existing traffic patterns during the construction phase, and the long-term maintenance obligations that would inevitably fall upon future administrations, while supporters of the initiative argued passionately that the benefits of reduced congestion, improved air quality, enhanced connectivity between previously isolated communities, and increased economic opportunities for local businesses would far outweigh any temporary inconveniences or financial expenditures.",
+    "category": "robustness",
+    "transcript": "The comprehensive Metropolitan Transportation Infrastructure Development Initiative, which had been under consideration by the Municipal Planning Committee for approximately 18 months following extensive community consultation sessions involving stakeholders from residential neighborhoods, commercial districts, industrial zones, and environmental advocacy groups, finally received preliminary approval from the City Council last Thursday evening. Though several council members expressed reservations about the projected costs, the proposed timeline for implementation, the potential disruption to existing traffic patterns during the construction phase, and the long-term maintenance obligations that would inevitably fall upon future administrations, while supporters of the initiative argued passionately that the benefits of reduced congestion, improved air quality, enhanced connectivity between previously isolated communities, and increased economic opportunities for local businesses would far outweigh any temporary inconveniences or financial expenditures.",
+    "wer": 0.008,
+    "cer": 0.009
+  },
+  {
+    "text": "Perhaps.",
+    "category": "robustness",
+    "transcript": "Perhaps—",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The snake moved slowly, very slowly, almost imperceptibly slowly through the grass, then suddenly, shockingly suddenly, explosively suddenly, it struck.",
+    "category": "robustness",
+    "transcript": "The snake moved slowly, very slowly, almost imperceptibly slowly through the grass. Then suddenly, shockingly suddenly, explosively suddenly, it struck.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "text": "The sixth sick sheikh's sixth sheep's sick, and the rural juror struggled with the specificities of the statistical analysis while the prosecutor's proposal prompted prolonged protestations.",
+    "category": "robustness",
+    "transcript": "The sixth sick shakes sixth sheep's sick. And the rural juror struggled with the specificities of the statistical analysis, while the prosecutor's proposal prompted prolonged protestations.",
+    "wer": 0.069,
+    "cer": 0.019
+  },
+  {
+    "text": "The 6ft 2in, 220lb linebacker completed the 40-yard dash in 4.58sec at the NFL Combine.",
+    "category": "robustness",
+    "wer": 0.353,
+    "cer": 0.072,
+    "transcript": "The 6'1\", 220 lb linebacker completed the 40-yard dash in 4.58 sec at the NFL Combine.",
+    "source_key": "robustness_hard"
+  },
+  {
+    "text": "The patient was administered 5mg of rivaroxaban and 150mg of fluconazole intravenously, while cultures confirmed Pseudomonas aeruginosa and Clostridium difficile colonization requiring vancomycin titration per IDSA guidelines.",
+    "category": "domain_specific",
+    "transcript": "The patient was administered 5 mg of rivaroxaban and 150 mg of fluconazole intravenously, while cultures confirmed Pseudomonas aeruginosa and Clostridium difficile colonization, requiring vancomycin titration per IDSA guidelines.",
+    "wer": 0.148,
+    "cer": 0.0
+  },
+  {
+    "text": "The synthesis of 2-acetoxybenzoic acid from salicylic acid requires careful pH monitoring, whereas ethylenediaminetetraacetic acid disodium salt dihydrate demonstrates superior chelation at physiological pH of 7.4 according to ASTM E70 specifications.",
+    "category": "domain_specific",
+    "transcript": "The synthesis of 2-acetoxybenzoic acid from salicylic acid requires careful pH monitoring, whereas ethylenediamine tetraacetic acid (disodium salt dihydrate) demonstrates superior chelation at physiological pH of 7.4 according to ASTM E70 specifications.",
+    "wer": 0.061,
+    "cer": 0.0
+  },
+  {
+    "text": "Per the res judicata doctrine and citing IEEE 802.11ax amendment ratification, the appellant argued that Saccharomyces cerevisiae strain BY4741 expressed recombinant proteins at x squared plus 3x minus 10 equals zero micromolar concentration as validated under ISO/IEC 17025 accreditation.",
+    "category": "domain_specific",
+    "transcript": "Per the res judicata doctrine and citing IEE 802.11ax Amendment Ratification, the appellant argued that Saccharomyces cerevisiae strain BY4741 expressed recombinant proteins at X² 3X 10 0 μM concentration, as validated under ISO/IEC 17025 accreditation.",
+    "wer": 0.195,
+    "cer": 0.146
+  }
+]

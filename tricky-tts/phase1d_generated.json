@@ -1,0 +1,722 @@
+[
+  {
+    "text": "Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf. on Cardiology (ISBN: 978-0-12-345678-9) data showing LDL reductions of 42%±7% using 20mg/dL dosing protocols.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234–89 of the J. Phys. Chem., noting that samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The property at 789 St. Clair Ave., measuring 2,450ft² (227.6m²), sold for £875,000.50 to Mr. & Mrs. St. John-Smythe, Esq., C.Eng., F.I.C.E. on Feb. 14th at 2:15pm.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67–142, the circuit required 3.3V±5%, 150mA max., with capacitance ≤10μF and operating temps between −40°C and +85°C per MIL-STD-883.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "The athlete, standing 6ft 3in and weighing 195lb, completed the 100m in 9.58sec at the 23rd Int'l Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., who lives at 123 St. George St., reported that the solution's pH was 7.4±0.2 at 25°C, with CO₂ levels ≥400ppm.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Send $1.25M to account GB29-NWBK-6016-1331-9268-19 by 3:00pm EST or contact Ms. St. Claire, B.Sc.(Hons), M.B.A. at extension x5847 before the Q3 deadline.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James Pl., announced services at 10:30am and 6:45pm; call 0800-PRAYERS or visit www.st-aug.org.uk.",
+    "category": "edge_cases",
+    "split": "public"
+  },
+  {
+    "text": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring blaCTX-M-15 require meropenem 2g IV q8h when MIC values reach 8-16μg/mL per EUCAST v.13.0 breakpoints.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Streptococcus pneumoniae strain TIGR4 expressing pbp2b mutations and Haemophilus influenzae type b require ceftriaxone 50mg/kg/day IV divided q12h not exceeding 4g/24h, with CSF penetration verified at 2.5-7.5μg/mL per General Electric v. Joiner, 522 U.S. 136 (1997) causation standards.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "In Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999), expert testimony regarding (R)-2-acetamido-N-(2,6-dimethylphenyl)propanamide (CAS 53994-73-3) metabolism via CYP2D6*17 allele variants was challenged under Fed.R.Evid. 702.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0°C ± 0.2°C maintaining pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Administer 15mg/kg IV q6h of piperacillin-tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring oprD mutations, per Daubert v. Merrell Dow, 509 U.S. 579 (1993) evidentiary standards.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Per Frye v. United States, 293 F. 1013 (D.C. Cir. 1923), analysis of (S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid (CAS 59-92-7) degradation via COMT Val158Met polymorphism requires HPLC-MS/MS sensitivity ≤0.5ng/mL conforming to FDA Guidance 2018.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Titrate 2.5mg/kg/min of (±)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6) IV maintaining MAP ≥65mmHg per RFC 2616 §14.9 cache-control directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61:2017.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128μg/mL when tested per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C.",
+    "category": "domain_specific",
+    "split": "public"
+  },
+  {
+    "text": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The present study will present evidence that Caoimhe experienced schadenfreude watching her rival's failure in Loughborough.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhán's Welsh compositions.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gemütlichkeit.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "split": "public"
+  },
+  {
+    "text": "We fine-tuned LLaMA 3.1 405B using LoRA on the meta-llama/Llama-3.1-405B-Instruct-hf checkpoint with rank 64 adapters.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "According to Vaswani et al. (2017), the transformer architecture enabled GPT-4o to achieve 89.3% on MMLU with FP16 quantization.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "The claude-sonnet-4-5 model outperformed Gemma-2-27B-it on coding benchmarks as described in §3.2 of the technical report.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "Comparing meta-llama/Llama-2-7b-chat-hf versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "The model trained on 1.4T tokens reached convergence at epoch-12 using the v2.1.3-rc training framework from Cohere.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "Our RAG pipeline uses Mistral 7B v0.3 with INT8 quantization and KV-cache optimization for 2x throughput improvement.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "We loaded mistralai/Mistral-7B-Instruct-v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint-5000 with 3.2B parameters.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "Our experiments with Gemma-2-27B-it and INT8 quantization on the mistralai/Mistral-7B-Instruct-v0.1 checkpoint-5000 achieved 87.6% accuracy on MMLU.",
+    "category": "ai_tech",
+    "split": "public"
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "Henry VIII's reign from 1509–1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "The emergency contact is +44 (0)20 7946 0958, reference number NI: AB 12 34 56 C, dated 15/04/1989.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "Super Bowl LVIII drew over 123.7 million viewers, making it the most-watched program in U.S. television history.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "The Apollo XI mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "The study spanning pp. 234–89 in Volume XXIII shows that ⅘ of the 1,984 participants were born between 1984 and 1999.",
+    "category": "number_format",
+    "split": "public"
+  },
+  {
+    "text": "DO NOT—and I mean DO NOT—open that email attachment under ANY circumstances whatsoever.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "Hmm... I'm not so sure about that. She said—well, she SAID she'd be here, but...",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "category": "paralinguistics",
+    "split": "public"
+  },
+  {
+    "text": "Prof. St. John-Smith, D.Phil.(Oxon), F.R.S., reported that participants (N=347, aged 18–65yrs, M=34.2±8.7) showed improvements of 23.5±4.1% vs. baseline at p<0.001 significance.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.C.P., relocated from 123 St. George St. to St. Petersburg, FL 33701, where temperatures fluctuate ±3.5°C daily.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The mixture requires 250±5μL of 0.1M NaOH, pH adjusted to 7.4±0.1, then centrifuged at 12,000×g for 15min at 4°C±0.5°C per SOP v3.2 §4.7.2(b).",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Rev. Dr. O'Connor, D.D., Th.M., presented at the 12th Int'l Symp. on Theology, Vol. VIII, pp. 234–89, discussing texts from ca. 150 B.C.E. to A.D. 325.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The H₂SO₄ concentration must remain ≥98.5% at 20±2°C; contact Prof. Zhang, D.Sc., M.Inst.P., at +86(0)10-6279-8341 or j.zhang@chem-inst.edu.cn for the 5th rev. protocol.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Please dial +1-800-555-0199 ext. 4782, enter PIN 9-3-7-2-6-8, then press # to reach Dr. R. St. Claire, M.D., F.A.C.S., regarding the Rx for 500mg tabs, 2×/day p.o.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Transfer £2.5M to acct. no. GB29-NWBK-6016-1331-9268-19 by 5:00p.m. GMT on the 23rd inst., ensuring FX rates stay within ±0.3% of the agreed €1.2345/£1.00 benchmark.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "Order ref. #INV-2024-03-0847 totaling $47,389.12 (inc. 8.875% sales tax) ships to 1847 St. Clair Ave. W., Ste. 300, Toronto, ON M6N-1J5 via UPS 2nd Day Air®.",
+    "category": "edge_cases",
+    "split": "semi_private"
+  },
+  {
+    "text": "The defendant's Markush structure claim covering (S)-2-amino-3-(4-hydroxyphenyl)propanoic acid derivatives was invalidated in Ariad Pharmaceuticals v. Eli Lilly, 598 F.3d 1336 (Fed. Cir. 2010) due to insufficient written description under 35 U.S.C. §112(a) and failure to meet ICH Q6A specifications.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Administer 12.5mg/kg IV q8h of meropenem to the patient with Pseudomonas aeruginosa strain PAO1 expressing oprD mutation, while maintaining serum concentrations between 8-16μg/mL per Sanford Guide protocols and 21 CFR §314.126(b)(2)(ii).",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Prepare 250μL aliquots containing 1.8×10⁻⁸ mol/L of (S)-1-(4-chlorophenyl)-N-methyl-N-[1-(2-thienyl)cyclohexyl]methanamine (CAS 33286-22-5) diluted in DMSO to final concentration 0.05% v/v, maintaining temperature at 22.5°C±0.5°C per ASTM E1272-18 §8.3.2.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Cultures of Escherichia coli strain BL21(DE3) and Saccharomyces cerevisiae strain BY4741 expressing recombinant human BRCA1 c.5266dupC mutation require 3.5×10⁷ CFU/mL inoculum in LB broth supplemented with 50μg/mL kanamycin sulfate per CLSI M07-A10 guidelines.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Molecular analysis revealed that Mycobacterium tuberculosis strain H37Rv and Streptococcus pneumoniae serotype 19A isolates both carry mutations in rpoB S531L and pbp2b T446A respectively, requiring treatment escalation to 15mg/kg/day rifampicin plus 2g q12h ceftriaxone sodium per WHO guidelines and res judicata principles established in Allen v. McCurry, 449 U.S. 90 (1980).",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "In Smith v. Wyeth Pharmaceuticals, 657 F.3d 149 (3rd Cir. 2011), expert testimony regarding 40mg/day escitalopram oxalate dosing in Homo sapiens subjects with CYP2C19*2/*2 genotype was admitted under Frye v. United States, 293 F. 1013 (D.C. Cir. 1923).",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "The pharmacokinetic analysis per FDA 21 CFR §320.25(d) showed that 75mg/m² of cisplatin (cis-diamminedichloroplatinum(II), CAS 15663-27-1) administered q3w achieved AUC₀₋∞ of 5.8±1.2 mg·h/L in patients with Mus musculus xenograft models of KRAS G12C mutant adenocarcinoma.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "The synthesis of (2R,3S,4R,5R)-2-(6-amino-9H-purin-9-yl)-5-(hydroxymethyl)tetrahydrofuran-3,4-diol (CAS 58-61-7) requires maintaining pH 6.8±0.2 at 4°C with 0.025M phosphate buffer per ISO/IEC 17025:2017 §7.2.1.1 accreditation standards.",
+    "category": "domain_specific",
+    "split": "semi_private"
+  },
+  {
+    "text": "Mairéad secured a permit to permit visitors into the Leicester gallery where the Laocoön sculpture and ouroboros tapestry are displayed.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Dr. Nguyen will present his Bildungsroman analysis at Leicester University, where Siobhán will present the opening remarks on Nahuatl literature.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking interpretation of weltanschauung for the Magdalen College archive.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Caoimhe's permit to film the mise en scène was denied, though the director tried to permit her access to the trompe-l'œil backdrop.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The academic record shows Aoife did record her observations on the mise en scène of Nahuatl rituals in Gloucester.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The conductor's conduct during rehearsals showed schadenfreude when Aoife struggled with the Ptolemy arrangement in Gloucester.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Tadhg didn't object to the museum object being moved from Worcestershire to Loughborough for Saoirse's exhibition.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "Siobhán's conduct report will conduct readers through the schadenfreude evident in the Loughborough manuscript about Eithne.",
+    "category": "phonetic",
+    "split": "semi_private"
+  },
+  {
+    "text": "The GPT-4o model from OpenAI significantly outperforms claude-sonnet-4-5 on mathematical reasoning tasks, as demonstrated in Appendix C of their technical report.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "We fine-tuned meta-llama/Llama-2-7b-chat-hf using LoRA with rank 16 and achieved 91.2% accuracy on MMLU after training on 500B tokens.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "As per section 3.2 of Brown et al. (2020), scaling laws predict that a 175B parameter model trained on 300B tokens should achieve approximately 85% on TriviaQA.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "The RAG pipeline using Cohere embeddings and mistralai/Mistral-7B-Instruct-v0.1 as the generator achieved 78.9% on NaturalQuestions with v2.1.3-rc of our framework.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "According to Vaswani et al. (2017), the transformer architecture with multi-head attention enables efficient parallel processing, which is why LLaMA 3.1 405B uses 128 attention heads.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "Hugging Face released Gemma-2-27B-it with improved instruction following, trained on 1.4T tokens using a mixture of supervised fine-tuning and RLHF on 50K preference pairs.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "DeepMind's Chinchilla paper suggests our 13B model is undertrained; we need at least 260B tokens instead of the 100B we used in epoch-12.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "The mistralai/Mistral-7B-Instruct-v0.1 model requires only 14GB VRAM with KV-cache optimization, compared to 28GB for Gemma-2-27B-it without quantization.",
+    "category": "ai_tech",
+    "split": "semi_private"
+  },
+  {
+    "text": "For inquiries, contact +1 (555) 234-5678 or reference case #2024-03-UK-00789; emergency line available 24/7/365 at extension ×4401.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "The Treaty of Versailles ended World War I, but its harsh terms arguably set the stage for World War II just two decades later.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "Chapter XIV, spanning pp. 287–312, examines the IVth Crusade's impact on Byzantine-Venetian relations from 1202–1204.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "Super Bowl LVIII drew 123.4 million viewers, breaking the previous record set by Super Bowl XLIX by nearly 8.5%.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "The patient's temperature spiked from 98.6°F to 103.4°F (39.7°C), requiring immediate intervention per protocol XXIV-B.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "According to the 80/20 rule, roughly ⅘ of outcomes result from just ⅕ of causes, though some studies suggest it's closer to a 70:30 ratio.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "Henry VIII's sixth wife, Catherine Parr, outlived him, whereas his second wife, Anne Boleyn, was executed in 1536 at age 35.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "The study enrolled participants ages 21–65 with BMIs between 18.5–24.9, excluding those with BP readings above 140/90.",
+    "category": "number_format",
+    "split": "semi_private"
+  },
+  {
+    "text": "Wow. Just... wow. That's absolutely brilliant work there, genius.",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "Eww, is that mold? That's disgusting—throw it out RIGHT NOW!",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "Hmm, interesting theory, but the data suggests... well, never mind what the data suggests.",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "Noooooo way! You actually got tickets to the show?",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "Ugh... seriously? I JUST cleaned that five minutes ago!",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "STOP! Don't take another step toward that ledge!",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "He said he'd be here at noon. It's now three o'clock.",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "I-I-I tried to explain, but then she just—she looked at me and whispered, 'I know.' Then she SCREAMED it: 'I KNOW EVERYTHING!'",
+    "category": "paralinguistics",
+    "split": "semi_private"
+  },
+  {
+    "text": "The 2nd ed. of Prof. van der Berg's text (ISBN 978-0-262-03384-8, pp. xiv+1,247, $89.95) covers reactions at pH 7.4±0.1 requiring ≥250μL H₂O₂ (30% w/v).",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Transfer $847,392.15 to acct. no. GB29-NWBK-6016-1331-9268-19 by 5:00pm EST; confirm via secure.payments@corp-bank.com or call +1-888-555-0147 PIN 9-7-3-8.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "The 5th Int'l Symp. on Quantum Physics, Vol. 23, pp. 1847–92, reported measurements of 3.2×10⁻⁶μg/m³ with uncertainty ≤0.08% at $2.7M cost.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "St. Catherine's Hospital on St. George St. billed £847,392.50 for treating 2,847 patients; contact billing@stcath-hosp.nhs.uk or ring 0800-777-6543.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Contact Prof. Martinez, D.Phil.(Oxon), M.Sc., at j.martinez@univ.ac.uk or call +44(0)1865-274000 ext. 5821 regarding the H₂SO₄ samples stored at -80°C±0.5°C.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Cmdr. St. Claire, R.N.(Ret.), Ph.D., reported coordinates 51°30'26\"N 0°7'39\"W at 14:23:07 GMT with wind speeds of 23.8kt±1.2kt and temp. 12.4°C.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., measured CO₂ levels at ±2.3% in St. Petersburg, FL, finding concentrations ≥450ppm at the St. Mary's facility on 3rd St.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "Rev. Dr. O'Brien, Th.D., B.A.(Hons), invested €1.5M in the startup at 123 St. James's Sq., London W1Y 4LB, expecting ≥18% ROI by Q3 '24.",
+    "category": "edge_cases",
+    "split": "private"
+  },
+  {
+    "text": "According to Daubert v. Merrell Dow Pharmaceuticals, Inc., 509 U.S. 579, 113 S.Ct. 2786 (1993), the (R)-2-acetamido-3-(4-hydroxyphenyl)propanoic acid derivative at 3.75×10⁻⁵ mol/L meets IEC 60601-2-49:2011+AMD1:2017 specifications.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Candida albicans strain SC5314 and Aspergillus fumigatus strain Af293 expressing cyp51A TR34/L98H mutations require voriconazole 6mg/kg IV q12h loading dose per ISO 20776-1:2019 and 42 U.S.C. § 262(k)(2)(A)(i)(I) biosimilar provisions.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv expressing katG S315T and inhA C-15T mutations requires rifampicin 10mg/kg PO daily plus isoniazid 5mg/kg per CDC guidelines and 42 C.F.R. § 493.1253(b)(2) laboratory standards.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "The compound (2S,3R,4S,5S,6R)-2-[3-[[3-(4-chlorophenyl)propyl]-methylamino]propyl]-6-(hydroxymethyl)oxane-3,4,5-triol hydrochloride (CAS 56-75-7) requires 0.025mL reconstitution with 8.3×10⁻⁴ mol/L buffer per ASTM E1644-14 at 22.5°C ± 0.2°C.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Inject 17.5mg/kg SC q12h of enoxaparin sodium (CAS 9041-08-1) for Streptococcus pneumoniae serotype 19A infections per Markman v. Westview Instruments, 517 U.S. 370 (1996) and CLSI M100-ED31:2021 guidelines.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Per In re Lipitor Antitrust Litig., 868 F.3d 231 (3rd Cir. 2017), administer (3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoic acid 40mg PO at 0.5×therapeutic index maintaining 36.5°C ± 0.4°C.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Administer 12.5mg/kg IV q8h of meropenem per Zosyn v. Generic Pharma, 847 F.3d 1371 (Fed. Cir. 2017), targeting Pseudomonas aeruginosa strain PAO1 harboring oprD mutations at 37.0°C ± 0.5°C maintaining pH 7.35-7.45 per ISO 13485:2016 compliance.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "Klebsiella pneumoniae strain ATCC BAA-1705 harboring blaKPC-2 and Acinetobacter baumannii strain ATCC 19606 require polymyxin B 2.5mg/kg/day IV per 45 C.F.R. § 164.312(a)(2)(iv) and RFC 5280 §4.2.1.3 certificate validation.",
+    "category": "domain_specific",
+    "split": "private"
+  },
+  {
+    "text": "At Magdalen College, Eithne will record Niamh's record-breaking lecture on the mise en scène techniques in Ptolemy's astronomical treatises.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Caoimhe will present her present on schadenfreude to the Worcestershire Historical Society, where Tadhg serves as content director despite his content expression.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Siobhán refused to permit the museum to permit photography of the Loughborough trompe-l'œil murals.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Siobhán's weltanschauung clashed with Nguyen's when they tried to conduct a conduct review at Loughborough University.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Aoife discovered schadenfreude watching Mairéad object to every object in the Gloucester Bildungsroman exhibition featuring Nahuatl manuscripts.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "The Leicester magistrate asked Aoife to conduct herself properly during the conduct hearing regarding Ptolemy's astronomical record, though no one could record her testimony.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Professor Mbeki noted that Niamh's mise en scène captured the gemütlichkeit of Magdalen College, where Saoirse once studied the ouroboros symbol.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "Mairéad's weltanschauung dissertation examined how Eithne would object to any object displaying Nahuatl glyphs at the Gloucester museum.",
+    "category": "phonetic",
+    "split": "private"
+  },
+  {
+    "text": "We deployed the stabilityai/stable-diffusion-xl-base-1.0 model using FP16 precision and xFormers attention optimization, reducing VRAM usage to 8.2GB.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "Our RAG pipeline combines mistralai/Mistral-7B-Instruct-v0.2 with a FAISS index containing 10M embeddings, as described in §4.3 of our technical report.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "GPT-4o demonstrated significant improvements over GPT-4-turbo on MMLU, scoring 88.7% compared to 86.4%, while maintaining FP16 inference speed.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "The Gemma-2-27B-it checkpoint-8500 outperformed claude-sonnet-3-5 on code generation tasks after RLHF alignment with 15K preference pairs from Anthropic's methodology.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "We fine-tuned LLaMA-3.1-405B using LoRA with rank 16 on a custom dataset of 50K examples, achieving 92.7% accuracy on our held-out test set.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "Brown et al. (2020) showed that GPT-3 with 175B parameters exhibits few-shot learning capabilities, which inspired our LoRA fine-tuning approach on Cohere's command-r-plus for domain adaptation.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "DeepMind's Chinchilla model, trained on 1.4T tokens with 70B parameters, follows optimal scaling laws as per Hoffmann et al. (2022) better than previous approaches.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "The meta-llama/Llama-2-70b-chat-hf model required INT8 quantization to fit on our A100 GPUs, reducing memory footprint from 140GB to 70GB.",
+    "category": "ai_tech",
+    "split": "private"
+  },
+  {
+    "text": "Elizabeth II reigned for 70 years, far exceeding Victoria's 63, but short of Louis XIV's 72.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "Super Bowl LVII drew 115.1 million viewers, while Super Bowl LVIII broke records with 123.7 million.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "The Treaty of Versailles was signed on 28/VI/1919, exactly five years after the assassination that triggered World War I.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "For assistance, call +1 (800) 555-0199 or +44 (0)161 496 0345 between 09:00–17:30 GMT.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "The IXth Symphony premiered in 1824, but wasn't widely performed until the 1850s when orchestras grew large enough.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "The company's revenue grew from $2.3 billion to $8.7×10⁹ between Q3/2019 and Q4/2023, a 278% increase.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "Recipe calls for ⅔ cup sugar, ¾ teaspoon salt, and baking at 375°F (190°C) for 22–25 minutes.",
+    "category": "number_format",
+    "split": "private"
+  },
+  {
+    "text": "I'm sooooo done with this nonsense, like, I literally cannot even—",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "Ugh, seriously? I've been waiting for hooours and now you tell me it's cancelled.",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "Eww, is that... is that mold? Blegh, I think I'm gonna be sick.",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "He whispered, 'Maybe we should go.' But then his voice cracked: 'We need to GO NOW!'",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "W-w-wait, you're telling me she just... she just left? Without saying anything?",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "STOP! Don't move a single muscle or the whole thing will collapse.",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "Hmm... that's peculiar. The data shows... wait. Wait wait wait, that can't be right.",
+    "category": "paralinguistics",
+    "split": "private"
+  },
+  {
+    "text": "Oh WOW, you forgot my birthday. Again. How... how thoughtful of you.",
+    "category": "paralinguistics",
+    "split": "private"
+  }
+]
