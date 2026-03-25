@@ -1,0 +1,97 @@
+{
+  "elevenlabs/eleven-multilingual-v2": {
+    "job_id": "27592fcf-e607-4135-9d9c-a2d82370fa80",
+    "status": "completed",
+    "model_id": "elevenlabs/eleven-multilingual-v2",
+    "output_name": "ronanarraig/tricky-tts-v2-eval-elevenlabs",
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-elevenlabs",
+    "result": {
+      "num_samples": 48,
+      "num_successful": 48,
+      "total_duration_s": 649.4629583333335,
+      "total_runtime_seconds": 366.2765095233917,
+      "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-elevenlabs",
+      "cost_charged": 1.0,
+      "mos": 4.3545,
+      "wer": 0.2814,
+      "cer": 0.1358,
+      "asr_model_id": "openai/whisper-large-v3-turbo"
+    }
+  },
+  "cartesia/sonic-3": {
+    "job_id": "9e954f0c-5f30-47d9-a275-d949d0b55299",
+    "status": "completed",
+    "model_id": "cartesia/sonic-3",
+    "output_name": "ronanarraig/tricky-tts-v2-eval-cartesia",
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-cartesia",
+    "result": {
+      "num_samples": 48,
+      "num_successful": 48,
+      "total_duration_s": 564.7420833333333,
+      "total_runtime_seconds": 725.9191176891327,
+      "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-cartesia",
+      "cost_charged": 1.0,
+      "mos": 4.0415,
+      "wer": 0.4101,
+      "cer": 0.2261,
+      "asr_model_id": "openai/whisper-large-v3-turbo"
+    }
+  },
+  "openai/gpt-4o-mini-tts": {
+    "job_id": "38377040-cd94-48f3-af96-5abb11cf43e1",
+    "status": "completed",
+    "model_id": "openai/gpt-4o-mini-tts",
+    "output_name": "ronanarraig/tricky-tts-v2-eval-gpt4o-mini",
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-gpt4o-mini",
+    "result": {
+      "num_samples": 48,
+      "num_successful": 48,
+      "total_duration_s": 695.4000000000002,
+      "total_runtime_seconds": 420.7070896625519,
+      "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-gpt4o-mini",
+      "cost_charged": 1.0,
+      "mos": 4.4649,
+      "wer": 0.2921,
+      "cer": 0.1538,
+      "asr_model_id": "openai/whisper-large-v3-turbo"
+    }
+  },
+  "kokoro": {
+    "job_id": "ba1f4c2e-7ed5-4539-abdc-1d9cf4eeedfa",
+    "status": "completed",
+    "model_id": "kokoro",
+    "output_name": "ronanarraig/tricky-tts-v2-eval-kokoro",
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-kokoro",
+    "result": {
+      "num_samples": 48,
+      "num_successful": 48,
+      "total_duration_s": 681.9259583333335,
+      "total_runtime_seconds": 332.0774893760681,
+      "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-kokoro",
+      "cost_charged": 1.0,
+      "mos": 4.5255,
+      "wer": 0.6584,
+      "cer": 0.399,
+      "asr_model_id": "openai/whisper-large-v3-turbo"
+    }
+  },
+  "unsloth/orpheus-3b-0.1-ft": {
+    "job_id": "15ddefb0-64ba-492e-add1-9cf07c0d26bb",
+    "status": "completed",
+    "model_id": "unsloth/orpheus-3b-0.1-ft",
+    "output_name": "ronanarraig/tricky-tts-v2-eval-orpheus",
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-orpheus",
+    "result": {
+      "num_samples": 48,
+      "num_successful": 48,
+      "total_duration_s": 627.8826666666668,
+      "total_runtime_seconds": 291.91924834251404,
+      "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-v2-eval-orpheus",
+      "cost_charged": 1.0,
+      "mos": 4.2811,
+      "wer": 0.363,
+      "cer": 0.1844,
+      "asr_model_id": "openai/whisper-large-v3-turbo"
+    }
+  }
+}

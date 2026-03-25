@@ -1,0 +1,27 @@
+{
+  "ElevenLabs": {
+    "job_id": "27592fcf-e607-4135-9d9c-a2d82370fa80",
+    "model_id": "elevenlabs/eleven-multilingual-v2",
+    "output_name": "tricky-tts-v2-eval-elevenlabs"
+  },
+  "Cartesia Sonic-3": {
+    "job_id": "9e954f0c-5f30-47d9-a275-d949d0b55299",
+    "model_id": "cartesia/sonic-3",
+    "output_name": "tricky-tts-v2-eval-cartesia"
+  },
+  "GPT-4o mini TTS": {
+    "job_id": "38377040-cd94-48f3-af96-5abb11cf43e1",
+    "model_id": "openai/gpt-4o-mini-tts",
+    "output_name": "tricky-tts-v2-eval-gpt4o-mini"
+  },
+  "Kokoro": {
+    "job_id": "ba1f4c2e-7ed5-4539-abdc-1d9cf4eeedfa",
+    "model_id": "kokoro",
+    "output_name": "tricky-tts-v2-eval-kokoro"
+  },
+  "Orpheus": {
+    "job_id": "15ddefb0-64ba-492e-add1-9cf07c0d26bb",
+    "model_id": "unsloth/orpheus-3b-0.1-ft",
+    "output_name": "tricky-tts-v2-eval-orpheus"
+  }
+}

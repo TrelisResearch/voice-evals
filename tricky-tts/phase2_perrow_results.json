@@ -1,0 +1,1826 @@
+[
+  {
+    "text": "Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf. on Cardiology (ISBN: 978-0-12-345678-9) data showing LDL reductions of 42%\u00b17% using 20mg/dL dosing protocols.",
+    "category": "edge_cases",
+    "spoken_form": "Doctor Zhang, M D, P H D, F A C C, presented at the fifth Annual Conference on Cardiology (I S B N nine seven eight zero twelve three four five six seven eight nine) data showing L D L reductions of forty-two percent plus or minus seven percent using twenty milligrams per deciliter dosing protocols.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1887,
+        "wer": 0.2222,
+        "asr_transcription": " Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Annauts Conf on Cardiology, ISBN 978-0-12-3-4-5-9, data showing LDL reductions of 42% plus 7% using 20-mbringed ratemose DL dosing protocols."
+      },
+      "cartesia": {
+        "cer": 0.1321,
+        "wer": 0.3889,
+        "asr_transcription": " Dr. Zhang, MD, pfei.d, fei-cc, presented at the 5th AN, conf, on cardiology ISBN 978012345678, nine data showing LDL reductions of 42%, 7% using 20MG, slash DL dosing protocols."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1635,
+        "wer": 0.5,
+        "asr_transcription": " Dr. Zhang, MD, PhD, FACC, presented at the 5th Annual Conference on Cardiology, ISBN 978-012-3456789, data showing LDL reductions of 42% plus 7% using 20 mg per DL dosing protocols."
+      },
+      "kokoro": {
+        "cer": 0.1384,
+        "wer": 0.5,
+        "asr_transcription": " Dr. Zhang, MD, PhD, FACC, presented at the 5th AN. Conf on Cardiology, ISBN, 970-8012-3456789, data showing LDL reductions of 42% plus 7% using 20-MG-slash-DL dosing protocols."
+      },
+      "orpheus": {
+        "cer": 0.1069,
+        "wer": 0.4722,
+        "asr_transcription": " Dr. Zhang, MD, PhD, FACC, presented at the 5th AN, ConfOn Cardiology, ISBN 9780-12-3456789, data showing LDL reductions of 42% plus or 7% using 20mg DL dosing protocols."
+      }
+    },
+    "median_cer": 0.1384,
+    "max_cer": 0.1887,
+    "min_cer": 0.1069,
+    "mean_cer": 0.14592,
+    "n_models": 5
+  },
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234\u201389 of the J. Phys. Chem., noting that samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+    "category": "edge_cases",
+    "spoken_form": "The manuscript cited Volume forty-seven, Number three, pages twelve thirty-four to eighty-nine of the J Phys Chem, noting that samples required greater than or equal to ninety-nine point nine percent purity and storage at minus eighty degrees Celsius plus or minus two degrees Celsius in fifty micrograms per milliliter aliquots.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.4218,
+        "wer": 0.4848,
+        "asr_transcription": " The manuscript cited Volumbra 47, No. 3, P. Peach in 12.3489 of the J. Physant Chem, noting that samples required 99.9% purity and storage at 80 dexpanbit tube in size in two outings in 15 multiplicates."
+      },
+      "cartesia": {
+        "cer": 0.3197,
+        "wer": 0.3636,
+        "asr_transcription": " The manuscript cited vol. 47, no. 3, PP. 1234. 89 of the JFIS. Chem, noting that samples require 99.9% purity and storage at 80 degrees Celsius, 2 degrees Celsius and 5, 0 Muji, slash ML aliquots."
+      },
+      "gpt4o_mini": {
+        "cer": 0.5918,
+        "wer": 0.6061,
+        "asr_transcription": " The manuscript cited Volume 47, Number 3, PP123489 of the J. Physchem, noting that samples required to 99.9% purity and storage at negative 80 degrees Celsius, plus or minus 2 degrees Celsius in 50 micrograms per milliliter aliquots."
+      },
+      "kokoro": {
+        "cer": 0.483,
+        "wer": 0.4848,
+        "asr_transcription": " The manuscript cited vol. 47, number 3, pp. 1,234.89 of the J-phys. Chem. Noting that samples required greater or equal to 99, 9% purity and storage at minus 80 degrees C plus or minus 2 degrees C in 50 Mug slash ML aliquots."
+      },
+      "orpheus": {
+        "cer": 0.4694,
+        "wer": 0.4242,
+        "asr_transcription": " The manuscript cited volume 47, number 3, PP, 1234-89 of the J-Phys. Chem, noting that samples required e-crink 99.9% purity and storage at minus 80 degrees Celsius plus 2 degrees Celsius and 50 microbele clots."
+      }
+    },
+    "median_cer": 0.4694,
+    "max_cer": 0.5918,
+    "min_cer": 0.3197,
+    "mean_cer": 0.45714,
+    "n_models": 5
+  },
+  {
+    "text": "The property at 789 St. Clair Ave., measuring 2,450ft\u00b2 (227.6m\u00b2), sold for \u00a3875,000.50 to Mr. & Mrs. St. John-Smythe, Esq., C.Eng., F.I.C.E. on Feb. 14th at 2:15pm.",
+    "category": "edge_cases",
+    "spoken_form": "The property at seven eight nine Saint Clair Avenue, measuring two thousand four hundred fifty square feet, two hundred twenty-seven point six square meters, sold for eight hundred seventy-five thousand pounds and fifty pence to Mister and Misses Saint John Smythe, Esquire, Chartered Engineer, F I C E on February fourteenth at two fifteen p m.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.2569,
+        "wer": 0.3056,
+        "asr_transcription": " The property at 789 St. Clair Averson, measuring 2,455,227.6, sold for $875,000, 50 to Mr. and Mrs. St. John Smythe, escrowing. See Ngebunko F.I.C.E. on February 14th at 2.15 p.m."
+      },
+      "cartesia": {
+        "cer": 0.4306,
+        "wer": 0.6111,
+        "asr_transcription": " The property at 789 says, Clare Avenue, measuring 2,450 FT squared, 227.6 square meters, sold for 875,000 pounds 50 pence to Mr. and Mrs. St. John Smythe ESQ. Seeing, Feist on February 14th at 2.15 p.m."
+      },
+      "gpt4o_mini": {
+        "cer": 0.4167,
+        "wer": 0.5833,
+        "asr_transcription": " The property at 789 St. Clair Ave, measuring 2,450 feet squared, 227.6 meters squared, sold for 875,000 pounds and 50 cents to Mr. and Mrs. St. John Smythe-esque CNJ FICE on February 14th at 2.15 p.m."
+      },
+      "kokoro": {
+        "cer": 0.3125,
+        "wer": 0.5556,
+        "asr_transcription": " The property at 789 Cent Claire Ave, measuring two 450 FD2, 227.6 M2, sold for 875,000 pounds and 50 pence to Mr. and Mrs. Cent John Smythe, Esquire, C. Eng. FICE on Feb. 14th at 2, 15 p.m."
+      },
+      "orpheus": {
+        "cer": 0.3056,
+        "wer": 0.4722,
+        "asr_transcription": " The property at 789 St. Clair Ave, measuring 2,450 squared, 227.6 squares, sold for 875,000 pounds 50 to Mr. and Mrs. St. John Smythe, ESC, Koenings, FIC, on February 14th at 2.15 p.m."
+      }
+    },
+    "median_cer": 0.3125,
+    "max_cer": 0.4306,
+    "min_cer": 0.2569,
+    "mean_cer": 0.34446000000000004,
+    "n_models": 5
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67\u2013142, the circuit required 3.3V\u00b15%, 150mA max., with capacitance \u226410\u03bcF and operating temps between \u221240\u00b0C and +85\u00b0C per MIL-STD-883.",
+    "category": "edge_cases",
+    "spoken_form": "According to I E E E Transactions Volume fifteen, pages sixty-seven to one forty-two, the circuit required three point three volts plus or minus five percent, one hundred fifty milliamps max, with capacitance less than or equal to ten microfarads and operating temps between minus forty degrees Celsius and plus eighty-five degrees Celsius per MIL standard eight eight three.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.3544,
+        "wer": 0.6061,
+        "asr_transcription": " According to IEE Transvulnern 15, PP 67142, the circuit required 3.3 V plus 5%, 150 monotolek max, with capacitance 9 or 10 mmF and operating temps between 40 degrees and 185 radigawine wires per mil STD883."
+      },
+      "cartesia": {
+        "cer": 0.2848,
+        "wer": 0.4545,
+        "asr_transcription": " According to IEE Trans. Vol. 15 pp. 67. 142, the circuit required 3.3 VVO percent, 150 mA max, with capacitance 10F and operating temps between 40 degrees Celsius and plus 85 degrees C per m ILS TD8-83."
+      },
+      "gpt4o_mini": {
+        "cer": 0.5443,
+        "wer": 0.5152,
+        "asr_transcription": " According to IEEE Trans Volume 15, PP 67-142, the circuit required 3.3 volts plus minus 5%, 150 milliamps max, with capacitance less than 10 microfarad, and operating temps between minus 40 degrees Celsius and plus 85 degrees Celsius, per MIL-STD-883."
+      },
+      "kokoro": {
+        "cer": 0.4177,
+        "wer": 0.6364,
+        "asr_transcription": " According to IEEE Trans, vol, 15 pp, 67142, the circuit required 3, 3 v plus or minus 5%, 150 mA max, with capacitance less or equal to 10 mu F and operating temps between minus 40 degrees C and plus 85 degrees C per mil SDD 883."
+      },
+      "orpheus": {
+        "cer": 0.6076,
+        "wer": 0.7576,
+        "asr_transcription": " According to IEEE Trans, volume 15 PP 67 to 142, the circuit required 3.3 volts plus 5%, 150 mAh max, with capacitance 10 mAh max, with capacitance to load 10 mF, non-rating temps between minus 40 degrees Celsius and past 85 degrees Celsius per mil STD 83."
+      }
+    },
+    "median_cer": 0.4177,
+    "max_cer": 0.6076,
+    "min_cer": 0.2848,
+    "mean_cer": 0.44176000000000004,
+    "n_models": 5
+  },
+  {
+    "text": "The athlete, standing 6ft 3in and weighing 195lb, completed the 100m in 9.58sec at the 23rd Int'l Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "category": "edge_cases",
+    "spoken_form": "The athlete, standing six feet three inches and weighing one hundred ninety-five pounds, completed the one hundred meters in nine point five eight seconds at the twenty-third International Championships held on Saint Patrick's Day at Saint Mary's Stadium.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.2,
+        "wer": 0.4286,
+        "asr_transcription": " The athlete, standing six-sift, three-in, and weighing 195 Alley B, completed the 100 milliliters in 9.58 sec at the 23rd Intel Championships held on St. Patrick's Day at St. Mary's Stadium."
+      },
+      "cartesia": {
+        "cer": 0.1355,
+        "wer": 0.3214,
+        "asr_transcription": " The athlete, standing six feet three in and weighing 195 pounds, completed the 100M in 9.58 sec at the 23rd Intel Championships held on St. Patrick's Day at St. Mary's Stadium."
+      },
+      "gpt4o_mini": {
+        "cer": 0.2258,
+        "wer": 0.3929,
+        "asr_transcription": " The athlete, standing 6 foot 3 inches and weighing 195 pounds, completed the 100 meters in 9.58 seconds at the 23rd International Championships held on St. Patrick's Day at St. Mary's Stadium."
+      },
+      "kokoro": {
+        "cer": 0.0387,
+        "wer": 0.2857,
+        "asr_transcription": " The athlete, standing 6 FT3 in and weighing 195 LB, completed the 100M in 9.58 sec at the 23rd Intel Championships held on St. Patrick's Day at St. Mary's Stadium."
+      },
+      "orpheus": {
+        "cer": 0.1419,
+        "wer": 0.3571,
+        "asr_transcription": " The athlete, standing 6'3 in and weighing 195 pounds, completed the 100 meters and 9.58 secs at the 23rd Intay Championships held on St. Patrick's Day at St. Mary's Stadium."
+      }
+    },
+    "median_cer": 0.1419,
+    "max_cer": 0.2258,
+    "min_cer": 0.0387,
+    "mean_cer": 0.14838,
+    "n_models": 5
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., who lives at 123 St. George St., reported that the solution's pH was 7.4\u00b10.2 at 25\u00b0C, with CO\u2082 levels \u2265400ppm.",
+    "category": "edge_cases",
+    "spoken_form": "Doctor Saint James, P H D, F R S, who lives at one twenty-three Saint George Street, reported that the solution's pH was seven point four plus or minus zero point two at twenty-five degrees Celsius, with C O two levels greater than or equal to four hundred parts per million.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.126,
+        "wer": 0.25,
+        "asr_transcription": " Dr. St. James, Ph.D., FRS, who lives at 123 St. George St., reported that the solution's pH was 7.4 plus 0.2 at 25 degrees, with CO2 levels 400 ppm."
+      },
+      "cartesia": {
+        "cer": 0.2205,
+        "wer": 0.375,
+        "asr_transcription": " Dr. St. James, PEEF.D, FRS, who lives at 123 SAIT. George Street reported that the solution's pH was 7.4, 0.4 at 25 degrees Celsius, with CO2 levels 400 ppm."
+      },
+      "gpt4o_mini": {
+        "cer": 0.2756,
+        "wer": 0.3438,
+        "asr_transcription": " Dr. St. James, Ph.D., FRS, who lives at 123 St. George Street, reported that the solution's pH was 7.4 \u00b1 0.2 at 25 degrees Celsius, with CO2 levels greater than 400 ppm."
+      },
+      "kokoro": {
+        "cer": 0.3622,
+        "wer": 0.4375,
+        "asr_transcription": " Dr. St. James, Ph.D., FRS, who lives at 123 St. George St., reported that the solution's pH was 7, 4 plus or minus 0, 2 at 25 degrees C, with CO2 levels greater or equal to 400 ppm."
+      },
+      "orpheus": {
+        "cer": 0.252,
+        "wer": 0.3125,
+        "asr_transcription": " Dr. St. James, Ph.D. FRS, who lives at 123 St. George St., reported that the solution's pH was 7.4+, not 0.2 at 25 degrees Celsius, with CO2 levels Grieverin 400 ppm."
+      }
+    },
+    "median_cer": 0.252,
+    "max_cer": 0.3622,
+    "min_cer": 0.126,
+    "mean_cer": 0.24726000000000004,
+    "n_models": 5
+  },
+  {
+    "text": "Send $1.25M to account GB29-NWBK-6016-1331-9268-19 by 3:00pm EST or contact Ms. St. Claire, B.Sc.(Hons), M.B.A. at extension x5847 before the Q3 deadline.",
+    "category": "edge_cases",
+    "spoken_form": "Send one point two five million dollars to account G B twenty-nine N W B K six zero one six one three three one nine two six eight nineteen by three zero zero p m E S T or contact Miss Saint Claire, B S C Honours, M B A at extension five eight four seven before the Q three deadline.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0828,
+        "wer": 0.4545,
+        "asr_transcription": " Send 125 to account GB29NWBK 6016-1331-926819 by 3 p.m. EST or contact Ms. St. Clair, BSC, Hans, MBA at extension X5847 before the Q3 deadline."
+      },
+      "cartesia": {
+        "cer": 0.1448,
+        "wer": 0.5455,
+        "asr_transcription": " Send $1.25 million to account GB29NWBK60161331926819 by 3 p.m. ESD or contact Ms. St. Clair, BSC.Hans, MBA at extension X5847 before the Q3 deadline."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1379,
+        "wer": 0.4242,
+        "asr_transcription": " Send $1.25 million to account GB29NWBK 6016-1331-926819 by 3 p.m. EST or contact Ms. St. Clair B.S. Cian's MBA at extension X5847 before the Q3 deadline."
+      },
+      "kokoro": {
+        "cer": 0.0897,
+        "wer": 0.3636,
+        "asr_transcription": " Send $1.25M to account GB29NWBK 601613-3192-6819 by 3, 00PM ESD, or contact Ms. Cent. Claire B., SC. Hans, MBA at extension X5847 before the Q3 deadline."
+      },
+      "orpheus": {
+        "cer": 0.2276,
+        "wer": 0.5758,
+        "asr_transcription": " Send $125 million to account GB29NWBK60161331, time 216819 by 3.00 p.m. ESTIS dead, or contact Ms. St. Clair, BSE, Hans, MBA, at extension X5847 before the Q3 deadline."
+      }
+    },
+    "median_cer": 0.1379,
+    "max_cer": 0.2276,
+    "min_cer": 0.0828,
+    "mean_cer": 0.13656000000000001,
+    "n_models": 5
+  },
+  {
+    "text": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James Pl., announced services at 10:30am and 6:45pm; call 0800-PRAYERS or visit www.st-aug.org.uk.",
+    "category": "edge_cases",
+    "spoken_form": "Reverend Doctor Saint Pierre, T H D, D D, residing at Saint Augustine's Rectory, four five six Saint James Place, announced services at ten thirty a m and six forty-five p m; call zero eight hundred PRAYERS or visit www dot st dash aug dot org dot U K.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0926,
+        "wer": 0.4,
+        "asr_transcription": " Rev. Dr. St. Pierre Thaudi, DD, residing at St. Augustine's Rectory, 456 St. James Powell. Announce services at 10.30 a.m. and 6.45 p.m. Call 0800-PRAYERS or visit www.stayug.org.uk."
+      },
+      "cartesia": {
+        "cer": 0.1358,
+        "wer": 0.6286,
+        "asr_transcription": " Rev. Dr. St. Pierre, the.D, DD, residing at St. Augustine's Rectory, 4568. James Place, announce services at 10.30 a.m. and 6.45 p.m. Call 0800, P-R-A-Y-E-R-S, or visit www.stog.org.uk."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0926,
+        "wer": 0.3714,
+        "asr_transcription": " Rev. Dr. St. Pierre, THD, D.D., residing at St. Augustine's Rectory, 456 St. James Place. Announce services at 1030 a.m. and 645 p.m. Call 0800-PRAYERS or visit www.staug.org."
+      },
+      "kokoro": {
+        "cer": 0.0864,
+        "wer": 0.4286,
+        "asr_transcription": " Rev. Dr. St. Pierre, THD, DD, reciting at St. Augustine's Rectory, 456 St. James, PL. Announce services at 10.30 a.m. and 6, 45 p.m. Call 800 prayers or visit www.syntag.org, UK."
+      },
+      "orpheus": {
+        "cer": 0.321,
+        "wer": 0.6,
+        "asr_transcription": " Rev. Dr. St. Pierre, THDD, residing at St. Augustine's Rectory, 456 St. James Player, announced services at 10.30 a.m. and 6.45 p.m. Call 080-Bowichiro, Prayers, or visit www.arboe.nard. That's data, www.ard.ard.r.uk."
+      }
+    },
+    "median_cer": 0.0926,
+    "max_cer": 0.321,
+    "min_cer": 0.0864,
+    "mean_cer": 0.14567999999999998,
+    "n_models": 5
+  },
+  {
+    "text": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring blaCTX-M-15 require meropenem 2g IV q8h when MIC values reach 8-16\u03bcg/mL per EUCAST v.13.0 breakpoints.",
+    "category": "domain_specific",
+    "spoken_form": "Escherichia coli strain O one five seven colon H seven and Salmonella enterica serovar Typhimurium strain L T two harboring bla C T X dash M dash fifteen require meropenem two grams I V every eight hours when M I C values reach eight to sixteen micrograms per milliliter per E U C A S T version thirteen point zero breakpoints.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0859,
+        "wer": 0.4118,
+        "asr_transcription": " Escherichia coli strain, O157TH7, and Salmonella enterica sorovar. Typhumurium strain, LT2, harboring BLA-CTX-M15. Require meropenum 2GIV-Q8H when MIC values reach 8060 mg ml per UCAS-V to 13.0 breakpoints."
+      },
+      "cartesia": {
+        "cer": 0.2424,
+        "wer": 0.9706,
+        "asr_transcription": " Escherichia coli strain O-1-5-7. Colon H-7 in Salmonella entorica serover typhumorium strain LT2 harboring black T-X-M1-5. Require meropenem 2GIVQ8H when MIC values reach 816 mu G. Slash ml per e u c a s t v 1 3. Dot zero breakpoints."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1768,
+        "wer": 0.3824,
+        "asr_transcription": " Escherichia coli strain 057H7 and Salmonella enterica cerevar typhimurium strain LT2 harboring Blah CTXM15 require meropenem 2G IV Q8H when MIC values reach 8 to 16 micrograms per milliliter per EUcast V13.0 breakpoints."
+      },
+      "kokoro": {
+        "cer": 0.1111,
+        "wer": 0.3824,
+        "asr_transcription": " Escherichia coli strain O157, H7, and Salmonella enterica cerevar typhimurium strain LT2 harboring BLAS CTXM 15 require meropenum 2G IVQ8H, when MIC values reach 8-16 MUG slash ML per EUCASD V13 zero breakpoints."
+      },
+      "orpheus": {
+        "cer": 0.1465,
+        "wer": 0.4412,
+        "asr_transcription": " Escherichia coli strain 0157HA7 and Salmonella enterica serovar typhinarium strain LT2 harboring Black's M15 require meropenem 2GIV Q8H when MIC values reach 8-6 co-gram point VIRG breakpoints."
+      }
+    },
+    "median_cer": 0.1465,
+    "max_cer": 0.2424,
+    "min_cer": 0.0859,
+    "mean_cer": 0.15254,
+    "n_models": 5
+  },
+  {
+    "text": "In Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999), expert testimony regarding (R)-2-acetamido-N-(2,6-dimethylphenyl)propanamide (CAS 53994-73-3) metabolism via CYP2D6*17 allele variants was challenged under Fed.R.Evid. 702.",
+    "category": "domain_specific",
+    "spoken_form": "In Kumho Tire Company versus Carmichael, five hundred twenty-six U S one hundred thirty-seven nineteen ninety-nine, expert testimony regarding R two acetamido N two six dimethylphenyl propanamide C A S five three nine nine",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0425,
+        "wer": 0.1282,
+        "asr_transcription": " In Kumho Tire Convermers Carmichael, 526 U.S., 137, 1999. Expert testimony regarding R2-acetamido-N, 2,6-dimethylphenol, propanamide, CAS-53994-73-3. Metabolism via CYP2D6-17 allele variants was challenged under FED.R.EVID-702."
+      },
+      "cartesia": {
+        "cer": 0.1321,
+        "wer": 0.4872,
+        "asr_transcription": " And Kumho Tire Company V. Carmichael 526, U.S. 137, 1999. Expert testimony regarding R2-acetamido, 2,6-dimethylphenylpropanamide, KS5-3994. 7.3. Three metabolism via CYP. 2D6.1.7 allele variance was challenged under Fed.re VID702."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0519,
+        "wer": 0.2564,
+        "asr_transcription": " In Kumho Tyre Co. v. Carmichael, 526 U.S. 137, 1999, expert testimony regarding R2-acetamido N-2,6-dimethylphenylpropanamide, CAS-53994733, metabolism via CYP2D6-SQ17 allele variants, was challenged under Fed.R Evidence 702."
+      },
+      "kokoro": {
+        "cer": 0.033,
+        "wer": 0.1538,
+        "asr_transcription": " In Cumho Tire Co. v. Carmichael, 526 U.S. 137, 1999, expert testimony regarding R-2-acetamiduen, 2-6-dimethylphenyl, propanamide, CAS 53,990-4733, metabolism via CYP2D6-17 allele variants was challenged under FED, R-EVID, 702."
+      },
+      "orpheus": {
+        "cer": 0.1698,
+        "wer": 0.4359,
+        "asr_transcription": " In Kumho Tire Co. v. Carmichael, 526 U.S. 137, 1999, expert testimony regarding RPCsineon.comithole, or Phanamide, Cas3994-733 metabolism via CYP2D617 allele variants was challenged under FEDA, Evident 702."
+      }
+    },
+    "median_cer": 0.0519,
+    "max_cer": 0.1698,
+    "min_cer": 0.033,
+    "mean_cer": 0.08586,
+    "n_models": 5
+  },
+  {
+    "text": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0\u00b0C \u00b1 0.2\u00b0C maintaining pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "spoken_form": "Administer zero point two five milliliters of one times ten to the minus fourth moles per liter two R comma three S comma four R comma five R dash two comma three comma four comma five comma six pentahydroxyhexanal C A S fifty ninety-nine seven to Saccharomyces cerevisiae strain S two eighty-eight C and Candida albicans strain S C five three one four at thirty point zero degrees Celsius plus or minus zero point two degrees Celsius maintaining p H five point five plus or minus zero point zero five per A S T M E two one four nine dash thirteen a.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1757,
+        "wer": 0.26,
+        "asr_transcription": " Administer 0.25 ml of 1.10 to 4mol nor L, 2R, 3S, 4R, 5R, 2, 3, 4, 5, 6, pentahydroxyhexanol, CAS, 50, 99, 7. To Saccharomyces caraviciae strain S288C and Canada albicans strain SC5314 at 30.0 degrees plus 0.2 degrees maintaining pH 5.5 plus 0.05 per ASTM E2149-138."
+      },
+      "cartesia": {
+        "cer": 0.4144,
+        "wer": 0.82,
+        "asr_transcription": " Administer 0.25 ml of 110 to the 4th PowerMol slash L2, R3, S4, R5, R2. 3, 4, 5, 6-penahydroxyhexanal cast 5, 0, 9, 9, 7 to Saccharomyces cerevisia strain S2, 8, 8, C, and Candida albicans strain S, C, 5. 3, 1, 4, at 30.0 degrees Celsius Celsius 0.0 degrees Celsius, maintaining pH 5.5, 0.5 pi per HDME to 14913A."
+      },
+      "gpt4o_mini": {
+        "cer": 0.3739,
+        "wer": 0.46,
+        "asr_transcription": " Administer 0.25 milliliters of 1 times 10 to the minus 4th mole liter, 2R, 3S, 4R, 5R, 23456, pentahydroxyhexanel, CAS 1599-7, to Saccharomyces cerevisiae, strain S288C, and Candida albicans strain SC5314, at 30.0 degrees Celsius, plus 0.2 degrees Celsius, maintaining pH 5.5 plus 0.05 per ASTM E2149-13A."
+      },
+      "kokoro": {
+        "cer": 0.3378,
+        "wer": 0.46,
+        "asr_transcription": " Administer, ML of 1 times 10 mol slash L, 2R3, 4R, 5R minus 2, 3, 4, 5, 6-pentahydroxyhexanol, CAS 5099-7, to Saccharomyces cerevisiae strain S288C and Canada albicans strain SC 5314 at 30. 0 degrees C plus or minus 0. 2 degrees C maintaining pH 5.5 plus or minus 0.05 per ASDM E2149-13A."
+      },
+      "orpheus": {
+        "cer": 0.4234,
+        "wer": 0.74,
+        "asr_transcription": " Hitchminister of 0.25L plus Us223456-Penhydroxyhexanol, KS50997, Isaccharomyces cerevisiae strain, SU88C, and Camudot albican strain, SCM3-4 at 30.0 degrees Celsius plus 0.2 degrees Celsius, maintaining pH 5.5 plus 0.05 per ASTM E2-149-13A."
+      }
+    },
+    "median_cer": 0.3739,
+    "max_cer": 0.4234,
+    "min_cer": 0.1757,
+    "mean_cer": 0.34504,
+    "n_models": 5
+  },
+  {
+    "text": "Per Frye v. United States, 293 F. 1013 (D.C. Cir. 1923), analysis of (S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid (CAS 59-92-7) degradation via COMT Val158Met polymorphism requires HPLC-MS/MS sensitivity \u22640.5ng/mL conforming to FDA Guidance 2018.",
+    "category": "domain_specific",
+    "spoken_form": "Per Frye versus United States, two ninety-three F. one zero one three, D.C. Circuit nineteen twenty-three, analysis of S-two-amino-three-three comma four-dihydroxyphenyl propanoic acid, C A S fifty-nine ninety-two seven, degradation via C O M T Val one five eight Met polymorphism requires H P L C-M S slash M S sensitivity less than or equal to zero point five nanograms per milliliter conforming to F D A Guidance twenty eighteen.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1568,
+        "wer": 0.5333,
+        "asr_transcription": " Per Fry-Viz United States, 293F, tendon 13, DC, subjure 1923. Analysis of S2-amino-3, 3-cone-4-dihydroxyphenylpropanoic acid, KS-5992E7. Degradation via KOMT-VAL-158-METI. Polymorphism requires HPLC-MS-MS sensitivity. 0.5 in GML conforming to FDA guidance 2018."
+      },
+      "cartesia": {
+        "cer": 0.0932,
+        "wer": 0.4889,
+        "asr_transcription": " Per Fry V, United States 293 F1013 DC, sir. 1923, analysis of S2-amino-3, 3, 4-dihydroxyphenylpropanoic acid, Cas5-9. 9-2, 7-degradation via ComteVal-158 metpolymorphism requires HPLCM-S-MS sensitivity 0. 5-NG, slash ML conforming to FDA guidance 2018."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1314,
+        "wer": 0.4889,
+        "asr_transcription": " Per Fry the United States, 293F1013, DC-SER 1923, Analysis of S-2-amino-3-3-4-dihydroxyphenylpropanoic acid, CAS-59929, Degradation via CONT-VAL-158-met polymorphism, Requires HPLC-MS-MS sensitivity less than 0.5 ng per ml, Conforming to FDA Guidance 2018."
+      },
+      "kokoro": {
+        "cer": 0.1525,
+        "wer": 0.3778,
+        "asr_transcription": " Per Frye v. United States, 293 F1013, DC, sir. 1923, analysis of S-2-amino-3-3, 4-dehydroxaphenyl, propanoic acid, CAS-5992-7, degradation via COMT-VAL-158 metpolymorphism requires HPLC-MS-MS sensitivity less or equal to zero. 5NG-slash-ML conforming to FDA guidance 2018."
+      },
+      "orpheus": {
+        "cer": 0.2881,
+        "wer": 0.5333,
+        "asr_transcription": " Per Frye v. United States, 293 F13DC, Sir, 1923, Analysis of S2-amino-334-dihydroxyphenyl, propanoic acid, KS59-92-7, Degradation via OMT-Val-158-Medridilla Conforming to FDA Dinance, 2018."
+      }
+    },
+    "median_cer": 0.1525,
+    "max_cer": 0.2881,
+    "min_cer": 0.0932,
+    "mean_cer": 0.1644,
+    "n_models": 5
+  },
+  {
+    "text": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "category": "phonetic",
+    "spoken_form": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.032,
+        "wer": 0.1765,
+        "asr_transcription": " The conduct of the Leicester Conference will conduct attendees through Todd G.'s analysis of schadenfreude in German literature."
+      },
+      "cartesia": {
+        "cer": 0.024,
+        "wer": 0.0588,
+        "asr_transcription": " The conduct of the Leicester Conference will conduct attendees through Todd's analysis of Schadenfreude in German literature."
+      },
+      "gpt4o_mini": {
+        "cer": 0.016,
+        "wer": 0.0588,
+        "asr_transcription": " The conduct of the Leicester Conference will conduct attendees through TAG's analysis of schadenfreude in German literature."
+      },
+      "kokoro": {
+        "cer": 0.016,
+        "wer": 0.0588,
+        "asr_transcription": " The conduct of the Leicester Conference will conduct attendees through TAG's analysis of schadenfreude in German literature."
+      },
+      "orpheus": {
+        "cer": 0.024,
+        "wer": 0.0588,
+        "asr_transcription": " The conduct of the Leicester Conference will conduct attendees through Tagi's analysis of Schadenfreude in German literature."
+      }
+    },
+    "median_cer": 0.024,
+    "max_cer": 0.032,
+    "min_cer": 0.016,
+    "mean_cer": 0.022400000000000003,
+    "n_models": 5
+  },
+  {
+    "text": "The present study will present evidence that Caoimhe experienced schadenfreude watching her rival's failure in Loughborough.",
+    "category": "phonetic",
+    "spoken_form": "The present study will present evidence that Keeva experienced schadenfreude watching her rival's failure in Luffburuh.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0325,
+        "wer": 0.0625,
+        "asr_transcription": " The present study will present evidence that Kawimi experienced schadenfreude watching her rival's failure in Loughborough."
+      },
+      "cartesia": {
+        "cer": 0.0325,
+        "wer": 0.125,
+        "asr_transcription": " The present study will present evidence that Kawi Mehe experienced schadenfreude watching her rival's failure in Loughborough."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0488,
+        "wer": 0.125,
+        "asr_transcription": " The present study will present evidence that K-Wave experienced schadenfreude watching her rival's failure in Loughborough."
+      },
+      "kokoro": {
+        "cer": 0.0488,
+        "wer": 0.0625,
+        "asr_transcription": " The present study will present evidence that Kiva experienced schadenfreude watching her rival's failure in Loughborough."
+      },
+      "orpheus": {
+        "cer": 0.0488,
+        "wer": 0.125,
+        "asr_transcription": " The present study will present evidence that Salem Hay experienced schadenfreude watching her rival's failure in Loughborough."
+      }
+    },
+    "median_cer": 0.0488,
+    "max_cer": 0.0488,
+    "min_cer": 0.0325,
+    "mean_cer": 0.042280000000000005,
+    "n_models": 5
+  },
+  {
+    "text": "When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobh\u00e1n's Welsh compositions.",
+    "category": "phonetic",
+    "spoken_form": "When they present the present to Eefa at Luffburra, they'll record her record collection featuring Shivawn's Welsh compositions.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0462,
+        "wer": 0.0556,
+        "asr_transcription": " When they present the present to Aoife at Loughborough, they'll record her record collection featuring Chauvin's Welsh compositions."
+      },
+      "cartesia": {
+        "cer": 0.0154,
+        "wer": 0.1111,
+        "asr_transcription": " When they present the present to Aoifei at Loughborough, they'll record her record collection featuring Siobhan's Welsh compositions."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0077,
+        "wer": 0.0556,
+        "asr_transcription": " When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhan's Welsh compositions."
+      },
+      "kokoro": {
+        "cer": 0.0077,
+        "wer": 0.0556,
+        "asr_transcription": " When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhan's Welsh compositions."
+      },
+      "orpheus": {
+        "cer": 0.0462,
+        "wer": 0.1667,
+        "asr_transcription": " When they present the present to Afed Loughborough, they'll record her record collection featuring Siobhan's Welsh compositions."
+      }
+    },
+    "median_cer": 0.0154,
+    "max_cer": 0.0462,
+    "min_cer": 0.0077,
+    "mean_cer": 0.024640000000000002,
+    "n_models": 5
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "category": "phonetic",
+    "spoken_form": "Doctor Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0167,
+        "wer": 0.1176,
+        "asr_transcription": " Dr. Nguyen's Bildungsroman explores how Tathg must conduct himself with proper conduct while studying at Magdalene College."
+      },
+      "cartesia": {
+        "cer": 0.05,
+        "wer": 0.1765,
+        "asr_transcription": " Dr. Neuen's Bildungsroman explores how Todd must conduct himself with proper conduct while studying at Magdalene College."
+      },
+      "gpt4o_mini": {
+        "cer": 0.025,
+        "wer": 0.0588,
+        "asr_transcription": " Dr. Nguyen's Bildungsroman explores how Taj must conduct himself with proper conduct while studying at Magdalen College."
+      },
+      "kokoro": {
+        "cer": 0.0167,
+        "wer": 0.0588,
+        "asr_transcription": " Dr. Nguyen's Bildungsroman explores how Tagg must conduct himself with proper conduct while studying at Magdalen College."
+      },
+      "orpheus": {
+        "cer": 0.0583,
+        "wer": 0.1765,
+        "asr_transcription": " Dr. Nguyen's Bildungsroman explores how Tad DeRay must conduct himself with proper conduct while studying at Magdalene College."
+      }
+    },
+    "median_cer": 0.025,
+    "max_cer": 0.0583,
+    "min_cer": 0.0167,
+    "mean_cer": 0.033339999999999995,
+    "n_models": 5
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gem\u00fctlichkeit.",
+    "category": "phonetic",
+    "spoken_form": "Professor M B E K I will record N E E V's record-breaking translation of N A H W A T L poetry with remarkable gem\u00fctlichkeit.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gem\u00fctlichkeit."
+      },
+      "cartesia": {
+        "cer": 0.0631,
+        "wer": 0.0714,
+        "asr_transcription": " Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable jamutlijkaite."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0631,
+        "wer": 0.1429,
+        "asr_transcription": " Professor Mbeki will record Niamh's record-breaking translation of Nahatal poetry with remarkable Gemutlikite."
+      },
+      "kokoro": {
+        "cer": 0.1171,
+        "wer": 0.2857,
+        "asr_transcription": " Professor Embeke will record Nayim's record-breaking translation of Nahuatl poetry with remarkable Jem'atlich-Gate."
+      },
+      "orpheus": {
+        "cer": 0.1532,
+        "wer": 0.3571,
+        "asr_transcription": " Professor Mbeki will record Nave's record-breaking translation of Nahuatl poetry with a remarkable janal to Kate."
+      }
+    },
+    "median_cer": 0.0631,
+    "max_cer": 0.1532,
+    "min_cer": 0.0,
+    "mean_cer": 0.07930000000000001,
+    "n_models": 5
+  },
+  {
+    "text": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "category": "phonetic",
+    "spoken_form": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0172,
+        "wer": 0.0556,
+        "asr_transcription": " Eowife needed a permit to film, but the Leicester Council wouldn't permit shooting near the Ptolemy manuscript exhibit."
+      },
+      "cartesia": {
+        "cer": 0.0086,
+        "wer": 0.0556,
+        "asr_transcription": " Aoifei needed a permit to film, but the Leicester Council wouldn't permit shooting near the Ptolemy Manuscript exhibit."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Aoife needed a permit to film, but the Leicester Council wouldn't permit shooting near the Ptolemy manuscript exhibit."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Aoife needed a permit to film, but the Leicester Council wouldn't permit shooting near the Ptolemy manuscript exhibit."
+      },
+      "orpheus": {
+        "cer": 0.0603,
+        "wer": 0.1111,
+        "asr_transcription": " IFA needed a permit to film, but the Leicester Council wouldn't permit shooting near the Tallamy Manuscript exhibit."
+      }
+    },
+    "median_cer": 0.0086,
+    "max_cer": 0.0603,
+    "min_cer": 0.0,
+    "mean_cer": 0.01722,
+    "n_models": 5
+  },
+  {
+    "text": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "category": "phonetic",
+    "spoken_form": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0673,
+        "wer": 0.0714,
+        "asr_transcription": " The content of Ceres' thesis made her content, exploring Weltanschauung in Gloucester's medieval texts."
+      },
+      "cartesia": {
+        "cer": 0.0865,
+        "wer": 0.2143,
+        "asr_transcription": " The content of Saoirse's thesis made her content, exploring Welton Xiong and Gloucester's medieval texts."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " The content of Saoirse's thesis made her content. Exploring Weltanschauung in Gloucester's medieval texts."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " The content of Saoirse's thesis made her content, exploring Weltanschauung in Gloucester's medieval texts."
+      },
+      "orpheus": {
+        "cer": 0.1058,
+        "wer": 0.1429,
+        "asr_transcription": " The content of Saers' thesis made her content, exploring Wealthanxiang in Gloucester's medieval texts."
+      }
+    },
+    "median_cer": 0.0673,
+    "max_cer": 0.1058,
+    "min_cer": 0.0,
+    "mean_cer": 0.05192,
+    "n_models": 5
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "spoken_form": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Doctor Nguyen.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0729,
+        "wer": 0.2667,
+        "asr_transcription": " Aithne and Kau Ilfin debated the mise en scene while eating Worcestershire sauce with Dr. Nguyen."
+      },
+      "cartesia": {
+        "cer": 0.1042,
+        "wer": 0.2,
+        "asr_transcription": " Ethani and Kowalhin debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0938,
+        "wer": 0.2,
+        "asr_transcription": " Ethna and Kalefin debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen."
+      },
+      "kokoro": {
+        "cer": 0.1354,
+        "wer": 0.3333,
+        "asr_transcription": " Ethan and Kilfin debated the Massey end scene while eating Worcestershire sauce with Dr. Nguyen."
+      },
+      "orpheus": {
+        "cer": 0.1042,
+        "wer": 0.2,
+        "asr_transcription": " Yithmi and Xiaofin debated the mise-en scene while eating Worcestershire sauce with Dr. Nguyen."
+      }
+    },
+    "median_cer": 0.1042,
+    "max_cer": 0.1354,
+    "min_cer": 0.0729,
+    "mean_cer": 0.1021,
+    "n_models": 5
+  },
+  {
+    "text": "We fine-tuned LLaMA 3.1 405B using LoRA on the meta-llama/Llama-3.1-405B-Instruct-hf checkpoint with rank 64 adapters.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned LLaMA three point one four oh five B using LoRA on the meta-llama slash Llama three point one four oh five B Instruct HF checkpoint with rank sixty-four adapters.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0598,
+        "wer": 0.2083,
+        "asr_transcription": " We fine-tuned Elema 3.1-405B using Laura on the MetaLama Lama 3.1-405B Instruct HF Checkpoint with rank 64 adapters."
+      },
+      "cartesia": {
+        "cer": 0.1282,
+        "wer": 0.4583,
+        "asr_transcription": " We fine-tuned LLMA 3.1405B using LARA on the meta-lama-slash LLAMA3.1. 4.0.5B. I instruct HF Checkpoint with rank 64 adapters."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " We fine-tuned Llama 3.1 405B using LoRa on the Meta Llama Llama 3.1-405B Instruct HF checkpoint with rank 64 adapters."
+      },
+      "kokoro": {
+        "cer": 0.0427,
+        "wer": 0.375,
+        "asr_transcription": " We fine-tuned LLMA 3.1405B using LoRa on the MetaLlama-Llama3. 1-405B InstructHF checkpoint with rank 64 adapters."
+      },
+      "orpheus": {
+        "cer": 0.0598,
+        "wer": 0.125,
+        "asr_transcription": " We fine-tune LMA 3.1 405B using LoRa on the Meadow Llama. Llama 3.1 405B instruct HF Checkpoint with rank 64 adapters."
+      }
+    },
+    "median_cer": 0.0598,
+    "max_cer": 0.1282,
+    "min_cer": 0.0,
+    "mean_cer": 0.058100000000000006,
+    "n_models": 5
+  },
+  {
+    "text": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+    "category": "ai_tech",
+    "spoken_form": "We benchmarked zero one A I slash Yi one point five thirty-four B Chat sixteen K against meta-llama slash Llama three point one seventy B Instruct using M M L U, G S M eight K at four-shot, and HumanEval benchmarks.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1374,
+        "wer": 0.7308,
+        "asr_transcription": " We benchmarked 0-1-A-I-D-WI-1.5-34-B-CHAT-A-16K against MetaLlamaShirLama32170B-Instruct using MMLU-GSM8KA4-SHOT and Human Eval Benchmarks."
+      },
+      "cartesia": {
+        "cer": 0.3053,
+        "wer": 1.0,
+        "asr_transcription": " We benchmarked 0-1-AI-slash-E-1-dot-5. 3-4-B-C-hat-16-K-against-Meta-Llama-slash-Llama-3-dot-1. 7-0-B. I instruct using MMLU-G-S-M-8-K-at-4-shot and Humane-Evil benchmarks."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0534,
+        "wer": 0.3846,
+        "asr_transcription": " We benchmarked 01-AI-YI-1.534B-Chat16K against MetaLlama-Llama3.1-70B-Instruct using MMLU, GSM8K at 4Shot, and HumanEval benchmarks."
+      },
+      "kokoro": {
+        "cer": 0.1145,
+        "wer": 0.5,
+        "asr_transcription": " We benchmarked 0-1-AI-slash-E1, 5-34-Bchat-16K against Meta-Llama-Llama-3-170B-Instruct using MMLU, GSM-8K at 4-shot, and human eval benchmarks."
+      },
+      "orpheus": {
+        "cer": 0.1069,
+        "wer": 0.5,
+        "asr_transcription": " We benchmarked 01AIEI 1.534B chat 16K against Meta Llama, Llama 3.170B instruct using MMLU, GSM 8K out of 4-shot, and human eval benchmarks."
+      }
+    },
+    "median_cer": 0.1145,
+    "max_cer": 0.3053,
+    "min_cer": 0.0534,
+    "mean_cer": 0.14350000000000002,
+    "n_models": 5
+  },
+  {
+    "text": "The claude-sonnet-4-5 model outperformed Gemma-2-27B-it on coding benchmarks as described in \u00a73.2 of the technical report.",
+    "category": "ai_tech",
+    "spoken_form": "The claude sonnet four dash five model outperformed Gemma two twenty-seven B I T on coding benchmarks as described in section three point two of the technical report.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1833,
+        "wer": 0.2174,
+        "asr_transcription": " The Claude-Sane 4-5 model outperformed Gemma 2, 20c even be it on coding benchmarks as described in Fairgroup 3.2 of the technical report."
+      },
+      "cartesia": {
+        "cer": 0.0917,
+        "wer": 0.1739,
+        "asr_transcription": " The Claude Sonnet-4-5 model outperformed Gemma-227-Beit on coding benchmarks as described in Section 3.2 of the technical report."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0917,
+        "wer": 0.1304,
+        "asr_transcription": " The Claude Sonnet 4.5 model outperformed Gemma 227b IT on coding benchmarks, as described in paragraph 3.2 of the technical report."
+      },
+      "kokoro": {
+        "cer": 0.0917,
+        "wer": 0.1304,
+        "asr_transcription": " The Claude Sonnet 4-5 model outperformed Gemma 227, be it on coding benchmarks, as described in Section 3, 2 of the technical report."
+      },
+      "orpheus": {
+        "cer": 0.125,
+        "wer": 0.2174,
+        "asr_transcription": " The Claude Sonnet 4.5 model outperformed JAMA 227B on coding benchmarks as described in Section 3.2 of the technical report."
+      }
+    },
+    "median_cer": 0.0917,
+    "max_cer": 0.1833,
+    "min_cer": 0.0917,
+    "mean_cer": 0.11668,
+    "n_models": 5
+  },
+  {
+    "text": "Comparing meta-llama/Llama-2-7b-chat-hf versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "category": "ai_tech",
+    "spoken_form": "Comparing meta-llama slash Llama two seven b chat HF versus G P T four oh shows that F P sixteen quantization reduces latency by forty percent without accuracy loss.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0794,
+        "wer": 0.2273,
+        "asr_transcription": " Comparing MetaLama, AshLama, 2, and 7B chat AHF versus GPT-4O shows that FP16 quantization reduces latency by 40% without accuracy loss."
+      },
+      "cartesia": {
+        "cer": 3.4444,
+        "wer": 0.9091,
+        "asr_transcription": " Comparing meta-LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+      },
+      "gpt4o_mini": {
+        "cer": 0.0476,
+        "wer": 0.3182,
+        "asr_transcription": " Comparing META-LAMA-LAMA2-7B-CHAT-HF versus GPT-4-0 shows that FP-16 quantization reduces latency by 40% without accuracy loss."
+      },
+      "kokoro": {
+        "cer": 0.0317,
+        "wer": 0.3182,
+        "asr_transcription": " Comparing MetaLlama-Llama2-7bChatHF versus GPT-4O shows that FP16 quantization reduces latency by 40% without accuracy loss."
+      },
+      "orpheus": {
+        "cer": 0.2698,
+        "wer": 0.4545,
+        "asr_transcription": " Comparing MetaLlama shows that FP16 quantization reduces latency by 40% without accuracy loss."
+      }
+    },
+    "median_cer": 0.0794,
+    "max_cer": 3.4444,
+    "min_cer": 0.0317,
+    "mean_cer": 0.77458,
+    "n_models": 5
+  },
+  {
+    "text": "Our pipeline is based on LLaMA-3.1-8B \u2192 fine-tuned on ShareGPT4 \u2192 RLHF\u2019d with DPO, then merged into the mistralai/Mixtral-8\u00d77B-Instruct-v0.1 architecture.",
+    "category": "ai_tech",
+    "spoken_form": "Our pipeline is based on LLaMA three point one eight B to fine-tuned on ShareGPT four to RLHF'd with DPO, then merged into the mistralai slash Mixtral eight times seven B Instruct v zero point one architecture.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0405,
+        "wer": 0.25,
+        "asr_transcription": " Our pipeline is based on Elema 3.18B, fine-tuned on ShareGPT4, RLHF'd with DPO, then merged into the Mistrelai, Mixtral, 8X7B, Instruct V.1 architecture."
+      },
+      "cartesia": {
+        "cer": 0.0946,
+        "wer": 0.3929,
+        "asr_transcription": " Our pipeline is based on LMMA 3.18B, fine-tuned on ShareGPT4, RLHF with DPO, then merged into the Mistral AI slash Mixtral 87B Instruct v 0.1 architecture."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0338,
+        "wer": 0.25,
+        "asr_transcription": " Our pipeline is based on LAMA 3.128B, fine-tuned on ShareGPT4, RLHFed with DPO, then merged into the Mistrali Mixtral 8x7B Instruct V0.1 architecture."
+      },
+      "kokoro": {
+        "cer": 0.3041,
+        "wer": 0.5,
+        "asr_transcription": " Our pipeline is based on LLA-MA3-1, 8B right arrow, fine-tuned on shared GPT-4 right arrow, RLHFed with DPO, then merged into the Mistrali slash Mixtral, 8 times 7B Instruct V0. One architecture."
+      },
+      "orpheus": {
+        "cer": 0.0743,
+        "wer": 0.2857,
+        "asr_transcription": " Our pipeline is based on EleMath 3.18b, fine-tuned on ShareGPT4, RLHF with DPO, then merged into the Mistrali, Mixtral 8 x 7b Instruct v 0.1 architecture."
+      }
+    },
+    "median_cer": 0.0743,
+    "max_cer": 0.3041,
+    "min_cer": 0.0338,
+    "mean_cer": 0.10946,
+    "n_models": 5
+  },
+  {
+    "text": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned deepseek-ai slash DeepSeek R one Distill Qwen thirty-two B on four times A one hundred eighty gigabyte S X M with B F sixteen, ZeRO three, gradient checkpointing equals True, and learning rate equals two times ten to the minus five.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1769,
+        "wer": 0.56,
+        "asr_transcription": " We fine-tuned DeepSeq AI DeepSeq R1 Distilquin, 32B on 4XA100 80GB by SXM with BUO1603, gradient checkpointing true, and LR2E5."
+      },
+      "cartesia": {
+        "cer": 0.4615,
+        "wer": 0.8,
+        "asr_transcription": " We fine-tuned DeepSeq Eyelash DeepSeq R1-Distilquin32B on 4, A180GB SXM with BF 16, 0, 3, gradient underscore checkpointing equal sign true, and Dalar equal sign 2E5."
+      },
+      "gpt4o_mini": {
+        "cer": 0.3231,
+        "wer": 0.6,
+        "asr_transcription": " We fine-tuned DeepSeq AI, DeepSeq R1, to still QEN32B on 4 times A100, 80 gigabytes SXM, with BF 16, 0, 3, gradient checkpointing true, and LR equals 2E minus 5."
+      },
+      "kokoro": {
+        "cer": 0.3846,
+        "wer": 0.64,
+        "asr_transcription": " We fine-tuned DeepCKI slash DeepCKR 1DQN32B on 4 times a 180GB SXM with BF16, ZRO3, gradient checkpointing equals true, and LR equals 2E5."
+      },
+      "orpheus": {
+        "cer": 0.2154,
+        "wer": 0.68,
+        "asr_transcription": " We fine-tuned DeepSeq i, DeepSeq R1, Distilquin 32B on 4xA180GB XM with BF1603, Gradient Checkpointing Trass and LAROL2E5."
+      }
+    },
+    "median_cer": 0.3231,
+    "max_cer": 0.4615,
+    "min_cer": 0.1769,
+    "mean_cer": 0.3123,
+    "n_models": 5
+  },
+  {
+    "text": "We loaded mistralai/Mistral-7B-Instruct-v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint-5000 with 3.2B parameters.",
+    "category": "ai_tech",
+    "spoken_form": "We loaded mistralai slash Mistral seven B Instruct v zero point one from Hugging Face and applied LoRA fine-tuning at checkpoint five thousand with three point two B parameters.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0763,
+        "wer": 0.0435,
+        "asr_transcription": " We loaded Mistral 7B Instruct V0-1 from Hugging Face and applied LoRa fine-tuning at Checkpoint 5000 with 3.2B parameters."
+      },
+      "cartesia": {
+        "cer": 0.0763,
+        "wer": 0.3913,
+        "asr_transcription": " We loaded Mistral AI slash Mistral 7 B Instruct V 0.1 from Hugging Face and applied LoRa fine tuning at checkpoint 5000 with 3.2 B parameters."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0153,
+        "wer": 0.1304,
+        "asr_transcription": " We loaded Mistrali Mistral 7B Instruct V 0.1 from Hugging Face and applied LoRa fine-tuning at checkpoint 5000 with 3.2B parameters."
+      },
+      "kokoro": {
+        "cer": 0.0458,
+        "wer": 0.087,
+        "asr_transcription": " We loaded Mistrali slash Mistral 7B Instruct V0, 1 from Hugging Face, and applied LoRa fine-tuning at checkpoint 5000 with 3.2B parameters."
+      },
+      "orpheus": {
+        "cer": 0.0916,
+        "wer": 0.1304,
+        "asr_transcription": " We loaded Mistrali Instruct V0.1 from Hugging Face and applied LoRa fine-tuning at checkpoint 5000 with 3.2b parameters."
+      }
+    },
+    "median_cer": 0.0763,
+    "max_cer": 0.0916,
+    "min_cer": 0.0153,
+    "mean_cer": 0.06106,
+    "n_models": 5
+  },
+  {
+    "text": "Our experiments with Gemma-2-27B-it and INT8 quantization on the mistralai/Mistral-7B-Instruct-v0.1 checkpoint-5000 achieved 87.6% accuracy on MMLU.",
+    "category": "ai_tech",
+    "spoken_form": "Our experiments with Gemma two twenty-seven B it and INT eight quantization on the mistralai slash Mistral seven B Instruct v zero point one checkpoint five thousand achieved eighty-seven point six percent accuracy on MMLU.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0616,
+        "wer": 0.2308,
+        "asr_transcription": " Our experiments with GEMMA-227-BEIT and INT8 quantization on the Mistrali-Mistral-7B-Instruct-Vive-2.1-Checkpoint-5000 achieved 87.6% accuracy on MMLU."
+      },
+      "cartesia": {
+        "cer": 0.0616,
+        "wer": 0.3077,
+        "asr_transcription": " Our experiments with GEMMA-227-BEIT and INT-8 quantization on the Mystril-AI-Mystril-7B-Instruct v0.1-Checkpoint-5000 achieved 87.6% accuracy on MMLU."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0205,
+        "wer": 0.1538,
+        "asr_transcription": " Our experiments with GEMMA-227BIT and INT8 quantization on the Mistrali Mistral 7B Instruct V0.1 Checkpoint 5000 achieved 87.6% accuracy on MMLU."
+      },
+      "kokoro": {
+        "cer": 0.089,
+        "wer": 0.3077,
+        "asr_transcription": " Our experiments with GEMMA-227, BEIT, and INT-8 quantization on the Mistrali slash Mistral 7B Instruct V0. One checkpoint 5000 achieved 87.6% accuracy on MMLU."
+      },
+      "orpheus": {
+        "cer": 0.0411,
+        "wer": 0.1923,
+        "asr_transcription": " Our experiments with GEMMA-2-27B and INT-8 quantization on the Mistral-A, Mistral-7B Instruct V0.1 checkpoint 5000 achieved 87.6% accuracy on MMLU."
+      }
+    },
+    "median_cer": 0.0616,
+    "max_cer": 0.089,
+    "min_cer": 0.0205,
+    "mean_cer": 0.054759999999999996,
+    "n_models": 5
+  },
+  {
+    "text": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+    "category": "number_format",
+    "spoken_form": "For participants ages eighteen to sixty-five, blood pressure should range from ninety over sixty to one hundred twenty over eighty millimeters of mercury, with temperatures between ninety-seven point eight degrees Fahrenheit and ninety-nine point one degrees Fahrenheit.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.224,
+        "wer": 0.2308,
+        "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90 to 60 to 120-80 mmH drawings, with temperatures between 97.8 degrees and 99.1 degrees."
+      },
+      "cartesia": {
+        "cer": 0.392,
+        "wer": 0.3462,
+        "asr_transcription": " For participants ages 18, 65, blood pressure should range from 90 60ths to 120 80ths in this age, with temperatures between 97.8 degrees Fahrenheit and 99.1 degrees Fahrenheit."
+      },
+      "gpt4o_mini": {
+        "cer": 0.456,
+        "wer": 0.3077,
+        "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90-60 to 120-80 millimeters of mercury, with temperatures between 97.8 degrees Fahrenheit and 99.1 degrees Fahrenheit."
+      },
+      "kokoro": {
+        "cer": 0.152,
+        "wer": 0.3077,
+        "asr_transcription": " For participants ages 1865, blood pressure should range from 9060 to 12080 mmHg, with temperatures between 97, 8 degrees F and 99, 1 degrees F."
+      },
+      "orpheus": {
+        "cer": 0.368,
+        "wer": 0.3846,
+        "asr_transcription": " For participants ages 18-65, blood pressure should range from 90-60 to 120-80 at some point 800-90-60 with temperatures between 97.8 to Fahrenheit and 99.1 to Fahrenheit."
+      }
+    },
+    "median_cer": 0.368,
+    "max_cer": 0.456,
+    "min_cer": 0.152,
+    "mean_cer": 0.3184,
+    "n_models": 5
+  },
+  {
+    "text": "Henry VIII's reign from 1509\u20131547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "category": "number_format",
+    "spoken_form": "Henry the Eighth's reign from fifteen oh nine to fifteen forty-seven saw England's break from Rome, while Louis the Fourteenth of France ruled for seventy-two years.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0278,
+        "wer": 0.05,
+        "asr_transcription": " Henry VIII's reign from 1509 to 1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years."
+      },
+      "cartesia": {
+        "cer": 0.0648,
+        "wer": 0.1,
+        "asr_transcription": " Henry Valleja's reign from 1509. 1547 saw England's break from Rome while Louis XRV of France ruled for 72 years."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0741,
+        "wer": 0.1,
+        "asr_transcription": " Henry VIII's reign, from 1509 to 1547, sought England's break from Rome, while Louis XIV of France ruled for 72 years."
+      },
+      "kokoro": {
+        "cer": 0.0648,
+        "wer": 0.1,
+        "asr_transcription": " Henry VIII's reign from 1509, 1540, seven saw England's break from Rome, while Louis XIV of France ruled for 72 years."
+      },
+      "orpheus": {
+        "cer": 0.0278,
+        "wer": 0.05,
+        "asr_transcription": " Henry VIII's reign from 1509 to 1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years."
+      }
+    },
+    "median_cer": 0.0648,
+    "max_cer": 0.0741,
+    "min_cer": 0.0278,
+    "mean_cer": 0.051859999999999996,
+    "n_models": 5
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format",
+    "spoken_form": "Pope Benedict the Sixteenth resigned in twenty thirteen, the first pope to do so since Gregory the Twelfth in fourteen fifteen.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1548,
+        "wer": 0.1176,
+        "asr_transcription": " Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory the Valenciade in 1415."
+      },
+      "cartesia": {
+        "cer": 0.1429,
+        "wer": 0.1765,
+        "asr_transcription": " Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory of the Restai in 1415."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415."
+      },
+      "orpheus": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415."
+      }
+    },
+    "median_cer": 0.0,
+    "max_cer": 0.1548,
+    "min_cer": 0.0,
+    "mean_cer": 0.059539999999999996,
+    "n_models": 5
+  },
+  {
+    "text": "The emergency contact is +44 (0)20 7946 0958, reference number NI: AB 12 34 56 C, dated 15/04/1989.",
+    "category": "number_format",
+    "spoken_form": "The emergency contact is plus forty-four zero twenty seven nine four six zero nine five eight, reference number N I colon A B twelve thirty-four fifty-six C, dated the fifteenth of April nineteen eighty-nine.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1398,
+        "wer": 0.4762,
+        "asr_transcription": " The emergency contact is PLUS44-020-7946-0958, reference number NI, AB12-3456C, dated 1504-SAW-1989."
+      },
+      "cartesia": {
+        "cer": 0.1613,
+        "wer": 0.4762,
+        "asr_transcription": " The emergency contact is plus 44027946. 0958, reference number NI, AB1234, 56C, dated 15 April 1989."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0968,
+        "wer": 0.3333,
+        "asr_transcription": " The emergency contact is plus 44-020-7946-0958, reference number NI-AB-12-34-36C, dated 1504-1989."
+      },
+      "kokoro": {
+        "cer": 0.1398,
+        "wer": 0.5238,
+        "asr_transcription": " The emergency contact is plus 44, 0, 2079-46-958, reference number NI, OB12-3456C, dated 1504-1989."
+      },
+      "orpheus": {
+        "cer": 0.3226,
+        "wer": 0.619,
+        "asr_transcription": " The emergency contact is plus 44, 0, 20, 17, paper 6, 79, 5, 8. Reference number NI, AB 12, 3456C, dated 15, poor 4, 15, 1st, 1989."
+      }
+    },
+    "median_cer": 0.1398,
+    "max_cer": 0.3226,
+    "min_cer": 0.0968,
+    "mean_cer": 0.17206000000000002,
+    "n_models": 5
+  },
+  {
+    "text": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "spoken_form": "The spacecraft traveled two point five times ten to the ninth miles at temperatures from minus forty degrees Celsius to plus one hundred twenty degrees Celsius, covering the distance in approximately three to two the predicted time.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1716,
+        "wer": 0.16,
+        "asr_transcription": " The spacecraft traveled 2.5 Eidogsa 109 miles at temperatures from 40 degrees to 120 degrees, covering the distance in approximately 3.2 the predicted time."
+      },
+      "cartesia": {
+        "cer": 0.3881,
+        "wer": 0.44,
+        "asr_transcription": " The spacecraft traveled 2.5 10 to the 9th power miles at temperatures from minus 40 degrees Celsius to plus 120 degrees C, covering the distance in approximately 3 to the predicted time."
+      },
+      "gpt4o_mini": {
+        "cer": 0.4925,
+        "wer": 0.48,
+        "asr_transcription": " The spacecraft traveled 2.5 times 10 to the 9th miles at temperatures from negative 40 degrees Celsius to positive 120 degrees Celsius, covering the distance in approximately 3 to 2 the predicted time."
+      },
+      "kokoro": {
+        "cer": 0.291,
+        "wer": 0.36,
+        "asr_transcription": " The spacecraft traveled to, 5 times 10-9 miles at temperatures from minus 40 degrees C to plus 120 degrees C, covering the distance in approximately 3 to the predicted time."
+      },
+      "orpheus": {
+        "cer": 0.3806,
+        "wer": 0.4,
+        "asr_transcription": " The spacecraft traveled 2.5 times 10 per miles at temperatures from 40 degrees Celsius to plus 120 degrees Celsius, covering the distance in approximately 3 could have predicted time."
+      }
+    },
+    "median_cer": 0.3806,
+    "max_cer": 0.4925,
+    "min_cer": 0.1716,
+    "mean_cer": 0.34476,
+    "n_models": 5
+  },
+  {
+    "text": "King Henry the 3rd (III), King Henry the 8th (VIII), and the XXIInd amendment were all discussed in the IVth century BC symposium.",
+    "category": "number_format",
+    "spoken_form": "King Henry the third, King Henry the eighth, and the twenty-second amendment were all discussed in the fourth century B C symposium.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.2195,
+        "wer": 0.3043,
+        "asr_transcription": " King Henry III, the third, King Henry VIII, Duster VIII, and the 49th Amendment were all discussed in the 5th century BC Symposium."
+      },
+      "cartesia": {
+        "cer": 0.1545,
+        "wer": 0.3043,
+        "asr_transcription": " King Henry III III, King Henry VIII VII, and the XXI Amendment were all discussed in the Iveth Century BC Symposium."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1626,
+        "wer": 0.2609,
+        "asr_transcription": " King Henry III, III, King Henry VIII, VIII, and the 22nd Amendment were all discussed in the 4th century BC Symposium."
+      },
+      "kokoro": {
+        "cer": 14.0,
+        "wer": 19.0,
+        "asr_transcription": " King Henry III III III, King Henry VIII III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III III"
+      },
+      "orpheus": {
+        "cer": 0.1707,
+        "wer": 0.3478,
+        "asr_transcription": " King Henry III, III, King Henry VIII, VII, and the 60 Uynd Amendment were all discussed in the Ith Century BC Symposium."
+      }
+    },
+    "median_cer": 0.1707,
+    "max_cer": 14.0,
+    "min_cer": 0.1545,
+    "mean_cer": 2.94146,
+    "n_models": 5
+  },
+  {
+    "text": "The Apollo XI mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "category": "number_format",
+    "spoken_form": "The Apollo eleven mission landed on July twentieth, nineteen sixty-nine, fulfilling Kennedy's goal set in the early nineteen sixties.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0538,
+        "wer": 0.0588,
+        "asr_transcription": " The Apollo IMPTH mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s."
+      },
+      "cartesia": {
+        "cer": 0.0108,
+        "wer": 0.0588,
+        "asr_transcription": " The Apollo XD mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0215,
+        "wer": 0.0588,
+        "asr_transcription": " The Apollo 11 mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " The Apollo Xi mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s."
+      },
+      "orpheus": {
+        "cer": 0.0753,
+        "wer": 0.0588,
+        "asr_transcription": " The Apollo-Alekson mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s."
+      }
+    },
+    "median_cer": 0.0215,
+    "max_cer": 0.0753,
+    "min_cer": 0.0,
+    "mean_cer": 0.03228,
+    "n_models": 5
+  },
+  {
+    "text": "The study spanning pp. 234\u201389 in Volume XXIII shows that \u2158 of the 1,984 participants were born between 1984 and 1999.",
+    "category": "number_format",
+    "spoken_form": "The study spanning pages two hundred thirty-four to eighty-nine in Volume twenty-three shows that four fifths of the one thousand nine hundred eighty-four participants were born between nineteen eighty-four and nineteen ninety-nine.",
+    "cer_reliable": false,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1913,
+        "wer": 0.2174,
+        "asr_transcription": " The study spanning PP-Chun 234-89 in volume 23 shows that four or five of the 1,984 participants were born between 1984 and 1999."
+      },
+      "cartesia": {
+        "cer": 0.1652,
+        "wer": 0.2174,
+        "asr_transcription": " The study spanning PP. 234. 89 in volume XA tie-dye shows that four-fifths of the 1,984 participants were born between 1984 and 1999."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1652,
+        "wer": 0.1739,
+        "asr_transcription": " The study spanning PP 234 to 89 in Volume 23 shows that four-fifths of the 1,984 participants were born between 1984 and 1999."
+      },
+      "kokoro": {
+        "cer": 0.0261,
+        "wer": 0.1304,
+        "asr_transcription": " The study spanning PP 23489 in volume XXIII shows that, of the 1,984 participants were born between 1984 and 1999."
+      },
+      "orpheus": {
+        "cer": 0.087,
+        "wer": 0.2174,
+        "asr_transcription": " The study spanning PP 234 to 89 in volume XX3 shows that Chi of the 1984 participants were born between 1984 and 1999."
+      }
+    },
+    "median_cer": 0.1652,
+    "max_cer": 0.1913,
+    "min_cer": 0.0261,
+    "mean_cer": 0.12696000000000002,
+    "n_models": 5
+  },
+  {
+    "text": "DO NOT\u2014and I mean DO NOT\u2014open that email attachment under ANY circumstances whatsoever.",
+    "category": "paralinguistics",
+    "spoken_form": "DO NOT \u2014 and I mean DO NOT \u2014 open that email attachment under ANY circumstances whatsoever.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Do not, and I mean do not, open that email attachment under any circumstances whatsoever."
+      },
+      "cartesia": {
+        "cer": 0.093,
+        "wer": 0.1333,
+        "asr_transcription": " Do you not? And I mean, do you not? Open that email attachment under any circumstances whatsoever."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Do not, and I mean do not, open that email attachment under any circumstances whatsoever."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Do not, and I mean do not, open that email attachment under any circumstances whatsoever."
+      },
+      "orpheus": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Do not, and I mean do not, open that email attachment under any circumstances whatsoever."
+      }
+    },
+    "median_cer": 0.0,
+    "max_cer": 0.093,
+    "min_cer": 0.0,
+    "mean_cer": 0.0186,
+    "n_models": 5
+  },
+  {
+    "text": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "category": "paralinguistics",
+    "spoken_form": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Ugh, seriously? I've told you like, I don't know, a million times already."
+      },
+      "cartesia": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Ugh, seriously. I've told you, like, I don't know, a million times already."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Ugh, seriously? I've told you like, I don't know, a million times already."
+      },
+      "kokoro": {
+        "cer": 0.0145,
+        "wer": 0.0769,
+        "asr_transcription": " Uh, seriously, I've told you like, I don't know a million times already."
+      },
+      "orpheus": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Ugh, seriously, I've told you like, I don't know, a million times already."
+      }
+    },
+    "median_cer": 0.0,
+    "max_cer": 0.0145,
+    "min_cer": 0.0,
+    "mean_cer": 0.0029000000000000002,
+    "n_models": 5
+  },
+  {
+    "text": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "spoken_form": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0976,
+        "wer": 0.1176,
+        "asr_transcription": " He started snoring, and I just thought, you know what? Forget it. Not worth it."
+      },
+      "cartesia": {
+        "cer": 0.0976,
+        "wer": 0.1176,
+        "asr_transcription": " He started snoring. And I just thought, you know what? Forget it. Not worth it."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0976,
+        "wer": 0.1176,
+        "asr_transcription": " He started snoring. And I just thought, you know what? Forget it. Not worth it."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " He started snoring, zzz, zzz, and I just thought, you know what, forget it, not worth it."
+      },
+      "orpheus": {
+        "cer": 0.122,
+        "wer": 0.1765,
+        "asr_transcription": " He started snoring. And just thought, you know what? Forget it. Not worth it."
+      }
+    },
+    "median_cer": 0.0976,
+    "max_cer": 0.122,
+    "min_cer": 0.0,
+    "mean_cer": 0.08296,
+    "n_models": 5
+  },
+  {
+    "text": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "category": "paralinguistics",
+    "spoken_form": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0241,
+        "wer": 0.0625,
+        "asr_transcription": " Oh, sure. Leaving your phone on the roof of the car was really smart. Brilliant move."
+      },
+      "cartesia": {
+        "cer": 0.0241,
+        "wer": 0.0625,
+        "asr_transcription": " Oh sure, leaving your phone on the roof of the car was really smart. Brilliant move."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0241,
+        "wer": 0.0625,
+        "asr_transcription": " Oh, sure. Leaving your phone on the roof of the car was really smart. Brilliant move."
+      },
+      "kokoro": {
+        "cer": 0.0241,
+        "wer": 0.0625,
+        "asr_transcription": " Oh sure, leaving your phone on the roof of the car was really smart. Brilliant move."
+      },
+      "orpheus": {
+        "cer": 0.0241,
+        "wer": 0.0625,
+        "asr_transcription": " Oh, sure. Leaving your phone on the roof of the car was really smart. Brilliant move."
+      }
+    },
+    "median_cer": 0.0241,
+    "max_cer": 0.0241,
+    "min_cer": 0.0241,
+    "mean_cer": 0.0241,
+    "n_models": 5
+  },
+  {
+    "text": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "category": "paralinguistics",
+    "spoken_form": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0857,
+        "wer": 0.3077,
+        "asr_transcription": " she whispered. Maybe we should leave. Then suddenly yelled, Run! Now!"
+      },
+      "cartesia": {
+        "cer": 0.1429,
+        "wer": 0.3846,
+        "asr_transcription": " She whispered, maybe we should leave. Then suddenly yelled, run! And now!"
+      },
+      "gpt4o_mini": {
+        "cer": 0.0857,
+        "wer": 0.3077,
+        "asr_transcription": " She whispered, maybe we should leave. Then suddenly yelled, run, now."
+      },
+      "kokoro": {
+        "cer": 0.0857,
+        "wer": 0.3077,
+        "asr_transcription": " She whispered, maybe we should leave, then suddenly yelled, run now."
+      },
+      "orpheus": {
+        "cer": 0.0857,
+        "wer": 0.3077,
+        "asr_transcription": " She whispered, maybe we should leave, then suddenly yelled, run, now."
+      }
+    },
+    "median_cer": 0.0857,
+    "max_cer": 0.1429,
+    "min_cer": 0.0857,
+    "mean_cer": 0.09714,
+    "n_models": 5
+  },
+  {
+    "text": "Hmm... I'm not so sure about that. She said\u2014well, she SAID she'd be here, but...",
+    "category": "paralinguistics",
+    "spoken_form": "Hmm... I'm not so sure about that. She said \u2014 well, she SAID she'd be here, but...",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Hmm, I'm not so sure about that. She said, well, she said she'd be here, but..."
+      },
+      "cartesia": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Hmm. I'm not so sure about that, she said. Well, she said she'd be here, but..."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Hmm, I'm not so sure about that, she said. Well, she said she'd be here, but..."
+      },
+      "kokoro": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "asr_transcription": " Hmm, I'm not so sure about that, she said. Well, she said she'd be here, but..."
+      },
+      "orpheus": {
+        "cer": 0.0563,
+        "wer": 0.0625,
+        "asr_transcription": " Hmm, not so sure about that. She said, well, she said she'd be here, but..."
+      }
+    },
+    "median_cer": 0.0,
+    "max_cer": 0.0563,
+    "min_cer": 0.0,
+    "mean_cer": 0.011260000000000001,
+    "n_models": 5
+  },
+  {
+    "text": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "category": "paralinguistics",
+    "spoken_form": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.022,
+        "wer": 0.0588,
+        "asr_transcription": " The balloon went pop and scared everyone. Then the baby went wah for like an hour straight."
+      },
+      "cartesia": {
+        "cer": 0.022,
+        "wer": 0.0588,
+        "asr_transcription": " The balloon went pop and scared everyone. Then the baby went wah for like an hour straight."
+      },
+      "gpt4o_mini": {
+        "cer": 0.022,
+        "wer": 0.0588,
+        "asr_transcription": " The balloon went pop and scared everyone. Then the baby went wah for like an hour straight."
+      },
+      "kokoro": {
+        "cer": 0.022,
+        "wer": 0.0588,
+        "asr_transcription": " The balloon went pop and scared everyone. Then the baby went waia for like an hour straight."
+      },
+      "orpheus": {
+        "cer": 0.0659,
+        "wer": 0.0588,
+        "asr_transcription": " The balloon went pop and scared everyone. Then the baby went for like an hour straight."
+      }
+    },
+    "median_cer": 0.022,
+    "max_cer": 0.0659,
+    "min_cer": 0.022,
+    "mean_cer": 0.030779999999999995,
+    "n_models": 5
+  },
+  {
+    "text": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "category": "paralinguistics",
+    "spoken_form": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0312,
+        "wer": 0.0556,
+        "asr_transcription": " Oh, that's disgusting. How long has this been sitting in the fridge? It smells like... Ugh, never mind."
+      },
+      "cartesia": {
+        "cer": 0.0833,
+        "wer": 0.1111,
+        "asr_transcription": " Girl, you, that's disgusting. How long has this been sitting in the fridge? It smells like, ugh, never mind."
+      },
+      "gpt4o_mini": {
+        "cer": 0.0104,
+        "wer": 0.0556,
+        "asr_transcription": " Ew, that's disgusting. How long has this been sitting in the fridge? It smells like... Ugh, never mind."
+      },
+      "kokoro": {
+        "cer": 0.0521,
+        "wer": 0.1667,
+        "asr_transcription": " Ewa, that's disgusting. How long has this been sitting in the fridge? It smells like. Ah, he never mind."
+      },
+      "orpheus": {
+        "cer": 0.0104,
+        "wer": 0.0556,
+        "asr_transcription": " Ew, that's disgusting. How long has this been sitting in the fridge? It smells like... Ugh, never mind."
+      }
+    },
+    "median_cer": 0.0312,
+    "max_cer": 0.0833,
+    "min_cer": 0.0104,
+    "mean_cer": 0.03748,
+    "n_models": 5
+  },
+  {
+    "text": "Streptococcus pneumoniae strain TIGR4 expressing pbp2b mutations and Haemophilus influenzae type b require ceftriaxone 50mg/kg/day IV divided q12h not exceeding 4g/24h, with CSF penetration verified at 2.5-7.5\u03bcg/mL per General Electric v. Joiner, 522 U.S. 136 (1997) causation standards.",
+    "category": "domain_specific",
+    "spoken_form": "Streptococcus pneumoniae strain T I G R four expressing P B P two B mutations and Haemophilus influenzae type B require ceftriaxone fifty milligrams per kilogram per day I V divided every twelve hours not exceeding four grams per twenty-four hours, with C S F penetration verified at two point five to seven point five micrograms per milliliter per General Electric versus Joiner, five twenty-two U.S. one thirty-six nineteen ninety-seven causation standards.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.0714,
+        "wer": 0.2174,
+        "asr_transcription": " Streptococcus pneumoniae strain TIGR4, expressing PBP2B mutations and Haemophilus influenzae type B, requires ceftriaxone. 50 mix-slash-day IV divided Q12AH not exceeding 4G24H, with CSF penetration verified at 2.5-7.5 gauge ML per General Electric Vitan Joiner, 522 U.S. 136, 1997 causation standards."
+      },
+      "cartesia": {
+        "cer": 0.1286,
+        "wer": 0.3478,
+        "asr_transcription": " Streptococcus pneumonia strain TIGR4 expressing PBP2B mutations and haemophilus influenzae type B require ceftrioxone 5-0-MG slash KG slash day IV divided Q12H not exceeding 4G slash 2-4-H with CSF penetration verified at 2.57. 5-MU-G slash ML per general electric V. Joyner 522 U.S. 136-1997 causation standards."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1786,
+        "wer": 0.3696,
+        "asr_transcription": " Streptococcus pneumoniae strain, TIGR4, expressing PBP2B mutations, and Haemophilus influenzae type B require ceftriaxone, 50 mg per kg per day, IV divided Q12H, not exceeding 4 g per 24 hours, with CSF penetration verified at 2.5 to 7.5 mcg per mL per general electric V joiner, 522 US 136, 1997."
+      },
+      "kokoro": {
+        "cer": 0.0786,
+        "wer": 0.1957,
+        "asr_transcription": " Streptococcus pneumoniae strain TIGR4 expressing PBP2B mutations, and hemophilus influenzae type B require ceftriaxone 50mg slash kg slash day IV divided Q12H not exceeding 4G24H, with CSF penetration verified at 2, 5-7, 5mg slash ml per general electric v-joiner, 522 US 136, 1997, causation standards."
+      },
+      "orpheus": {
+        "cer": 0.1214,
+        "wer": 0.3913,
+        "asr_transcription": " Streptococcus pneumoniae strain TIGR4 expressing PVP2B mutations and hemophilus influenzae type B require ceftriaxone 50mg P-log day IV divided Q12H not exceeding 4G124H with CSF penetration verified at 2.5 to 7.5 murified tool back of General Electric B. Joyner 522US136-1997 Causation Standards"
+      }
+    },
+    "median_cer": 0.1214,
+    "max_cer": 0.1786,
+    "min_cer": 0.0714,
+    "mean_cer": 0.11572,
+    "n_models": 5
+  },
+  {
+    "text": "Administer 15mg/kg IV q6h of piperacillin-tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring oprD mutations, per Daubert v. Merrell Dow, 509 U.S. 579 (1993) evidentiary standards.",
+    "category": "domain_specific",
+    "spoken_form": "Administer fifteen milligrams per kilogram I V every six hours of piperacillin-tazobactam four point five grams for Pseudomonas aeruginosa strain P A O one harboring oprD mutations, per Daubert versus Merrell Dow, five zero nine U.S. five seven nine nineteen ninety-three evidentiary standards.",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.1183,
+        "wer": 0.2333,
+        "asr_transcription": " Administer 15-Kliegel-Klohler's IV Q6H of piperacillin-tazobactam 4.5-grine for Pseudomonas aeruginosa strain, PAO1, harboring OPRD mutations, per Dauber v. Merrill Dow, 509 U.S., 579-1993, evidentiary standards."
+      },
+      "cartesia": {
+        "cer": 0.086,
+        "wer": 0.2667,
+        "asr_transcription": " Administer 1-5MG slash KGIV-Q6H of pipercyllin-tazobactam 4.5G for Pseudomonas aeruginosa strain PAO1 harboring of permutations per Daubert V. Merrill Dow, 509 U.S. 579-1993 Evidentiary Standards."
+      },
+      "gpt4o_mini": {
+        "cer": 0.043,
+        "wer": 0.2667,
+        "asr_transcription": " Administer 15 mg per kg IVQ6H of piperacillin-tazobactam, 4.5 g for Pseudomonas aeruginosa strain PAO1, harboring OPRD mutations, per Daubert v. Merrill Dow, 509 U.S. 579, 1993, evidentiary standards."
+      },
+      "kokoro": {
+        "cer": 0.0806,
+        "wer": 0.3333,
+        "asr_transcription": " Administer 15-MG-slash-KG-IV-Q-6H of pipercylintazobactam 4.5G for Pseudomonas aeruginosa strain PAO1 harboring OPER-D mutations, per Daubert v. Merrill Dow, 509 U.S. 579, 1993, evidentiary standards."
+      },
+      "orpheus": {
+        "cer": 0.1075,
+        "wer": 0.3667,
+        "asr_transcription": " Administer 15 mg PCC-CisH of papiracillin, tazobactam 4.5 g for Pseudomonas aeruginosa strain, PAO1 harboring OPERD mutations, per Dow, Bayer v. Murrell Dow, 509 U.S. 579, 1993 Evidentiary Standards"
+      }
+    },
+    "median_cer": 0.086,
+    "max_cer": 0.1183,
+    "min_cer": 0.043,
+    "mean_cer": 0.08707999999999999,
+    "n_models": 5
+  },
+  {
+    "text": "Titrate 2.5mg/kg/min of (\u00b1)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6) IV maintaining MAP \u226565mmHg per RFC 2616 \u00a714.9 cache-control directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61:2017.",
+    "category": "domain_specific",
+    "spoken_form": "Titrate two point five milligrams per kilogram per minute of plus or minus four dash two aminoethyl benzene one two diol C A S fifty-one sixty-one six I V maintaining M A P greater than or equal to sixty-five millimeters of mercury per R F C two six one six section fourteen point nine cache control directives for real-time hemodynamic monitoring systems compliant with I S O eight zero six zero one dash two dash sixty-one colon twenty seventeen",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.6574,
+        "wer": 0.7619,
+        "asr_transcription": " For real-time hemodynamic monitoring systems compliant with ISO 807-260-2017."
+      },
+      "cartesia": {
+        "cer": 0.1806,
+        "wer": 0.5714,
+        "asr_transcription": " Titrate 2, 5, M, G, slash K, G, Slushman, O, minus 4, 2-aminoethylbenzene, 1, 2-dials, cast 5, 1, 6, 1. 6 IV maintaining MAP-65-MAHG per RFC 2616 Section 14.9 Cache Control Directives for real-time hemodynamic monitoring systems compliant with ISO 8-0601, 2, 6, 1, 2017."
+      },
+      "gpt4o_mini": {
+        "cer": 0.1898,
+        "wer": 0.381,
+        "asr_transcription": " TITRI, 2.5 mg kg minute of plus and minus 4,2-aminoethylbenzene 1,2-diol, CAS 51616, IV, maintaining MAP equals 65 mmHg per RFC 2616, Section 14.9 Cache Control Directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61-2017."
+      },
+      "kokoro": {
+        "cer": 0.3009,
+        "wer": 0.4524,
+        "asr_transcription": " Titrate 2, 5 mg slash kg slash min of plus or minus minus 4, 2-aminothyl, benzene 1, 2-diol, CAS 5161-6, IV maintaining MAP greater or equal to 65 mm Hg per RFC 2616 Section 14, 9 cache control directives for real-time hemodynamic monitoring systems, compliant with ISO 80601-2-61-2017."
+      },
+      "orpheus": {
+        "cer": 0.2639,
+        "wer": 0.4524,
+        "asr_transcription": " Titrate 2.5 mg pre-celligram 0,4-2-amatoethylbenzene-1, 2-diol, CAS 5161-6, IV-maintaining MAP obbacoral year of Protein 1016 Section 14.9 TASH control directives for real-time hemodynamic monitoring systems, compliant with ISO 8601-2017."
+      }
+    },
+    "median_cer": 0.2639,
+    "max_cer": 0.6574,
+    "min_cer": 0.1806,
+    "mean_cer": 0.31852,
+    "n_models": 5
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128\u03bcg/mL when tested per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37.0\u00b0C \u00b1 0.5\u00b0C.",
+    "category": "domain_specific",
+    "spoken_form": "Mycobacterium tuberculosis strain H thirty-seven R V and Mycobacterium bovis B C G expressing rpoB S five thirty-one L mutations demonstrate rifampicin M I C greater than one hundred twenty-eight micrograms per milliliter when tested per C L S I M twenty-four dash A two two thousand eleven at P H six point eight plus or minus zero point one and thirty-seven point zero degrees Celsius plus or minus zero point five degrees Celsius",
+    "cer_reliable": true,
+    "models": {
+      "elevenlabs": {
+        "cer": 0.191,
+        "wer": 0.3243,
+        "asr_transcription": " Mycobacterium tuberculosis strain H37R VI and Mycobacterium bovis BCG expressing RPOB S53.1L mutations demonstrate rifampicin MIC when tested per CLSI M24A2 in 2011 at pH 6.8 plus 0.1 and 37.0 DUMDAO plus 0.5 DUMDAO."
+      },
+      "cartesia": {
+        "cer": 0.3116,
+        "wer": 0.6486,
+        "asr_transcription": " Mycobacterium, tuberculosis strain, H37, Arv8, and mycobacterium bovis BCG expressing ARPOB S531, L mutations demonstrate rifampicin MIC1, 2, 8, MUG, slash ML when tested per CLSIM24. A2, colon, 2, 0, 1, when at P6.8, 0.1, and 37.0 degrees Celsius, 0.0 degrees Celsius."
+      },
+      "gpt4o_mini": {
+        "cer": 0.3216,
+        "wer": 0.3243,
+        "asr_transcription": " Mycobacterium tuberculosis strain H37RV and Mycobacterium bovis BCG expressing RPOB S531L mutations demonstrate rifampicin MIC greater than 128 micrograms per milliliter when tested per CLSI M24A2 2011 at pH 6.8 \u00b1 0.1 and 37.0 degrees Celsius \u00b1 0.5 degrees Celsius."
+      },
+      "kokoro": {
+        "cer": 0.206,
+        "wer": 0.3243,
+        "asr_transcription": " Mycobacterium tuberculosis, strain H37RV, and Mycobacterium bovis BCG, expressing RPO-BS531L mutations demonstrate rifampicin myc128mug-ml, when tested per CLSI M24A2, 2011, at pH 6.8+, or minus 0.1 and 37, 0 degrees C+, or minus 0, 5 degrees C."
+      },
+      "orpheus": {
+        "cer": 0.4724,
+        "wer": 0.5946,
+        "asr_transcription": " Mycobacterium tuberculosis strain H37RV and Mycobacterium bovis BCG expressing ARPOB-S31L mutations demonstrate rifampicin MICS101-28-microgroof. When tested per CLSI M24A2-2111 at pH 6.8 plus OMI11 at 37.0 degrees Celsius plus OMI11 and 37.0 degrees Celsius plus R.5 degrees Celsius,"
+      }
+    },
+    "median_cer": 0.3116,
+    "max_cer": 0.4724,
+    "min_cer": 0.191,
+    "mean_cer": 0.30052,
+    "n_models": 5
+  }
+]
