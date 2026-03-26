@@ -139,16 +139,40 @@ CER is currently computed as `CER(original_written_text, asr_transcript_of_tts_a
 
 For phonetic rows, if a TTS model mispronounces "Saoirse" as "Sa-oir-se" but ASR still outputs "Saoirse" (strong spelling prior), the error is invisible to round-trip CER. This understates phonetic difficulty.
 
-### Fix: reference-TTS ground truth pipeline (Phase 3)
+### Reference-TTS ground truth pipeline (prototyped)
 
-The `spoken_form` column was generated this phase but not yet used as the CER reference. Phase 3 should implement:
-1. Run Kokoro TTS on `spoken_form` → reference audio
-2. Run ASR on reference audio → ground truth transcript
-3. CER(ground_truth, test_asr_transcript)
+The `reference_column` Studio parameter went live during this phase. We prototyped the pipeline on 10 rows:
 
-This replaces the ambiguous written text reference with a consistent spoken-form reference, making CER meaningful for technical rows.
+1. Run Orpheus TTS on `spoken_form` → reference audio (at `ronanarraig/tricky-tts-proto-ref-orpheus-v2`)
+2. Run AssemblyAI ASR on reference audio → `reference_asr_transcript`
+3. Push dataset with `reference_asr_transcript` column
+4. Run test model eval with `reference_column="reference_asr_transcript"`
+5. CER(reference_asr_transcript, test_asr_transcript)
 
-**Studio feature request filed** (ID: `6814128c`): add `reference_column` parameter to TTS eval API so Studio can compute CER against `spoken_form` instead of `text` natively.
+**Orpheus selected as reference TTS** because: open-source (reproducible), not included in the benchmark rankings, and runs on clean spoken_form text so its normalisation weaknesses don't bias other models.
+
+**Prototype results (10 rows, ElevenLabs vs reference pipeline):**
+
+| Category | Text (truncated) | Old CER | New CER | Δ |
+|---|---|---|---|---|
+| domain_specific | Mycobacterium tuberculosis... | 0.312 | 0.142 | -0.170 |
+| number_format | Spacecraft 2.5×10⁹ miles... | 0.381 | 0.096 | -0.285 |
+| ai_tech | deepseek-ai/DeepSeek-R1... | 0.323 | 0.194 | -0.129 |
+| ai_tech | 01-ai/Yi-1.5-34B... | 0.115 | 0.030 | -0.085 |
+| edge_cases | IEEE Trans. Vol. 15... | 0.418 | 0.297 | -0.121 |
+| edge_cases | J. Phys. Chem. pp. 1234–89... | 0.469 | 0.369 | -0.100 |
+| number_format | Ages 18–65, BP 90/60... | N/A | 0.000 | — |
+| paralinguistics | Snoring zzz zzz... | N/A | 0.000 | — |
+| phonetic | Eithne and Caoilfhinn... | 0.104 | 0.230 | **+0.126** |
+| domain_specific | (2R,3S,4R,5R)-pentahydroxy... | 0.374 | 0.432 | **+0.058** |
+
+Most technical rows improved substantially. Two regressions:
+- **Phonetic row**: spoken_form uses hyphenated respellings ("Eth-na", "Keelin") which Orpheus mispronounces — the reference itself is noisy. Consider respellings without hyphens for TTS input.
+- **Chemical compound row**: AssemblyAI intelligent formatting outputs Unicode (e.g. `10⁻⁴`, `°C`) in ref_asr — this inflates CER when test ASR uses different formatting.
+
+**Key finding: Unicode in ref_asr comes from the ASR model, not from TTS input.** The spoken_form is clean ASCII. AssemblyAI's intelligent formatting reconverts spoken numbers back to symbolic form (`2.5×10⁹`, `-40°C`), introducing Unicode into the reference_asr_transcript. This creates CER noise when test ASR uses different normalisation. Mitigation: strip/normalise Unicode from both reference and test ASR before CER computation — worth filing as a Studio feature request.
+
+**Studio feature request filed** (ID: `6814128c`): add `reference_column` parameter to TTS eval API. Now live.
 
 ---
 
@@ -179,4 +203,6 @@ table = pq.read_table(local_path, columns=["text_prompt", "asr_cer", "asr_transc
 - Calibrate semi-private and private splits with same methodology
 - Apply entity-based n-gram overlap check between splits (leakage prevention)
 - Migrate from `ronanarraig/` to `Trelis/` org once on Trelis infrastructure
-- Implement reference-TTS ground truth pipeline once Studio supports `reference_column` parameter (or manually via spoken_form → Kokoro → ASR)
+- Apply reference-TTS ground truth pipeline to full 48-row dataset (not just prototype)
+- Address phonetic respelling quality: avoid hyphens in TTS respellings (e.g. "Ethna" not "Eth-na") so Orpheus doesn't split on the hyphen
+- Request ASR normalisation option in Studio to strip Unicode from ref_asr before CER computation
