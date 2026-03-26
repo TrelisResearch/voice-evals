@@ -63,19 +63,21 @@ Before running all model evals, spot-check the reference_asr_transcript quality:
 
 Run TTS eval jobs on `ronanarraig/tricky-tts-proto-with-reference` with `reference_column="reference_asr_transcript"` and `asr_model_id="openai/whisper-large-v3"`.
 
-**Target models (discuss with user before running):**
+**Target models (confirmed):**
 
-| Model | Type | Priority | Notes |
-|---|---|---|---|
-| `elevenlabs/eleven-multilingual-v2` | proprietary | high | baseline from phase 2 |
-| `unsloth/orpheus-3b-0.1-ft` | open-source | high | used as reference TTS — still evaluate as test model |
-| `google/gemini-2.5-flash-tts` | proprietary | high | bug `e2bc5701` may be fixed |
-| `openai/gpt-4o-mini-tts` | proprietary | high | strong performer in phase 2 |
-| `cartesia/sonic-3` | proprietary | medium | phase 2 baseline |
-| `kokoro` | open-source | medium | phase 2 baseline |
-| `google/gemini-2.5-pro-tts` | proprietary | low | reference audio model — may bias if also tested |
+| Model | `tts_model_type` | Notes |
+|---|---|---|
+| `elevenlabs/eleven-multilingual-v2` | `auto` | baseline from phase 2 |
+| `openai/gpt-4o-mini-tts` | `auto` | strong performer in phase 2 |
+| `cartesia/sonic-3` | `auto` | baseline from phase 2 |
+| `google/gemini-2.5-flash-tts` | `auto` | bug `e2bc5701` — retry |
+| `google/gemini-2.5-pro-tts` | `auto` | also used as reference audio; fine to test |
+| `unsloth/orpheus-3b-0.1-ft` | `orpheus` | reference TTS + test model (valid — ref is its ASR transcript) |
+| `kokoro` | `kokoro` | baseline from phase 2 |
+| `piper` | `piper` | new in phase 3 |
+| `chatterbox` | `chatterbox` | new — not evaluated in phase 2 |
 
-Open question: should Orpheus be both the reference TTS and a test model? It's fine — the reference is its ASR transcript, not raw audio. Orpheus being evaluated against its own transcript is a valid "upper bound" data point.
+All models: `asr_model_id="openai/whisper-large-v3"`, `reference_column="reference_asr_transcript"`, UTMOS enabled.
 
 ---
 
@@ -112,13 +114,12 @@ Apply the same methodology to semi-private and private splits:
 
 ---
 
-## Open Questions for Discussion
+## Decisions Made
 
-1. **Model list** — which models do we want in the final leaderboard? Any additions beyond the list above?
-2. **Orpheus as reference + test** — comfortable with this, or use a different reference TTS (e.g. Gemini Pro)?
-3. **Phonetic category** — CER is inherently noisy for this category (ASR spelling prior). Do we want to add a UTMOS-only flag for phonetic rows, similar to paralinguistics?
-4. **Timing** — scale to full 48 rows immediately after prototype validation, or do semi-private/private in parallel?
-5. **Dataset naming** — current names are under `ronanarraig/tricky-tts-*`. When do we migrate to `Trelis/` org?
+1. **Model list** — ElevenLabs, GPT-4o-mini-tts, Cartesia Sonic-3, Gemini Flash-TTS, Gemini Pro-TTS, Orpheus, Kokoro, Piper, Chatterbox (all models Studio supports)
+2. **Orpheus as reference + test** — confirmed fine
+3. **CER for all categories** — yes, including phonetic; UTMOS for all rows
+4. **Dataset naming** — TBD when migrating to `Trelis/` org
 
 ---
 
