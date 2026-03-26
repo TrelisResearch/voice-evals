@@ -152,39 +152,45 @@ For phonetic rows, if a TTS model mispronounces "Saoirse" as "Sa-oir-se" but ASR
 - Added `ref_self_cer` quality gate: if `CER(spoken_form, ref_asr) > 0.3`, reference audio is unreliable (Orpheus loop/garble) and row is skipped
 - Added Section 4a to spoken_form_rules.md: chemical compound rules (stereo descriptors, locant lists, CAS numbers, dose notation)
 
-**v4 — Prototype (spoken_form as direct CER reference, Option A):**
+**v4 — Prototype (10 rows, reference pipeline investigation):**
 
-Final approach: use `spoken_form` text directly as `reference_column` in Studio evaluation. No Orpheus reference TTS step needed. Simpler, covers all rows, fully deterministic.
+Prototype dataset: `ronanarraig/tricky-tts-proto-v4` — 10 rows with `text`, `spoken_form`, `category`, `cer_reliable`.
 
-- Gemini Pro TTS reference audio generated for inspection (`ronanarraig/tricky-tts-proto-ref-gemini-pro`)
-- Orpheus data prep audio generated for inspection (`ronanarraig/tricky-tts-proto-ref-orpheus-datap`) — 10 samples, 2.9 min
-- Test dataset: `ronanarraig/tricky-tts-proto-v4` — 10 rows with `text`, `spoken_form`, `category`, `cer_reliable`
-- 3 test model evals run with `reference_column="spoken_form"`, `asr_model_id="openai/whisper-large-v3"`:
+Orpheus reference audio generated via data prep: `ronanarraig/tricky-tts-proto-ref-orpheus-datap` — 10 samples, 2.9 min. Audio quality confirmed good via inspection.
 
-**Prototype v4 results (ElevenLabs, 10 rows, CER vs spoken_form):**
+Gemini Pro reference audio also generated for comparison: `ronanarraig/tricky-tts-proto-ref-gemini-pro`.
 
-| Category | Text (truncated) | CER | Note |
-|---|---|---|---|
-| paralinguistics | [snoring/laughter text] | 0.124 | Lowest — expected |
-| phonetic | Eithne and Caoilfhinn... | 0.272 | ElevenLabs kept original spelling not respelled |
-| ai_tech | deepseek-ai/DeepSeek-R1... | ~0.35 | Digit/abbrev formatting vs. expanded spoken_form |
-| edge_cases | IEEE Trans. Vol. 15... | 0.60–0.61 | Highest — Vol./No./pp. kept as abbreviations |
+**Intended final methodology** (not yet complete — blocked by Orpheus eval 504):
+1. Orpheus TTS reads `spoken_form` → audio (via data prep or eval endpoint)
+2. Whisper large-v3 ASR on that audio → `reference_asr_transcript`
+3. Dataset: `text` (original), `spoken_form`, `reference_asr_transcript`
+4. Eval jobs: TTS models read `text`, ASR → CER vs `reference_asr_transcript`
 
-CER is expected to be higher than old_cer because spoken_form uses fully expanded words (e.g. "forty-two percent") while test_asr uses digit/abbreviation format. This is correct: CER(spoken_form, test_asr) measures how faithfully TTS+ASR round-trips the intended pronunciation, not just transcription accuracy.
+This normalises both reference and test through the same ASR model, so CER reflects pronunciation differences rather than formatting differences between written and expanded text.
 
-**Key findings from v4 prototype:**
-- spoken_form as reference column works cleanly for all categories except phonetic (where ASR spelling prior masks pronunciation errors)
-- paralinguistics row as expected shows near-zero CER — not informative for CER, only UTMOS
-- ElevenLabs phonetic row: kept "Eithne" and "Caoilfhinn" in ASR rather than respelled form — phonetic category still best evaluated by UTMOS + human inspection
-- Orpheus and Gemini Flash evals: Orpheus failed with 504 (known instability), Gemini Flash completed but produced 0 samples (bug filed `e2bc5701`)
+**What was run in v4 (approximation):** `reference_column="spoken_form"` (text string, not ASR transcript). This is incorrect — it inflates CER artificially because the test ASR outputs digits/abbreviations while spoken_form is fully expanded words. Used as a temporary diagnostic only.
+
+**Prototype v4 ElevenLabs results (CER vs spoken_form — inflated, for reference only):**
+
+| Category | CER | ASR snippet |
+|---|---|---|
+| domain_specific (chemical) | 0.638 | `0.25 mL of 1-10-4-MOLOL, 2R, 3S...` |
+| edge_cases (IEEE) | 0.604–0.614 | `IEEE Transeval 115, PPM 67-142...` |
+| number_format (BP) | 0.588 | `ages 18 to 65` (digits, not words) |
+| ai_tech (DeepSeek) | 0.417 | `DeepSeq AI to DeepSeq R1 to distill QUEN` |
+| phonetic | 0.272 | `Eithne and Kauilfin` (original spelling kept) |
+| paralinguistics | 0.124 | `zzz` dropped, rest clean |
+
+Orpheus eval failed (504, bug `6248f9de`). Gemini Flash eval: 0 samples (bug `e2bc5701`). Only ElevenLabs results available from v4.
 
 **Bugs filed this phase:**
 - `8f38a6ae`: empty response body on job poll (intermittent 200 with no JSON)
 - `37a45916`: data prep TTS should support router models (ElevenLabs/Gemini etc.)
 - `e2bc5701`: Gemini Flash TTS eval completed but result=null, 0 samples — silent failure
 - `d53d481f`: clarify whether asr_cer in parquet uses reference_column or original text
-- `1a350d3c`: add ASR+CER to data prep TTS pipeline (currently only audio output)
+- `1a350d3c`: add ASR+CER to data prep TTS pipeline (currently audio only, no transcript)
 - `749df765`: batch upload response key mismatch (`upload_urls` in docs vs `files` in actual response)
+- `6248f9de`: Orpheus eval endpoint recurring 504 failures
 
 **Studio feature request filed** (ID: `6814128c`): add `reference_column` parameter to TTS eval API. Now live.
 
@@ -214,10 +220,4 @@ table = pq.read_table(local_path, columns=["text_prompt", "asr_cer", "asr_transc
 
 ## Phase 3 Next Steps
 
-- **Scale reference pipeline to full 48 rows**: prototype v4 validated, expand to full public split
-- Retry Orpheus eval for v4 prototype (failed with 504)
-- Retry Gemini Flash eval for v4 prototype (silent failure — 0 samples, bug `e2bc5701`)
-- Calibrate semi-private and private splits with same methodology
-- Apply entity-based n-gram overlap check between splits (leakage prevention)
-- Migrate from `ronanarraig/` to `Trelis/` org once on Trelis infrastructure
-- Consider raising or removing ref_self_cer quality gate (0.3 threshold was too strict — filtering good rows due to formatting-driven CER, not audio quality)
+See `reports/tricky-tts/phase3-roadmap.md`.
