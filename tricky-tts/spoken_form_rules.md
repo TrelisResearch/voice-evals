@@ -92,36 +92,36 @@ Use these exact respellings so TTS reads them correctly:
 ### Irish / Gaelic names
 | Written | Spoken form |
 |---|---|
-| Saoirse | Seer-sha |
+| Saoirse | Seersha |
 | Niamh | Neev |
-| Caoimhe | Kwee-va |
+| Caoimhe | Kweeva |
 | Caoilfhinn | Keelin |
-| Aoife | Ee-fa |
-| Siobhán | Shih-vawn |
-| Eithne | Eth-na |
-| Tadhg | Tige (rhymes with "tiger" without the r) |
-| Oisín | Uh-sheen |
-| Diarmuid | Deer-mid |
-| Fionnuala | Fin-OO-la |
-| Pádraig | Paw-drig |
-| Fearghal | Far-gul |
+| Aoife | Eefah |
+| Siobhán | Shihvawn |
+| Eithne | Ethna |
+| Tadhg | Tige |
+| Oisín | Uhsheen |
+| Diarmuid | Deermid |
+| Fionnuala | FinOOla |
+| Pádraig | Pawdrig |
+| Fearghal | Fargul |
 
 ### Welsh / Scottish / other Celtic
 | Written | Spoken form |
 |---|---|
-| Catrìona | Kah-tree-na |
-| Llangefni | Hlan-GEV-nee |
-| Clachnacuddin | Klakh-na-KOO-din |
-| Auchterarder | Awk-ter-AR-der |
-| Cnoc an Doire | Krnok an DOH-ra |
-| Blaenavon | Blay-NAV-on |
+| Catrìona | Kahtreena |
+| Llangefni | HlanGEVnee |
+| Clachnacuddin | KlakhnaKOOdin |
+| Auchterarder | AwkterARder |
+| Cnoc an Doire | Krnok an DOHra |
+| Blaenavon | BlayNAVon |
 
 ### Place names with non-obvious pronunciation
 | Written | Spoken form |
 |---|---|
 | Leicester | Lester |
-| Loughborough | Luff-bruh |
-| Worcestershire | Wooster-sheer |
+| Loughborough | Luffbruh |
+| Worcestershire | Woostersheer |
 | Gloucester | Gloster |
 | Magdalen (College) | Maudlin |
 | Ptolemy | Tolemy |
@@ -129,18 +129,18 @@ Use these exact respellings so TTS reads them correctly:
 ### Foreign loanwords
 | Written | Spoken form |
 |---|---|
-| schadenfreude | shah-den-froy-da |
-| weltanschauung | velt-an-show-oong |
-| Bildungsroman | Bil-dungs-ro-mahn |
-| gemütlichkeit | geh-MOOT-likh-kite |
+| schadenfreude | shahdenfroydah |
+| weltanschauung | veltanshowoong |
+| Bildungsroman | Bildungsrohmahn |
+| gemütlichkeit | gehMOOTlikhkite |
 | mise en scène | meez on sen |
-| bourguignon | boor-geen-YAWN |
+| bourguignon | boorgeen YAWN |
 | gnocchi | nyoki |
-| quinoa | keen-wah |
-| açaí | ah-sah-EE |
-| chipotle | chih-POHT-lay |
+| quinoa | keenwah |
+| açaí | ahsahEE |
+| chipotle | chihPOHTlay |
 | pho | fuh |
-| ptarmigan | TAR-migan |
+| ptarmigan | TARmigan |
 
 ---
 

@@ -6,6 +6,7 @@ then re-run the reference pipeline prototype.
 import json, os, re, time, requests
 from pathlib import Path
 from collections import defaultdict
+import editdistance
 
 env_path = Path("/home/claude/TR/.env")
 for line in env_path.read_text().splitlines():
@@ -71,7 +72,7 @@ def gen_spoken(text: str, category: str) -> str:
             return sanitise(c.strip())
     raise ValueError(f"All models failed: {text[:50]}")
 
-def poll_job(job_type: str, job_id: str, interval: int = 30):
+def poll_job(job_type: str, job_id: str, interval: int = 15):
     while True:
         time.sleep(interval)
         j = requests.get(f"{TRELIS_API}/{job_type}/jobs/{job_id}", headers=HEADERS).json()
@@ -105,7 +106,6 @@ for r in sample:
     print(f"  OLD: {old[:80]}", flush=True)
     print(f"  NEW: {new[:80]}", flush=True)
     print(flush=True)
-    time.sleep(0.4)
 
 # ── Push updated spoken_form dataset ─────────────────────────────────────────
 api = HfApi(token=HF_TOKEN)
@@ -120,9 +120,9 @@ print("\nSubmitting Orpheus reference job...", flush=True)
 resp = requests.post(f"{TRELIS_API}/tts-evaluation/jobs", headers=HEADERS, json={
     "model_id": "unsloth/orpheus-3b-0.1-ft",
     "dataset_id": ref_repo, "split": "train", "num_samples": 10,
-    "asr_model_id": "assemblyai/universal-3-pro", "language": "auto",
+    "asr_model_id": "openai/whisper-large-v3", "language": "auto",
     "tts_model_type": "orpheus", "push_results": True,
-    "output_org": "ronanarraig", "output_name": "tricky-tts-proto-ref-orpheus-v2",
+    "output_org": "ronanarraig", "output_name": "tricky-tts-proto-ref-orpheus-v3",
     "private": True,
 })
 ref_job_id = resp.json().get("id") or resp.json().get("job_id")
@@ -132,7 +132,7 @@ if j["status"] != "completed":
     print(f"FAILED: {j.get('error')}"); exit(1)
 
 # ── Extract reference ASR transcripts ────────────────────────────────────────
-local = hf_hub_download("ronanarraig/tricky-tts-proto-ref-orpheus-v2",
+local = hf_hub_download("ronanarraig/tricky-tts-proto-ref-orpheus-v3",
     "data/train-00000-of-00001.parquet", repo_type="dataset", token=HF_TOKEN)
 t = pq.read_table(local, columns=["text_prompt", "asr_transcription", "asr_cer"])
 ref_d = t.to_pydict()
@@ -160,9 +160,9 @@ print("\nSubmitting ElevenLabs test eval...", flush=True)
 resp = requests.post(f"{TRELIS_API}/tts-evaluation/jobs", headers=HEADERS, json={
     "model_id": "elevenlabs/eleven-multilingual-v2",
     "dataset_id": proto_repo, "split": "train", "num_samples": 10,
-    "asr_model_id": "assemblyai/universal-3-pro", "language": "auto",
+    "asr_model_id": "openai/whisper-large-v3", "language": "auto",
     "tts_model_type": "auto", "push_results": True,
-    "output_org": "ronanarraig", "output_name": "tricky-tts-proto-test-elevenlabs-v2",
+    "output_org": "ronanarraig", "output_name": "tricky-tts-proto-test-elevenlabs-v3",
     "reference_column": "reference_asr_transcript", "private": True,
 })
 test_job_id = resp.json().get("id") or resp.json().get("job_id")
@@ -172,34 +172,51 @@ if j["status"] != "completed":
     print(f"FAILED: {j.get('error')}"); exit(1)
 
 # ── Download and inspect ──────────────────────────────────────────────────────
-local2 = hf_hub_download("ronanarraig/tricky-tts-proto-test-elevenlabs-v2",
+local2 = hf_hub_download("ronanarraig/tricky-tts-proto-test-elevenlabs-v3",
     "data/train-00000-of-00001.parquet", repo_type="dataset", token=HF_TOKEN)
 t2 = pq.read_table(local2, columns=["text_prompt","asr_transcription","asr_cer"])
 test_d = t2.to_pydict()
 test_by_text = dict(zip(test_d["text_prompt"],
     zip(test_d["asr_transcription"], test_d["asr_cer"])))
 
+REF_SELF_CER_THRESHOLD = 0.3
+
+def compute_cer(ref: str, hyp: str) -> float:
+    """Character error rate: edit_distance(ref, hyp) / len(ref)."""
+    ref, hyp = ref.strip().lower(), hyp.strip().lower()
+    if not ref:
+        return 0.0
+    return editdistance.eval(ref, hyp) / len(ref)
+
 old_cer = {r["text"]: r.get("median_cer") for r in perrow}
 
 print("\n" + "="*100)
-print("INSPECTION: old CER-vs-text  |  new ref-pipeline CER  |  spoken_form  |  ref_asr  |  test_asr")
+print("INSPECTION: old CER-vs-text  |  ref_pipeline CER (computed)  |  spoken_form  |  ref_asr  |  test_asr")
 print("="*100)
 
-rows_sorted = sorted(proto_rows, key=lambda r: -(test_by_text.get(r["text"],("",0))[1] or 0))
+rows_sorted = sorted(proto_rows, key=lambda r: -compute_cer(
+    r["reference_asr_transcript"], test_by_text.get(r["text"], ("",))[0] or ""))
 for r in rows_sorted:
-    test_asr, test_cer = test_by_text.get(r["text"], ("N/A", None))
+    test_asr, _ = test_by_text.get(r["text"], ("N/A", None))
     ref_asr = r["reference_asr_transcript"]
     o_cer = old_cer.get(r["text"])
-    ref_cer = spoken_to_ref_cer.get(r["spoken_form"])
-    delta = (test_cer - o_cer) if (test_cer and o_cer) else None
+    ref_self_cer = spoken_to_ref_cer.get(r["spoken_form"])
+
+    ref_ok = ref_self_cer is not None and ref_self_cer <= REF_SELF_CER_THRESHOLD
+    ref_pipeline_cer = compute_cer(ref_asr, test_asr) if (ref_ok and test_asr != "N/A") else None
+    delta = (ref_pipeline_cer - o_cer) if (ref_pipeline_cer is not None and o_cer is not None) else None
 
     print(f"\n[{r['category']}]")
     print(f"  text:     {r['text'][:90]}")
     print(f"  spoken:   {r['spoken_form'][:90]}")
     print(f"  ref_asr:  {ref_asr[:90]}")
     print(f"  test_asr: {test_asr[:90]}")
-    cer_str = f"old={o_cer:.3f}  ref_pipeline={test_cer:.3f}  delta={delta:+.3f}" if delta is not None else f"ref_pipeline={test_cer}"
-    ref_cer_str = f"  ref_self_cer={ref_cer:.3f}" if ref_cer is not None else ""
-    print(f"  CER: {cer_str}{ref_cer_str}")
+    if ref_self_cer is not None and ref_self_cer > REF_SELF_CER_THRESHOLD:
+        print(f"  CER: ⚠ REFERENCE FAILED (ref_self_cer={ref_self_cer:.3f} > {REF_SELF_CER_THRESHOLD}) — skipping")
+    elif ref_pipeline_cer is not None:
+        cer_str = f"old={o_cer:.3f}  ref_pipeline={ref_pipeline_cer:.3f}  delta={delta:+.3f}" if delta is not None else f"ref_pipeline={ref_pipeline_cer:.3f}"
+        print(f"  CER: {cer_str}  ref_self_cer={ref_self_cer:.3f}")
+    else:
+        print(f"  CER: N/A  ref_self_cer={ref_self_cer}")
 
 print("\nDone.", flush=True)
