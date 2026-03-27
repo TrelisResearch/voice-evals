@@ -1,0 +1,52 @@
+[
+  {
+    "text": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases",
+    "spoken_form": "The manuscript cited Volume forty-seven, Number three of the Journal of Physical Chemistry, noting samples required greater than or equal to ninety-nine point nine percent purity and storage at minus eighty degrees Celsius plus or minus two degrees Celsius in fifty micrograms per millilitre aliquots."
+  },
+  {
+    "text": "Per IEEE Trans. Vol. 15, the circuit required 3.3V±5%, 150mA max., capacitance ≤10μF and operating temps −40°C to +85°C per MIL-STD-883.",
+    "category": "edge_cases",
+    "spoken_form": "Per I triple E Transactions Volume fifteen, the circuit required three point three volts plus or minus five percent, one hundred fifty milliamps max., capacitance less than or equal to ten microfarads and operating temps minus forty degrees Celsius to plus eighty-five degrees Celsius per MIL standard eight eighty-three."
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0°C ± 0.2°C, pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "spoken_form": "Administer zero point two five millilitres of one times ten to the minus four moles per litre two R three S four R five R two three four five six pentahydroxyhexanal C A S fifty ninety nine seven to Saccharomyces cerevisiae S288C at thirty point zero degrees Celsius plus or minus zero point two degrees Celsius, pH five point five plus or minus zero point zero five per A S T M E2149-13a."
+  },
+  {
+    "text": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128μg/mL per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37°C ± 0.5°C.",
+    "category": "domain_specific",
+    "spoken_form": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin M I C greater than one hundred twenty-eight micrograms per millilitre per C L S I M24-A2:2011 at pH 6.8 plus or minus 0.1 and 37 degrees Celsius plus or minus 0.5 degrees Celsius."
+  },
+  {
+    "text": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4×A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned deepseek AI slash DeepSeek R1 Distill Kwen 32B on 4 times A100 eighty gigabytes S X M with BF16, zero 3, gradient checkpointing equals True, and learning rate equals 2 times 10 to the minus 5."
+  },
+  {
+    "text": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+    "category": "ai_tech",
+    "spoken_form": "We benchmarked zero one AI slash Yee 1.5 34B Chat 16K against meta llama slash Llama 3.1 70B Instruct using M M L U, G S M 8 K at 4 shot, and HumanEval benchmarks."
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "spoken_form": "The spacecraft traveled two point five times ten to the ninth miles at temperatures from minus forty degrees Celsius to plus one hundred twenty degrees Celsius, covering the distance in approximately three to two the predicted time."
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format",
+    "spoken_form": "For participants ages eighteen to sixty-five, blood pressure should range from ninety over sixty to one twenty over eighty millimetres of mercury, with temperatures between ninety-seven point eight degrees Fahrenheit and ninety-nine point one degrees Fahrenheit."
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "spoken_form": "Ethna and Keelin debated the meez on sen while eating Woostersheer sauce with Doctor Nguyen."
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "spoken_form": "He started snoring, zzz, zzz, and I just thought, you know what, forget it. Not worth it."
+  }
+]

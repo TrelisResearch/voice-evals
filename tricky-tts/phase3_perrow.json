@@ -1,0 +1,740 @@
+{
+  "ElevenLabs": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " the manuscript cited Vol. 47 No. 3 of the J. Fisantabur Chem. Noting samples required Noriju 99.9% purity and storage at 80\u00b0C in 50 mL aliquots.",
+      "asr_wer": 0.5349,
+      "asr_cer": 0.496,
+      "duration_s": 15.510958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE Trans V1115, the circuit required 3.3 V plus 5%, 150 MW max, capacitance 0.10 MW and operating temps 40 DGW to plus 185 DGW per mil STD 883.",
+      "asr_wer": 0.4762,
+      "asr_cer": 0.4328,
+      "duration_s": 19.504791666666666,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 MnL of 1.10 to 4 mL L, 2R to 3S, 4R, 5R, 2,3,4,5,6, penta-hydroxyhexanol, Kias 50 and 99 to 7. To Saccharomyces cerevisiae S208C at 30.0 Duxa plus 0.2 to C, pH 5.5 plus 0.05 per ASTM E2149 to 39.",
+      "asr_wer": 0.7234,
+      "asr_cer": 0.4246,
+      "duration_s": 23.684375,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37RVI expressing RPOB S531L in demonstrates rifampicin MIC 128 mbar mLs per CLSI M24A2 2011 at pH 6.8+, 0.1 and 37\u00b0C 0.5\u00b0C.",
+      "asr_wer": 0.5789,
+      "asr_cer": 0.3937,
+      "duration_s": 20.387125,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq AI DeepSeq R1 DistilQN 32B on 4XA 180GB SXM with BFS 16, 0, 3, gradient or checkpointing true, and LRVAL low-to-E 5.",
+      "asr_wer": 0.5714,
+      "asr_cer": 0.3483,
+      "duration_s": 15.789583333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked Eero 1 AI Y 1.5 34B Chat X 16K against MetaLlama Lama 3.1 70B Instruct using MMLU GSM 8K A4 Shot and Human Evil benchmarks.",
+      "asr_wer": 0.5161,
+      "asr_cer": 0.1333,
+      "duration_s": 16.532625,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 of 109 miles at temperatures from 40\u00b0C to 120\u00b0C, covering the distance in approximately 3.2, the predicted time.",
+      "asr_wer": 0.3529,
+      "asr_cer": 0.2969,
+      "duration_s": 13.74625,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90 to 60 to 120-80 mmHg, with temperatures between 97.8\u00b0C and 99.1\u00b0C.",
+      "asr_wer": 0.2727,
+      "asr_cer": 0.3421,
+      "duration_s": 14.953666666666667,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Eithne and Kauilfin debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_wer": 0.1333,
+      "asr_cer": 0.0769,
+      "duration_s": 5.897875,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring, zzzz, zzzz, and I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.1176,
+      "asr_cer": 0.0244,
+      "duration_s": 10.031041666666667,
+      "utmos_score": null
+    }
+  ],
+  "GPT-4o mini TTS": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited volume 47, number 3 of the JFIS Chem, noting samples required equals 99.9% purity and storage at negative 80 degrees Celsius plus minus 2 degrees Celsius in 50 microgram per milliliter aliquots.",
+      "asr_wer": 0.2791,
+      "asr_cer": 0.208,
+      "duration_s": 16.608,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE trans volume 15, the circuit required 3.3 volts plus 5%, 150 milliamps max, capacitance less than 10 microfarad, and operating temps minus 40 degrees Celsius to plus 85 degrees Celsius per mil STD 883.",
+      "asr_wer": 0.1905,
+      "asr_cer": 0.1429,
+      "duration_s": 17.304,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 milliliters of 1 x 10\u207b\u2074 mol liter 2R3S4R5R23456 pentahydroxyhexanol Cas50-99-7 to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C pH 5.5 \u00b1 0.05 per ASTM E2149-13A.",
+      "asr_wer": 0.5319,
+      "asr_cer": 0.3492,
+      "duration_s": 28.968,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37RV expressing RPOB S531L demonstrates rifampicin MIC greater than 128 micrograms per milliliter per CLSI M24A2 2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_wer": 0.4211,
+      "asr_cer": 0.2308,
+      "duration_s": 24.648,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq AI DeepSeq R1 Distil Quen 32B on 4x A100 80GB SXM with BF16, 03, gradient checkpointing true, and LR equals 2E5.",
+      "asr_wer": 0.5714,
+      "asr_cer": 0.3371,
+      "duration_s": 16.752,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked 01AI Yai 1.5-34B Chat 16K against MetaLlama Lama 3.1-70B Instruct using MMLU, GSM8K at 4-shot, and human-level benchmarks.",
+      "asr_wer": 0.5161,
+      "asr_cer": 0.1037,
+      "duration_s": 15.768,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 times 10 muion miles at temperatures from negative 40 degrees Celsius to plus 120 degrees Celsius, covering the distance in approximately 3 times 2 the predicted time.",
+      "asr_wer": 0.1471,
+      "asr_cer": 0.1146,
+      "duration_s": 13.704,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90-60 to 120 to 80 mmHg with temperatures between 97.8 degrees Fahrenheit and 99.1 degrees Fahrenheit.",
+      "asr_wer": 0.1515,
+      "asr_cer": 0.1526,
+      "duration_s": 14.208,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Ethne and Kailson debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_wer": 0.1333,
+      "asr_cer": 0.0549,
+      "duration_s": 6.216,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring. And I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.1176,
+      "asr_cer": 0.0976,
+      "duration_s": 7.104,
+      "utmos_score": null
+    }
+  ],
+  "Cartesia Sonic-3": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited Vol. 47, no, 3 of the JFIS. Chem. Noting samples required 99.9% purity and storage at 80 degrees Celsius, 2 degrees Celsius in 5, 0 mu G. Slash ML Aliquots.",
+      "asr_wer": 0.4884,
+      "asr_cer": 0.376,
+      "duration_s": 14.628583333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE trans. Val. 15, the circuit required 3.3 VU5%, 150 ma max. Capacitance 10F in operating temps, 40 degrees Celsius to plus 85 degrees C per m, ILSTD883.",
+      "asr_wer": 0.5,
+      "asr_cer": 0.3824,
+      "duration_s": 15.778,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 ml of wine 10 to the fourth power mol slash L2, R3, S4, R5, R2, 3, 4, 5. 6-penahydroxyhexanal cast 5, 0, 9, 9. 7-saccharomyces cerevisiae S288C at 30.0 degrees Celsius, 0.2 degrees Celsius, pH 5.5, 0.05 per ASTM E2, 149, 13A.",
+      "asr_wer": 0.6809,
+      "asr_cer": 0.3254,
+      "duration_s": 23.823708333333332,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37-RV expressing RPOB S531-L demonstrates rifampicin MIC128-MUGY. Slash ML per CLSIM24. A2 colon 2, 0, 1, 1 at pH 6.8, 0.1 in 37 degrees Celsius, 0.5 degrees Celsius.",
+      "asr_wer": 0.5263,
+      "asr_cer": 0.3032,
+      "duration_s": 19.879208333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq Eyelash DeepSeq R1 Distilled Quin32B on 4, a 180 GBS XM with BF16, 03, gradient underscore checkpointing equal sign true, and LR equal sign 2E5.",
+      "asr_wer": 0.6286,
+      "asr_cer": 0.3764,
+      "duration_s": 11.78125,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked 0-1-A-I-slash-Y-1-dot-5, 3-4-B-C-hat-16-K against Meta-Llama-slash-Llama-3-dot-1. 7-0-B. I instruct using MMLU-G-S-M-8-K at 4-shot and Humane Evil benchmarks.",
+      "asr_wer": 0.9032,
+      "asr_cer": 0.2815,
+      "duration_s": 12.773916666666667,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 10 to the 9th power miles at temperatures from minus 40 degrees Celsius to plus 120 degrees C, covering the distance in approximately 3 to the predicted time.",
+      "asr_wer": 0.1176,
+      "asr_cer": 0.1042,
+      "duration_s": 10.710208333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 0.960 to 0.180 MHG, with temperatures between 97.8 degrees Fahrenheit and 99.1 degrees Fahrenheit.",
+      "asr_wer": 0.2727,
+      "asr_cer": 0.1789,
+      "duration_s": 11.938,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Heathney and Kowalfin debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_wer": 0.1333,
+      "asr_cer": 0.0989,
+      "duration_s": 4.4147083333333335,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring. And I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.1176,
+      "asr_cer": 0.0976,
+      "duration_s": 6.269416666666666,
+      "utmos_score": null
+    }
+  ],
+  "Gemini Flash TTS": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited Vol 47, number 3, of the JFIS Chem, noting samples required greater than 99.9% purity and storage at negative 80 degrees Celsius, plus or minus 2 degrees Celsius, in 50 micrograms per ml aliquots.",
+      "asr_wer": 0.2326,
+      "asr_cer": 0.208,
+      "duration_s": 17.450958333333332,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE trans volume 15, the circuit required 3.3 volt plus or minus 5%, 150 milliamps max, capacitance Celeste 10 microfarad, and operating temps negative 40 degrees Celsius to positive 85 degrees Celsius per mil standard 883.",
+      "asr_wer": 0.2381,
+      "asr_cer": 0.1765,
+      "duration_s": 20.730958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 milliliters of 1 times 10 to the negative fourth mole per liter 2R3S4R5R pentahydroxyhexanol CAS50997 to Saccharomyces cerevisiae S288C at 30.0 degrees Celsius plus or minus 0.2C, pH 5.5 \u00b1 0.05, her ASTM E2149-13A.",
+      "asr_wer": 0.4043,
+      "asr_cer": 0.2222,
+      "duration_s": 34.45095833333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37RV expressing ARPO-B S531L demonstrates rifampicin MIC greater than 128 micrograms per ml per CLSI M24A2-2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_wer": 0.4737,
+      "asr_cer": 0.267,
+      "duration_s": 24.890958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq AI DeepSeq R1 Distil QN32B on 4xA100 80GB SXM with BF16, 0, 3, gradient checkpointing equals true, and LR equals 2E to the negative 5.",
+      "asr_wer": 0.4,
+      "asr_cer": 0.2528,
+      "duration_s": 17.850958333333335,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked 01AI-ye1.534b-chat16k against meta.lama-lama3.170b-instruct using MMLU, GSM8k at 4-shot, and human eval benchmarks.",
+      "asr_wer": 0.5484,
+      "asr_cer": 0.0741,
+      "duration_s": 18.410958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 times 10 to the 9th miles at temperatures from minus 40 degrees Celsius to plus 120 degrees Celsius, covering the distance in approximately three-halves the predicted time.",
+      "asr_wer": 0.0882,
+      "asr_cer": 0.0573,
+      "duration_s": 14.370958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90-60 to 120-80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_wer": 0.2727,
+      "asr_cer": 0.3368,
+      "duration_s": 15.930958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Ethna and Kalefin debated the mise-en-scene while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_wer": 0.0667,
+      "asr_cer": 0.044,
+      "duration_s": 6.890958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring. Zzz. Zzz. And I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.0,
+      "asr_cer": 0.0,
+      "duration_s": 9.650958333333334,
+      "utmos_score": null
+    }
+  ],
+  "Gemini Pro TTS": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited Fall 47, No. 3 of the JFISChem, noting samples required greater than 99.9% purity and storage at negative 80\u00b0C plus or minus 2\u00b0C in 50 micrograms per ml aliquotes.",
+      "asr_wer": 0.3721,
+      "asr_cer": 0.348,
+      "duration_s": 17.290958333333332,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IIEE trans vol 15, the circuit required 3.3 V plus or minus 5%, 150 mA max, capacitance Celeste 10 microfarad, and operating temps negative 40 degrees Celsius to plus 85 degrees Celsius per mil standard 883.",
+      "asr_wer": 0.2857,
+      "asr_cer": 0.2059,
+      "duration_s": 18.770958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 mL of 1 x 10\u207b\u2074 mol per liter 2R3S4R5R pentahydroxyhexanil Cas50997 to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C pH, plus or minus 0.05, per ASTM E2149-13A.",
+      "asr_wer": 0.5319,
+      "asr_cer": 0.3532,
+      "duration_s": 31.65095833333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37RV expressing RPOB S531L demonstrates rifampicin MIC greater than 128 micrograms per ml per CLSI M24A2-2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_wer": 0.4474,
+      "asr_cer": 0.267,
+      "duration_s": 25.690958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq AI slash DeepSeq R1-Distil QEN-32B on 4x180GB SXM with BF16, 0, 3, gradient checkpointing equals true, and LR equals 2E to the negative 5.",
+      "asr_wer": 0.3714,
+      "asr_cer": 0.2191,
+      "duration_s": 18.49095833333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked 01AI-YI1.5-34B-CHAT16K against MetaLlama-Llama3.1-70B-Instruct using MMLU, GSM8K at 4-shot, and human eval benchmarks.",
+      "asr_wer": 0.6129,
+      "asr_cer": 0.1037,
+      "duration_s": 19.530958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 times 10 to the 9th miles at temperatures from negative 40 degrees Celsius to positive 120 degrees Celsius, covering the distance in approximately 3 to the predicted time.",
+      "asr_wer": 0.0882,
+      "asr_cer": 0.0885,
+      "duration_s": 14.050958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90-60 to 120-80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_wer": 0.2727,
+      "asr_cer": 0.3368,
+      "duration_s": 15.570958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Eithner and Kaelfin debated the Misen Sen while eating Worcestershire sauce with Dr. Duen.",
+      "asr_wer": 0.4,
+      "asr_cer": 0.1429,
+      "duration_s": 6.370958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring. Zzzz. Zzzz. And I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.1176,
+      "asr_cer": 0.0244,
+      "duration_s": 10.970958333333334,
+      "utmos_score": null
+    }
+  ],
+  "Orpheus": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited volume 47, number 3 of the JFIS, Chem, noting samples required grade con 99.9% purity and storage at minus 80 degrees Celsius plus 2 degrees Celsius and 50 microimpointed bold stire. Aliquots.",
+      "asr_wer": 0.3488,
+      "asr_cer": 0.264,
+      "duration_s": 16.64,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE trans volume 15. The circuit required 3.3 volts plus is 5%, 150 milliampere max. Capacitance 10 lieutenant fair and operating temps minus 40 degrees Celsius to plus 85 degrees Celsius per MOS TD 883.",
+      "asr_wer": 0.3095,
+      "asr_cer": 0.2227,
+      "duration_s": 18.346666666666668,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer 0.25 mils of 1 x 10 mitofoxamol L, 2R, 3S, 4R, 5R, 2, 3, 4, 5, 6 pentahydroxyhexanol, KS50-997 to saccharomyces cerevisiae ST8C at 30.0\u00b0C plus dormyces cerevisiae ST at 30.0\u00b0C plus changes of uresiae pH 5.5 plus 2025 per ASTM E214913A.",
+      "asr_wer": 0.7447,
+      "asr_cer": 0.4325,
+      "duration_s": 30.208,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis, H37RV expressing RPOB, 7-3-Cithelesaz 0.5-C-MSK, I plus lomelantations, 2011 at pH 6.8 plus 0.1, and 37\u00b0C plus 1 and 37\u00b0C plus 0.5\u00b0C.",
+      "asr_wer": 0.7105,
+      "asr_cer": 0.5204,
+      "duration_s": 25.002666666666666,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSeq-I, DeepSeq-R1 distil QN32B on 4xA 180GB XM with BF16-03, gradient check the kiting train and LRH2E5.",
+      "asr_wer": 0.7429,
+      "asr_cer": 0.4213,
+      "duration_s": 14.762666666666666,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked O1-AIEI 1.5-34b-CHAT16k against Meta-LUMA, LUMA 3.1-70b, Instruct using NNLU, GSM 8k at 4-shot, and HumanEval benchmarks.",
+      "asr_wer": 0.5161,
+      "asr_cer": 0.1111,
+      "duration_s": 15.530666666666667,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled 2.5 times 10 nines out of two quarters from 40 degrees Celsius to plus 20, 20 degrees Celsius, covering the distance in approximately 3 to Z zero, covering the distance in approximately 3 degrees Celsius to plus 120 degrees Celsius, covering the distance in approximately 3 degrees Celsius to plus 3, 10, and knaving just to make challenges, prepermanating one day came to have names.",
+      "asr_wer": 1.3529,
+      "asr_cer": 1.1979,
+      "duration_s": 29.269333333333332,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18 to 65, blood pressure should range from 90-60 to 120-80 mmHg, with temperatures between 97.8 and 99.1 F.",
+      "asr_wer": 0.2727,
+      "asr_cer": 0.3474,
+      "duration_s": 15.274666666666667,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Ethne and Solilfen debated the maison's saying while eating Worcestershire sauce with Dr. Wynne.",
+      "asr_wer": 0.4,
+      "asr_cer": 0.2308,
+      "duration_s": 6.144,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring. I just thought, you know what? Forget it. Not worth it.",
+      "asr_wer": 0.1765,
+      "asr_cer": 0.1463,
+      "duration_s": 10.666666666666666,
+      "utmos_score": null
+    }
+  ],
+  "Kokoro": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": " The manuscript cited vol. 47, number 3 of the J-phys. Chem. Noting samples required greater or equal to 99, 9% purity and storage at minus 80 degrees C plus or minus 2 degrees C in 50 muge-slash-mL aliquots.",
+      "asr_wer": 0.2558,
+      "asr_cer": 0.228,
+      "duration_s": 17.75,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": " Per IEEE trans, vol. 15, the circuit required 3 3V plus or minus 5%, 150 ma max, capacitance less or equal to 10 mu F, and operating temps minus 40, C to plus 85 degrees C per mil STD 883.",
+      "asr_wer": 0.2857,
+      "asr_cer": 0.2563,
+      "duration_s": 19.375,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": " Administer, ML of 1 x 10 mol slash L, 2R3, 4R, 5R-2, 3, 4, 5, 6-pentahydroxahexanol, CAS 50997, to Saccharomyces cerevisiae S288C at 30, 0\u00b0C+, or minus 0, 2\u00b0C, pH 5.5+, or minus 0.05 per ASDM E214913A.",
+      "asr_wer": 0.5532,
+      "asr_cer": 0.369,
+      "duration_s": 25.5,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": " Mycobacterium tuberculosis H37-RV-expressing RPO-B-S531L demonstrates rifampicin MYC128-MUG-ML per CLSI-M24A2, 2011 at pH 6.8+, or minus 0.1, and 37\u00b0C+, or minus 0, 5\u00b0C.",
+      "asr_wer": 0.3947,
+      "asr_cer": 0.2986,
+      "duration_s": 23.025,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": " We fine-tuned DeepSea KI slash DeepSeaCAR 1DistilQN32B on four times a 180 GB SXM with BF16, ZRO3, gradient checkpointing equals true, and LR equals 2E5.",
+      "asr_wer": 0.4857,
+      "asr_cer": 0.2697,
+      "duration_s": 15.525,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": " We benchmarked 0-1-A-I-E-1, 5-34-B-CHAT-16-K against Meta-Lama-Lama 3-1-70-B-Instruct using MMLU, GSM-8-K at 4-shot, and human eval benchmarks.",
+      "asr_wer": 0.3871,
+      "asr_cer": 0.0444,
+      "duration_s": 15.4,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": " The spacecraft traveled two, five times ten-nine miles at temperatures from minus 40 degrees C to plus 120 degrees C, covering the distance in approximately three, two the predicted time.",
+      "asr_wer": 0.3235,
+      "asr_cer": 0.1927,
+      "duration_s": 13.35,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": " For participants ages 18-65, blood pressure should range from 90-60 to 120-80 mmHg, with temperatures between 97, 8 degrees F, and 99, 1 degrees F.",
+      "asr_wer": 0.2424,
+      "asr_cer": 0.2684,
+      "duration_s": 14.4,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": " Ethan and Kielfin debated the Messie end scene while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_wer": 0.2667,
+      "asr_cer": 0.0989,
+      "duration_s": 6.1,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": " He started snoring, zzz, zzz, and I just thought, you know what, forget it, not worth it.",
+      "asr_wer": 0.0,
+      "asr_cer": 0.0,
+      "duration_s": 6.225,
+      "utmos_score": null
+    }
+  ],
+  "Piper (en-gb)": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 17.39174603174603,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 18.11156462585034,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 29.91891156462585,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 24.11392290249433,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 14.675011337868481,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 13.990022675736961,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 11.80734693877551,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 14.013242630385488,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 5.363809523809524,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 6.501587301587302,
+      "utmos_score": null
+    }
+  ],
+  "Chatterbox": [
+    {
+      "text_prompt": "The manuscript cited Vol. 47, No. 3 of the J. Phys. Chem., noting samples required \u226599.9% purity and storage at \u221280\u00b0C\u00b12\u00b0C in 50\u03bcg/mL aliquots.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 10.64,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Per IEEE Trans. Vol. 15, the circuit required 3.3V\u00b15%, 150mA max., capacitance \u226410\u03bcF and operating temps \u221240\u00b0C to +85\u00b0C per MIL-STD-883.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 10.8,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Administer 0.25mL of 1\u00d710\u207b\u2074 mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae S288C at 30.0\u00b0C \u00b1 0.2\u00b0C, pH 5.5 \u00b1 0.05 per ASTM E2149-13a.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 35.4,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Mycobacterium tuberculosis H37Rv expressing rpoB S531L demonstrates rifampicin MIC >128\u03bcg/mL per CLSI M24-A2:2011 at pH 6.8 \u00b1 0.1 and 37\u00b0C \u00b1 0.5\u00b0C.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 17.96,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4\u00d7A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 11.08,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 12.52,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "The spacecraft traveled 2.5\u00d710\u2079 miles at temperatures from -40\u00b0C to +120\u00b0C, covering the distance in approximately 3:2 the predicted time.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 10.36,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "For participants ages 18\u201365, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8\u00b0F and 99.1\u00b0F.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 11.6,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Eithne and Caoilfhinn debated the mise en sc\u00e8ne while eating Worcestershire sauce with Dr. Nguyen.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 5.12,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring\u2014zzz, zzz\u2014and I just thought... you know what, forget it. Not worth it.",
+      "asr_transcription": null,
+      "asr_wer": null,
+      "asr_cer": null,
+      "duration_s": 4.6,
+      "utmos_score": null
+    }
+  ]
+}

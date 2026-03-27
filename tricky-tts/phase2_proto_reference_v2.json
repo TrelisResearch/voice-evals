@@ -1,0 +1,72 @@
+[
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234–89 of the J. Phys. Chem., noting that samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases",
+    "spoken_form": "The manuscript cited Volume forty-seven, Number three, pages twelve thirty-four to eighty-nine of the Journal of Physical Chemistry, noting that samples required greater than or equal to ninety-nine point nine percent purity and storage at minus eighty degrees Celsius plus or minus two degrees Celsius in fifty micrograms per millilitre aliquots.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " The manuscript cited volume 47, number 3, pages 1234 to 89 of the Journal of Physical Chemistry, noting that samples required greater than or equal to 99.9% purity in storage at minus 80 degrees Celsius plus or minus 2 degrees Celsius and 50 micrograms per milliliter aliquots."
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67–142, the circuit required 3.3V±5%, 150mA max., with capacitance ≤10μF and operating temps between −40°C and +85°C per MIL-STD-883.",
+    "category": "edge_cases",
+    "spoken_form": "According to I triple E Transactions Volume fifteen, pages sixty-seven to one forty-two, the circuit required three point three volts plus or minus five percent, one hundred fifty milliamps max, with capacitance less than or equal to ten microfarads and operating temps between minus forty degrees Celsius and plus eighty-five degrees Celsius per MIL standard eight eighty-three.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " According to IEEE Inzactions Volume 15, pages 67 to 142, the circuit required 3.3 volts plus or minus 5%, 150 milliamps max with capacitance less than or equal to 10 microfarads and operating temps between minus 40 degrees Celsius and plus 85 degrees Celsius per mil standard 883."
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0°C ± 0.2°C maintaining pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "spoken_form": "Administer zero point two five millilitres of one times ten to the minus four moles per litre two R three S four R five R two three four five six pentahydroxyhexanal C A S fifty ninety nine seven to Saccharomyces cerevisiae strain S two eighty eight C and Candida albicans strain S C five three one four at thirty point zero degrees Celsius plus or minus zero point two degrees Celsius maintaining pH five point five plus or minus zero point zero five per A S T M E two one four nine thirteen a.",
+    "cer_reliable": true,
+    "reference_asr_transcript": " Administer 0.25 milliliters of 1 x 10⁻⁴ moles per liter 2R3S 4R5R 23456-penahydroxyhexanol CAS 50997-saccharomyces cerevisiae strain S288C and candida albicam strain SC5314 at 30.0°C ±0.2 degrees Celsius containing pH 5.5 plus or minus 0.05 per AST."
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128μg/mL when tested per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C.",
+    "category": "domain_specific",
+    "spoken_form": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin M I C greater than one hundred twenty-eight micrograms per millilitre when tested per C L S I M24-A2:2011 at pH six point eight plus or minus zero point one and thirty-seven point zero degrees Celsius plus or minus zero point five degrees Celsius.",
+    "cer_reliable": true,
+    "reference_asr_transcript": " Mycobacterium tuberculosis strain H37RV and Mycobacterium bovis BCG-expressing RPOB S31L mutations demonstrate rifampicin MIC greater than 128 micrograms per milliliter when tested per C LSIN 24A2 2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C."
+  },
+  {
+    "text": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4×A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned deepseek AI slash DeepSeek R1 Distill Qwen 32B on 4 times A100 80GB SXM with BF16, ZeRO 3, gradient checkpointing equals True, and learning rate equals 2 times 10 to the minus 5.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " We fine-tune DeepSeq AI slash DeepSeq R1 distil QUIN32B on 4 times A180GB XM with BF1603 gradient checkpointing equals true, and learning rate equals 2 times 10 to the minus 5."
+  },
+  {
+    "text": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+    "category": "ai_tech",
+    "spoken_form": "We benchmarked zero one AI slash Yi 1.5 34B Chat 16K against meta llama slash Llama 3.1 70B Instruct using M M L U, G S M 8 K at 4 shot, and HumanEval benchmarks.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " We benchmarked 01-AI-E-1.5-34-B-CHAT-16K against MetaLlama-Llama-3.170-B-Instruct using MNLU, GSM-8K at 4-shot, and human eval benchmarks."
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "spoken_form": "The spacecraft traveled two point five times ten to the ninth miles at temperatures from minus forty degrees Celsius to plus one hundred twenty degrees Celsius, covering the distance in approximately three to two the predicted time.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " The spacecraft traveled 2.5 times 10 to the 9th miles at temperatures from minus 40 degrees Celsius to plus 120 degrees Celsius, covering the distance in approximately 3 to 2 the predicted time."
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format",
+    "spoken_form": "For participants ages eighteen to sixty-five, blood pressure should range from ninety over sixty to one twenty over eighty millimetres of mercury, with temperatures between ninety-seven point eight degrees Fahrenheit and ninety-nine point one degrees Fahrenheit.",
+    "cer_reliable": false,
+    "reference_asr_transcript": " For participants ages 18 to 65, blood pressure should range from 90 over 60 to 120 over 80 mmHg, with temperatures between 97.8 °F and 99.1 °F."
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "spoken_form": "Ethna and Keelin debated the meez on sen while eating Woostersheer sauce with Doctor Nguyen.",
+    "cer_reliable": true,
+    "reference_asr_transcript": " Efnan Kehlen debated the mise-en-scene while eating Worcestershire sauce with Dr. Wim."
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "spoken_form": "He started snoring, zzz, zzz, and I just thought, you know what, forget it. Not worth it.",
+    "cer_reliable": true,
+    "reference_asr_transcript": " He started snoring. And I just thought, you know what? Forget it. Not worth it."
+  }
+]

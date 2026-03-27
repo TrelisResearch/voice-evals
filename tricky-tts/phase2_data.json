@@ -1,0 +1,290 @@
+[
+  {
+    "text": "Dr. Zhang, M.D., Ph.D., F.A.C.C., presented at the 5th Ann. Conf. on Cardiology (ISBN: 978-0-12-345678-9) data showing LDL reductions of 42%±7% using 20mg/dL dosing protocols.",
+    "category": "edge_cases",
+    "spoken_form": "Doctor Zhang, M D, P H D, F A C C, presented at the fifth Annual Conference on Cardiology (I S B N nine seven eight zero twelve three four five six seven eight nine) data showing L D L reductions of forty-two percent plus or minus seven percent using twenty milligrams per deciliter dosing protocols.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The manuscript cited Vol. 47, No. 3, pp. 1234–89 of the J. Phys. Chem., noting that samples required ≥99.9% purity and storage at −80°C±2°C in 50μg/mL aliquots.",
+    "category": "edge_cases",
+    "spoken_form": "The manuscript cited Volume forty-seven, Number three, pages twelve thirty-four to eighty-nine of the J Phys Chem, noting that samples required greater than or equal to ninety-nine point nine percent purity and storage at minus eighty degrees Celsius plus or minus two degrees Celsius in fifty micrograms per milliliter aliquots.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The property at 789 St. Clair Ave., measuring 2,450ft² (227.6m²), sold for £875,000.50 to Mr. & Mrs. St. John-Smythe, Esq., C.Eng., F.I.C.E. on Feb. 14th at 2:15pm.",
+    "category": "edge_cases",
+    "spoken_form": "The property at seven eight nine Saint Clair Avenue, measuring two thousand four hundred fifty square feet, two hundred twenty-seven point six square meters, sold for eight hundred seventy-five thousand pounds and fifty pence to Mister and Misses Saint John Smythe, Esquire, Chartered Engineer, F I C E on February fourteenth at two fifteen p m.",
+    "cer_reliable": false
+  },
+  {
+    "text": "According to IEEE Trans. Vol. 15, pp. 67–142, the circuit required 3.3V±5%, 150mA max., with capacitance ≤10μF and operating temps between −40°C and +85°C per MIL-STD-883.",
+    "category": "edge_cases",
+    "spoken_form": "According to I E E E Transactions Volume fifteen, pages sixty-seven to one forty-two, the circuit required three point three volts plus or minus five percent, one hundred fifty milliamps max, with capacitance less than or equal to ten microfarads and operating temps between minus forty degrees Celsius and plus eighty-five degrees Celsius per MIL standard eight eight three.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The athlete, standing 6ft 3in and weighing 195lb, completed the 100m in 9.58sec at the 23rd Int'l Championships held on St. Patrick's Day at St. Mary's Stadium.",
+    "category": "edge_cases",
+    "spoken_form": "The athlete, standing six feet three inches and weighing one hundred ninety-five pounds, completed the one hundred meters in nine point five eight seconds at the twenty-third International Championships held on Saint Patrick's Day at Saint Mary's Stadium.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Dr. St. James, Ph.D., F.R.S., who lives at 123 St. George St., reported that the solution's pH was 7.4±0.2 at 25°C, with CO₂ levels ≥400ppm.",
+    "category": "edge_cases",
+    "spoken_form": "Doctor Saint James, P H D, F R S, who lives at one twenty-three Saint George Street, reported that the solution's pH was seven point four plus or minus zero point two at twenty-five degrees Celsius, with C O two levels greater than or equal to four hundred parts per million.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Send $1.25M to account GB29-NWBK-6016-1331-9268-19 by 3:00pm EST or contact Ms. St. Claire, B.Sc.(Hons), M.B.A. at extension x5847 before the Q3 deadline.",
+    "category": "edge_cases",
+    "spoken_form": "Send one point two five million dollars to account G B twenty-nine N W B K six zero one six one three three one nine two six eight nineteen by three zero zero p m E S T or contact Miss Saint Claire, B S C Honours, M B A at extension five eight four seven before the Q three deadline.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Rev. Dr. St. Pierre, Th.D., D.D., residing at St. Augustine's Rectory, 456 St. James Pl., announced services at 10:30am and 6:45pm; call 0800-PRAYERS or visit www.st-aug.org.uk.",
+    "category": "edge_cases",
+    "spoken_form": "Reverend Doctor Saint Pierre, T H D, D D, residing at Saint Augustine's Rectory, four five six Saint James Place, announced services at ten thirty a m and six forty-five p m; call zero eight hundred PRAYERS or visit www dot st dash aug dot org dot U K.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Escherichia coli strain O157:H7 and Salmonella enterica serovar Typhimurium strain LT2 harboring blaCTX-M-15 require meropenem 2g IV q8h when MIC values reach 8-16μg/mL per EUCAST v.13.0 breakpoints.",
+    "category": "domain_specific",
+    "spoken_form": "Escherichia coli strain O one five seven colon H seven and Salmonella enterica serovar Typhimurium strain L T two harboring bla C T X dash M dash fifteen require meropenem two grams I V every eight hours when M I C values reach eight to sixteen micrograms per milliliter per E U C A S T version thirteen point zero breakpoints.",
+    "cer_reliable": true
+  },
+  {
+    "text": "In Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999), expert testimony regarding (R)-2-acetamido-N-(2,6-dimethylphenyl)propanamide (CAS 53994-73-3) metabolism via CYP2D6*17 allele variants was challenged under Fed.R.Evid. 702.",
+    "category": "domain_specific",
+    "spoken_form": "In Kumho Tire Company versus Carmichael, five hundred twenty-six U S one hundred thirty-seven nineteen ninety-nine, expert testimony regarding R two acetamido N two six dimethylphenyl propanamide C A S five three nine nine",
+    "cer_reliable": true
+  },
+  {
+    "text": "Administer 0.25mL of 1×10⁻⁴ mol/L (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal (CAS 50-99-7) to Saccharomyces cerevisiae strain S288C and Candida albicans strain SC5314 at 30.0°C ± 0.2°C maintaining pH 5.5 ± 0.05 per ASTM E2149-13a.",
+    "category": "domain_specific",
+    "spoken_form": "Administer zero point two five milliliters of one times ten to the minus fourth moles per liter two R comma three S comma four R comma five R dash two comma three comma four comma five comma six pentahydroxyhexanal C A S fifty ninety-nine seven to Saccharomyces cerevisiae strain S two eighty-eight C and Candida albicans strain S C five three one four at thirty point zero degrees Celsius plus or minus zero point two degrees Celsius maintaining p H five point five plus or minus zero point zero five per A S T M E two one four nine dash thirteen a.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Per Frye v. United States, 293 F. 1013 (D.C. Cir. 1923), analysis of (S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid (CAS 59-92-7) degradation via COMT Val158Met polymorphism requires HPLC-MS/MS sensitivity ≤0.5ng/mL conforming to FDA Guidance 2018.",
+    "category": "domain_specific",
+    "spoken_form": "Per Frye versus United States, two ninety-three F. one zero one three, D.C. Circuit nineteen twenty-three, analysis of S-two-amino-three-three comma four-dihydroxyphenyl propanoic acid, C A S fifty-nine ninety-two seven, degradation via C O M T Val one five eight Met polymorphism requires H P L C-M S slash M S sensitivity less than or equal to zero point five nanograms per milliliter conforming to F D A Guidance twenty eighteen.",
+    "cer_reliable": true
+  },
+  {
+    "text": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "category": "phonetic",
+    "spoken_form": "The conduct of the Leicester conference will conduct attendees through Tadhg's analysis of schadenfreude in German literature.",
+    "cer_reliable": true
+  },
+  {
+    "text": "The present study will present evidence that Caoimhe experienced schadenfreude watching her rival's failure in Loughborough.",
+    "category": "phonetic",
+    "spoken_form": "The present study will present evidence that Keeva experienced schadenfreude watching her rival's failure in Luffburuh.",
+    "cer_reliable": true
+  },
+  {
+    "text": "When they present the present to Aoife at Loughborough, they'll record her record collection featuring Siobhán's Welsh compositions.",
+    "category": "phonetic",
+    "spoken_form": "When they present the present to Eefa at Luffburra, they'll record her record collection featuring Shivawn's Welsh compositions.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Dr. Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "category": "phonetic",
+    "spoken_form": "Doctor Nguyen's Bildungsroman explores how Tadhg must conduct himself with proper conduct while studying at Magdalen College.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Professor Mbeki will record Niamh's record-breaking translation of Nahuatl poetry with remarkable gemütlichkeit.",
+    "category": "phonetic",
+    "spoken_form": "Professor M B E K I will record N E E V's record-breaking translation of N A H W A T L poetry with remarkable gemütlichkeit.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "category": "phonetic",
+    "spoken_form": "Aoife needed a permit to film, but the Leicester council wouldn't permit shooting near the Ptolemy manuscript exhibit.",
+    "cer_reliable": true
+  },
+  {
+    "text": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "category": "phonetic",
+    "spoken_form": "The content of Saoirse's thesis made her content, exploring weltanschauung in Gloucester's medieval texts.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Dr. Nguyen.",
+    "category": "phonetic",
+    "spoken_form": "Eithne and Caoilfhinn debated the mise en scène while eating Worcestershire sauce with Doctor Nguyen.",
+    "cer_reliable": true
+  },
+  {
+    "text": "We fine-tuned LLaMA 3.1 405B using LoRA on the meta-llama/Llama-3.1-405B-Instruct-hf checkpoint with rank 64 adapters.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned LLaMA three point one four oh five B using LoRA on the meta-llama slash Llama three point one four oh five B Instruct HF checkpoint with rank sixty-four adapters.",
+    "cer_reliable": false
+  },
+  {
+    "text": "We benchmarked 01-ai/Yi-1.5-34B-Chat-16K against meta-llama/Llama-3.1-70B-Instruct using MMLU, GSM8K@4-shot, and HumanEval benchmarks.",
+    "category": "ai_tech",
+    "spoken_form": "We benchmarked zero one A I slash Yi one point five thirty-four B Chat sixteen K against meta-llama slash Llama three point one seventy B Instruct using M M L U, G S M eight K at four-shot, and HumanEval benchmarks.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The claude-sonnet-4-5 model outperformed Gemma-2-27B-it on coding benchmarks as described in §3.2 of the technical report.",
+    "category": "ai_tech",
+    "spoken_form": "The claude sonnet four dash five model outperformed Gemma two twenty-seven B I T on coding benchmarks as described in section three point two of the technical report.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Comparing meta-llama/Llama-2-7b-chat-hf versus GPT-4o shows that FP16 quantization reduces latency by 40% without accuracy loss.",
+    "category": "ai_tech",
+    "spoken_form": "Comparing meta-llama slash Llama two seven b chat HF versus G P T four oh shows that F P sixteen quantization reduces latency by forty percent without accuracy loss.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Our pipeline is based on LLaMA-3.1-8B → fine-tuned on ShareGPT4 → RLHF’d with DPO, then merged into the mistralai/Mixtral-8×7B-Instruct-v0.1 architecture.",
+    "category": "ai_tech",
+    "spoken_form": "Our pipeline is based on LLaMA three point one eight B to fine-tuned on ShareGPT four to RLHF'd with DPO, then merged into the mistralai slash Mixtral eight times seven B Instruct v zero point one architecture.",
+    "cer_reliable": false
+  },
+  {
+    "text": "We fine-tuned deepseek-ai/DeepSeek-R1-Distill-Qwen-32B on 4×A100 80GB SXM with bf16, ZeRO-3, gradient_checkpointing=True, and lr=2e-5.",
+    "category": "ai_tech",
+    "spoken_form": "We fine-tuned deepseek-ai slash DeepSeek R one Distill Qwen thirty-two B on four times A one hundred eighty gigabyte S X M with B F sixteen, ZeRO three, gradient checkpointing equals True, and learning rate equals two times ten to the minus five.",
+    "cer_reliable": false
+  },
+  {
+    "text": "We loaded mistralai/Mistral-7B-Instruct-v0.1 from Hugging Face and applied LoRA fine-tuning at checkpoint-5000 with 3.2B parameters.",
+    "category": "ai_tech",
+    "spoken_form": "We loaded mistralai slash Mistral seven B Instruct v zero point one from Hugging Face and applied LoRA fine-tuning at checkpoint five thousand with three point two B parameters.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Our experiments with Gemma-2-27B-it and INT8 quantization on the mistralai/Mistral-7B-Instruct-v0.1 checkpoint-5000 achieved 87.6% accuracy on MMLU.",
+    "category": "ai_tech",
+    "spoken_form": "Our experiments with Gemma two twenty-seven B it and INT eight quantization on the mistralai slash Mistral seven B Instruct v zero point one checkpoint five thousand achieved eighty-seven point six percent accuracy on MMLU.",
+    "cer_reliable": false
+  },
+  {
+    "text": "For participants ages 18–65, blood pressure should range from 90/60 to 120/80 mmHg, with temperatures between 97.8°F and 99.1°F.",
+    "category": "number_format",
+    "spoken_form": "For participants ages eighteen to sixty-five, blood pressure should range from ninety over sixty to one hundred twenty over eighty millimeters of mercury, with temperatures between ninety-seven point eight degrees Fahrenheit and ninety-nine point one degrees Fahrenheit.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Henry VIII's reign from 1509–1547 saw England's break from Rome, while Louis XIV of France ruled for 72 years.",
+    "category": "number_format",
+    "spoken_form": "Henry the Eighth's reign from fifteen oh nine to fifteen forty-seven saw England's break from Rome, while Louis the Fourteenth of France ruled for seventy-two years.",
+    "cer_reliable": false
+  },
+  {
+    "text": "Pope Benedict XVI resigned in 2013, the first pope to do so since Gregory XII in 1415.",
+    "category": "number_format",
+    "spoken_form": "Pope Benedict the Sixteenth resigned in twenty thirteen, the first pope to do so since Gregory the Twelfth in fourteen fifteen.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The emergency contact is +44 (0)20 7946 0958, reference number NI: AB 12 34 56 C, dated 15/04/1989.",
+    "category": "number_format",
+    "spoken_form": "The emergency contact is plus forty-four zero twenty seven nine four six zero nine five eight, reference number N I colon A B twelve thirty-four fifty-six C, dated the fifteenth of April nineteen eighty-nine.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The spacecraft traveled 2.5×10⁹ miles at temperatures from -40°C to +120°C, covering the distance in approximately 3:2 the predicted time.",
+    "category": "number_format",
+    "spoken_form": "The spacecraft traveled two point five times ten to the ninth miles at temperatures from minus forty degrees Celsius to plus one hundred twenty degrees Celsius, covering the distance in approximately three to two the predicted time.",
+    "cer_reliable": false
+  },
+  {
+    "text": "King Henry the 3rd (III), King Henry the 8th (VIII), and the XXIInd amendment were all discussed in the IVth century BC symposium.",
+    "category": "number_format",
+    "spoken_form": "King Henry the third, King Henry the eighth, and the twenty-second amendment were all discussed in the fourth century B C symposium.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The Apollo XI mission landed on July 20, 1969, fulfilling Kennedy's goal set in the early 1960s.",
+    "category": "number_format",
+    "spoken_form": "The Apollo eleven mission landed on July twentieth, nineteen sixty-nine, fulfilling Kennedy's goal set in the early nineteen sixties.",
+    "cer_reliable": false
+  },
+  {
+    "text": "The study spanning pp. 234–89 in Volume XXIII shows that ⅘ of the 1,984 participants were born between 1984 and 1999.",
+    "category": "number_format",
+    "spoken_form": "The study spanning pages two hundred thirty-four to eighty-nine in Volume twenty-three shows that four fifths of the one thousand nine hundred eighty-four participants were born between nineteen eighty-four and nineteen ninety-nine.",
+    "cer_reliable": false
+  },
+  {
+    "text": "DO NOT—and I mean DO NOT—open that email attachment under ANY circumstances whatsoever.",
+    "category": "paralinguistics",
+    "spoken_form": "DO NOT — and I mean DO NOT — open that email attachment under ANY circumstances whatsoever.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "category": "paralinguistics",
+    "spoken_form": "Ugh, seriously? I've told you like... I don't know, a MILLION times already.",
+    "cer_reliable": true
+  },
+  {
+    "text": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "category": "paralinguistics",
+    "spoken_form": "He started snoring—zzz, zzz—and I just thought... you know what, forget it. Not worth it.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "category": "paralinguistics",
+    "spoken_form": "Oh sure, leaving your phone on the roof of the car was reeeally smart. Brilliant move.",
+    "cer_reliable": true
+  },
+  {
+    "text": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "category": "paralinguistics",
+    "spoken_form": "She whispered, 'Maybe we should leave.' Then suddenly yelled, 'RUN! NOW!'",
+    "cer_reliable": true
+  },
+  {
+    "text": "Hmm... I'm not so sure about that. She said—well, she SAID she'd be here, but...",
+    "category": "paralinguistics",
+    "spoken_form": "Hmm... I'm not so sure about that. She said — well, she SAID she'd be here, but...",
+    "cer_reliable": true
+  },
+  {
+    "text": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "category": "paralinguistics",
+    "spoken_form": "The balloon went pop and scared everyone. Then the baby went waaah for like an hour straight.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "category": "paralinguistics",
+    "spoken_form": "Eww, that's disgusting! How long has this been sitting in the fridge? It smells like... ugh, never mind.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Streptococcus pneumoniae strain TIGR4 expressing pbp2b mutations and Haemophilus influenzae type b require ceftriaxone 50mg/kg/day IV divided q12h not exceeding 4g/24h, with CSF penetration verified at 2.5-7.5μg/mL per General Electric v. Joiner, 522 U.S. 136 (1997) causation standards.",
+    "category": "domain_specific",
+    "spoken_form": "Streptococcus pneumoniae strain T I G R four expressing P B P two B mutations and Haemophilus influenzae type B require ceftriaxone fifty milligrams per kilogram per day I V divided every twelve hours not exceeding four grams per twenty-four hours, with C S F penetration verified at two point five to seven point five micrograms per milliliter per General Electric versus Joiner, five twenty-two U.S. one thirty-six nineteen ninety-seven causation standards.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Administer 15mg/kg IV q6h of piperacillin-tazobactam 4.5g for Pseudomonas aeruginosa strain PAO1 harboring oprD mutations, per Daubert v. Merrell Dow, 509 U.S. 579 (1993) evidentiary standards.",
+    "category": "domain_specific",
+    "spoken_form": "Administer fifteen milligrams per kilogram I V every six hours of piperacillin-tazobactam four point five grams for Pseudomonas aeruginosa strain P A O one harboring oprD mutations, per Daubert versus Merrell Dow, five zero nine U.S. five seven nine nineteen ninety-three evidentiary standards.",
+    "cer_reliable": true
+  },
+  {
+    "text": "Titrate 2.5mg/kg/min of (±)-4-(2-aminoethyl)benzene-1,2-diol (CAS 51-61-6) IV maintaining MAP ≥65mmHg per RFC 2616 §14.9 cache-control directives for real-time hemodynamic monitoring systems compliant with ISO 80601-2-61:2017.",
+    "category": "domain_specific",
+    "spoken_form": "Titrate two point five milligrams per kilogram per minute of plus or minus four dash two aminoethyl benzene one two diol C A S fifty-one sixty-one six I V maintaining M A P greater than or equal to sixty-five millimeters of mercury per R F C two six one six section fourteen point nine cache control directives for real-time hemodynamic monitoring systems compliant with I S O eight zero six zero one dash two dash sixty-one colon twenty seventeen",
+    "cer_reliable": true
+  },
+  {
+    "text": "Mycobacterium tuberculosis strain H37Rv and Mycobacterium bovis BCG expressing rpoB S531L mutations demonstrate rifampicin MIC >128μg/mL when tested per CLSI M24-A2:2011 at pH 6.8 ± 0.1 and 37.0°C ± 0.5°C.",
+    "category": "domain_specific",
+    "spoken_form": "Mycobacterium tuberculosis strain H thirty-seven R V and Mycobacterium bovis B C G expressing rpoB S five thirty-one L mutations demonstrate rifampicin M I C greater than one hundred twenty-eight micrograms per milliliter when tested per C L S I M twenty-four dash A two two thousand eleven at P H six point eight plus or minus zero point one and thirty-seven point zero degrees Celsius plus or minus zero point five degrees Celsius",
+    "cer_reliable": true
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "ElevenLabs": {
+    "job_id": "9b1575c3-4498-44de-9bc2-f74ab7467673",
+    "model_id": "elevenlabs/eleven-multilingual-v2",
+    "output_name": "tricky-tts-pub-eval-elevenlabs"
+  },
+  "GPT-4o mini TTS": {
+    "job_id": "df517dc9-b6b8-4953-8b1e-a1699d0d1641",
+    "model_id": "openai/gpt-4o-mini-tts",
+    "output_name": "tricky-tts-pub-eval-gpt4o-mini"
+  },
+  "Cartesia Sonic-3": {
+    "job_id": "fa2ab008-0796-4dc9-ac03-c22833620e40",
+    "model_id": "cartesia/sonic-3",
+    "output_name": "tricky-tts-pub-eval-cartesia"
+  },
+  "Gemini Flash TTS": {
+    "job_id": "45bf2af9-1942-47d3-bc2b-7c84f8f91dc1",
+    "model_id": "google/gemini-2.5-flash-tts",
+    "output_name": "tricky-tts-pub-eval-gemini-flash"
+  },
+  "Gemini Pro TTS": {
+    "job_id": "b50e2f8d-0834-42e1-b471-52a1887ecba8",
+    "model_id": "google/gemini-2.5-pro-tts",
+    "output_name": "tricky-tts-pub-eval-gemini-pro"
+  },
+  "Orpheus": {
+    "job_id": "6ec8042d-4b70-4921-9262-1acc142cd77a",
+    "model_id": "unsloth/orpheus-3b-0.1-ft",
+    "output_name": "tricky-tts-pub-eval-orpheus"
+  },
+  "Kokoro": {
+    "job_id": "c1b96870-6efe-41bc-ac53-9fc856dcf778",
+    "model_id": "kokoro",
+    "output_name": "tricky-tts-pub-eval-kokoro"
+  },
+  "Chatterbox": {
+    "job_id": "cc4b6c3c-068d-4b6d-89e2-9fe0f925d145",
+    "model_id": "ResembleAI/chatterbox",
+    "output_name": "tricky-tts-pub-eval-chatterbox"
+  },
+  "Piper (en-gb)": {
+    "job_id": "6a15b2f4-23fd-4ee5-afee-cd0ad1bb6000",
+    "model_id": "Trelis/piper-en-gb-cori-high",
+    "output_name": "tricky-tts-pub-eval-piper"
+  }
+}

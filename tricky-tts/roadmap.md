@@ -59,13 +59,24 @@ A text-only benchmark for evaluating TTS model quality on linguistically and typ
 | robustness | 0.020 | Repeated words, long utterances — primarily UTMOS-valued |
 | prosody | 0.003 | Long complex sentences — WER near-zero by design; UTMOS-discriminating |
 
-### Phase 2 — Difficulty Validation & Evaluation (future)
-- [ ] Run UTMOS + Round Trip ASR via Trelis Studio across N diverse TTS models (e.g. Orpheus + 2 others)
-- [ ] Compute per-row median score across models — rows where *all* models perform well are candidates for removal
-- [ ] Filter out "easy" rows (below difficulty threshold) to ensure the benchmark is genuinely challenging
-- [ ] Use median-of-N approach to avoid unfairly penalising any single model's quirks
-- [ ] Identify which categories are hardest; expand or resample underperforming categories as needed
-- [ ] Re-run final evaluation on filtered, stable splits
+### Phase 2 — Difficulty Validation & Evaluation ✅ Complete
+- [x] Run UTMOS + Round Trip ASR via Trelis Studio across 5 TTS models (ElevenLabs, GPT-4o mini TTS, Cartesia Sonic-3, Kokoro, Orpheus)
+- [x] Compute per-row median CER across models — rows where all models CER < 0.05 flagged as easy
+- [x] Filter out 7 easy rows (5 phonetic + 2 number_format) and generate harder replacements
+- [x] Paralinguistics kept as-is (UTMOS-focused; low CER by design)
+- [x] Generated `spoken_form` + `cer_reliable` columns for all rows
+- [x] Validation eval confirmed: CER improved 50% (0.136 → 0.203), WER improved 56% (0.281 → 0.440)
+- [x] Final public split pushed: `ronanarraig/tricky-tts-v2-public` (48 rows, 8 per category)
+- Scripts: `phase2_generate_spoken_form.py`, `phase2_push_dataset.py`, `phase2_run_tts_eval.py`, `phase2_poll_results.py`, `phase2_perrow_analysis.py`, `phase2_generate_replacements.py`, `phase2_build_filtered.py`
+
+**Eval results (initial 48 rows, all models):**
+| Model | MOS | WER | CER |
+|---|---|---|---|
+| Kokoro | 4.526 | 0.658 | 0.399 |
+| GPT-4o mini TTS | 4.465 | 0.292 | 0.154 |
+| ElevenLabs | 4.355 | 0.281 | 0.136 |
+| Orpheus | 4.281 | 0.363 | 0.184 |
+| Cartesia Sonic-3 | 4.042 | 0.410 | 0.226 |
 
 ## Notes
 - Evaluation is entirely handled by Trelis Studio — no audio files stored in the dataset

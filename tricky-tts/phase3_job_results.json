@@ -1,0 +1,106 @@
+{
+  "Orpheus": {
+    "info": {
+      "job_id": "001caf1b-ca8e-442a-a84a-cd8f3ef70e86",
+      "model_id": "unsloth/orpheus-3b-0.1-ft",
+      "output_name": "tricky-tts-eval-ref-orpheus"
+    },
+    "result": {
+      "id": "001caf1b-ca8e-442a-a84a-cd8f3ef70e86",
+      "status": "completed",
+      "created_at": "2026-03-27T10:53:08.625020",
+      "started_at": "2026-03-27T10:53:08.728535",
+      "completed_at": "2026-03-27T10:56:18.569995",
+      "config": {
+        "model_id": "unsloth/orpheus-3b-0.1-ft",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-proto-spoken-form-input",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 10,
+        "max_new_tokens": 4000,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "tara",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-eval-ref-orpheus",
+        "private": true,
+        "asr_model_id": "openai/whisper-large-v3",
+        "language": "auto",
+        "tts_model_type": "orpheus",
+        "kokoro_voice": "af_heart",
+        "reference_column": null,
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 10,
+        "num_successful": 10,
+        "total_duration_s": 174.93333333333334,
+        "total_runtime_seconds": 172.16914820671082,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-orpheus",
+        "cost_charged": 1.0,
+        "mos": 3.9853,
+        "wer": 0.5044,
+        "cer": 0.3306,
+        "asr_model_id": "openai/whisper-large-v3"
+      },
+      "error": null,
+      "logs": "[10:53:08] Starting TTS evaluation pipeline...\n[10:53:08] [Modal] Model: unsloth/orpheus-3b-0.1-ft\n[10:53:08] [Modal] Dataset: ronanarraig/tricky-tts-proto-spoken-form-input\n[10:53:25] [Modal] Function call started (ID: fc-01KMQETBC...)\n[10:53:25] [Modal] Starting TTS evaluation on cuda\n[10:53:25] [Modal] Model: unsloth/orpheus-3b-0.1-ft\n[10:53:27] [Modal] Loaded 10 prompts from ronanarraig/tricky-tts-proto-spoken-form-input\n[10:53:27] [Modal] Loading tokenizer for unsloth/orpheus-3b-0.1-ft...\n[10:53:28] [Modal] Tokenizer loaded\n[10:53:28] [Modal] Loading SNAC decoder...\n[10:53:29] [Modal] SNAC loaded\n[10:53:29] [Modal] Formatted 10 prompts for vLLM generation\n[10:53:33] [Modal] Initializing vLLM engine for unsloth/orpheus-3b-0.1-ft (10 prompts, sub-batch=15)...\n[10:54:46] [Modal] vLLM ready. Running Orpheus TTS inference...\n[10:55:00] [Modal]   Generated 10/10 samples\n[10:55:01] [Modal] vLLM generation complete. Decoding audio tokens via SNAC...\n[10:55:01] [Modal] [1/10] Decoding: 'The manuscript cited Volume forty-seven, Number three, pages...'\n[10:55:02] [Modal]   -> 19.2s (1575 tokens)\n[10:55:02] [Modal] [2/10] Decoding: 'According to I triple E Transactions Volume fifteen, pages s...'\n[10:55:02] [Modal]   -> 21.2s (1736 tokens)\n[10:55:02] [Modal] [3/10] Decoding: 'Administer zero point two five millilitres of one times ten ...'\n[10:55:02] [Modal]   -> 32.9s (2695 tokens)\n[10:55:02] [Modal] [4/10] Decoding: 'Mycobacterium tuberculosis strain H37Rv and Mycobacterium bo...'\n[10:55:02] [Modal]   -> 28.5s (2338 tokens)\n[10:55:02] [Modal] [5/10] Decoding: 'We fine-tuned deepseek AI slash DeepSeek R1 Distill Qwen 32B...'\n[10:55:03] [Modal]   -> 15.7s (1288 tokens)\n[10:55:03] [Modal] [6/10] Decoding: 'We benchmarked zero one AI slash Yi 1.5 34B Chat 16K against...'\n[10:55:03] [Modal]   -> 14.8s (1218 tokens)\n[10:55:03] [Modal] [7/10] Decoding: 'The spacecraft traveled two point five times ten to the nint...'\n[10:55:03] [Modal]   -> 14.9s (1225 tokens)\n[10:55:03] [Modal] [8/10] Decoding: 'For participants ages eighteen to sixty-five, blood pressure...'\n[10:55:03] [Modal]   -> 14.0s (1148 tokens)\n[10:55:03] [Modal] [9/10] Decoding: 'Ethna and Keelin debated the meez on sen while eating Wooste...'\n[10:55:03] [Modal]   -> 5.9s (483 tokens)\n[10:55:03] [Modal] [10/10] Decoding: 'He started snoring, zzz, zzz, and I just thought, you know w...'\n[10:55:03] [Modal]   -> 7.9s (644 tokens)\n[10:55:03] [Modal] Generated 10/10 samples successfully\n[10:55:03] [Modal] Computing MOS scores (UTMOS22) for 10 samples...\n[10:55:03] [Modal] Loading UTMOS22 MOS predictor...\n[10:55:06] [Modal] MOS predictor loaded, scoring samples...\n[10:55:40] [Modal] MOS: 10/10 (running avg: 3.985)\n[10:55:40] [Modal] Mean MOS: 3.985 (std: 0.388)\n[10:55:40] [Modal] Starting ASR round-trip with openai/whisper-large-v3...\n[10:55:40] [Modal] Freeing TTS model from GPU...\n[10:55:41] [Modal] ASR model type: whisper\n[10:55:41] [Modal] Language: auto -> None\n[10:55:41] [Modal] Preparing ASR samples: 10/10\n[10:55:41] [Modal] Prepared 10 samples for ASR\n[10:55:41] [Modal] Loading ASR model: openai/whisper-large-v3\n[10:55:52] [Modal] ASR model loaded, running inference...\n[10:55:58] [Modal] ASR Round-Trip Results: WER=50.4% CER=33.1% (10 samples)\n[10:55:58] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-eval-ref-orpheus...\n[10:55:58] [Modal] Uploading 10 samples to HuggingFace (this may take a while)...\n[10:56:14] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-orpheus\n[10:56:16] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-orpheus-metadata\n[10:56:17] [Modal] ============================================================\n[10:56:17] [Modal] Generated: 10/10 samples\n[10:56:17] [Modal] Total audio: 174.9s\n[10:56:17] [Modal] MOS: 3.985\n[10:56:17] [Modal] ASR Round-Trip: WER=50.4% CER=33.1%\n[10:56:17] [Modal] Runtime: 2.9 min\n[10:56:17] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-orpheus\n[10:56:17] [Modal] ============================================================\n[10:56:17] [Modal] Committing model cache (pre-exit)...\n[10:56:18] [Billing] Charged $1.0000, new balance: $495.19\n[10:56:18] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    }
+  },
+  "Kokoro": {
+    "info": {
+      "job_id": "0fccf08f-29e7-4abc-b3dc-db274ee4b6de",
+      "model_id": "kokoro",
+      "output_name": "tricky-tts-eval-ref-kokoro"
+    },
+    "result": {
+      "id": "0fccf08f-29e7-4abc-b3dc-db274ee4b6de",
+      "status": "completed",
+      "created_at": "2026-03-27T10:53:09.172129",
+      "started_at": "2026-03-27T10:53:09.214206",
+      "completed_at": "2026-03-27T10:55:24.032993",
+      "config": {
+        "model_id": "kokoro",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-proto-spoken-form-input",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 10,
+        "max_new_tokens": 4000,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-eval-ref-kokoro",
+        "private": true,
+        "asr_model_id": "openai/whisper-large-v3",
+        "language": "auto",
+        "tts_model_type": "kokoro",
+        "kokoro_voice": "af_heart",
+        "reference_column": null,
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 10,
+        "num_successful": 10,
+        "total_duration_s": 186.67499999999998,
+        "total_runtime_seconds": 111.5390453338623,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-kokoro",
+        "cost_charged": 1.0,
+        "mos": 4.5261,
+        "wer": 0.4405,
+        "cer": 0.2854,
+        "asr_model_id": "openai/whisper-large-v3"
+      },
+      "error": null,
+      "logs": "[10:53:09] Starting TTS evaluation pipeline...\n[10:53:09] [Modal] Model: kokoro\n[10:53:09] [Modal] Dataset: ronanarraig/tricky-tts-proto-spoken-form-input\n[10:53:31] [Modal] Function call started (ID: fc-01KMQETBS...)\n[10:53:31] [Modal] Starting TTS evaluation on cuda\n[10:53:31] [Modal] Model: kokoro\n[10:53:33] [Modal] Loaded 10 prompts from ronanarraig/tricky-tts-proto-spoken-form-input\n[10:53:33] [Modal] Kokoro TTS detected \u2014 skipping local model loading (voice: af_heart)\n[10:53:33] [Modal] Kokoro TTS: synthesizing 10 prompts (voice=af_heart)...\n[10:53:56] [Modal]   [1/10] -> 22.8s\n[10:53:57] [Modal]   [2/10] -> 24.6s\n[10:53:58] [Modal]   [3/10] -> 33.9s\n[10:53:59] [Modal]   [4/10] -> 28.7s\n[10:54:00] [Modal]   [5/10] -> 17.7s\n[10:54:01] [Modal]   [6/10] -> 16.1s\n[10:54:01] [Modal]   [7/10] -> 14.5s\n[10:54:02] [Modal]   [8/10] -> 16.3s\n[10:54:02] [Modal]   [9/10] -> 5.8s\n[10:54:03] [Modal]   [10/10] -> 6.2s\n[10:54:03] [Modal] Generated 10/10 samples successfully\n[10:54:03] [Modal] Computing MOS scores (UTMOS22) for 10 samples...\n[10:54:03] [Modal] Loading UTMOS22 MOS predictor...\n[10:54:07] [Modal] MOS predictor loaded, scoring samples...\n[10:54:43] [Modal] MOS: 10/10 (running avg: 4.526)\n[10:54:44] [Modal] Mean MOS: 4.526 (std: 0.022)\n[10:54:44] [Modal] Starting ASR round-trip with openai/whisper-large-v3...\n[10:54:44] [Modal] ASR model type: whisper\n[10:54:44] [Modal] Language: auto -> None\n[10:54:44] [Modal] Preparing ASR samples: 10/10\n[10:54:44] [Modal] Prepared 10 samples for ASR\n[10:54:44] [Modal] Loading ASR model: openai/whisper-large-v3\n[10:54:56] [Modal] ASR model loaded, running inference...\n[10:55:03] [Modal] ASR Round-Trip Results: WER=44.0% CER=28.5% (10 samples)\n[10:55:03] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-eval-ref-kokoro...\n[10:55:04] [Modal] Uploading 10 samples to HuggingFace (this may take a while)...\n[10:55:20] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-kokoro\n[10:55:22] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-kokoro-metadata\n[10:55:22] [Modal] ============================================================\n[10:55:22] [Modal] Generated: 10/10 samples\n[10:55:22] [Modal] Total audio: 186.7s\n[10:55:22] [Modal] MOS: 4.526\n[10:55:22] [Modal] ASR Round-Trip: WER=44.0% CER=28.5%\n[10:55:22] [Modal] Runtime: 1.9 min\n[10:55:22] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-eval-ref-kokoro\n[10:55:22] [Modal] ============================================================\n[10:55:22] [Modal] Committing model cache (pre-exit)...\n[10:55:24] [Billing] Charged $1.0000, new balance: $496.19\n[10:55:24] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    }
+  }
+}
