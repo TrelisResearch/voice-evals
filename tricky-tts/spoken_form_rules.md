@@ -59,8 +59,10 @@ and special character must be fully expanded before output.
 | Written | Spoken |
 |---|---|
 | `meta-llama/Llama-3.1-405B-Instruct-hf` | meta llama slash Llama 3.1 405B Instruct HF |
-| `01-ai/Yi-1.5-34B-Chat-16K` | zero one AI slash Yi 1.5 34B Chat 16K |
-| `deepseek-ai/DeepSeek-R1-Distill-Qwen-32B` | deepseek AI slash DeepSeek R1 Distill Qwen 32B |
+| `01-ai/Yi-1.5-34B-Chat-16K` | zero one AI slash Yee 1.5 34B Chat 16K |
+| `Yi` | Yee |
+| `deepseek-ai/DeepSeek-R1-Distill-Qwen-32B` | deepseek AI slash DeepSeek R1 Distill Kwen 32B |
+| `Qwen` | Kwen |
 | `mistralai/Mistral-7B-Instruct-v0.1` | mistral AI slash Mistral 7B Instruct v0.1 |
 | `mistralai/Mixtral-8×7B-Instruct-v0.1` | mistral AI slash Mixtral 8 times 7B Instruct v0.1 |
 | `meta-llama/Llama-2-7b-chat-hf` | meta llama slash Llama 2 7B chat HF |
@@ -70,12 +72,15 @@ and special character must be fully expanded before output.
 | `checkpoint-5000` | checkpoint 5000 |
 | `LoRA` | LoRA (unchanged) |
 | `bf16` | BF16 |
-| `ZeRO-3` | ZeRO 3 |
+| `ZeRO-3` | zero 3 |
+| `ZeRO` | zero |
 | `INT8` | INT8 |
 | `FP16` | FP16 |
 | `lr=2e-5` | learning rate equals 2 times 10 to the minus 5 |
 | `gradient_checkpointing=True` | gradient checkpointing equals True |
 | `4×A100` | 4 times A100 |
+| `80GB` | eighty gigabytes |
+| `GB` | gigabytes |
 
 **Numbers in model names:** Say them as plain digits or short numbers, not spelled out.
 - `7B` → "7B" (say "seven B")

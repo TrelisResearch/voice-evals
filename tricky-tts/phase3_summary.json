@@ -1,0 +1,66 @@
+[
+  {
+    "model": "ElevenLabs",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "GPT-4o mini TTS",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Cartesia Sonic-3",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Gemini Flash TTS",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Gemini Pro TTS",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Orpheus",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Kokoro",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  },
+  {
+    "model": "Piper (en-gb)",
+    "mos": null,
+    "wer": null,
+    "cer": null,
+    "samples": null,
+    "status": "completed"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "Orpheus": {
+    "job_id": "001caf1b-ca8e-442a-a84a-cd8f3ef70e86",
+    "model_id": "unsloth/orpheus-3b-0.1-ft",
+    "output_name": "tricky-tts-eval-ref-orpheus"
+  },
+  "Kokoro": {
+    "job_id": "0fccf08f-29e7-4abc-b3dc-db274ee4b6de",
+    "model_id": "kokoro",
+    "output_name": "tricky-tts-eval-ref-kokoro"
+  }
+}
