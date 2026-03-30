@@ -17,18 +17,24 @@ Four categories replacing the previous six:
 
 **Goal:** 4 rows (one per category), human reference audio, qualitative + quantitative eval across all Studio TTS models.
 
-### Step 1: Write 4 rows
-One carefully chosen example per category. No `spoken_form` needed.
+### Step 1: Write 4 rows -- DONE
+One carefully chosen example per category, with `spoken_form` for each.
+See `tricky-tts/phase4/rows.json`.
 
-### Step 2: Record reference audio
-User records their own voice reading each of the 4 rows. Push as `ronanarraig/tricky-tts-phase4` with `text`, `category`, `reference_audio` columns.
+### Step 2: Record reference audio -- DONE
+User recorded voice reading each of the 4 rows (~20s each).
+Audio files in `tricky-tts/phase4/audio/`.
 
-### Step 3: Run eval on all supported Studio models
+### Step 3: Upload to Trelis Studio
+Create a session in Trelis Studio and upload the 4 audio files + text/category metadata.
+Use the data prep pipeline (upload audio, process with forced alignment) to build a HuggingFace dataset with `text`, `category`, `reference_audio` columns.
+
+### Step 4: Run eval on all supported Studio models
 - `asr_model_id="openai/whisper-large-v3"`
 - `reference_column` = not set (compare ASR output to `text` directly)
-- All 9 models: ElevenLabs, GPT-4o mini, Cartesia, Gemini Flash, Gemini Pro, Orpheus, Kokoro, Piper, Chatterbox
+- All supported TTS models: ElevenLabs, GPT-4o mini, Cartesia, Gemini Flash, Gemini Pro, Orpheus, Kokoro, Piper, Chatterbox
 
-### Step 4: Review results
+### Step 5: Review results
 - User listens to each model's audio per row and gives qualitative commentary
 - Inspect CER per row — note where round-trip ASR signal is strong vs weak
 - Document failure modes

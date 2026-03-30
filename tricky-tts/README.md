@@ -15,3 +15,4 @@ Text-only benchmark for evaluating TTS models on linguistically challenging Engl
 - [`phase1/`](phase1/) — text generation, calibration, round-trip testing, HF push
 - [`phase2/`](phase2/) — spoken_form generation, difficulty filtering, eval
 - [`phase3/`](phase3/) — reference pipeline, multi-model eval, dataset builds
+- [`phase4/`](phase4/) — 4-row human-referenced eval (new taxonomy), recording tools

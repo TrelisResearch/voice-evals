@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tricky TTS Phase 4 - Voice Recording</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card-bg: #fff;
+      --accent: #e9ecef;
+      --highlight: #e94560;
+      --text: #212529;
+      --muted: #6c757d;
+    }
+    body { background: var(--bg); color: var(--text); min-height: 100vh; }
+    .card { background: var(--card-bg); border: 1px solid #dee2e6; }
+    .card-header { background: var(--accent); border-bottom: 1px solid #dee2e6; }
+    .badge-cat { background: var(--highlight); font-size: 0.85rem; }
+    .text-display {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      padding: 1.5rem;
+      background: #f0f4f8;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--highlight);
+      color: #1a1a2e;
+    }
+    .spoken-form {
+      font-size: 1rem;
+      line-height: 1.6;
+      padding: 1rem;
+      background: #eef6f0;
+      border-radius: 0.5rem;
+      border-left: 4px solid #4a9;
+      color: var(--muted);
+    }
+    .timer { font-size: 2.5rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .timer.recording { color: var(--highlight); }
+    .timer.good { color: #198754; }
+    .btn-record {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--highlight); border: 4px solid #dee2e6;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .btn-record:hover { transform: scale(1.05); background: #d63050; }
+    .btn-record.recording { animation: pulse 1s infinite; }
+    .btn-record .inner {
+      width: 28px; height: 28px; background: #fff; border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .btn-record.recording .inner { border-radius: 4px; width: 24px; height: 24px; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(233,69,96,0.5); }
+      50% { box-shadow: 0 0 0 15px rgba(233,69,96,0); }
+    }
+    .nav-row { cursor: pointer; padding: 0.75rem 1rem; border-radius: 0.5rem; transition: background 0.15s; }
+    .nav-row:hover { background: #f0f4f8; }
+    .nav-row.active { background: #e2e8f0; }
+    .nav-row .status { width: 10px; height: 10px; border-radius: 50%; background: #ccc; }
+    .nav-row .status.done { background: #198754; }
+    audio { width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h4 class="mb-1">Tricky TTS Phase 4</h4>
+    <p class="text-muted small mb-4">Record yourself reading each row. Aim for ~20 seconds per recording.</p>
+
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header fw-semibold small">Rows</div>
+          <div class="card-body p-2" id="nav"></div>
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-outline-dark btn-sm w-100" id="downloadAll" disabled>Download All</button>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span>
+              <span class="badge badge-cat me-2" id="catBadge"></span>
+              <span class="fw-semibold" id="rowTitle"></span>
+            </span>
+            <span class="small text-muted" id="rowCounter"></span>
+          </div>
+          <div class="card-body">
+            <div class="text-display mb-3" id="textDisplay"></div>
+
+            <details class="mb-3">
+              <summary class="small text-muted" style="cursor:pointer">Show spoken form (pronunciation guide)</summary>
+              <div class="spoken-form mt-2" id="spokenForm"></div>
+            </details>
+
+            <div class="mb-3">
+              <label for="micSelect" class="form-label small text-muted">Microphone</label>
+              <select class="form-select form-select-sm" id="micSelect"></select>
+            </div>
+
+            <div class="d-flex flex-column align-items-center my-4">
+              <div class="timer mb-3" id="timer">0:00</div>
+              <button class="btn-record" id="recordBtn" title="Click to record">
+                <div class="inner"></div>
+              </button>
+              <div class="small text-muted mt-2" id="recordHint">Click to start recording</div>
+            </div>
+
+            <div id="playbackSection" class="d-none">
+              <hr class="border-secondary">
+              <div class="d-flex align-items-center gap-3">
+                <audio id="audioPlayer" controls></audio>
+                <button class="btn btn-outline-dark btn-sm" id="downloadBtn">Download</button>
+                <button class="btn btn-outline-danger btn-sm" id="rerecordBtn">Re-record</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const ROWS = [
+  {
+    id: 0,
+    category: "symbol_expansion",
+    text: "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+    spoken_form: "The reaction requires greater than or equal to five hundred microlitres of H 2 O 2, thirty percent weight by volume, at thirty seven plus or minus two degrees Celsius, yielding approximately two point five times ten to the sixth C F U per millilitre, a three times improvement over the control at p H seven point four plus or minus zero point one."
+  },
+  {
+    id: 1,
+    category: "abbreviation_reading",
+    text: "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene\u2019s S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+    spoken_form: "Doctor K R Liu, M D, P H D, F A C C, presented in Volume twelve of I triple E Transactions on Bioinformatics, pages eighty nine to one hundred four, arguing that the R P O B gene's S 531 L mutation remains the gold standard versus the newer kat G assay endorsed by C L S I."
+  },
+  {
+    id: 2,
+    category: "proper_nouns",
+    text: "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+    spoken_form: "Seersha Nee Keelin from Doon Leery benchmarked deepseek AI slash DeepSeek R1 0528 against Kwen slash Kwen 3 235B A 22B on M M L U Pro, while her colleague Shihvawn Oh Ree-an from Inish Maan evaluated mistral AI slash Mixtral 8 times 22B Instruct v zero point one on G S M 8 K."
+  },
+  {
+    id: 3,
+    category: "prosody_and_punctuation",
+    text: "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+    spoken_form: "He started snoring, zzz, zzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up! He jolted awake. Huh? What... what happened? She sighed. Shhh, just pay attention. Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip."
+  }
+];
+
+let currentRow = 0;
+let mediaRecorder = null;
+let chunks = [];
+let timerInterval = null;
+let startTime = 0;
+const recordings = {};
+
+async function populateMics() {
+  // Request permission first so device labels are available
+  try {
+    const tempStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    tempStream.getTracks().forEach(function(t) { t.stop(); });
+  } catch (e) { /* will handle on record */ }
+
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  const mics = devices.filter(function(d) { return d.kind === 'audioinput'; });
+  const select = document.getElementById('micSelect');
+  select.replaceChildren();
+  mics.forEach(function(mic, i) {
+    var opt = document.createElement('option');
+    opt.value = mic.deviceId;
+    opt.textContent = mic.label || ('Microphone ' + (i + 1));
+    select.appendChild(opt);
+  });
+}
+
+function init() {
+  renderNav();
+  showRow(0);
+  populateMics();
+  // Refresh mic list when devices change (plug in USB mic, connect AirPods, etc.)
+  navigator.mediaDevices.addEventListener('devicechange', populateMics);
+  document.getElementById('recordBtn').addEventListener('click', toggleRecord);
+  document.getElementById('rerecordBtn').addEventListener('click', rerecord);
+  document.getElementById('downloadBtn').addEventListener('click', downloadCurrent);
+  document.getElementById('downloadAll').addEventListener('click', downloadAllFiles);
+}
+
+function renderNav() {
+  const nav = document.getElementById('nav');
+  nav.replaceChildren();
+  ROWS.forEach((r, i) => {
+    const row = document.createElement('div');
+    row.className = 'nav-row d-flex align-items-center gap-2' + (i === currentRow ? ' active' : '');
+    row.dataset.idx = i;
+
+    const dot = document.createElement('div');
+    dot.className = 'status' + (recordings[i] ? ' done' : '');
+    dot.id = 'status-' + i;
+
+    const info = document.createElement('div');
+    const title = document.createElement('div');
+    title.className = 'small fw-semibold';
+    title.textContent = 'Row ' + i;
+    const cat = document.createElement('div');
+    cat.className = 'small text-muted';
+    cat.textContent = r.category;
+    info.appendChild(title);
+    info.appendChild(cat);
+
+    row.appendChild(dot);
+    row.appendChild(info);
+    row.addEventListener('click', () => showRow(i));
+    nav.appendChild(row);
+  });
+}
+
+function showRow(idx) {
+  currentRow = idx;
+  const row = ROWS[idx];
+  document.getElementById('catBadge').textContent = row.category;
+  document.getElementById('rowTitle').textContent = 'Row ' + idx;
+  document.getElementById('rowCounter').textContent = (idx + 1) + ' / ' + ROWS.length;
+  document.getElementById('textDisplay').textContent = row.text;
+  document.getElementById('spokenForm').textContent = row.spoken_form;
+  resetTimer();
+
+  if (recordings[idx]) {
+    showPlayback(recordings[idx]);
+  } else {
+    hidePlayback();
+  }
+  renderNav();
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  const timer = document.getElementById('timer');
+  timer.textContent = '0:00';
+  timer.className = 'timer';
+}
+
+function updateTimer() {
+  const elapsed = (Date.now() - startTime) / 1000;
+  const mins = Math.floor(elapsed / 60);
+  const secs = Math.floor(elapsed % 60).toString().padStart(2, '0');
+  const timer = document.getElementById('timer');
+  timer.textContent = mins + ':' + secs;
+  timer.className = elapsed >= 15 && elapsed <= 25 ? 'timer good' : 'timer recording';
+}
+
+async function toggleRecord() {
+  const btn = document.getElementById('recordBtn');
+  if (mediaRecorder && mediaRecorder.state === 'recording') {
+    mediaRecorder.stop();
+    btn.classList.remove('recording');
+    document.getElementById('recordHint').textContent = 'Click to start recording';
+    clearInterval(timerInterval);
+    return;
+  }
+
+  try {
+    const deviceId = document.getElementById('micSelect').value;
+    const constraints = deviceId ? { audio: { deviceId: { exact: deviceId } } } : { audio: true };
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    chunks = [];
+    mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm;codecs=opus' });
+    mediaRecorder.ondataavailable = function(e) { if (e.data.size > 0) chunks.push(e.data); };
+    var rowAtStart = currentRow;
+    mediaRecorder.onstop = function() {
+      stream.getTracks().forEach(function(t) { t.stop(); });
+      var blob = new Blob(chunks, { type: 'audio/webm' });
+      recordings[rowAtStart] = blob;
+      showPlayback(blob);
+      renderNav();
+      checkAllDone();
+      // Auto-save to server
+      var fname = 'row' + rowAtStart + '_' + ROWS[rowAtStart].category + '.webm';
+      saveToServer(blob, fname).then(function(path) {
+        if (path) document.getElementById('recordHint').textContent = 'Saved: ' + path;
+      });
+    };
+    mediaRecorder.start();
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 100);
+    btn.classList.add('recording');
+    document.getElementById('recordHint').textContent = 'Click to stop';
+    hidePlayback();
+  } catch (err) {
+    alert('Microphone access denied. Please allow microphone access and try again.');
+  }
+}
+
+function showPlayback(blob) {
+  const section = document.getElementById('playbackSection');
+  const player = document.getElementById('audioPlayer');
+  player.src = URL.createObjectURL(blob);
+  section.classList.remove('d-none');
+}
+
+function hidePlayback() {
+  document.getElementById('playbackSection').classList.add('d-none');
+}
+
+function rerecord() {
+  delete recordings[currentRow];
+  hidePlayback();
+  resetTimer();
+  renderNav();
+  checkAllDone();
+}
+
+async function saveToServer(blob, filename) {
+  try {
+    var resp = await fetch('/save?name=' + encodeURIComponent(filename), {
+      method: 'POST',
+      body: blob
+    });
+    var data = await resp.json();
+    return data.saved;
+  } catch (e) {
+    // Fallback to browser download if server isn't running
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    return null;
+  }
+}
+
+async function downloadCurrent() {
+  var blob = recordings[currentRow];
+  if (!blob) return;
+  var row = ROWS[currentRow];
+  var filename = 'row' + currentRow + '_' + row.category + '.webm';
+  var path = await saveToServer(blob, filename);
+  if (path) {
+    document.getElementById('recordHint').textContent = 'Saved: ' + path;
+  }
+}
+
+function checkAllDone() {
+  var allDone = ROWS.every(function(_, i) { return recordings[i]; });
+  document.getElementById('downloadAll').disabled = !allDone;
+}
+
+async function downloadAllFiles() {
+  var saved = [];
+  for (var i = 0; i < ROWS.length; i++) {
+    if (recordings[i]) {
+      var filename = 'row' + i + '_' + ROWS[i].category + '.webm';
+      var path = await saveToServer(recordings[i], filename);
+      if (path) saved.push(path);
+    }
+  }
+  if (saved.length > 0) {
+    document.getElementById('recordHint').textContent = 'Saved all ' + saved.length + ' recordings';
+  }
+}
+
+init();
+</script>
+</body>
+</html>

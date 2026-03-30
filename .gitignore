@@ -4,6 +4,8 @@ tmp/
 # Dataset text and audio files (stored locally, not in git)
 **/text/
 **/audio/
+# Exception: phase4 human reference recordings (small, committed intentionally)
+!tricky-tts/phase4/audio/
 __pycache__/
 *.pyc
 .DS_Store

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "category": "symbol_expansion",
+    "text": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+    "spoken_form": "The reaction requires greater than or equal to five hundred microlitres of H 2 O 2, thirty percent weight by volume, at thirty seven plus or minus two degrees Celsius, yielding approximately two point five times ten to the sixth C F U per millilitre, a three times improvement over the control at p H seven point four plus or minus zero point one."
+  },
+  {
+    "id": 1,
+    "category": "abbreviation_reading",
+    "text": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+    "spoken_form": "Doctor K R Liu, M D, P H D, F A C C, presented in Volume twelve of I triple E Transactions on Bioinformatics, pages eighty nine to one hundred four, arguing that the R P O B gene's S 531 L mutation remains the gold standard versus the newer kat G assay endorsed by C L S I."
+  },
+  {
+    "id": 2,
+    "category": "proper_nouns",
+    "text": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+    "spoken_form": "Seersha Nee Keelin from Doon Leery benchmarked deepseek AI slash DeepSeek R1 0528 against Kwen slash Kwen 3 235B A 22B on M M L U Pro, while her colleague Shihvawn Oh Ree-an from Inish Maan evaluated mistral AI slash Mixtral 8 times 22B Instruct v zero point one on G S M 8 K."
+  },
+  {
+    "id": 3,
+    "category": "prosody_and_punctuation",
+    "text": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+    "spoken_form": "He started snoring, zzz, zzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up! He jolted awake. Huh? What... what happened? She sighed. Shhh, just pay attention. Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip."
+  }
+]
