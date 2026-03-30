@@ -1,0 +1,266 @@
+{
+  "ElevenLabs": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires Notcher 500 Meal L of H2O2, 30% WV, at 37 plus Sauter-Curacao's, yielding 2.5106 CFU, not ML, a 3 kex improvement over the control at pH 7.4 plus 0.1.",
+      "asr_wer": 0.4375,
+      "asr_cer": 0.4032,
+      "duration_s": 20.712208333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Volum de Twente of IEEE Trans Dollars on Bioinformatics, PPALT 89-104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer KTG assay endorsed by CLSI.",
+      "asr_wer": 0.1628,
+      "asr_cer": 0.1343,
+      "duration_s": 20.665791666666667,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Sayersani Chawilfin from Dunleogher benchmarked DeepSeq AI, DeepSeq R10528 against QENQEN3-235B A22B on MMLU Pro, while her colleague Shobhan O. Riyain from Enos Mayayan evaluated Mistrali Chirmikstral 8x22B Instruct V0.1 on GSM8K.",
+      "asr_wer": 0.4737,
+      "asr_cer": 0.1724,
+      "duration_s": 23.266416666666668,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring. Zzzz, zzzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up. He jolted awake. Huh? What? What happened? She sighed. Shh, just pay attention. Outside, the wind went whoosh through the open window and somewhere far off, drip, drip, drip, drip.",
+      "asr_wer": 0.0833,
+      "asr_cer": 0.0307,
+      "duration_s": 24.613166666666668,
+      "utmos_score": null
+    }
+  ],
+  "GPT-4o mini TTS": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires equals 500 microliters of H2O2, 30% WV, at 37 plus 2 degrees Celsius, yielding approximately 2.5 times 10 to the 6 CFU per milliliter, a three times improvement over the control at pH 7.4 plus 0.1.",
+      "asr_wer": 0.5938,
+      "asr_cer": 0.7742,
+      "duration_s": 18.912,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K. R. Liu, MD, PhD, FACC, presented in Volume 12 of IEEE Trans on Bioinformatics, PP89-104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer CATG assay endorsed by CLSI.",
+      "asr_wer": 0.3256,
+      "asr_cer": 0.0846,
+      "duration_s": 20.4,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Sirsha Nikhilfin from Dunlaugheri benchmarked DeepSeq AI DeepSeq R10528 against QEN QEN3-235B-A22B on MMLU Pro, while her colleague Siobhan O'Rean from Inismian evaluated Mistrali Mixtrel 8x22B Instruct V0.1 on GSM-AK.",
+      "asr_wer": 0.5263,
+      "asr_cer": 0.1595,
+      "duration_s": 23.064,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring, zzzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up. He jolted awake. Huh? What, what happened? She sighed. Shh, just pay attention. Outside, the wind went whoosh through the open window, and somewhere far off, drip, drip, drip.",
+      "asr_wer": 0.0625,
+      "asr_cer": 0.0153,
+      "duration_s": 25.056,
+      "utmos_score": null
+    }
+  ],
+  "Cartesia Sonic-3": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires 500 mL of HF-AOSF 30% W slash V at 37 2 degrees Celsius, yielding 2.510 to the 6 power C Fu slash mL, a 3 improvement over the control at pH 7.4, 0.1.",
+      "asr_wer": 0.4375,
+      "asr_cer": 0.3952,
+      "duration_s": 14.106125,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K.R. Liu, MD, Phi.D, Phi.CC, presented in Vol, FDCE, of IEE Trans, on bioinformatics PP. 89. 104, arguing that the ARPOP genes S531, L mutation remains the gold standard VCs. The newer CAD-G assay endorsed by CLSI.",
+      "asr_wer": 0.3721,
+      "asr_cer": 0.0945,
+      "duration_s": 17.632666666666665,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Sawarsini Kowalfin from Dune Laocare benchmarked DeepSeq-I slash DeepSeq-R 1. 0528 against QWEN slash QEN3. 235BA22B on MMLU. P. Rowe, while her colleague Siobhan Orian from Enos Miayan evaluated Mistral AI slash Mixtral 8x22 B-Instruct V 0.1 on GSM 8K.",
+      "asr_wer": 0.7895,
+      "asr_cer": 0.25,
+      "duration_s": 22.413083333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring. Zzzz. Right in the middle of the lecture. Sessed, she hissed, nudging him. Wake up. He jolted awake. Huh? What? What happened? She sighed. Shh. Just pay attention. Outside, the wind went whoosh through the open window and somewhere far off. Drip, drip, drip.",
+      "asr_wer": 0.0833,
+      "asr_cer": 0.0307,
+      "duration_s": 23.902041666666666,
+      "utmos_score": null
+    }
+  ],
+  "Gemini Flash TTS": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires G500 microliters of H2O2, 30% WV, at 37 \u00b1 2\u00b0C, yielding approximately 2.5 x 10\u2076 CFU per ml, a 3x improvement over the control at pH 7.4 \u00b1 0.1.",
+      "asr_wer": 0.2812,
+      "asr_cer": 0.2823,
+      "duration_s": 20.890958333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K. R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. 12 of IEEE Trans on Bioinformatics, pages 89-104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer CATG assay endorsed by CLSI.",
+      "asr_wer": 0.093,
+      "asr_cer": 0.0597,
+      "duration_s": 22.090958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Sorsha Nikailfin from Doonjoyfer benchmarked DeepSeq AI DeepSeq R1-0528 against QEN QEN3-235B-A22B on MMLU Pro, while her colleague Siobhan Orian from Ines Mayan evaluated Mistral AI Mixtral 8x22B Instruct V0.1 on GSM8K.",
+      "asr_wer": 0.4211,
+      "asr_cer": 0.1552,
+      "duration_s": 29.610958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring, see, see, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up. He jolted awake. Huh? What happened? She sighed. Shh, just pay attention. Outside, the wind went whoo through the open window, and somewhere far off, drip, drip,",
+      "asr_wer": 0.125,
+      "asr_cer": 0.0728,
+      "duration_s": 31.370958333333334,
+      "utmos_score": null
+    }
+  ],
+  "Gemini Pro TTS": [
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K.R. Liu, MD, Ph.D., FACC, presented in Volume 12 of IEEE Trans on Bioinformatics, pages 89 to 104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer CATG assay endorsed by CLSI.",
+      "asr_wer": 0.2791,
+      "asr_cer": 0.1095,
+      "duration_s": 25.130958333333332,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Sirse Nic\u00e9ilfin from D\u00fan Laoghaire benchmarked DeepSeq AI slash DeepSeq R1 0528 against QWEN slash QWEN3 235B A22B on MMLU Pro, while her colleague Siobhan O'Rean from Innis Mayon evaluated Mistrali slash Mixtrel 8x22B on GSM8K.",
+      "asr_wer": 0.4737,
+      "asr_cer": 0.2371,
+      "duration_s": 35.290958333333336,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring, zzz, zzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up, he jolted awake. Huh? What? What happened? She sighed. Shh, just pay attention. Outside, the wind went whoosh through the open window, and somewhere far off, drip, drip, drip.",
+      "asr_wer": 0.0208,
+      "asr_cer": 0.0038,
+      "duration_s": 24.850958333333335,
+      "utmos_score": null
+    }
+  ],
+  "Orpheus": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires to 500 muols of H2O, 30% WVI, at 37 plus 2 degrees Celsius, yielding approximately 2 degrees Celsius, yielding approximately D, a three times improvement over the control at pH 7.4 plus 0.1.",
+      "asr_wer": 0.5312,
+      "asr_cer": 0.7581,
+      "duration_s": 17.92,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K.R. Liu, MD, PhD, FACC, presented in Volume 12 of IEEE Trans on Bioinformatics, PP 89-104, arguing that the RPOB gene's S-theroleccele mutation remains the gold standard versus the newer CATG assay endorsed by CLSI.",
+      "asr_wer": 0.3256,
+      "asr_cer": 0.1393,
+      "duration_s": 19.797333333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Serseni Chalufin from Dunlauger benchmarked DeepSeq-I DeepSeq-R1-0528 against K-Tran Canfuyuan 3-235 PA-22B on MM-LU Pro, while her colleague Chauvan O. Rian from Inus Mayan evaluated Mistrali Mixtrel 8x22-B Instruct V0.1 on GSM-8K.",
+      "asr_wer": 0.7368,
+      "asr_cer": 0.2414,
+      "duration_s": 23.381333333333334,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring. Right in the middle of the lecture. She hissed, nudging him. Wake up. He jolted awake. Huh? What? What happened? She sighed. Just pay attention. Outside, the wind went whoosh through the open window, and somewhere far off, drip, drip, drip.",
+      "asr_wer": 0.0833,
+      "asr_cer": 0.069,
+      "duration_s": 19.541333333333334,
+      "utmos_score": null
+    }
+  ],
+  "Kokoro": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires greater or equal to 500 mu L of H2O2, 30% WV, at 37 plus or minus 2 degrees C, yielding approximately 2. 5 times 10 6 CFU ML, a 3 times improvement over the control at pH 7, 4 plus or minus 0, 1.",
+      "asr_wer": 0.6562,
+      "asr_cer": 0.7258,
+      "duration_s": 21.375,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K. Arlew, MD, PhD, FACC, presented in vol. XII of IEEE trans on bioinformatics, PP. 89-104, arguing that the RPOB genes S531L mutation remains the gold standard versus the newer CATG assay endorsed by CLSI.",
+      "asr_wer": 0.3023,
+      "asr_cer": 0.0746,
+      "duration_s": 21.625958333333333,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Saoirse Ny-Kaelfin from Dunleagh Care benchmarked Deepsea KI slash Deepsea CAR 1-0528 against QN slash QN3-235 BA 22B on MMLUpro, while her colleague Siobhan O'Acute-Rien from Anais Meehan evaluated Mistrali slash Mixtrel 8x22 B-Instruct V0, 1 on GSM 8K.",
+      "asr_wer": 0.7895,
+      "asr_cer": 0.2716,
+      "duration_s": 24.15,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring ZZZZZZ right in the middle of the lecture. Psst, she hissed, nudging him. Wake up, he jolted awake. Huh, what? What happened? She sighed. SHHH, just pay attention. Outside, the wind went whoosh through the open window and somewhere far off. Drip, drip, drip.",
+      "asr_wer": 0.0417,
+      "asr_cer": 0.0038,
+      "duration_s": 19.075,
+      "utmos_score": null
+    }
+  ],
+  "Chatterbox": [
+    {
+      "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+      "asr_transcription": "The reaction requires 500 mL of HPAL-02 30% WALTAU-8D-80 at 37.2 dieski yielding 2 Pulse 5 time TAUN-62AML-8, a 3-CALS improvement over the control at HPALSIN 4 TAUN and 4DAUHPALSIN.",
+      "asr_wer": 0.5625,
+      "asr_cer": 0.5726,
+      "duration_s": 14.64,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+      "asr_transcription": "Dr. K.R. Liu, MOD, FAAD, FACC, presented in VolXYCB Trance on Bioinformatics, PAP 89-1004, arguing that the RIPOB gene's SIFT-RL mutation remains the gold standard VSS-thenuracatic assay endorsed by Kelsey.",
+      "asr_wer": 0.5349,
+      "asr_cer": 0.204,
+      "duration_s": 15.08,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+      "asr_transcription": "Soursnee Kyle Finn from Dunlau Hair Benchmark Deep Seek, I.L. Deep Seek, I.L. Deep Seek R1-85-2 Entitledy Prether 82225-BA Entitledy Bro, while her colleague Siobhan O'Ryan from Eniesmeon evaluated Mr. Lime Mixtral, A.A.A.A., Saita 2-2-B Instruct V8-01 on GSMA Cake. And Dwell the Bird.",
+      "asr_wer": 1.2632,
+      "asr_cer": 0.556,
+      "duration_s": 16.6,
+      "utmos_score": null
+    },
+    {
+      "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+      "asr_transcription": "He started snoring. ZZZ! Right in the middle of the lecture! Stew! She hissed, nudging him. Wake up! He jolted awake. What? What happened? She sighed. Shoo! Just pay attention! Upside, the wind went whoosh through the open window and somewhere far off,",
+      "asr_wer": 0.1667,
+      "asr_cer": 0.1188,
+      "duration_s": 12.84,
+      "utmos_score": null
+    }
+  ]
+}

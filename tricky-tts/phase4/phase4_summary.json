@@ -1,0 +1,56 @@
+[
+  {
+    "model": "ElevenLabs",
+    "mos": 4.2979,
+    "wer": 0.289325,
+    "cer": 0.18515
+  },
+  {
+    "model": "GPT-4o mini TTS",
+    "mos": 4.3539,
+    "wer": 0.37705,
+    "cer": 0.2584
+  },
+  {
+    "model": "Cartesia Sonic-3",
+    "mos": 3.9769,
+    "wer": 0.4206,
+    "cer": 0.1926
+  },
+  {
+    "model": "Gemini Flash TTS",
+    "mos": 4.0567,
+    "wer": 0.230075,
+    "cer": 0.14250000000000002
+  },
+  {
+    "model": "Gemini Pro TTS",
+    "mos": 4.3029,
+    "wer": 0.2578666666666667,
+    "cer": 0.1168
+  },
+  {
+    "model": "Orpheus",
+    "mos": 4.1616,
+    "wer": 0.419225,
+    "cer": 0.30195
+  },
+  {
+    "model": "Kokoro",
+    "mos": 4.5127,
+    "wer": 0.447425,
+    "cer": 0.26895
+  },
+  {
+    "model": "Piper (en-gb)",
+    "mos": 3.6187,
+    "wer": 0.4596,
+    "cer": 0.3081
+  },
+  {
+    "model": "Chatterbox",
+    "mos": 4.3168,
+    "wer": 0.6318250000000001,
+    "cer": 0.36285
+  }
+]

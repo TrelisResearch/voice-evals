@@ -1,0 +1,38 @@
+{
+  "ElevenLabs": {
+    "job_id": "fa021600-5dc2-4d56-bcdd-60ba7dbab9f3",
+    "model_id": "elevenlabs/eleven-multilingual-v2"
+  },
+  "GPT-4o mini TTS": {
+    "job_id": "b97abfde-36e3-40ee-a933-7bc07a920a7d",
+    "model_id": "openai/gpt-4o-mini-tts"
+  },
+  "Cartesia Sonic-3": {
+    "job_id": "5dd490a7-15e0-466b-8198-a6049d549d83",
+    "model_id": "cartesia/sonic-3"
+  },
+  "Gemini Flash TTS": {
+    "job_id": "438d4324-4eaf-49bd-b284-911900c7b380",
+    "model_id": "google/gemini-2.5-flash-tts"
+  },
+  "Gemini Pro TTS": {
+    "job_id": "7f9c9965-c5a0-4ed6-b72d-1edad5339f5a",
+    "model_id": "google/gemini-2.5-pro-tts"
+  },
+  "Orpheus": {
+    "job_id": "5bee19bb-4602-47df-8acd-987733ffc01e",
+    "model_id": "unsloth/orpheus-3b-0.1-ft"
+  },
+  "Kokoro": {
+    "job_id": "c8a0b666-478d-4309-9149-0a02dea0a287",
+    "model_id": "kokoro"
+  },
+  "Piper (en-gb)": {
+    "job_id": "7d015c33-0dbe-413f-b482-96787b3b0dad",
+    "model_id": "Trelis/piper-en-gb-cori-high"
+  },
+  "Chatterbox": {
+    "job_id": "c2a840bd-5cde-4b66-914a-ffe7c0f7b439",
+    "model_id": "ResembleAI/chatterbox"
+  }
+}
