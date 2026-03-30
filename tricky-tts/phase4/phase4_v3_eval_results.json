@@ -1,0 +1,470 @@
+{
+  "ElevenLabs": {
+    "info": {
+      "job_id": "3788d775-4040-4da0-abdc-8340b0ef97ac",
+      "model_id": "elevenlabs/eleven-multilingual-v2"
+    },
+    "result": {
+      "id": "3788d775-4040-4da0-abdc-8340b0ef97ac",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:48.869294",
+      "started_at": "2026-03-30T13:11:48.913407",
+      "completed_at": "2026-03-30T13:13:26.703559",
+      "config": {
+        "model_id": "elevenlabs/eleven-multilingual-v2",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-elevenlabs",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "auto",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 88.32879166666666,
+        "total_runtime_seconds": 76.82445120811462,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-elevenlabs",
+        "cost_charged": 1.0,
+        "mos": 4.2726,
+        "wer": 0.3395,
+        "cer": 0.1746,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:48] Starting TTS evaluation pipeline...\n[13:11:48] [Modal] Model: elevenlabs/eleven-multilingual-v2\n[13:11:48] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:48] [Modal] Auto-detected TTS model type: orpheus\n[13:12:08] [Modal] Function call started (ID: fc-01KMZDYDG...)\n[13:12:08] [Modal] Starting TTS evaluation on cuda\n[13:12:08] [Modal] Model: elevenlabs/eleven-multilingual-v2\n[13:12:10] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:10] [Modal] Router TTS model detected: elevenlabs/eleven-multilingual-v2 \u2014 skipping local model loading\n[13:12:10] [Modal] Router TTS: synthesizing 4 prompts via elevenlabs/eleven-multilingual-v2...\n[13:12:26] [Modal]   Synthesized 1/4 (1 successful)\n[13:12:29] [Modal]   Synthesized 2/4 (2 successful)\n[13:12:33] [Modal]   Synthesized 3/4 (3 successful)\n[13:12:37] [Modal]   Synthesized 4/4 (4 successful)\n[13:12:37] [Modal]   [1/4] -> 18.3s\n[13:12:37] [Modal]   [2/4] -> 21.2s\n[13:12:37] [Modal]   [3/4] -> 23.7s\n[13:12:37] [Modal]   [4/4] -> 25.2s\n[13:12:37] [Modal] Generated 4/4 samples successfully\n[13:12:37] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:12:37] [Modal] Loading UTMOS22 MOS predictor...\n[13:12:43] [Modal] MOS predictor loaded, scoring samples...\n[13:13:00] [Modal] MOS: 4/4 (running avg: 4.273)\n[13:13:00] [Modal] Mean MOS: 4.273 (std: 0.248)\n[13:13:00] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:13:00] [Modal] ASR model type: router\n[13:13:00] [Modal] Language: auto -> None\n[13:13:00] [Modal] Preparing ASR samples: 4/4\n[13:13:00] [Modal] Prepared 4 samples for ASR\n[13:13:00] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:01] [Modal] [Router]   Submitted 4/4\n[13:13:01] [Modal] [Router] Polling for results...\n[13:13:01] [Modal] [Router]   Waiting for results (4 pending)...\n[13:13:03] [Modal] [Router]   Collected 1/4 results (3 pending)\n[13:13:05] [Modal] [Router]   Collected 2/4 results (2 pending)\n[13:13:07] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:13:09] [Modal] [Router]   Collected 4/4 results\n[13:13:09] [Modal] ASR Round-Trip Results: WER=34.0% CER=17.5% (4 samples)\n[13:13:09] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-elevenlabs...\n[13:13:10] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:13:23] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-elevenlabs\n[13:13:25] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-elevenlabs-metadata\n[13:13:25] [Modal] ============================================================\n[13:13:25] [Modal] Generated: 4/4 samples\n[13:13:25] [Modal] Total audio: 88.3s\n[13:13:25] [Modal] MOS: 4.273\n[13:13:25] [Modal] ASR Round-Trip: WER=34.0% CER=17.5%\n[13:13:25] [Modal] Runtime: 1.3 min\n[13:13:25] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-elevenlabs\n[13:13:25] [Modal] ============================================================\n[13:13:25] [Modal] Committing model cache (pre-exit)...\n[13:13:26] [Billing] Charged $1.0000, new balance: $132.41\n[13:13:26] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "GPT-4o mini TTS": {
+    "info": {
+      "job_id": "63e5af06-ff12-499d-9506-905b41e3fbdc",
+      "model_id": "openai/gpt-4o-mini-tts"
+    },
+    "result": {
+      "id": "63e5af06-ff12-499d-9506-905b41e3fbdc",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:49.434292",
+      "started_at": "2026-03-30T13:11:49.506752",
+      "completed_at": "2026-03-30T13:13:51.344846",
+      "config": {
+        "model_id": "openai/gpt-4o-mini-tts",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "auto",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 90.048,
+        "total_runtime_seconds": 100.41436290740967,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts",
+        "cost_charged": 1.0,
+        "mos": 4.3305,
+        "wer": 0.1914,
+        "cer": 0.11,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:49] Starting TTS evaluation pipeline...\n[13:11:49] [Modal] Model: openai/gpt-4o-mini-tts\n[13:11:49] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:49] [Modal] Auto-detected TTS model type: orpheus\n[13:12:08] [Modal] Function call started (ID: fc-01KMZDYE4...)\n[13:12:08] [Modal] Starting TTS evaluation on cuda\n[13:12:08] [Modal] Model: openai/gpt-4o-mini-tts\n[13:12:22] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:22] [Modal] Router TTS model detected: openai/gpt-4o-mini-tts \u2014 skipping local model loading\n[13:12:23] [Modal] Router TTS: synthesizing 4 prompts via openai/gpt-4o-mini-tts...\n[13:12:28] [Modal]   Synthesized 1/4 (1 successful)\n[13:12:34] [Modal]   Synthesized 2/4 (2 successful)\n[13:12:41] [Modal]   Synthesized 3/4 (3 successful)\n[13:12:47] [Modal]   Synthesized 4/4 (4 successful)\n[13:12:47] [Modal]   [1/4] -> 20.7s\n[13:12:47] [Modal]   [2/4] -> 21.5s\n[13:12:47] [Modal]   [3/4] -> 24.8s\n[13:12:47] [Modal]   [4/4] -> 23.1s\n[13:12:47] [Modal] Generated 4/4 samples successfully\n[13:12:47] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:12:47] [Modal] Loading UTMOS22 MOS predictor...\n[13:12:56] [Modal] MOS predictor loaded, scoring samples...\n[13:13:23] [Modal] MOS: 4/4 (running avg: 4.330)\n[13:13:24] [Modal] Mean MOS: 4.330 (std: 0.322)\n[13:13:24] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:13:24] [Modal] ASR model type: router\n[13:13:24] [Modal] Language: auto -> None\n[13:13:24] [Modal] Preparing ASR samples: 4/4\n[13:13:24] [Modal] Prepared 4 samples for ASR\n[13:13:24] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:28] [Modal] [Router]   Submitted 4/4\n[13:13:29] [Modal] [Router] Polling for results...\n[13:13:29] [Modal] [Router]   Waiting for results (4 pending)...\n[13:13:31] [Modal] [Router]   Collected 4/4 results\n[13:13:31] [Modal] ASR Round-Trip Results: WER=19.1% CER=11.0% (4 samples)\n[13:13:31] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts...\n[13:13:32] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:13:45] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts\n[13:13:48] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts-metadata\n[13:13:48] [Modal] ============================================================\n[13:13:48] [Modal] Generated: 4/4 samples\n[13:13:48] [Modal] Total audio: 90.0s\n[13:13:48] [Modal] MOS: 4.330\n[13:13:48] [Modal] ASR Round-Trip: WER=19.1% CER=11.0%\n[13:13:48] [Modal] Runtime: 1.7 min\n[13:13:48] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts\n[13:13:48] [Modal] ============================================================\n[13:13:48] [Modal] Committing model cache (pre-exit)...\n[13:13:51] [Billing] Charged $1.0000, new balance: $129.41\n[13:13:51] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Kokoro": {
+    "info": {
+      "job_id": "d9dd2002-1181-4aa5-9d2e-86966839defe",
+      "model_id": "kokoro"
+    },
+    "result": {
+      "id": "d9dd2002-1181-4aa5-9d2e-86966839defe",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:52.180151",
+      "started_at": "2026-03-30T13:11:52.229996",
+      "completed_at": "2026-03-30T13:13:41.582077",
+      "config": {
+        "model_id": "kokoro",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-kokoro",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "kokoro",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 86.22595833333334,
+        "total_runtime_seconds": 70.33408975601196,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-kokoro",
+        "cost_charged": 1.0,
+        "mos": 4.5115,
+        "wer": 0.3642,
+        "cer": 0.1916,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:52] Starting TTS evaluation pipeline...\n[13:11:52] [Modal] Model: kokoro\n[13:11:52] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:12:29] [Modal] Function call started (ID: fc-01KMZDYGR...)\n[13:12:29] [Modal] Starting TTS evaluation on cuda\n[13:12:29] [Modal] Model: kokoro\n[13:12:31] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:31] [Modal] Kokoro TTS detected \u2014 skipping local model loading (voice: af_heart)\n[13:12:31] [Modal] Kokoro TTS: synthesizing 4 prompts (voice=af_heart)...\n[13:12:51] [Modal]   [1/4] -> 21.4s\n[13:12:52] [Modal]   [2/4] -> 21.6s\n[13:12:53] [Modal]   [3/4] -> 24.1s\n[13:12:54] [Modal]   [4/4] -> 19.1s\n[13:12:54] [Modal] Generated 4/4 samples successfully\n[13:12:54] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:12:54] [Modal] Loading UTMOS22 MOS predictor...\n[13:12:58] [Modal] MOS predictor loaded, scoring samples...\n[13:13:17] [Modal] MOS: 4/4 (running avg: 4.512)\n[13:13:18] [Modal] Mean MOS: 4.511 (std: 0.044)\n[13:13:18] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:13:18] [Modal] ASR model type: router\n[13:13:18] [Modal] Language: auto -> None\n[13:13:18] [Modal] Preparing ASR samples: 4/4\n[13:13:18] [Modal] Prepared 4 samples for ASR\n[13:13:18] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:19] [Modal] [Router]   Submitted 4/4\n[13:13:19] [Modal] [Router] Polling for results...\n[13:13:19] [Modal] [Router]   Waiting for results (4 pending)...\n[13:13:21] [Modal] [Router]   Waiting for results (4 pending)...\n[13:13:23] [Modal] [Router]   Waiting for results (4 pending)...\n[13:13:25] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:13:27] [Modal] [Router]   Collected 4/4 results\n[13:13:27] [Modal] ASR Round-Trip Results: WER=36.4% CER=19.2% (4 samples)\n[13:13:27] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-kokoro...\n[13:13:27] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:13:37] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-kokoro\n[13:13:39] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-kokoro-metadata\n[13:13:39] [Modal] ============================================================\n[13:13:39] [Modal] Generated: 4/4 samples\n[13:13:39] [Modal] Total audio: 86.2s\n[13:13:39] [Modal] MOS: 4.511\n[13:13:39] [Modal] ASR Round-Trip: WER=36.4% CER=19.2%\n[13:13:39] [Modal] Runtime: 1.2 min\n[13:13:39] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-kokoro\n[13:13:39] [Modal] ============================================================\n[13:13:39] [Modal] Committing model cache (pre-exit)...\n[13:13:41] [Billing] Charged $1.0000, new balance: $131.41\n[13:13:41] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Piper (en-gb)": {
+    "info": {
+      "job_id": "9be025ba-a15d-479d-a3bc-b782e3321a14",
+      "model_id": "Trelis/piper-en-gb-cori-high"
+    },
+    "result": {
+      "id": "9be025ba-a15d-479d-a3bc-b782e3321a14",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:52.751370",
+      "started_at": "2026-03-30T13:11:52.799839",
+      "completed_at": "2026-03-30T13:13:50.751230",
+      "config": {
+        "model_id": "Trelis/piper-en-gb-cori-high",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-piper-en-gb",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "en",
+        "tts_model_type": "piper",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 82.33795918367346,
+        "total_runtime_seconds": 108.92919754981995,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-piper-en-gb",
+        "cost_charged": 1.0,
+        "mos": 3.7775,
+        "wer": 0.5123,
+        "cer": 0.3073,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:52] Starting TTS evaluation pipeline...\n[13:11:52] [Modal] Model: Trelis/piper-en-gb-cori-high\n[13:11:52] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:52] [Modal] Using Piper evaluation (CPU)\n[13:11:57] [Modal] Function call started (ID: fc-01KMZDYHB...)\n[13:11:57] [Modal] Starting Piper evaluation (CPU)\n[13:11:57] [Modal] Model: Trelis/piper-en-gb-cori-high\n[13:11:59] [Modal] Loading dataset: ronanarraig/tricky-tts-phase4 [train]\n[13:12:04] [Modal] Loaded 4 prompts (reference_column=reference_asr)\n[13:12:04] [Modal] Loading Piper model: Trelis/piper-en-gb-cori-high\n[13:12:05] [Modal] Downloaded: /cache/hub/models--Trelis--piper-en-gb-cori-high/snapshots/1708f396d85449348c8ae4455a280d5a46f96d47/model.onnx\n[13:12:07] [Modal] Piper loaded (sr=22050)\n[13:12:14] [Modal] [4/4] 20.7s (1.79s gen) | He started snoring \u2014 zzz, zzz \u2014 right in the middle of the l...\n[13:12:14] [Modal] Generated 4/4 samples\n[13:12:14] [Modal] Computing MOS scores (UTMOS22)...\n[13:13:12] [Modal] MOS: 4/4 (running avg: 3.777)\n[13:13:12] [Modal] Mean MOS: 3.777 (std: 0.315)\n[13:13:13] [Modal] Language: en -> en\n[13:13:13] [Modal] Preparing ASR samples: 4/4\n[13:13:13] [Modal] Prepared 4 samples for ASR\n[13:13:13] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:16] [Modal] [Router]   Submitted 4/4\n[13:13:16] [Modal] [Router] Polling for results...\n[13:13:17] [Modal] [Router]   Collected 1/4 results (3 pending)\n[13:13:19] [Modal] [Router]   Collected 2/4 results (2 pending)\n[13:13:21] [Modal] [Router]   Collected 4/4 results\n[13:13:21] [Modal] ASR Round-Trip: WER=51.2% CER=30.7% (4 samples)\n[13:13:22] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-piper-en-gb...\n[13:13:42] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-piper-en-gb\n[13:13:46] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-piper-en-gb-metadata\n[13:13:50] [Modal] ============================================================\n[13:13:50] [Modal] Generated: 4/4 samples\n[13:13:50] [Modal] Total audio: 82.3s\n[13:13:50] [Modal] MOS: 3.777\n[13:13:50] [Modal] ASR Round-Trip: WER=51.2% CER=30.7%\n[13:13:50] [Modal] Runtime: 1.8 min\n[13:13:50] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-piper-en-gb\n[13:13:50] [Modal] ============================================================\n[13:13:50] [Billing] Charged $1.0000, new balance: $130.41\n[13:13:50] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Cartesia Sonic-3": {
+    "info": {
+      "job_id": "ba39886b-7773-41d0-9927-02731dd1ffd7",
+      "model_id": "cartesia/sonic-3"
+    },
+    "result": {
+      "id": "ba39886b-7773-41d0-9927-02731dd1ffd7",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:49.930114",
+      "started_at": "2026-03-30T13:11:49.968406",
+      "completed_at": "2026-03-30T13:14:16.446165",
+      "config": {
+        "model_id": "cartesia/sonic-3",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "auto",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 74.214,
+        "total_runtime_seconds": 107.53024959564209,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3",
+        "cost_charged": 1.0,
+        "mos": 4.0194,
+        "wer": 0.5185,
+        "cer": 0.2415,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:49] Starting TTS evaluation pipeline...\n[13:11:49] [Modal] Model: cartesia/sonic-3\n[13:11:49] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:49] [Modal] Auto-detected TTS model type: orpheus\n[13:12:25] [Modal] Function call started (ID: fc-01KMZDYFN...)\n[13:12:25] [Modal] Starting TTS evaluation on cuda\n[13:12:25] [Modal] Model: cartesia/sonic-3\n[13:12:28] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:28] [Modal] Router TTS model detected: cartesia/sonic-3 \u2014 skipping local model loading\n[13:12:28] [Modal] Router TTS: synthesizing 4 prompts via cartesia/sonic-3...\n[13:12:47] [Modal]   Synthesized 1/4 (1 successful)\n[13:12:58] [Modal]   Synthesized 2/4 (2 successful)\n[13:13:11] [Modal]   Synthesized 3/4 (3 successful)\n[13:13:23] [Modal]   Synthesized 4/4 (4 successful)\n[13:13:23] [Modal]   [1/4] -> 13.2s\n[13:13:23] [Modal]   [2/4] -> 17.0s\n[13:13:23] [Modal]   [3/4] -> 22.4s\n[13:13:23] [Modal]   [4/4] -> 21.6s\n[13:13:23] [Modal] Generated 4/4 samples successfully\n[13:13:23] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:13:23] [Modal] Loading UTMOS22 MOS predictor...\n[13:13:29] [Modal] MOS predictor loaded, scoring samples...\n[13:13:41] [Modal] MOS: 4/4 (running avg: 4.019)\n[13:13:41] [Modal] Mean MOS: 4.019 (std: 0.263)\n[13:13:41] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:13:41] [Modal] ASR model type: router\n[13:13:41] [Modal] Language: auto -> None\n[13:13:41] [Modal] Preparing ASR samples: 4/4\n[13:13:41] [Modal] Prepared 4 samples for ASR\n[13:13:41] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:46] [Modal] [Router]   Submitted 4/4\n[13:13:46] [Modal] [Router] Polling for results...\n[13:13:47] [Modal] [Router]   Collected 1/4 results (3 pending)\n[13:13:49] [Modal] [Router]   Collected 1/4 results (3 pending)\n[13:13:52] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:13:54] [Modal] [Router]   Collected 4/4 results\n[13:13:54] [Modal] ASR Round-Trip Results: WER=51.8% CER=24.1% (4 samples)\n[13:13:54] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3...\n[13:13:54] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:14:09] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3\n[13:14:12] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3-metadata\n[13:14:12] [Modal] ============================================================\n[13:14:12] [Modal] Generated: 4/4 samples\n[13:14:12] [Modal] Total audio: 74.2s\n[13:14:13] [Modal] MOS: 4.019\n[13:14:13] [Modal] ASR Round-Trip: WER=51.8% CER=24.1%\n[13:14:13] [Modal] Runtime: 1.8 min\n[13:14:13] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3\n[13:14:13] [Modal] ============================================================\n[13:14:13] [Modal] Committing model cache (pre-exit)...\n[13:14:16] [Billing] Charged $1.0000, new balance: $127.41\n[13:14:16] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Gemini Flash TTS": {
+    "info": {
+      "job_id": "a8dd215c-a941-4da5-b2ec-805d1cdc0099",
+      "model_id": "google/gemini-2.5-flash-tts"
+    },
+    "result": {
+      "id": "a8dd215c-a941-4da5-b2ec-805d1cdc0099",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:50.493371",
+      "started_at": "2026-03-30T13:11:50.542703",
+      "completed_at": "2026-03-30T13:14:14.766210",
+      "config": {
+        "model_id": "google/gemini-2.5-flash-tts",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "auto",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 94.00383333333332,
+        "total_runtime_seconds": 118.95235872268677,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts",
+        "cost_charged": 1.0,
+        "mos": 4.1845,
+        "wer": 0.2099,
+        "cer": 0.1122,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:50] Starting TTS evaluation pipeline...\n[13:11:50] [Modal] Model: google/gemini-2.5-flash-tts\n[13:11:50] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:50] [Modal] Auto-detected TTS model type: orpheus\n[13:12:11] [Modal] Function call started (ID: fc-01KMZDYF4...)\n[13:12:11] [Modal] Starting TTS evaluation on cuda\n[13:12:11] [Modal] Model: google/gemini-2.5-flash-tts\n[13:12:16] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:16] [Modal] Router TTS model detected: google/gemini-2.5-flash-tts \u2014 skipping local model loading\n[13:12:16] [Modal] Router TTS: synthesizing 4 prompts via google/gemini-2.5-flash-tts...\n[13:12:28] [Modal]   Synthesized 1/4 (1 successful)\n[13:12:46] [Modal]   Synthesized 2/4 (2 successful)\n[13:13:01] [Modal]   Synthesized 3/4 (3 successful)\n[13:13:15] [Modal]   Synthesized 4/4 (4 successful)\n[13:13:15] [Modal]   [1/4] -> 18.5s\n[13:13:15] [Modal]   [2/4] -> 21.3s\n[13:13:15] [Modal]   [3/4] -> 27.9s\n[13:13:15] [Modal]   [4/4] -> 26.4s\n[13:13:15] [Modal] Generated 4/4 samples successfully\n[13:13:15] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:13:15] [Modal] Loading UTMOS22 MOS predictor...\n[13:13:20] [Modal] MOS predictor loaded, scoring samples...\n[13:13:45] [Modal] MOS: 4/4 (running avg: 4.185)\n[13:13:45] [Modal] Mean MOS: 4.184 (std: 0.474)\n[13:13:45] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:13:45] [Modal] ASR model type: router\n[13:13:45] [Modal] Language: auto -> None\n[13:13:45] [Modal] Preparing ASR samples: 4/4\n[13:13:46] [Modal] Prepared 4 samples for ASR\n[13:13:46] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:13:49] [Modal] [Router]   Submitted 4/4\n[13:13:49] [Modal] [Router] Polling for results...\n[13:13:50] [Modal] [Router]   Collected 1/4 results (3 pending)\n[13:13:52] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:13:54] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:13:56] [Modal] [Router]   Collected 4/4 results\n[13:13:57] [Modal] ASR Round-Trip Results: WER=21.0% CER=11.2% (4 samples)\n[13:13:57] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts...\n[13:13:57] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:14:08] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts\n[13:14:10] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts-metadata\n[13:14:10] [Modal] ============================================================\n[13:14:10] [Modal] Generated: 4/4 samples\n[13:14:10] [Modal] Total audio: 94.0s\n[13:14:10] [Modal] MOS: 4.184\n[13:14:10] [Modal] ASR Round-Trip: WER=21.0% CER=11.2%\n[13:14:11] [Modal] Runtime: 2.0 min\n[13:14:11] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts\n[13:14:11] [Modal] ============================================================\n[13:14:11] [Modal] Committing model cache (pre-exit)...\n[13:14:14] [Billing] Charged $1.0000, new balance: $128.41\n[13:14:14] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Orpheus": {
+    "info": {
+      "job_id": "d17acfe1-80ac-48d2-8380-00996ac76e8f",
+      "model_id": "unsloth/orpheus-3b-0.1-ft"
+    },
+    "result": {
+      "id": "d17acfe1-80ac-48d2-8380-00996ac76e8f",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:51.629517",
+      "started_at": "2026-03-30T13:11:51.677242",
+      "completed_at": "2026-03-30T13:14:48.712342",
+      "config": {
+        "model_id": "unsloth/orpheus-3b-0.1-ft",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 4000,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-orpheus",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "orpheus",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 80.64000000000001,
+        "total_runtime_seconds": 140.4236752986908,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-orpheus",
+        "cost_charged": 1.0,
+        "mos": 4.1515,
+        "wer": 0.358,
+        "cer": 0.2143,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:51] Starting TTS evaluation pipeline...\n[13:11:51] [Modal] Model: unsloth/orpheus-3b-0.1-ft\n[13:11:51] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:12:26] [Modal] Function call started (ID: fc-01KMZDYG6...)\n[13:12:26] [Modal] Starting TTS evaluation on cuda\n[13:12:26] [Modal] Model: unsloth/orpheus-3b-0.1-ft\n[13:12:28] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:28] [Modal] Loading tokenizer for unsloth/orpheus-3b-0.1-ft...\n[13:12:29] [Modal] Tokenizer loaded\n[13:12:29] [Modal] Loading SNAC decoder...\n[13:12:30] [Modal] SNAC loaded\n[13:12:30] [Modal] Formatted 4 prompts for vLLM generation\n[13:12:34] [Modal] Initializing vLLM engine for unsloth/orpheus-3b-0.1-ft (4 prompts, sub-batch=128)...\n[13:13:46] [Modal] vLLM ready. Running Orpheus TTS inference...\n[13:13:54] [Modal]   Generated 4/4 samples\n[13:13:55] [Modal] vLLM generation complete. Decoding audio tokens via SNAC...\n[13:13:55] [Modal] [1/4] Decoding: 'The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, y...'\n[13:13:56] [Modal]   -> 17.9s (1470 tokens)\n[13:13:56] [Modal] [2/4] Decoding: 'Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII o...'\n[13:13:56] [Modal]   -> 19.8s (1624 tokens)\n[13:13:56] [Modal] [3/4] Decoding: 'Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepse...'\n[13:13:56] [Modal]   -> 23.4s (1918 tokens)\n[13:13:56] [Modal] [4/4] Decoding: 'He started snoring \u2014 zzz, zzz \u2014 right in the middle of the l...'\n[13:13:56] [Modal]   -> 19.5s (1603 tokens)\n[13:13:56] [Modal] Generated 4/4 samples successfully\n[13:13:56] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:13:56] [Modal] Loading UTMOS22 MOS predictor...\n[13:14:00] [Modal] MOS predictor loaded, scoring samples...\n[13:14:24] [Modal] MOS: 4/4 (running avg: 4.152)\n[13:14:24] [Modal] Mean MOS: 4.152 (std: 0.386)\n[13:14:24] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:14:24] [Modal] Freeing TTS model from GPU...\n[13:14:24] [Modal] ASR model type: router\n[13:14:24] [Modal] Language: auto -> None\n[13:14:24] [Modal] Preparing ASR samples: 4/4\n[13:14:24] [Modal] Prepared 4 samples for ASR\n[13:14:24] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:14:25] [Modal] [Router]   Submitted 4/4\n[13:14:25] [Modal] [Router] Polling for results...\n[13:14:26] [Modal] [Router]   Waiting for results (4 pending)...\n[13:14:28] [Modal] [Router]   Collected 2/4 results (2 pending)\n[13:14:30] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:32] [Modal] [Router]   Collected 4/4 results\n[13:14:32] [Modal] ASR Round-Trip Results: WER=35.8% CER=21.4% (4 samples)\n[13:14:32] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-orpheus...\n[13:14:32] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:14:44] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-orpheus\n[13:14:46] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-orpheus-metadata\n[13:14:46] [Modal] ============================================================\n[13:14:46] [Modal] Generated: 4/4 samples\n[13:14:46] [Modal] Total audio: 80.6s\n[13:14:46] [Modal] MOS: 4.152\n[13:14:46] [Modal] ASR Round-Trip: WER=35.8% CER=21.4%\n[13:14:46] [Modal] Runtime: 2.3 min\n[13:14:46] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-orpheus\n[13:14:46] [Modal] ============================================================\n[13:14:46] [Modal] Committing model cache (pre-exit)...\n[13:14:48] [Billing] Charged $1.0000, new balance: $125.41\n[13:14:48] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Chatterbox": {
+    "info": {
+      "job_id": "01aad2fc-f084-4ffa-8a97-d08eecacb53c",
+      "model_id": "ResembleAI/chatterbox"
+    },
+    "result": {
+      "id": "01aad2fc-f084-4ffa-8a97-d08eecacb53c",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:53.307475",
+      "started_at": "2026-03-30T13:11:53.353877",
+      "completed_at": "2026-03-30T13:14:36.458184",
+      "config": {
+        "model_id": "ResembleAI/chatterbox",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-chatterbox",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "en",
+        "tts_model_type": "chatterbox",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 84.88000000000001,
+        "total_runtime_seconds": 149.79871678352356,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-chatterbox",
+        "cost_charged": 1.0,
+        "mos": 4.1,
+        "wer": 0.9444,
+        "cer": 0.5941,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:53] Starting TTS evaluation pipeline...\n[13:11:53] [Modal] Model: ResembleAI/chatterbox\n[13:11:53] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:53] [Modal] Using Chatterbox evaluation\n[13:12:05] [Modal] Function call started (ID: fc-01KMZDYHW...)\n[13:12:05] [Modal] Starting Chatterbox evaluation on cuda\n[13:12:05] [Modal] Model: ResembleAI/chatterbox\n[13:12:06] [Modal] Loading dataset: ronanarraig/tricky-tts-phase4 [train]\n[13:12:07] [Modal] Loaded 4 prompts (reference_column=reference_asr)\n[13:12:07] [Modal] Loading Chatterbox model: ResembleAI/chatterbox\n[13:12:07] [Modal] No t3_finetuned.pt in ResembleAI/chatterbox \u2014 using base model weights\n[13:12:07] [Modal] Downloaded voice conditioning: /cache/hub/models--ResembleAI--chatterbox/snapshots/05e904af2b5c7f8e482687a9d7336c5c824467d9/conds.pt\n[13:12:37] [Modal] Model loaded with voice conditioning (sr=24000)\n[13:12:37] [Modal] GPU: NVIDIA A100-SXM4-40GB\n[13:12:37] [Modal] [1/4] Generating: 'The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, y...'\n[13:12:59] [Modal]   -> 17.2s (22.2s gen)\n[13:12:59] [Modal] [2/4] Generating: 'Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII o...'\n[13:13:09] [Modal]   -> 15.0s (9.7s gen)\n[13:13:09] [Modal] [3/4] Generating: 'Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepse...'\n[13:13:22] [Modal]   -> 20.1s (13.1s gen)\n[13:13:22] [Modal] [4/4] Generating: 'He started snoring \u2014 zzz, zzz \u2014 right in the middle of the l...'\n[13:13:43] [Modal]   -> 32.6s (21.2s gen)\n[13:13:43] [Modal] Generated 4/4 samples\n[13:13:43] [Modal] Computing MOS scores (UTMOS22)...\n[13:14:10] [Modal] MOS: 4/4 (running avg: 4.100)\n[13:14:10] [Modal] Mean MOS: 4.100 (std: 0.554)\n[13:14:10] [Modal] Freeing TTS model from GPU...\n[13:14:11] [Modal] Language: en -> en\n[13:14:11] [Modal] Preparing ASR samples: 4/4\n[13:14:11] [Modal] Prepared 4 samples for ASR\n[13:14:11] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:14:12] [Modal] [Router]   Submitted 4/4\n[13:14:12] [Modal] [Router] Polling for results...\n[13:14:12] [Modal] [Router]   Waiting for results (4 pending)...\n[13:14:14] [Modal] [Router]   Collected 2/4 results (2 pending)\n[13:14:16] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:18] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:20] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:22] [Modal] [Router]   Collected 4/4 results\n[13:14:22] [Modal] ASR Round-Trip: WER=94.4% CER=59.4% (4 samples)\n[13:14:22] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-chatterbox...\n[13:14:33] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-chatterbox\n[13:14:34] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-chatterbox-metadata\n[13:14:36] [Modal] ============================================================\n[13:14:36] [Modal] Generated: 4/4 samples\n[13:14:36] [Modal] Total audio: 84.9s\n[13:14:36] [Modal] MOS: 4.100\n[13:14:36] [Modal] ASR Round-Trip: WER=94.4% CER=59.4%\n[13:14:36] [Modal] Runtime: 2.5 min\n[13:14:36] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-chatterbox\n[13:14:36] [Modal] ============================================================\n[13:14:36] [Billing] Charged $1.0000, new balance: $126.41\n[13:14:36] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  },
+  "Gemini Pro TTS": {
+    "info": {
+      "job_id": "b4fb66cd-71e4-4934-9016-d2b839d08a6a",
+      "model_id": "google/gemini-2.5-pro-tts"
+    },
+    "result": {
+      "id": "b4fb66cd-71e4-4934-9016-d2b839d08a6a",
+      "status": "completed",
+      "created_at": "2026-03-30T13:11:51.012567",
+      "started_at": "2026-03-30T13:11:51.062061",
+      "completed_at": "2026-03-30T13:15:23.745452",
+      "config": {
+        "model_id": "google/gemini-2.5-pro-tts",
+        "prompts": null,
+        "dataset_id": "ronanarraig/tricky-tts-phase4",
+        "dataset_config": null,
+        "split": "train",
+        "num_samples": 4,
+        "max_new_tokens": 2560,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.1,
+        "speaker_name": "speaker",
+        "push_results": true,
+        "output_repo": "ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts",
+        "private": true,
+        "asr_model_id": "fireworks/whisper-v3",
+        "language": "auto",
+        "tts_model_type": "auto",
+        "kokoro_voice": "af_heart",
+        "reference_column": "reference_asr",
+        "tier_timeout": 10800
+      },
+      "result": {
+        "num_samples": 4,
+        "num_successful": 4,
+        "total_duration_s": 112.68383333333333,
+        "total_runtime_seconds": 185.72707557678223,
+        "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts",
+        "cost_charged": 1.0,
+        "mos": 4.2272,
+        "wer": 0.2037,
+        "cer": 0.11,
+        "asr_model_id": "fireworks/whisper-v3"
+      },
+      "error": null,
+      "logs": "[13:11:51] Starting TTS evaluation pipeline...\n[13:11:51] [Modal] Model: google/gemini-2.5-pro-tts\n[13:11:51] [Modal] Dataset: ronanarraig/tricky-tts-phase4\n[13:11:51] [Modal] Auto-detected TTS model type: orpheus\n[13:12:13] [Modal] Function call started (ID: fc-01KMZDYFK...)\n[13:12:14] [Modal] Starting TTS evaluation on cuda\n[13:12:14] [Modal] Model: google/gemini-2.5-pro-tts\n[13:12:17] [Modal] Loaded 4 prompts from ronanarraig/tricky-tts-phase4 (reference_column=reference_asr)\n[13:12:17] [Modal] Router TTS model detected: google/gemini-2.5-pro-tts \u2014 skipping local model loading\n[13:12:17] [Modal] Router TTS: synthesizing 4 prompts via google/gemini-2.5-pro-tts...\n[13:12:44] [Modal]   Synthesized 1/4 (1 successful)\n[13:13:11] [Modal]   Synthesized 2/4 (2 successful)\n[13:13:43] [Modal]   Synthesized 3/4 (3 successful)\n[13:14:05] [Modal]   Synthesized 4/4 (4 successful)\n[13:14:05] [Modal]   [1/4] -> 28.7s\n[13:14:05] [Modal]   [2/4] -> 24.8s\n[13:14:05] [Modal]   [3/4] -> 34.6s\n[13:14:05] [Modal]   [4/4] -> 24.6s\n[13:14:06] [Modal] Generated 4/4 samples successfully\n[13:14:06] [Modal] Computing MOS scores (UTMOS22) for 4 samples...\n[13:14:06] [Modal] Loading UTMOS22 MOS predictor...\n[13:14:12] [Modal] MOS predictor loaded, scoring samples...\n[13:14:45] [Modal] MOS: 4/4 (running avg: 4.227)\n[13:14:45] [Modal] Mean MOS: 4.227 (std: 0.337)\n[13:14:45] [Modal] Starting ASR round-trip with fireworks/whisper-v3...\n[13:14:45] [Modal] ASR model type: router\n[13:14:45] [Modal] Language: auto -> None\n[13:14:45] [Modal] Preparing ASR samples: 4/4\n[13:14:45] [Modal] Prepared 4 samples for ASR\n[13:14:45] [Modal] [Router] Submitting 4 samples to Router (fireworks/whisper-v3)...\n[13:14:48] [Modal] [Router]   Submitted 4/4\n[13:14:48] [Modal] [Router] Polling for results...\n[13:14:48] [Modal] [Router]   Waiting for results (4 pending)...\n[13:14:51] [Modal] [Router]   Collected 2/4 results (2 pending)\n[13:14:53] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:55] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:57] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:14:59] [Modal] [Router]   Collected 3/4 results (1 pending)\n[13:15:01] [Modal] [Router]   Collected 4/4 results\n[13:15:01] [Modal] ASR Round-Trip Results: WER=20.4% CER=11.0% (4 samples)\n[13:15:01] [Modal] Pushing evaluation samples to ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts...\n[13:15:02] [Modal] Uploading 4 samples to HuggingFace (this may take a while)...\n[13:15:16] [Modal] Samples pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts\n[13:15:19] [Modal] Metadata-only dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts-metadata\n[13:15:19] [Modal] ============================================================\n[13:15:19] [Modal] Generated: 4/4 samples\n[13:15:19] [Modal] Total audio: 112.7s\n[13:15:19] [Modal] MOS: 4.227\n[13:15:19] [Modal] ASR Round-Trip: WER=20.4% CER=11.0%\n[13:15:19] [Modal] Runtime: 3.1 min\n[13:15:19] [Modal] Dataset: https://huggingface.co/datasets/ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts\n[13:15:19] [Modal] ============================================================\n[13:15:19] [Modal] Committing model cache (pre-exit)...\n[13:15:23] [Billing] Charged $1.0000, new balance: $124.41\n[13:15:23] TTS evaluation complete!",
+      "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+      "cost_description": "Billed for compute at $0.99/hr (Router) or $4.32/hr (GPU)"
+    },
+    "status": "completed"
+  }
+}

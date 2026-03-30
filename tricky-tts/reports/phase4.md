@@ -2,11 +2,11 @@
 
 ## Overview
 
-Phase 4 introduced a new 4-category taxonomy and a minimal 4-row human-referenced eval dataset. The user recorded their own voice reading each row; Whisper-medium transcribed that audio to produce a `reference_asr` column used as the CER target. All 9 supported Studio TTS models were evaluated.
+Phase 4 introduced a new 4-category taxonomy and a minimal 4-row human-referenced eval dataset. The user recorded their own voice reading each row; Whisper large-v3 (via Studio ASR eval) transcribed that audio to produce a `reference_asr` column used as the CER target. All 9 supported Studio TTS models were evaluated.
 
 **Dataset:** `ronanarraig/tricky-tts-phase4` (private, 4 rows)
 **ASR model for round-trip:** `fireworks/whisper-v3`
-**Reference column:** `reference_asr` (Whisper-medium transcription of human-recorded audio)
+**Reference column:** `reference_asr` (Whisper large-v3 transcription of human-recorded audio, via Studio ASR eval)
 
 ---
 
@@ -23,51 +23,51 @@ Phase 4 introduced a new 4-category taxonomy and a minimal 4-row human-reference
 
 ## Reference Audio & ASR Quality
 
-The user recorded ~20s of audio per row (`.webm` format). Transcribed locally with **Whisper-medium (int8/CPU)** — used instead of large-v3 due to disk space constraints on the VPS, and because the Studio ASR eval pipeline got stuck (see Bugs below).
+The user recorded ~20s of audio per row (`.webm` format). The Studio ASR eval job (`openai/whisper-large-v3`) eventually completed after 43 minutes total — the HF push alone took 33 minutes for a 2.63MB file (~1.3 KB/s). See Bugs section.
 
-| Row | Category | Reference ASR (Whisper-medium) | Notes |
+| Row | Category | Reference ASR (Whisper large-v3) | Notes |
 |---|---|---|---|
-| 0 | symbol_expansion | "Bars greater than or equal to 500 µL of H2O2, 30% weight by volume, at 37 ± 2°C, yielding approximately 2.5 × 10⁶ CFU per milliliter, a three times improvement over the control at pH 7.4 ± 0.1." | "Bars" is a mishearing — recording started mid-word ("≥" was read as "greater than or equal to" but Whisper-medium heard "Bars"). Reference is imperfect for row 0. |
-| 1 | abbreviation_reading | "Dr. K. Orlew, MD, PhD, FACC, presented in Volume 12 of IEEE Transactions on Bioinformatics, pages 89-104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer 4G assay endorsed by CLSI." | "Orlew" for "K.R. Liu" — Whisper-medium garbled initials. "4G assay" for "katG assay". Reference is imperfect but captures the overall reading pattern. |
-| 2 | proper_nouns | "Irsa Ní Chíilean from Dun Laoghaire benchmarked DeepSeq AI slash DeepSeq R1 0528 against Qen Qen3 235B A22B on MMLU Pro while her colleague Siobhán O'Rhean from Inishmann evaluated Mistral AI Mixtral 8x22B Instruct V0.1 on GSM 8K" | "Irsa" for "Saoirse", "Chíilean" for "Ní Chaoilfhinn" — Whisper-medium struggles significantly with Irish names. Reference is noisy. |
-| 3 | prosody_and_punctuation | "He started snoring, zz, zz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up! He jolted awake. Huh? What? What happened? She sighed. Shhh, just pay attention. Outside, the wind went whoosh through the open window and somewhere far off, drip, drip, drip." | Clean. Good reference. |
+| 0 | symbol_expansion | "fires greater than or equal to 500 microlitres of H2O2, 30% weight by volume, at 37 ± 2°C, yielding approximately 2.5 × 10⁶ CFU per milliliter, a 3× improvement over the control at pH 7.4 ± 0.1." | "fires" is a mishearing at the very start — but the rest is accurate. |
+| 1 | abbreviation_reading | "Dr. K. Orlew, MD, PhD, FACC, presented in Volume 12 of IEEE Transactions on Bioinformatics, pages 89-104, arguing that the RPOB gene's S531L mutation remains the gold standard versus the newer 4G assay endorsed by CLSI." | "Orlew" for "K.R. Liu" — garbled initials. "4G assay" for "katG assay". Otherwise solid. |
+| 2 | proper_nouns | "Kirsia Ní Chíoláin from Dún Laoghaire benchmarked DeepSeq AI/DeepSeq R1-0528 against QEN QEN3-235B/A22B on MMLU Pro while her colleague Siobhán O'Rhean from Inishmann evaluated Mistral AI Mixtral 8x22B Instruct V0.1 on GSM 8K" | "Kirsia" for "Saoirse", "Chíoláin" for "Chaoilfhinn" — even large-v3 struggles with Irish names. Still the best available reference. |
+| 3 | prosody_and_punctuation | "He started snoring, zzz, zzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up! He jolted awake. Huh? What? What happened? She sighed. Shhh, just pay attention. Outside, the wind went whoosh through the open window and somewhere far off, drip, drip, drip." | Clean. Excellent reference. |
 
-**Key implication:** Reference ASR noise inflates CER for rows 0–2, making row 3 (prosody) the most reliable signal. For rows 0 and 2 especially, CER vs. `reference_asr` is lower-quality than CER vs. `text` would be. Using a better reference (large-v3 or a dedicated model) would improve rows 0–2.
+**Key implication:** Row 3 (prosody) has the cleanest reference and most reliable CER signal. Row 0 reference still has a single-word error at the start ("fires") but is otherwise accurate. Rows 1–2 have some garbling of proper names/initials, which inflates CER for those rows across all models.
 
 ---
 
 ## Leaderboard
 
-CER measured against `reference_asr` column (Whisper-medium of human voice). MOS from UTMOS.
-
-Gemini Flash TTS only returned 3/4 rows — skipped row 0 (symbol_expansion, the longest/hardest prompt). Scores reflect available rows.
+CER measured against `reference_asr` column (Whisper large-v3 of human voice). MOS from UTMOS. All 9 models returned 4/4 rows in this run.
 
 | Rank | Model | MOS ↑ | WER | CER ↓ |
 |---|---|---|---|---|
-| 1 | Gemini Flash TTS | 4.222 | 0.378 | **0.136** |
-| 2 | GPT-4o mini TTS | 4.335 | 0.263 | **0.162** |
-| 3 | Gemini Pro TTS | 4.302 | 0.256 | **0.161** |
-| 4 | ElevenLabs | 4.270 | 0.294 | 0.185 |
-| 5 | Kokoro | **4.514** | 0.378 | 0.214 |
-| 6 | Orpheus | 4.152 | 0.382 | 0.231 |
-| 7 | Cartesia Sonic-3 | 3.882 | 0.588 | 0.250 |
-| 8 | Piper (en-gb) | 3.694 | 0.552 | 0.334 |
-| 9 | Chatterbox | 4.351 | 0.578 | 0.335 |
+| 1 | Gemini Pro TTS | 4.227 | 0.212 | **0.112** |
+| 2 | GPT-4o mini TTS | 4.330 | 0.200 | **0.121** |
+| 3 | Gemini Flash TTS | 4.184 | 0.222 | 0.122 |
+| 4 | ElevenLabs | 4.273 | 0.361 | 0.192 |
+| 5 | Kokoro | **4.511** | 0.383 | 0.209 |
+| 6 | Orpheus | 4.152 | 0.375 | 0.229 |
+| 7 | Cartesia Sonic-3 | 4.019 | 0.548 | 0.259 |
+| 8 | Piper (en-gb) | 3.777 | 0.533 | 0.323 |
+| 9 | Chatterbox | 4.100 | 0.928 | 0.583 |
 
-**MOS winner:** Kokoro (4.514) — consistently highest naturalness across all phases.
-**CER winner:** Gemini Flash TTS (0.136) — but benefited from skipping the hardest symbol_expansion row.
-**Balanced best:** GPT-4o mini TTS and Gemini Pro TTS — strong on both accuracy and naturalness.
+**MOS winner:** Kokoro (4.511) — consistently highest naturalness across all phases.
+**CER winner:** Gemini Pro TTS (0.112) — also excellent WER (0.212).
+**Balanced best:** GPT-4o mini TTS — strong across both accuracy and naturalness, consistent across all 4 rows.
 
 ---
 
 ## Per-Row CER
 
+Reference: Whisper large-v3 of human-recorded audio.
+
 | Row | Category | ElevenLabs | GPT-4o | Cartesia | Gemini Flash | Gemini Pro | Orpheus | Kokoro | Piper | Chatterbox |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 0 | symbol_expansion | 0.409 | 0.409 | 0.486 | N/A | 0.265 | 0.470 | 0.492 | 0.536 | 0.586 |
-| 1 | abbreviation_reading | 0.133 | **0.067** | 0.214 | 0.170 | 0.105 | 0.143 | 0.105 | 0.391 | 0.391 |
-| 2 | proper_nouns | 0.188 | 0.153 | 0.288 | 0.124 | 0.262 | 0.249 | 0.253 | 0.275 | 0.301 |
-| 3 | prosody_and_punctuation | 0.012 | 0.019 | 0.012 | N/A | 0.012 | 0.062 | **0.008** | 0.135 | 0.062 |
+| 0 | symbol_expansion | 0.450 | 0.286 | 0.513 | 0.254 | **0.138** | 0.476 | 0.471 | 0.503 | 0.693 |
+| 1 | abbreviation_reading | 0.133 | **0.071** | 0.171 | 0.114 | **0.071** | 0.133 | 0.085 | 0.389 | 0.346 |
+| 2 | proper_nouns | 0.185 | **0.122** | 0.306 | 0.113 | 0.176 | 0.243 | 0.270 | 0.270 | 0.423 |
+| 3 | prosody_and_punctuation | **0.000** | 0.004 | 0.046 | 0.008 | 0.065 | 0.065 | 0.008 | 0.131 | 0.869 |
 
 ---
 
@@ -76,61 +76,64 @@ Gemini Flash TTS only returned 3/4 rows — skipped row 0 (symbol_expansion, the
 ### Row 0 — `symbol_expansion`
 **Text:** `The reaction requires ≥500 μL of H₂O₂ (30% w/v) at 37±2°C, yielding ≈2.5×10⁶ CFU/mL — a 3× improvement over the control at pH 7.4±0.1.`
 
-The hardest row. Gemini Flash TTS **skipped it entirely** (only 3 rows returned). All models show high CER (0.265–0.586). Gemini Pro TTS performs best (CER 0.265), correctly rendering most symbols. ElevenLabs and GPT-4o both say "greater than 500" but omit "approximately" for `≈` and misconstrue other symbols. Orpheus and Kokoro garble unit symbols badly. Cartesia and Chatterbox largely fail. Note: reference_asr itself is imperfect here ("Bars greater than...") so absolute CER values are inflated for all models.
+The hardest row. All models show high CER (0.138–0.693). Gemini Pro TTS is clear best (0.138), rendering "greater than or equal to 500 microliters", "30% weight per volume", and "approximately 2.5 times 10 to the 6th". GPT-4o and Gemini Flash also reasonable. Orpheus, Kokoro, Piper all garble unit symbols. Chatterbox almost completely fails (0.693). Note: reference starts with "fires" (mishearing) which inflates all CERs slightly.
 
-**ElevenLabs CER=0.409:** "The reaction requires 500 mW of H2O2, 30% WV, at 37 ± 2°C, yielding 2.5 ± 106 CFU mW, a 3x improvement..."
-**Gemini Pro TTS CER=0.265:** "The reaction requires greater than 500 microliters of H2O2 30% W over V at 37 ± 2°C, yielding approximately 2.5 times 10 to the 6th CFU per milliliter..."
+**Gemini Pro TTS CER=0.138:** "The reaction requires greater than or equal to 500 microliters of H2O2, 30% weight per volume, at 37 ± 2°C, yielding approximately 2.5 × 10⁶..."
+**Chatterbox CER=0.693:** "The reaction requires 500mL of H-PAL-02-O2 at 3d7-2-OdA, yielding 2-PAL-5-tondrin-6-Cl..."
 
 ### Row 1 — `abbreviation_reading`
 **Text:** `Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89–104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.`
 
-Most models handle this well. GPT-4o mini TTS is the standout (CER 0.067): correctly reads "Volume 12", "IEEE Trans on Bioinformatics", "pages 89-104", and most abbreviations. Kokoro also strong (0.105). Piper and Chatterbox struggle significantly — Piper produces garbled output ("LuMD, Kio4H, tot deus e solo 1") suggesting poor handling of dotted initials. The reference_asr ("Orlew" for "K.R. Liu") slightly inflates all CERs here.
+GPT-4o mini TTS and Gemini Pro TTS joint best (CER 0.071). Both correctly read "Volume 12", "IEEE Trans on Bioinformatics", "pages 89-104" and most abbreviations. Kokoro also strong (0.085). Piper and Chatterbox fail badly — Piper hallucinates entire phrases ("Dr. K.R. Liu and D. Hego-Fleisch, Dr. Verhorn"), Chatterbox garbles abbreviations ("M.A.D., Peyate 8th ACC").
 
-**GPT-4o mini TTS CER=0.067:** "Dr. K.R. Liu, MD, PhD, FACC, presented in Volume 12 of IEEE Trans on Bioinformatics, pages 89-104, arguing..."
-**Piper CER=0.391:** "Dr. K. R. LuMD, Kio4H, tot deus e solo 1, FACC presented in vol. S4L4Y..."
+**GPT-4o mini TTS CER=0.071:** "Dr. K. R. Liu, MD, PhD, FACC, presented in Volume 12 of IEEE Trans on Bioinformatics, pages 89-104..."
+**Piper CER=0.389:** "Dr. K.R. Liu and D. Hego-Fleisch, Dr. Verhorn, FACC presented in vol. Sorrel-Vervieres et Trolls..."
 
 ### Row 2 — `proper_nouns`
 **Text:** `Saoirse Ní Chaoilfhinn from Dún Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobhán Ó Riain from Inis Meáin evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.`
 
-Model path handling (HF slugs with slashes and version numbers) is handled reasonably by most commercial models. Irish names are universally mispronounced by all models — none comes close to correct. Gemini Flash TTS (CER 0.124) is best but only on rows it processed. The reference_asr is noisy here ("Irsa" for "Saoirse", "Chíilean" for "Chaoilfhinn"), so CER comparisons are approximate.
+GPT-4o mini TTS best (0.122), Gemini Flash close (0.113). Irish names universally mispronounced by all models — even the reference itself has "Kirsia" for "Saoirse". HF model paths (slashes, version numbers) handled reasonably by commercial models. Chatterbox worst (0.423) — hallucinates model names entirely.
 
-**Gemini Flash TTS CER=0.124:** "He started snoring..." — row ordering wrong (this is row 3's content).
-**GPT-4o mini TTS CER=0.153:** "Sirsha Mikhailfin from Dunlewheri benchmarked DeepSeq AI DeepSeq R10528 against QEN QEN3-235B-A22B..."
+**GPT-4o mini TTS CER=0.122:** "Sirsha Ni Hielthin from DUN Laogira benchmarked DeepSeq AI slash DeepSeq R1-0528 against QEN-QEN3-235B-A22B..."
+**Chatterbox CER=0.423:** "Sawarisni Kowalfin from Dunlau Hair Benchmark DeepSeek, iDeepSeek R1, ADSeek R1 8528..."
 
 ### Row 3 — `prosody_and_punctuation`
 **Text:** `He started snoring — zzz, zzz — right in the middle of the lecture. "Psst," she hissed, nudging him. "Wake up!" He jolted awake. "Huh? What... what happened?" She sighed. "Shhh — just pay attention." Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.`
 
-The clearest signal row. Reference is clean. Most commercial models score very low CER (0.008–0.019). Kokoro is best (0.008). ElevenLabs, GPT-4o, Cartesia, Gemini Pro all excellent. Orpheus (0.062) skips the zzz sounds and some punctuation cues. Piper (0.135) renders "zzz" as "said, said, said" — completely wrong. Chatterbox (0.062) renders "zzz" as "Zee, zee, zee" — recognisable but slightly off.
+Clearest signal row — reference is clean. ElevenLabs achieves perfect CER=0.000. GPT-4o, Gemini Flash, Kokoro all near-zero. Orpheus (0.065) skips the zzz sounds entirely. Piper (0.131) renders "zzz" as "said, said, said". Chatterbox catastrophically fails (0.869) — completely garbles the second half of the text.
 
-**Kokoro CER=0.008:** "He started snoring ZZZZZZ right in the middle of the lecture. Psst, she hissed, nudging him. Wake up!..."
-**Piper CER=0.135:** "He started snoring. Said, said, said. Said, said, said. Right in the middle of the lecture. Psst! Sh..."
+**ElevenLabs CER=0.000:** "He started snoring, zzz, zzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up!..."
+**Chatterbox CER=0.869:** "He started snoring. See, Zee? Right in the middle of the lecture. See! Hissed, nudging him. Wak..."
 
 ---
 
 ## Eval Result Datasets
 
+Final run (v3, Whisper large-v3 reference):
+
 | Model | HF Dataset |
 |---|---|
-| ElevenLabs | `ronanarraig/tricky-tts-ph4-v2-elevenlabs` |
-| GPT-4o mini TTS | `ronanarraig/tricky-tts-ph4-v2-gpt-4o-mini-tts` |
-| Cartesia Sonic-3 | `ronanarraig/tricky-tts-ph4-v2-cartesia-sonic-3` |
-| Gemini Flash TTS | `ronanarraig/tricky-tts-ph4-v2-gemini-flash-tts` |
-| Gemini Pro TTS | `ronanarraig/tricky-tts-ph4-v2-gemini-pro-tts` |
-| Orpheus | `ronanarraig/tricky-tts-ph4-v2-orpheus` |
-| Kokoro | `ronanarraig/tricky-tts-ph4-v2-kokoro` |
-| Piper (en-gb) | `ronanarraig/tricky-tts-ph4-v2-piper-en-gb` |
-| Chatterbox | `ronanarraig/tricky-tts-ph4-v2-chatterbox` |
+| ElevenLabs | `ronanarraig/tricky-tts-ph4-v3-elevenlabs` |
+| GPT-4o mini TTS | `ronanarraig/tricky-tts-ph4-v3-gpt-4o-mini-tts` |
+| Cartesia Sonic-3 | `ronanarraig/tricky-tts-ph4-v3-cartesia-sonic-3` |
+| Gemini Flash TTS | `ronanarraig/tricky-tts-ph4-v3-gemini-flash-tts` |
+| Gemini Pro TTS | `ronanarraig/tricky-tts-ph4-v3-gemini-pro-tts` |
+| Orpheus | `ronanarraig/tricky-tts-ph4-v3-orpheus` |
+| Kokoro | `ronanarraig/tricky-tts-ph4-v3-kokoro` |
+| Piper (en-gb) | `ronanarraig/tricky-tts-ph4-v3-piper-en-gb` |
+| Chatterbox | `ronanarraig/tricky-tts-ph4-v3-chatterbox` |
 
 ---
 
 ## Trelis Studio Experience / Bugs
 
-### Bug: ASR eval job stuck at "Pushing evaluation results to Hub..."
+### Bug: ASR eval HF push extremely slow + job status not updating during push
 - Job `cd1fd2e4` ran Whisper large-v3 on the 4-row WAV dataset
 - Inference completed (CER 16%, WER 29%) at 12:00:15
-- Job then hung at "Pushing evaluation results to Hub..." indefinitely — status never transitioned to `completed`, HF repo only had `.gitattributes`
-- Workaround: transcribed locally with faster-whisper medium
-- Filed as bug `73aa8f79`
+- HF shard upload then took **33 minutes for a 2.63MB file** (~1.3 KB/s) — total runtime 2593.6s (~43 min)
+- During the entire push phase, the job API returned `status: running` with `result: null` — no indication of progress
+- Appeared hung; worked around by transcribing locally with Whisper-medium, then re-ran properly once the job completed
+- Filed as bug `7a7266ff` (slow push + status not updating during push)
 
 ### Bug: ASR eval fails on `.webm` audio
 - First ASR eval attempt used the webm-format audio dataset
