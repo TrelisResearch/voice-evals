@@ -79,10 +79,10 @@ def transcribe(audio, retries=2):
     return None
 
 # Load data
-curated = json.loads(Path("tricky-tts/curated_public.json").read_text())
-original_results = {r["text"]: r for r in json.loads(Path("tricky-tts/roundtrip_results.json").read_text())}
+curated = json.loads(Path("tricky-tts/phase1/curated_public.json").read_text())
+original_results = {r["text"]: r for r in json.loads(Path("tricky-tts/phase1/roundtrip_results.json").read_text())}
 
-out_path = Path("tricky-tts/curated_results.json")
+out_path = Path("tricky-tts/phase1/curated_results.json")
 if out_path.exists():
     curated_results = json.loads(out_path.read_text())
     done = {r["text"] for r in curated_results}
