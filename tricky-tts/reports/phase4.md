@@ -54,7 +54,7 @@ Human reference scores 4.22 overall — a ceiling for naturalness comparison. Al
 
 ## Leaderboard
 
-CER measured against `reference_asr` column (Whisper large-v3 of human voice). MOS from UTMOS. All 9 models returned 4/4 rows in this run. Mistral returned 4/4 rows but UTMOS score not available (null in output dataset).
+CER measured against `reference_asr` column (Whisper large-v3 of human voice). MOS from UTMOS. All 10 models returned 4/4 rows. Mistral MOS is job-level aggregate (per-row `utmos_score` is null in output parquet; aggregate available in job result JSON).
 
 | Rank | Model | MOS ↑ | WER | CER ↓ |
 |---|---|---|---|---|
@@ -67,13 +67,13 @@ CER measured against `reference_asr` column (Whisper large-v3 of human voice). M
 | 7 | Cartesia Sonic-3 | 4.019 | 0.548 | 0.259 |
 | 8 | Piper (en-gb) | 3.777 | 0.533 | 0.323 |
 | 9 | Chatterbox | 4.100 | 0.928 | 0.583 |
-| 10 | Mistral Voxtral-Mini | N/A | 0.719 | **0.569** |
+| 10 | Mistral Voxtral-Mini | 4.289 | 0.710 | **0.569** |
 | — | Human reference | 4.223 | — | — |
 
 **MOS winner:** Kokoro (4.511) — consistently highest naturalness across all phases.
 **CER winner:** Gemini Pro TTS (0.112) — also excellent WER (0.212).
 **Balanced best:** GPT-4o mini TTS — strong across both accuracy and naturalness, consistent across all 4 rows.
-**Mistral Voxtral-Mini:** Last place by a wide margin (CER 0.569) — garbles symbol_expansion entirely and truncates prosody row mid-sentence.
+**Mistral Voxtral-Mini:** Last place by a wide margin (CER 0.569) despite competitive naturalness (MOS 4.289) — garbles symbol_expansion entirely and truncates prosody row mid-sentence. High MOS with low accuracy is a pattern typical of fluent-but-hallucinating TTS.
 
 ---
 
