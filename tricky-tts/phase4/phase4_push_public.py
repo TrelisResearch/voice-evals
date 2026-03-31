@@ -81,9 +81,12 @@ MOS from UTMOS. Human reference audio scored at 4.22 MOS.
 
 ## Evaluation methodology
 
-Evaluations were run via [Trelis Voice AI Services](https://trelis.com/voice-ai-services/):
 - **Round-trip ASR CER**: TTS model generates audio → Whisper transcribes back → CER vs human reference
 - **MOS (naturalness)**: UTMOS score on generated audio
+
+## Built with Trelis Studio
+
+Evaluations were run using [Trelis Studio](https://studio.trelis.com). For custom voice model development, see [Trelis Voice AI Services](https://trelis.com/voice-ai-services/).
 
 ## License
 
