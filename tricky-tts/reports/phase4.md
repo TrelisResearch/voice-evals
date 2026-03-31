@@ -194,12 +194,6 @@ Final run (v3, Whisper large-v3 reference):
 
 ---
 
-## Pending
-
-- Re-run Piper + Chatterbox round-trip ASR (same bug as Phase 3 — ASR not wired for these model types). Piper and Chatterbox CER is from `fireworks/whisper-v3` round-trip; confirm with Trelis whether the per-sample ASR is working correctly for those model types.
-
----
-
 ## Timing
 
 | Step | Time |
