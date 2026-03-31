@@ -3,10 +3,11 @@
 Text-only benchmark for evaluating TTS models on linguistically challenging English inputs.
 
 ## Reports
-- [Phase 1](reports/phase1.md) — calibration journey (1a-1d), key findings, dataset files
-- [Phase 2](reports/phase2.md) — difficulty validation, spoken_form, 5-model eval
-- [Phase 3](reports/phase3.md) — reference pipeline, 9-model eval, qualitative analysis
-- [Phase 4+5 Roadmap](reports/phase4-roadmap.md) — new 4-category taxonomy, human-referenced eval
+- [Phase 1](phase1/report.md) — calibration journey (1a-1d), key findings, dataset files
+- [Phase 2](phase2/report.md) — difficulty validation, spoken_form, 5-model eval
+- [Phase 3](phase3/report.md) — reference pipeline, 9-model eval, qualitative analysis
+- [Phase 4](phase4/report.md) — new 4-category taxonomy, human-referenced eval, 10-model leaderboard
+- [Phase 4 Roadmap](phase4/roadmap.md) — upcoming phases
 
 ## Reference
 - [Spoken Form Rules](spoken_form_rules.md) — rules for generating spoken_form column
