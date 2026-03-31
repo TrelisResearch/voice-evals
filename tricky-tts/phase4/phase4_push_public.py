@@ -50,7 +50,7 @@ failure mode that separates capable TTS systems from weaker ones.
 | `proper_nouns` | Irish/Celtic names, HuggingFace model paths, brand names |
 | `prosody_and_punctuation` | Em-dashes, ellipses, onomatopoeia, rhythm — `zzz`, `Psst`, `whoosh` |
 
-Columns: `text`, `category`, `spoken_form` (normalised reference transcription), `reference_audio` (human voice recording, webm), `reference_asr` (Whisper large-v3 transcription of reference audio).
+Columns: `text`, `category`, `spoken_form` (normalised reference transcription), `reference_audio` (human voice recording, webm), `reference_asr` (transcription of reference audio by `openai/whisper-large-v3` via Trelis Studio ASR eval).
 
 ## Usage
 
