@@ -1,0 +1,16 @@
+[
+  {
+    "label": "original (with ...)",
+    "prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+    "asr_transcription": "He started snoring, zzzzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up, he jolted awake. Huh? What? What happened? She sighed.",
+    "asr_cer": 0.4444,
+    "duration_s": 11.714333333333334
+  },
+  {
+    "label": "no-ellipsis (... \u2192 ,)",
+    "prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What, what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off, drip, drip, drip.",
+    "asr_transcription": "He started snoring, zzzzz, right in the middle of the lecture. Psst, she hissed, nudging him. Wake up. He jolted awake. Huh? What? What happened? She sighed. Shh.",
+    "asr_cer": 0.4291,
+    "duration_s": 12.123416666666667
+  }
+]
