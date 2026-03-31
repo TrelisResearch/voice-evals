@@ -1,0 +1,34 @@
+[
+  {
+    "text_prompt": "The reaction requires \u2265500 \u03bcL of H\u2082O\u2082 (30% w/v) at 37\u00b12\u00b0C, yielding \u22482.5\u00d710\u2076 CFU/mL \u2014 a 3\u00d7 improvement over the control at pH 7.4\u00b10.1.",
+    "asr_transcription": "The reaction requires an inquiry greater than the epis-fertilum occurrence. 40% at the slash V at 2 fring plus 3 hum yield",
+    "asr_wer": 0.925,
+    "asr_cer": 0.7407,
+    "duration_s": 10.24425,
+    "utmos_score": null
+  },
+  {
+    "text_prompt": "Dr. K.R. Liu, M.D., Ph.D., F.A.C.C., presented in Vol. XII of IEEE Trans. on Bioinformatics (pp. 89\u2013104), arguing that the rpoB gene's S531L mutation remains the gold standard vs. the newer katG assay endorsed by CLSI.",
+    "asr_transcription": "Dr. K. R. Liu, MD, PhD, f.a.c.c, presented in Volume 12 of IEEE Trans on Bioinformatics PP 89-109.",
+    "asr_wer": 0.7568,
+    "asr_cer": 0.6303,
+    "duration_s": 9.019041666666666,
+    "utmos_score": null
+  },
+  {
+    "text_prompt": "Saoirse N\u00ed Chaoilfhinn from D\u00fan Laoghaire benchmarked deepseek-ai/DeepSeek-R1-0528 against Qwen/Qwen3-235B-A22B on MMLU-Pro, while her colleague Siobh\u00e1n \u00d3 Riain from Inis Me\u00e1in evaluated mistralai/Mixtral-8x22B-Instruct-v0.1 on GSM8K.",
+    "asr_transcription": "Sirsha Ni Chowfin from Dunleary benchmarked DeepSeek Eye slash DeepSeek R10528 against QEN slash QEN3235B A22B on MMLU Pro, while her colleague Siobhan O'Yain from Enus Miain evaluated the results of the test.",
+    "asr_wer": 0.6757,
+    "asr_cer": 0.3694,
+    "duration_s": 16.810458333333333,
+    "utmos_score": null
+  },
+  {
+    "text_prompt": "He started snoring \u2014 zzz, zzz \u2014 right in the middle of the lecture. \"Psst,\" she hissed, nudging him. \"Wake up!\" He jolted awake. \"Huh? What... what happened?\" She sighed. \"Shhh \u2014 just pay attention.\" Outside, the wind went whoosh through the open window, and somewhere far off... drip, drip, drip.",
+    "asr_transcription": "He started snoring, zzz, zzz, right in the middle of the lecture. Pssst, she hissed, nudging him. Wake up, he jolted awake. Huh? What?",
+    "asr_wer": 0.5208,
+    "asr_cer": 0.5346,
+    "duration_s": 10.014083333333334,
+    "utmos_score": null
+  }
+]

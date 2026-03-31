@@ -36,9 +36,25 @@ The user recorded ~20s of audio per row (`.webm` format). The Studio ASR eval jo
 
 ---
 
+## Reference Audio MOS
+
+Human-recorded audio scored with UTMOS (WAV format, via `ronanarraig/tricky-tts-phase4-wav`).
+
+| Row | Category | MOS |
+|---|---|---|
+| 0 | symbol_expansion | 4.129 |
+| 1 | abbreviation_reading | 4.278 |
+| 2 | proper_nouns | 4.276 |
+| 3 | prosody_and_punctuation | 4.207 |
+| **avg** | | **4.223** |
+
+Human reference scores 4.22 overall — a ceiling for naturalness comparison. All TTS models that score above ~4.1 are competitive in that dimension.
+
+---
+
 ## Leaderboard
 
-CER measured against `reference_asr` column (Whisper large-v3 of human voice). MOS from UTMOS. All 9 models returned 4/4 rows in this run.
+CER measured against `reference_asr` column (Whisper large-v3 of human voice). MOS from UTMOS. All 9 models returned 4/4 rows in this run. Mistral returned 4/4 rows but UTMOS score not available (null in output dataset).
 
 | Rank | Model | MOS ↑ | WER | CER ↓ |
 |---|---|---|---|---|
@@ -51,10 +67,13 @@ CER measured against `reference_asr` column (Whisper large-v3 of human voice). M
 | 7 | Cartesia Sonic-3 | 4.019 | 0.548 | 0.259 |
 | 8 | Piper (en-gb) | 3.777 | 0.533 | 0.323 |
 | 9 | Chatterbox | 4.100 | 0.928 | 0.583 |
+| 10 | Mistral Voxtral-Mini | N/A | 0.719 | **0.569** |
+| — | Human reference | 4.223 | — | — |
 
 **MOS winner:** Kokoro (4.511) — consistently highest naturalness across all phases.
 **CER winner:** Gemini Pro TTS (0.112) — also excellent WER (0.212).
 **Balanced best:** GPT-4o mini TTS — strong across both accuracy and naturalness, consistent across all 4 rows.
+**Mistral Voxtral-Mini:** Last place by a wide margin (CER 0.569) — garbles symbol_expansion entirely and truncates prosody row mid-sentence.
 
 ---
 
@@ -62,12 +81,12 @@ CER measured against `reference_asr` column (Whisper large-v3 of human voice). M
 
 Reference: Whisper large-v3 of human-recorded audio.
 
-| Row | Category | ElevenLabs | GPT-4o | Cartesia | Gemini Flash | Gemini Pro | Orpheus | Kokoro | Piper | Chatterbox |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 0 | symbol_expansion | 0.450 | 0.286 | 0.513 | 0.254 | **0.138** | 0.476 | 0.471 | 0.503 | 0.693 |
-| 1 | abbreviation_reading | 0.133 | **0.071** | 0.171 | 0.114 | **0.071** | 0.133 | 0.085 | 0.389 | 0.346 |
-| 2 | proper_nouns | 0.185 | **0.122** | 0.306 | 0.113 | 0.176 | 0.243 | 0.270 | 0.270 | 0.423 |
-| 3 | prosody_and_punctuation | **0.000** | 0.004 | 0.046 | 0.008 | 0.065 | 0.065 | 0.008 | 0.131 | 0.869 |
+| Row | Category | ElevenLabs | GPT-4o | Cartesia | Gemini Flash | Gemini Pro | Orpheus | Kokoro | Piper | Chatterbox | Mistral |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | symbol_expansion | 0.450 | 0.286 | 0.513 | 0.254 | **0.138** | 0.476 | 0.471 | 0.503 | 0.693 | 0.741 |
+| 1 | abbreviation_reading | 0.133 | **0.071** | 0.171 | 0.114 | **0.071** | 0.133 | 0.085 | 0.389 | 0.346 | 0.630 |
+| 2 | proper_nouns | 0.185 | **0.122** | 0.306 | 0.113 | 0.176 | 0.243 | 0.270 | 0.270 | 0.423 | 0.369 |
+| 3 | prosody_and_punctuation | **0.000** | 0.004 | 0.046 | 0.008 | 0.065 | 0.065 | 0.008 | 0.131 | 0.869 | 0.535 |
 
 ---
 
@@ -107,6 +126,21 @@ Clearest signal row — reference is clean. ElevenLabs achieves perfect CER=0.00
 
 ---
 
+## Mistral Voxtral-Mini Results
+
+Model: `mistral/voxtral-mini-tts-2603`. Evaluated after the main 9-model run. UTMOS not available (null). CER=0.569 average — worst of all models tested.
+
+| Row | Category | CER | Notes |
+|---|---|---|---|
+| 0 | symbol_expansion | 0.741 | Completely garbles: "an inquiry greater than the epis-fertilum occurrence. 40% at the slash V at 2 fring plus 3 hum yield" — no symbol expansion at all |
+| 1 | abbreviation_reading | 0.630 | Reads initials/abbreviations partially ("K. R. Liu, MD, PhD, f.a.c.c") but truncates at "PP 89-109" and drops second half |
+| 2 | proper_nouns | 0.369 | Best row — handles HF model paths reasonably ("DeepSeek Eye slash DeepSeek R10528"), though Irish names still wrong |
+| 3 | prosody_and_punctuation | 0.535 | Truncates mid-sentence ("Huh? What?") — drops ~40% of the text |
+
+**Key failure modes:** No symbol expansion (treats `≥`, `μL`, `×10⁶` as unparseable), early truncation of longer sentences, and inconsistent abbreviation reading. Not yet production-quality for technical text.
+
+---
+
 ## Eval Result Datasets
 
 Final run (v3, Whisper large-v3 reference):
@@ -122,6 +156,9 @@ Final run (v3, Whisper large-v3 reference):
 | Kokoro | `ronanarraig/tricky-tts-ph4-v3-kokoro` |
 | Piper (en-gb) | `ronanarraig/tricky-tts-ph4-v3-piper-en-gb` |
 | Chatterbox | `ronanarraig/tricky-tts-ph4-v3-chatterbox` |
+| Mistral Voxtral-Mini | `ronanarraig/tricky-tts-ph4-v3-mistral` |
+| Human reference (WAV) | `ronanarraig/tricky-tts-phase4-wav` |
+| Human reference MOS | `ronanarraig/tricky-tts-phase4-reference-mos` |
 
 ---
 
@@ -145,6 +182,11 @@ Final run (v3, Whisper large-v3 reference):
 - The TTS eval pipeline reads the audio column via HuggingFace's audio decoder (which uses soundfile internally but for a different purpose)
 - In practice, the TTS eval only reads `text` column — `reference_audio` column is ignored by the eval engine
 
+### Bug: MOS eval fails on `.webm` audio
+- MOS eval submitted on `ronanarraig/tricky-tts-phase4` `reference_audio` column (webm format) — same libsndfile error as ASR eval
+- Workaround: pushed separate WAV dataset `ronanarraig/tricky-tts-phase4-wav` with `audio` column in PCM WAV format
+- Filed as bug `edef0e0a`
+
 ### Friction: Whisper large-v3 not accepted in TTS round-trip ASR
 - Phase 3 used `openai/whisper-large-v3` in `asr_model_id` — this now returns `ASR_ROUTER_ONLY` error
 - Must use Router models (e.g. `fireworks/whisper-v3`)
@@ -154,8 +196,6 @@ Final run (v3, Whisper large-v3 reference):
 
 ## Pending
 
-- **MOS on human reference audio** — Studio does not yet support running UTMOS on an input dataset that already has audio (e.g. to score the human reference recording). Waiting on Studio support for this.
-- **Mistral TTS** — Not yet supported in Studio. Will add to model list once available.
 - Re-run Piper + Chatterbox round-trip ASR (same bug as Phase 3 — ASR not wired for these model types). Piper and Chatterbox CER is from `fireworks/whisper-v3` round-trip; confirm with Trelis whether the per-sample ASR is working correctly for those model types.
 
 ---

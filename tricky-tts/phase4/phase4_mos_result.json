@@ -1,0 +1,29 @@
+{
+  "id": "f96e0dbd-dd50-46c8-834d-c0d6a3c5f197",
+  "status": "completed",
+  "created_at": "2026-03-31T08:31:47.330054",
+  "started_at": "2026-03-31T08:31:47.375704",
+  "completed_at": "2026-03-31T08:34:13.259155",
+  "config": {
+    "dataset_id": "ronanarraig/tricky-tts-phase4-wav",
+    "split": "train",
+    "audio_column": "audio",
+    "num_samples": 4,
+    "output_repo": "ronanarraig/tricky-tts-phase4-reference-mos",
+    "private": true
+  },
+  "result": {
+    "mean_mos": 4.2226,
+    "std_mos": 0.0608,
+    "num_samples": 4,
+    "num_scored": 4,
+    "num_skipped": 0,
+    "total_runtime_seconds": 138.76895093917847,
+    "dataset_url": "https://huggingface.co/datasets/ronanarraig/tricky-tts-phase4-reference-mos",
+    "cost_charged": 1.0
+  },
+  "error": null,
+  "logs": "[08:31:47] Starting MOS evaluation pipeline...\n[08:31:47] [Modal] Dataset: ronanarraig/tricky-tts-phase4-wav\n[08:31:47] [Modal] Audio column: audio\n[08:31:54] [Modal] Function call started (ID: fc-01KN1GACQ...)\n[08:31:54] [Modal] Starting MOS evaluation on cuda\n[08:31:54] [Modal] Dataset: ronanarraig/tricky-tts-phase4-wav (split=train, audio_column=audio)\n[08:31:55] [Modal] Loading dataset ronanarraig/tricky-tts-phase4-wav...\n[08:32:00] [Modal] Dataset loaded: 4 rows\n[08:32:01] [Modal] Scoring all 4 rows\n[08:32:01] [Modal] Loading UTMOS22 MOS predictor...\n[08:32:06] [Modal] MOS predictor loaded, scoring samples...\n[08:32:22] [Modal] MOS: 4/4 scored (running avg: 4.223)\n[08:32:22] [Modal] Scoring complete: 4 scored, 0 skipped\n[08:32:23] [Modal] Mean MOS: 4.223 (std: 0.061)\n[08:32:23] [Modal] Pushing scored dataset to ronanarraig/tricky-tts-phase4-reference-mos...\n[08:34:12] [Modal] Dataset pushed: https://huggingface.co/datasets/ronanarraig/tricky-tts-phase4-reference-mos\n[08:34:12] [Modal] MOS evaluation complete in 139s\n[08:34:13] [Billing] Charged $1.0000, new balance: $122.41\n[08:34:13] MOS evaluation complete!",
+  "user_id": "8c5205df-1e42-4781-8aa9-ae854aab1f19",
+  "cost_description": "Billed for compute time"
+}
