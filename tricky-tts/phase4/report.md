@@ -139,6 +139,8 @@ Model: `mistral/voxtral-mini-tts-2603`. Evaluated after the main 9-model run. UT
 
 **Key failure modes:** No symbol expansion (treats `≥`, `μL`, `×10⁶` as unparseable), early truncation of longer sentences, and inconsistent abbreviation reading. Not yet production-quality for technical text.
 
+**On truncation:** Row 3 cuts off exactly at `"What... what happened?"` — the ellipsis `...` is the likely trigger. Voxtral-Mini appears to treat `...` as an EOS signal rather than a pause, stopping generation early. This is a known failure mode in TTS models trained on data where `...` marks end-of-utterance. Row 1 similarly truncates at a sentence-final period mid-passage. This would be worth testing with ellipsis-free text to confirm.
+
 ---
 
 ## Eval Result Datasets
