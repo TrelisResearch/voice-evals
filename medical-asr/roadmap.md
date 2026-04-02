@@ -111,7 +111,26 @@ Based on evals:
 - Decide audio source: Orpheus TTS vs user-recorded vs hybrid
 - Set target row count per split (likely 30–50 given entity diversity needed)
 
-### 1e. Phase 1 report
+### 1f. Curated baselines: EKA-hard and MultiMed-hard
+
+Build permanent public + private benchmark splits from EKA and MultiMed using the same difficulty-filtering approach as ai-terms v2. Target: 50 public + 50 private rows per dataset.
+
+**Pipeline (identical for both datasets):**
+
+1. **Sample 500 rows** — stratified where possible (EKA: by recording_context; MultiMed: by speaker role / content type)
+2. **CER filter (Otsu)** — run Whisper large-v3 on all 500 rows; compute per-sample CER; apply Otsu threshold to separate good from garbage rows. Expected survivors: ~250. Applies to both EKA (catches poor audio quality) and MultiMed (catches bad YouTube captions).
+3. **Entity extraction** — run dual-LLM extraction (Gemini 2.5 Flash + Claude Sonnet) on the ~250 survivors. Also extract context templates (sentence with entity slots masked) as a byproduct — these feed Phase 2 text generation.
+4. **Difficulty filter** — run 3 open-source models on all ~250 survivors; compute median entity CER per row; rank by difficulty. Use open-source only (Whisper large-v3, Canary 1B v2, Voxtral Mini 3B) so the private split remains clean.
+5. **Split into public + private** — take top 100 by median entity CER; assign 50 to public, 50 to private with entity deduplication (no entity appears in both splits).
+6. **Push to HF** — four private datasets:
+   - `ronanarraig/eka-hard-public` (open-source + proprietary evals)
+   - `ronanarraig/eka-hard-private` (open-source only — never run proprietary)
+   - `ronanarraig/multimed-hard-public`
+   - `ronanarraig/multimed-hard-private`
+
+**Private split rules:** open-source models only. Never submit private splits to proprietary APIs (Gemini, Speechmatics, Deepgram, etc.). This preserves the private split as a held-out set uncontaminated by third-party model training data.
+
+### 1g. Phase 1 report
 
 Document in `reports/phase1.md`:
 - Dataset quality verdicts (keep / conditionally use / discard)
