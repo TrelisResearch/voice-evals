@@ -67,9 +67,12 @@ Voice evaluation datasets and benchmarks for ASR models. Uses [Trelis Studio](ht
 - Synthetic data mixing languages within utterances
 - Different topic seeds / prompt templates per split to prevent leakage
 
-#### Medical Terms
-- **Status: Planned** (start after ai-terms v2 pipeline is stable)
+#### Medical Terms (`ronanarraig/medical-terms-{public,semi-private,private}`)
+- **Status: Phase 1 in progress** — see `medical-asr/roadmap.md`
 - Entity categories: drugs, procedures, conditions, anatomy, organisations
+- Multi-phase project: Phase 1 (benchmark survey + eval), Phase 2 (test set build), Phases 3–5 (fine-tuning at 10h/100h/1000h)
+- Key benchmark gap: no public entity-annotated English medical ASR benchmark with difficulty filtering exists
+- Google MedASR (`google/medasr`) is the primary open-source comparison target
 
 #### Legal Terms
 - **Status: Planned** (start after ai-terms v2 pipeline is stable)
