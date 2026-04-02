@@ -115,20 +115,25 @@ Based on evals:
 
 Build permanent public + private benchmark splits from EKA and MultiMed using the same difficulty-filtering approach as ai-terms v2. Target: 50 public + 50 private rows per dataset.
 
-**Pipeline (identical for both datasets):**
+**Key lesson from Phase 1 run:** EKA contains a large proportion of single-word and short-phrase narrations (single drug names, single symptoms). These inflate CER artifically and are less interesting than sentence-level utterances — a model getting "carbetocin" wrong tells you less than a model getting it wrong in a clinical sentence. **Next run should pre-filter EKA to sentence-length rows before sampling 500**, to ensure the pool reflects realistic clinical speech rather than isolated term narrations. This will also reveal broader model failure modes (not just drug name recall but in-context transcription errors).
 
-1. **Sample 500 rows** — stratified where possible (EKA: by recording_context; MultiMed: by speaker role / content type)
-2. **CER filter + floor** — run Whisper large-v3 on all 500 rows; compute per-sample CER. EKA: apply Otsu threshold (0.588) + length floor (≥10 chars) + 5% CER floor → 176 rows. MultiMed: 30% CER hard ceiling + 5% floor (Otsu gave 1.178 — too permissive; manual inspection confirmed garbage rows above 30%) → 174 rows. Save per-sample Whisper CER scores — reused as model 1 of 3 in the difficulty filter. Note: high CER on EKA short drug-name rows is a valid difficulty signal, not noise (e.g. "carbetocin" → "Carpet of Sin").
-3. **Difficulty filter first (before entity extraction)** — Whisper scores already available from step 2; run 2 additional open-source models (Canary 1B v2, Voxtral Mini 3B) on survivors; compute median CER across all 3 (entity CER for EKA which has annotations; overall CER as proxy for MultiMed); rank by difficulty; take top 100 hardest. Open-source only so private split stays clean. **Do this before entity extraction to reduce LLM costs (~70% savings).**
-4. **Entity extraction** — run dual-LLM extraction (Gemini 2.5 Flash + Claude Sonnet) on the top 100 rows only. Also extract context templates (sentence with entity slots masked) as a byproduct — these feed Phase 2 text generation.
-5. **Split into public + private** — take top 100 by median CER; assign 50 to public, 50 to private with entity deduplication (no entity appears in both splits).
-6. **Push to HF** — four private datasets:
+**Revised pipeline for next run:**
+
+1. **Pre-filter to sentences** — before sampling, filter EKA to rows where `text` is a complete sentence (heuristic: ≥ 5 tokens AND ends with punctuation OR length ≥ 60 chars). This focuses the sample on clinically realistic utterances.
+2. **Sample 500 rows** — stratified by recording_context from the sentence-filtered pool.
+3. **CER filter + floor** — Whisper CER run. EKA: Otsu ceiling + 5% floor (no need for char-length floor if pre-filtered to sentences). MultiMed: 30% hard ceiling + 5% floor (Otsu was 1.178 — too permissive; auto-caption garbage rows persist above 30%).
+4. **Difficulty filter first (before entity extraction)** — Canary 1B v2 + Voxtral Mini 3B; rank by median CER across 3 models; top 100 kept. Open-source only. **Do before entity extraction to save ~70% LLM cost.**
+5. **Entity extraction** — dual-LLM (Gemini 2.5 Flash + Claude Sonnet, agreed-only) on top 100 only.
+6. **Split into public + private** — 50/50 with entity deduplication.
+7. **Push to HF** — four private datasets:
    - `ronanarraig/eka-hard-public` (open-source + proprietary evals)
    - `ronanarraig/eka-hard-private` (open-source only — never run proprietary)
    - `ronanarraig/multimed-hard-public`
    - `ronanarraig/multimed-hard-private`
 
-**Private split rules:** open-source models only. Never submit private splits to proprietary APIs (Gemini, Speechmatics, Deepgram, etc.). This preserves the private split as a held-out set uncontaminated by third-party model training data.
+**MultiMed status:** reference quality issues persist even at 30% CER ceiling — auto-generated captions with speaker labels and misalignment are not fully removed by CER filtering alone. Longer-term option: re-source from CC-BY licensed YouTube medical content and process through Trelis Studio for proper alignment. Standard YouTube content is not fair use for ML eval data. For now, MultiMed is lower-confidence than EKA as a benchmark anchor.
+
+**Private split rules:** open-source models only. Never submit private splits to proprietary APIs (Gemini, Speechmatics, Deepgram, etc.).
 
 ### 1g. Phase 1 report
 

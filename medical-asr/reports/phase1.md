@@ -191,7 +191,19 @@ The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Cana
 
 ---
 
-## 1f. Curated Baselines — Final Datasets
+## 1f. Curated Baselines — Learnings and Next Run
+
+### What we'd do differently
+
+**EKA: pre-filter to sentence-length rows before sampling.**
+The current EKA hard-100 is dominated by single-word and short-phrase narrations (individual drug names, single symptoms). These are valid difficulty signal but less useful as a benchmark — CER is inflated by length artefact, and the rows don't reflect realistic clinical speech. A stronger test set would focus on full clinical sentences where entities appear in context. Next run: filter EKA to rows with ≥ 5 tokens / ≥ 60 chars before drawing the 500-row sample. This will surface more interesting failure modes (in-context entity errors, not just isolated recall) and make the final split more representative.
+
+**MultiMed: reference quality not fully solvable by CER filtering.**
+Even at 30% CER ceiling, some rows have speaker labels and misaligned captions that can't be distinguished from hard transcription errors by CER alone. Longer-term: re-source from CC-BY licensed YouTube medical content and process through Trelis Studio. Standard YouTube is not fair use for ML eval data.
+
+### Final Datasets — Current Run
+
+
 
 **Pipeline applied:**
 1. Sample 500 rows each (EKA: stratified by recording_context; MultiMed: random, duration ≥ 3s)
