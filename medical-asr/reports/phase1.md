@@ -134,9 +134,9 @@ Speechmatics Ursa 2 ranks 5th on EKA entity CER (0.073), behind Gemini, Assembly
 
 On EKA, Gemini has the best entity CER (0.039) but only middling WER (0.110 vs AssemblyAI 0.114). The gap between entity CER and WER suggests Gemini handles the hard medical vocabulary well but may over-normalise or paraphrase elsewhere. Worth inspecting samples.
 
-### Finding 4: MultiMed is usable but needs Otsu filtering first
+### Finding 4: MultiMed needs a hard 30% CER filter; Otsu threshold too permissive
 
-Source is YouTube medical channels (lectures, interviews, podcasts, documentaries) with auto-generated captions as references. Some rows have entirely wrong reference transcriptions, inflating apparent model WER. However the audio itself is realistic — diverse speakers, natural conditions, genuine medical content. **Plan: run Otsu thresholding on per-sample CER (using Whisper as reference model) to separate good from garbage rows, then use the filtered subset as a secondary baseline.** The high overall WER (17–23%) is partly reference noise, not purely model error.
+Source is YouTube medical channels (lectures, interviews, podcasts, documentaries) with auto-generated captions as references. Otsu thresholding produced a threshold of 1.178 — far too permissive, keeping rows with entirely misaligned transcriptions. Manual inspection of the boundary slice (CER 0.20–0.45) confirmed: lower-end rows (CER ~0.20–0.30) look fine; upper-end rows show speaker labels embedded in transcripts (e.g. "Speaker 1:") and clear alignment failures. **Adopted 30% CER hard ceiling (+ 5% floor): 174/499 rows kept.** `ronanarraig/multimed-otsu`
 
 ### Finding 4b: United-Syn-Med TTS quality is poor
 
@@ -145,6 +145,22 @@ Prosody is flat and stress patterns on polysyllabic drug names are wrong (e.g. "
 ### Finding 5: Qwen3-ASR-1.7B non-functional, Moonshine-tiny broken on Studio
 
 Qwen3-ASR-1.7B returns 1.000 WER/CER on all datasets — likely empty output or Chinese characters. Studio bug filed (`5eb76bfc`). Moonshine-tiny dtype mismatch in Studio — bug filed (`77aef1bb`). Both need fixing before Phase 3 fine-tuning targets can be evaluated.
+
+### Finding 7: EKA high-CER rows are valid difficulty signal, not noise
+
+Manual inspection of EKA rows around the Otsu threshold (0.589) revealed these are legitimate hard cases — short drug name narrations where Whisper hallucinates phonetically plausible English words:
+
+| CER | Reference | Whisper prediction |
+|-----|-----------|-------------------|
+| 0.455 | tolperisone | Tall person. |
+| 0.471 | Nebicard 5 Tablet | Navy Card File Tablet |
+| 0.500 | itopride | I took pride. |
+| 0.500 | carbetocin | Carpet of Sin |
+| 0.538 | Grilinctus Ls | Grelynthus ellis. |
+| 0.571 | Arm bag | I'm back. |
+| 0.588 | Triglimisave Ls 2 | Strike, let me save, LS2. |
+
+High CER here is an artefact of short utterance length (one wrong word = high CER), not bad audio. **Implication for EKA curation: filter by minimum token/character length rather than CER ceiling.** Short single-word narrations like "Abbott" (CER 0.500, Whisper: "bot") are valid hard rows but inflate CER stats — length-based filtering preserves them while removing low-content rows. Decision pending user review.
 
 ### Finding 6: Model rankings are consistent across datasets
 
@@ -175,6 +191,30 @@ The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Cana
 
 ---
 
+## 1f. Curated Baselines — Final Datasets
+
+**Pipeline applied:**
+1. Sample 500 rows each (EKA: stratified by recording_context; MultiMed: random, duration ≥ 3s)
+2. Whisper CER filter — EKA: Otsu ceiling (0.588) + len ≥ 10 chars + 5% floor → 176 rows; MultiMed: 30% hard ceiling + 5% floor → 174 rows
+3. Difficulty filter — Canary 1B v2 + Voxtral Mini 3B evals; rank by median CER across 3 models; top 100 kept per dataset
+4. Entity extraction on top 100 only (EKA: reformat existing annotations; MultiMed: dual-LLM Gemini+Claude, agreed-only)
+5. Split 50 public + 50 private with entity deduplication
+
+**Results:**
+
+| Dataset | Rows | CER range (median) | Entity overlap | HF slug |
+|---------|------|--------------------|----------------|---------|
+| EKA hard public | 50 | 0.238–0.900 | — | `ronanarraig/eka-hard-public` |
+| EKA hard private | 50 | 0.121–0.235 | 3 entities w/ public | `ronanarraig/eka-hard-private` |
+| MultiMed hard public | 50 | 0.152–0.387 | — | `ronanarraig/multimed-hard-public` |
+| MultiMed hard private | 50 | 0.102–0.288 | 2 entities w/ public | `ronanarraig/multimed-hard-private` |
+
+Entity extraction stats: EKA 145 context templates extracted; MultiMed 80 agreed entities, 80 templates. Combined 140 unique context templates saved to `tmp/context_templates.json` for Phase 2 seeding.
+
+**Note on entity CER for difficulty ranking:** Studio per-sample eval results do not include entity-level CER (only aggregate). Difficulty ranking used overall CER as proxy for both datasets. For EKA this is a reasonable approximation since entity terms dominate CER failure modes.
+
+---
+
 ## 1e. Studio Bugs Filed
 
 | Bug | Feedback ID | Status |
@@ -184,6 +224,7 @@ The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Cana
 | Add google/medasr model | `6c6a50b9` | Filed |
 | Add Gemini 2.5 Flash | `a205d9fc` | Filed |
 | Add OpenAI gpt-4o-transcribe | `d1877c02` | Filed |
+| GET /evaluation/jobs: ?status= filter not applied server-side | `a5c4c486` | Filed |
 
 ---
 
