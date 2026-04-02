@@ -61,36 +61,34 @@ Create three small eval sets (random 50-row samples), push to `ronanarraig/` on 
 
 Sampling: stratified where possible (EKA: across entity types and recording contexts; MultiMed: across speaker roles; United: random).
 
-### 1b. Model evaluation via Trelis Studio
+### 1b. Calibrated datasets — EKA rebuild + CC-BY second source
 
-Run all open-source models on all three pilot sets. Run proprietary models on all three — United-Syn-Med is drugs-only synthetic but that's still a useful signal: if medical-specialist proprietary models (Speechmatics, Deepgram) aren't beating general models on simple drug-name audio, that's a meaningful finding.
+**Goal:** Get the real-speech test sets right before running any further evals. Two workstreams.
 
-**Open-source models:**
+#### 1b-i. EKA rebuild (sentence-filtered)
 
-| Model | Studio ID | Notes |
-|-------|-----------|-------|
-| Whisper large-v3 | `openai/whisper-large-v3` | Universal baseline |
-| Canary 1B v2 | `nvidia/canary-1b-v2` | Top open-source on HF leaderboard |
-| Voxtral Mini 3B | `mistralai/Voxtral-Mini-3B-2507` | Recent multimodal |
-| Qwen3-ASR 1.7B | `Qwen/Qwen3-ASR-1.7B` | Recent; strong at size |
-| Moonshine-tiny | `UsefulSensors/moonshine-tiny` | Pre-fine-tune baseline; Phase 3 target |
-| Google MedASR | `google/medasr` | Medical specialist; *pending Studio support* |
+EKA has a `recording_context` column. `narration_entity` rows (2,206) are mostly single drug/entity narrations — not useful as sentences. `narration_sentence` rows (1,303) are full clinical sentences — this is the target pool. Also include any row with text ≥ 60 chars regardless of context.
 
-**Proprietary models (semi-private pilot sets only):**
+**Pipeline:**
+1. Filter full EKA to sentence pool (`narration_sentence` OR len ≥ 60 chars)
+2. Stratified-sample 500 from that pool (by recording_context)
+3. Whisper CER filter: Otsu ceiling + 5% floor
+4. Difficulty filter: Canary + Voxtral; median CER top 100
+5. Entity extraction (dual-LLM) on top 100 only
+6. Split 50 public + 50 private with entity dedup
+7. Push `ronanarraig/eka-hard-public` v2, `ronanarraig/eka-hard-private` v2
 
-| Model | Studio ID | Notes |
-|-------|-----------|-------|
-| Gemini 2.5 Pro | `google/gemini-2.5-pro` | Strong general + medical |
-| Gemini 2.5 Flash | *(pending Studio support)* | Faster/cheaper |
-| OpenAI transcribe | *(pending Studio support)* | gpt-4o-transcribe |
-| Speechmatics Ursa 2 | `speechmatics/ursa-2-enhanced` | Medical-specialist claim |
-| Deepgram Nova 3 | `deepgram/nova-3` | Medical-specialist claim |
-| AssemblyAI Universal 3 | `assemblyai/universal-3-pro` | Competitive general |
-| ElevenLabs Scribe v2 | `elevenlabs/scribe-v2` | Worth including |
+#### 1b-ii. CC-BY second real-speech source
 
-*Studio model requests submitted 2026-04-02: google/medasr (`6c6a50b9`), Gemini 2.5 Flash (`a205d9fc`), OpenAI gpt-4o-transcribe (`d1877c02`).*
+**Step 1** — Identify medical audio categories and CC-BY/public-domain sources per category. Wide shortlist, quick licence + quality inspection.
 
-**Metrics:** WER, CER, entity CER on EKA (only set with entity annotations). Entity CER is primary signal.
+**Step 2** — Download at most 3 sample audios across different categories.
+
+**Step 3** — Trelis Studio draft-transcribe + data prep on each sample.
+
+**Step 4** — LLM-clean a 10-segment subset: review one segment at a time, passing ~2 surrounding segments as context. Produce clean ground-truth references.
+
+**Step 5** — User listens to and inspects the 10 cleaned samples; decide which source(s) to proceed with for full processing.
 
 ### 1c. Sample inspection
 
