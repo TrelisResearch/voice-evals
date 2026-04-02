@@ -180,44 +180,20 @@ Target ~300–500 candidate entities total (need buffer since most will be filte
 
 **Why context diversity matters:** uniform sentence templates make the benchmark gameable and unrepresentative. Entities should appear in varied clinical registers.
 
-**Two-step approach:**
+**Approach: mine entity + context together from the same source.**
 
-**Step 1 — Extract templates during Phase 1 entity extraction (free, licence-clean):**
-The Phase 1 entity extraction scripts (run on EKA-hard-50 and MultiMed-hard-50) should output two things simultaneously: entity annotations AND sentence templates with entity slots masked. This is a byproduct of work already happening — no separate step needed.
+Slot-filling templates (entity replaced with `[DRUG]` etc.) are not useful unless the replacement term is semantically compatible with the surrounding sentence — "particularly the [ANATOMY] information as Otitis media impacts the middle ear" filled with "femur" is nonsense. The Phase 1 context templates extracted from EKA/MultiMed are retained as **register examples only** (to show the LLM what clinical language looks like), not as fill-in-the-blank templates.
 
-For each extracted entity, save the surrounding sentence with the entity replaced by a slot tag:
-- Input: `"patient was started on azithromycin for a respiratory infection"`
-- Entity output: `{"text": "azithromycin", "category": "drugs", ...}`
-- Template output: `"patient was started on [DRUG] for a [CONDITION]"`
+**Actual approach:** when building the entity seed list (step 2b), simultaneously mine real example sentences containing each entity from public-domain sources (FDA drug labels, PubMed abstracts, open case reports). Each seed entry = `{entity, category, example_sentence}`. The example sentence provides natural context specific to that entity. LLM generation in step 2d then uses the example sentence as a style anchor for that entity, rather than a generic template.
 
-Accumulated across EKA-hard-50 + MultiMed-hard-50, this yields ~100 real clinical sentence templates grounded in actual clinical language. These feed directly into Phase 2 text generation.
-
-**Step 2 — LLM-generated context taxonomy to fill gaps:**
-Generate ~30 distinct clinical context types covering registers not well represented in Phase 1 data:
-
-| Context type | Example template |
-|-------------|-----------------|
-| Prescription instruction | "Take [DRUG] [DOSE] [FREQUENCY] with food" |
-| Admission note | "Patient presents with [CONDITION], started on [DRUG]" |
-| Discharge summary | "[DRUG] was discontinued due to [ADVERSE_EFFECT]" |
-| Lab interpretation | "[LAB] elevated, suggestive of [CONDITION]" |
-| Procedure description | "Patient underwent [PROCEDURE] for [CONDITION]" |
-| Referral | "Referred to [ORG] for management of [CONDITION]" |
-| Drug interaction | "[DRUG] held due to interaction with [DRUG]" |
-| Radiology impression | "[ANATOMY] shows [FINDING], consistent with [CONDITION]" |
-| Medication reconciliation | "Continue [DRUG], reduce [DRUG] to [DOSE]" |
-| Clinical trial | "Enrolled in trial of [DRUG] for [CONDITION] at [ORG]" |
-
-Use CC-BY open-access case reports (PLOS Medicine, BMC) as few-shot register exemplars in the generation prompt — not as source material, just to anchor clinical voice.
-
-During generation: randomly sample context type per row to ensure diversity across the 150–200 candidate utterances.
+This ensures context is always semantically coherent with the entity.
 
 ### 2d. Text corpus generation
 
-Generate ~150–200 candidate utterances using LLM, combining entity seeds + context templates:
-- Sample entity from seed list (bias toward rare/difficult)
-- Sample context template (randomly across types)
-- Generate realistic clinical utterance around the entity in that context
+Generate ~150–200 candidate utterances using LLM, one per seed entity:
+- For each entity: use its mined example sentence as context anchor
+- LLM generates a fresh clinical utterance in a similar register, with the entity naturally embedded
+- Vary clinical register across rows (prescription, discharge summary, radiology, referral, etc.) by instruction in the prompt
 - Each utterance: 1–2 entities, at least one rare/difficult term, ≤ 30s when spoken
 - Entity distribution: 40% drugs, 30% procedures, 20% conditions, 10% anatomy
 
