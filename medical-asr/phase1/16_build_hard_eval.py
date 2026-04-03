@@ -341,35 +341,122 @@ if not job:
 print(f"  Cost: ${job['result'].get('cost_charged', 0):.3f}")
 tick('3b_draft_transcribe')
 
-# ── Step 3c: Process → push to HF ────────────────────────────────
-print(f"\nStep 3c: Processing and pushing to {TRANSCRIBED_DATASET}...")
-r = requests.post(f'{BASE}/file-stores/{output_store_id}/process', headers=HEADERS, json={
-    'output_org': 'ronanarraig',
-    'output_dataset_name': TRANSCRIBED_DATASET.split('/')[-1],
-    'split_option': 'test_only',
-    'language': 'english',
-    'enable_quality_checks': False,
-    'min_chunk_duration': MIN_DURATION,
-    'hf_token': HF_TOKEN,
-})
-data = r.json()
-print(f"  {r.status_code} {data}")
-proc_job_id = data.get('job_id') or data.get('id')
+# Capture signed file URLs from draft-transcribe job config (valid 4h)
+dt_full_job = requests.get(f'{BASE}/data-prep/jobs/{dt_job_id}', headers=HEADERS).json()
+dt_file_urls = dt_full_job.get('config', {}).get('file_urls', [])
+print(f"  Captured {len(dt_file_urls)} signed file URL pairs")
 
-job = poll_data_prep_job(proc_job_id, 'process', interval=20)
-if not job:
-    raise SystemExit("Process step failed")
-tick('3c_process')
+# ── Step 3c: Load VTT+WAV from draft-transcribe output ───────────
+# Note: Studio process step ignores output_org/hf_token (bug filed: 907b979b).
+# Workaround: parse VTT+WAV directly from draft-transcribe signed URLs.
+# For MultiMed (APPLY_NLTK_TRIM=True), we also try the process step to get
+# word_timestamps for sentence-level trimming.
 
-# ── Step 4: Load transcribed dataset ─────────────────────────────
-print(f"\nStep 4: Loading {TRANSCRIBED_DATASET}...")
-trans_ds = load_dataset(TRANSCRIBED_DATASET, split='test', token=HF_TOKEN)
-trans_ds = trans_ds.cast_column('audio', trans_ds.features['audio'].__class__(decode=False))
-chunks = list(trans_ds)
-print(f"  {len(chunks)} chunks, columns: {trans_ds.column_names}")
+def parse_vtt(vtt_text):
+    """Parse Whisper VTT → (full_text, start_sec, end_sec)."""
+    segments = []
+    lines = vtt_text.strip().split('\n')
+    i = 0
+    while i < len(lines):
+        if '-->' in lines[i]:
+            times = re.findall(r'(\d+:\d+:\d+\.\d+)', lines[i])
+            if len(times) == 2:
+                def to_sec(t):
+                    h, m, s = t.split(':')
+                    return int(h)*3600 + int(m)*60 + float(s)
+                start, end = to_sec(times[0]), to_sec(times[1])
+                i += 1
+                text_lines = []
+                while i < len(lines) and lines[i].strip() and '-->' not in lines[i]:
+                    text_lines.append(lines[i].strip())
+                    i += 1
+                text = ' '.join(text_lines)
+                if text:
+                    segments.append((text, start, end))
+            continue
+        i += 1
+    if not segments:
+        return None, 0, 0
+    return ' '.join(s[0] for s in segments), segments[0][1], segments[-1][2]
+
+
+print(f"\nStep 3c: Downloading {len(dt_file_urls)} VTT+WAV pairs from draft-transcribe output...")
+chunks = []
+n_download_fail = 0
+
+with ThreadPoolExecutor(max_workers=50) as executor:
+    def download_pair(entry):
+        try:
+            vtt = requests.get(entry['transcript_url'], timeout=30).text
+            wav_bytes = requests.get(entry['audio_url'], timeout=60).content
+            text, start, end = parse_vtt(vtt)
+            if not text:
+                return None
+            return {
+                'audio': {'bytes': wav_bytes},
+                'text': text,
+                'source_file': entry['audio_filename'],
+                'duration': end - start,
+                'word_timestamps': '[]',  # segment-level only; word-level via process step
+            }
+        except Exception:
+            return None
+
+    futures = {executor.submit(download_pair, e): i for i, e in enumerate(dt_file_urls)}
+    done = 0
+    for future in as_completed(futures):
+        result = future.result()
+        chunks.append(result)
+        done += 1
+        if done % 200 == 0 or done == len(dt_file_urls):
+            print(f"  {done}/{len(dt_file_urls)}")
+
+chunks = [c for c in chunks if c is not None]
+n_download_fail = len(dt_file_urls) - len(chunks)
+print(f"  {n_download_fail} download failures")
+print(f"  {len(chunks)} chunks loaded")
+tick('3c_download_vtt')
+
+# For MultiMed: also run process step to get word_timestamps, then merge
+if APPLY_NLTK_TRIM:
+    print(f"\nStep 3d: Process step for word_timestamps (MultiMed)...")
+    r = requests.post(f'{BASE}/file-stores/{output_store_id}/process', headers=HEADERS, json={
+        'output_org': 'ronanarraig',
+        'output_dataset_name': TRANSCRIBED_DATASET.split('/')[-1],
+        'split_option': 'test_only',
+        'max_test_rows': 10000,
+        'language': 'english',
+        'enable_quality_checks': False,
+        'min_chunk_duration': MIN_DURATION,
+        'hf_token': HF_TOKEN,
+    })
+    data = r.json()
+    proc_job_id = data.get('job_id') or data.get('id')
+    print(f"  {r.status_code} job={proc_job_id}")
+    proc_job = poll_data_prep_job(proc_job_id, 'process', interval=20)
+    if proc_job and proc_job.get('result', {}).get('dataset_id'):
+        # Process step successfully pushed to HF — load word_timestamps from there
+        ds_id = proc_job['result']['dataset_id']
+        print(f"  Loading word_timestamps from {ds_id}...")
+        wts_ds = load_dataset(ds_id, split='test', token=HF_TOKEN)
+        # Build map: source_file → word_timestamps
+        wts_map = {row.get('source_file',''): row.get('word_timestamps','[]') for row in wts_ds}
+        for c in chunks:
+            c['word_timestamps'] = wts_map.get(c['source_file'], '[]')
+        print(f"  Merged word_timestamps for {sum(1 for c in chunks if c[\"word_timestamps\"] != \"[]\")}/{len(chunks)} chunks")
+    else:
+        print(f"  Process step did not push to HF (known bug) — NLTK trim will be skipped")
+        APPLY_NLTK_TRIM_EFFECTIVE = False
+    tick('3d_process_word_timestamps')
+else:
+    APPLY_NLTK_TRIM_EFFECTIVE = False
+
+# For EKA, no NLTK trim needed
+if not APPLY_NLTK_TRIM:
+    APPLY_NLTK_TRIM_EFFECTIVE = False
 
 # ── Step 5: NLTK sentence detection + audio trim ─────────────────
-print(f"\nStep 5: {'NLTK sentence detection + trim' if APPLY_NLTK_TRIM else 'Direct extraction (no NLTK trim)'}...")
+print(f"\nStep 5: {'NLTK sentence detection + trim' if APPLY_NLTK_TRIM_EFFECTIVE else 'Direct extraction (no NLTK trim)'}...")
 trimmed_rows = []
 n_no_sentence = 0
 
@@ -378,7 +465,7 @@ for row in chunks:
     audio = row.get('audio') or {}
     dur = row.get('duration') or 0
 
-    if APPLY_NLTK_TRIM:
+    if APPLY_NLTK_TRIM_EFFECTIVE:
         wts = row.get('word_timestamps', '[]')
         sents = find_clean_sentences(text, wts)
         if not sents:
