@@ -90,7 +90,38 @@ EKA has a `recording_context` column. `narration_entity` rows (2,206) are mostly
 
 **Step 5** — User listens to and inspects the 10 cleaned samples; decide which source(s) to proceed with for full processing.
 
-### 1c. Sample inspection
+### 1c. MultiMed sentence extraction pipeline
+
+**Goal:** Extract clean, sentence-level medical audio clips from MultiMed with high-quality ground truth transcripts. Prototype on test split (4,751 rows); scale to train split (25,512 rows) if results are good.
+
+**Pipeline:**
+
+1. **Filter**: duration ≥5s + text ≥60 chars (no sentence heuristic — YT captions too unreliable for boundary detection). Sample 500.
+2. **Push to HF**: `multimed-sentences-500`
+3. **Trelis Studio draft-transcribe**: Whisper large-v3 → word timestamps + transcript → `multimed-sentences-transcribed`
+4. **NLTK sentence detection on Whisper text**: detect clean inner sentences (drop partial sentences at chunk start/end). Trim audio using word timestamps. Keep sentences ≥3s, ≥40 chars. Multiple sentences per chunk all kept.
+5. **Gemini 3 Flash combined call** (audio + full Whisper chunk + trimmed Whisper sentence → single JSON response):
+   - `transcript`: clean ground truth (Gemini listens to trimmed audio; Whisper chunk provides context for what surrounds the target sentence)
+   - `is_medical`: bool
+   - `medical_density`: low/medium/high
+   - `entities`: list with text, category, char offsets
+6. **Filter**: keep `medical_density == high` only
+7. **Review UI**: human inspect/correct consensus transcripts
+8. **Public/private split**: entity dedup → target 50 public + 50 private
+
+**Drop points (observed on 45-row prototype):**
+- Step 4: ~42% rows have no clean inner sentence
+- Step 6: ~40% of surviving rows not high-density medical
+
+**Scale-up path**: run steps 1–7 on full 25k train split → estimated ~14k clean sentences before density filtering.
+
+**Key design decisions:**
+- YT captions not passed to Gemini (not sentence-aligned after trimming)
+- Full Whisper chunk (not just trimmed sentence) passed as context, with note that audio only covers the trimmed portion
+- Tagging combined with consensus in one Gemini call to save cost/latency
+- Gemini 3 Flash used throughout (not 2.5)
+
+### 1d. Sample inspection
 
 After eval runs, inspect high-CER samples from each dataset and model. Key questions:
 - What is Whisper actually getting wrong — entity terms specifically, or general transcription quality?

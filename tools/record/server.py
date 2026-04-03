@@ -2,8 +2,6 @@
 
 Serves record.html and saves uploaded audio to tricky-tts/phase4/audio/.
 Run from repo root: uv run tricky-tts/phase4/server.py
-
-NOTE: The canonical copy of this UI now lives in tools/record/.
 """
 
 import http.server

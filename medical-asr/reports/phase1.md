@@ -227,6 +227,41 @@ Entity extraction stats: EKA 145 context templates extracted; MultiMed 80 agreed
 
 ---
 
+## 1c. MultiMed Sentence Extraction Pipeline
+
+**Goal:** Extract clean sentence-level medical clips from MultiMed with Gemini 3 Flash ground truth transcripts.
+
+### Pipeline
+
+1. Filter MultiMed test (4,751 rows) to duration ≥5s + text ≥60 chars → sample 500 → `multimed-sentences-500`
+2. Trelis Studio draft-transcribe (Whisper large-v3) → word timestamps → `multimed-sentences-transcribed` (501 rows)
+3. NLTK sentence detection on Whisper text → trim audio via word timestamps → clean sentence clips
+4. Gemini 3 Flash combined call: trimmed audio + full Whisper chunk context → `transcript` + `is_medical` + `medical_density` + `entities` in single JSON response
+5. Keep `medical_density == high` rows
+6. Review UI (human inspect/correct)
+
+### Drop log (prototype on 45 high-density rows from earlier pipeline)
+
+| Step | In | Out | Dropped | Reason |
+|------|----|-----|---------|--------|
+| NLTK sentence trim | 45 | 28 sentences (26 rows) | 19 rows (42%) | No clean inner sentence found |
+| Multiple sentences | 2 rows | 4 sentences | — | 2 rows yielded 2 sentences each (kept all) |
+
+Note: the 45-row prototype used an earlier Gemini 2.5 Flash tagging step; the revised pipeline (Phase 1C final) combines tagging + consensus into one Gemini 3 Flash call and runs on the full filtered dataset.
+
+### Key design decisions
+
+- YT captions not passed to Gemini (not sentence-aligned after trimming)
+- Full Whisper chunk passed as surrounding context, trimmed sentence identified within it
+- Tagging (is_medical, entities, medical_density) combined with consensus in one call
+- All sentences from multi-sentence chunks kept — treated as independent data points
+
+### Status
+
+Prototype complete. Full pipeline script (`15_sentence_trim_consensus.py`) pending final run and user inspection.
+
+---
+
 ## 1e. Studio Bugs Filed
 
 | Bug | Feedback ID | Status |

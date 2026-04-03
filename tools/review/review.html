@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcript Review</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f5f7fa; color: #212529; min-height: 100vh; }
+    .transcript-block {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding: 0.75rem 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .t-yt      { background: #fff8e1; border-left: 4px solid #ffc107; }
+    .t-whisper { background: #e8f5e9; border-left: 4px solid #43a047; }
+    .t-gemini  { background: #e3f2fd; border-left: 4px solid #1e88e5; }
+    .t-consensus { background: #f3e5f5; border-left: 4px solid #8e24aa; }
+    .label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #666; margin-bottom: 0.25rem; }
+    .nav-row { cursor: pointer; padding: 0.6rem 0.8rem; border-radius: 0.4rem; transition: background 0.12s; }
+    .nav-row:hover { background: #e9ecef; }
+    .nav-row.active { background: #dee2e6; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: #ccc; flex-shrink: 0; }
+    .dot.done { background: #43a047; }
+    .dot.edited { background: #8e24aa; }
+    textarea.form-control { font-size: 0.95rem; line-height: 1.7; resize: vertical; }
+    .cer-badge { font-size: 0.75rem; }
+    .entity-pill { font-size: 0.72rem; background: #e8eaf6; color: #3949ab; border-radius: 1rem; padding: 0.15rem 0.55rem; }
+  </style>
+</head>
+<body>
+<div class="container-fluid py-3 px-4">
+  <div class="d-flex align-items-center mb-3 gap-3">
+    <h5 class="mb-0">Transcript Review</h5>
+    <span class="text-muted small" id="subtitle"></span>
+  </div>
+
+  <div class="row g-3">
+    <!-- Nav -->
+    <div class="col-md-3 col-lg-2">
+      <div class="card shadow-sm">
+        <div class="card-header py-2 small fw-semibold">Rows</div>
+        <div class="card-body p-2" id="nav"></div>
+      </div>
+    </div>
+
+    <!-- Main panel -->
+    <div class="col-md-9 col-lg-10">
+      <div class="card shadow-sm">
+        <div class="card-header py-2 d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span class="fw-semibold" id="rowTitle">–</span>
+            <span class="badge bg-secondary cer-badge" id="cerBadge"></span>
+            <span class="badge bg-info text-dark cer-badge" id="densityBadge"></span>
+          </div>
+          <span class="small text-muted" id="rowCounter"></span>
+        </div>
+        <div class="card-body">
+
+          <!-- Audio -->
+          <div class="mb-3">
+            <audio id="player" controls class="w-100"></audio>
+          </div>
+
+          <!-- Entities -->
+          <div id="entitiesRow" class="mb-3 d-flex flex-wrap gap-1"></div>
+
+          <!-- Transcripts -->
+          <div class="mb-2" id="tYtRow">
+            <div class="label">YouTube auto-captions</div>
+            <div class="transcript-block t-yt" id="tYt">–</div>
+          </div>
+          <div class="mb-2" id="tChunkRow">
+            <div class="label">Whisper — full chunk context</div>
+            <div class="transcript-block t-whisper" id="tChunk" style="opacity:0.7;font-size:0.85rem">–</div>
+          </div>
+          <div class="mb-2">
+            <div class="label">Whisper — trimmed sentence</div>
+            <div class="transcript-block t-whisper" id="tWhisper">–</div>
+          </div>
+          <div class="mb-2" id="tGeminiRow">
+            <div class="label">Gemini ASR</div>
+            <div class="transcript-block t-gemini" id="tGemini">–</div>
+          </div>
+
+          <hr class="my-3">
+
+          <!-- Consensus editor -->
+          <div class="mb-1 label">Transcript (edit as needed)</div>
+          <textarea class="form-control mb-3" id="consensusEdit" rows="3"></textarea>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary btn-sm px-4" id="btnAccept">Accept</button>
+            <button class="btn btn-outline-secondary btn-sm" id="btnSkip">Skip</button>
+            <span class="small text-muted align-self-center ms-2" id="saveStatus"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let ROWS = [];
+let current = 0;
+const state = {};  // id -> { consensus_text, reviewed, edited }
+
+async function load() {
+  const resp = await fetch('/rows.json');
+  ROWS = await resp.json();
+  ROWS.forEach(r => { state[r.id] = { consensus_text: r.consensus_text || r.transcript || '', reviewed: r.reviewed || false }; });
+  document.getElementById('subtitle').textContent = ROWS.length + ' row' + (ROWS.length !== 1 ? 's' : '');
+  renderNav();
+  showRow(0);
+}
+
+function renderNav() {
+  const nav = document.getElementById('nav');
+  nav.replaceChildren();
+  ROWS.forEach((r, i) => {
+    const el = document.createElement('div');
+    el.className = 'nav-row d-flex align-items-center gap-2' + (i === current ? ' active' : '');
+    const dot = document.createElement('div');
+    const s = state[r.id];
+    dot.className = 'dot' + (s.reviewed ? (s.edited ? ' edited' : ' done') : '');
+    const info = document.createElement('div');
+    info.className = 'small';
+    const cerLabel = r.gemini_cer != null ? `CER ${r.gemini_cer.toFixed(3)}` : (r.duration != null ? `${r.duration.toFixed(1)}s` : '');
+    info.innerHTML = `<div class="fw-semibold">Row ${i}</div><div class="text-muted" style="font-size:0.72rem">${cerLabel}</div>`;
+    el.appendChild(dot); el.appendChild(info);
+    el.addEventListener('click', () => showRow(i));
+    nav.appendChild(el);
+  });
+}
+
+function showRow(idx) {
+  current = idx;
+  const r = ROWS[idx];
+  document.getElementById('rowTitle').textContent = `Row ${idx}`;
+  document.getElementById('rowCounter').textContent = `${idx + 1} / ${ROWS.length}`;
+  document.getElementById('cerBadge').textContent = r.gemini_cer != null ? `CER ${r.gemini_cer.toFixed(3)}` : (r.duration != null ? `${r.duration.toFixed(1)}s` : '');
+  document.getElementById('densityBadge').textContent = r.medical_density || '';
+  document.getElementById('player').src = `/audio/${r.id}.wav`;
+  // YT captions (optional)
+  const ytRow = document.getElementById('tYtRow');
+  if (r.yt_text) { document.getElementById('tYt').textContent = r.yt_text; ytRow.style.display = ''; }
+  else { ytRow.style.display = 'none'; }
+  // Whisper chunk context (optional)
+  const chunkRow = document.getElementById('tChunkRow');
+  if (r.whisper_chunk) { document.getElementById('tChunk').textContent = r.whisper_chunk; chunkRow.style.display = ''; }
+  else { chunkRow.style.display = 'none'; }
+  // Whisper sentence
+  document.getElementById('tWhisper').textContent = r.whisper_text || r.whisper_sentence || '–';
+  // Gemini ASR (optional)
+  const geminiRow = document.getElementById('tGeminiRow');
+  if (r.gemini_text) { document.getElementById('tGemini').textContent = r.gemini_text; geminiRow.style.display = ''; }
+  else { geminiRow.style.display = 'none'; }
+  // Editable transcript
+  const editVal = state[r.id].consensus_text || r.consensus_text || r.transcript || r.whisper_text || r.whisper_sentence || '';
+  document.getElementById('consensusEdit').value = editVal;
+  document.getElementById('saveStatus').textContent = state[r.id].reviewed ? '✓ saved' : '';
+
+  // Entities
+  const entRow = document.getElementById('entitiesRow');
+  entRow.replaceChildren();
+  const ents = JSON.parse(r.entities || '[]');
+  ents.forEach(e => {
+    const pill = document.createElement('span');
+    pill.className = 'entity-pill';
+    pill.textContent = e.text + (e.category ? ` · ${e.category}` : '');
+    entRow.appendChild(pill);
+  });
+  if (!ents.length) entRow.style.display = 'none';
+  else entRow.style.display = '';
+
+  renderNav();
+}
+
+async function save(advance) {
+  const r = ROWS[current];
+  const text = document.getElementById('consensusEdit').value.trim();
+  const edited = text !== r.consensus_text;
+  state[r.id] = { consensus_text: text, reviewed: true, edited };
+  document.getElementById('saveStatus').textContent = 'saving…';
+  await fetch('/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: r.id, consensus_text: text }),
+  });
+  document.getElementById('saveStatus').textContent = '✓ saved';
+  renderNav();
+  if (advance && current < ROWS.length - 1) showRow(current + 1);
+}
+
+document.getElementById('btnAccept').addEventListener('click', () => save(true));
+document.getElementById('btnSkip').addEventListener('click', () => {
+  if (current < ROWS.length - 1) showRow(current + 1);
+});
+
+load();
+</script>
+</body>
+</html>
