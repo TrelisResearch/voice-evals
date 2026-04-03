@@ -271,18 +271,24 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 - **Output:** 920 high-density rows exported to `tools/review/data-eka/` (~32 min total)
 - **Next:** run 3-model difficulty filter → top-100 → manual review in UI
 
-### MultiMed Results (In Progress)
+### MultiMed Results (Blocked — HF import failed)
 
 - **Source:** `leduckhai/MultiMed` test split — 4,751 rows
-- **Studio HF import:** ~2h estimated (1,400/4,751 complete at last check — still running)
-- **Next:** draft-transcribe → NLTK trim → Gemini Pro ASR → tag → export
+- **Studio HF import:** Failed after ~2h with `Input aborted - not reschedulable` at ~1,400/4,751 rows
+- **Status:** Blocked pending Studio fix. EKA-only path sufficient for initial 50-row eval set.
+- **Decision:** Proceed with EKA-hard-50 only for now. Resume MultiMed once Studio HF import is reliable.
+
+### EKA Next Steps (Pending)
+
+9. Difficulty filter: run Whisper large-v3, Canary 1B v2, Voxtral Mini on 920 high-density rows → median CER vs Gemini transcript → top-100
+10. Manual review in UI (`tools/review/server.py`) → drop to 50 rows → `eka-hard-public`
 
 ### Studio Bugs Encountered (Phase 1D)
 
 | Bug | Feedback ID | Impact | Workaround |
 |-----|------------|--------|------------|
 | Router eval broken (`RouterEvaluation.run()` unexpected kwarg `output_target`) | `8788af6d` | All Studio ASR router models fail since ~10:30 UTC 2026-04-03 | Direct Gemini 2.5 Pro API |
-| HF dataset import very slow (~2h for 4,751 rows) | `2bef1bbf` | Blocks pipeline start | Wait; filed suggestion for bulk upload |
+| HF dataset import very slow + fails (`Input aborted`) | `2bef1bbf` | MultiMed 4,751-row import aborted after ~2h | Blocked; EKA-only path for now |
 | Process step ignores `output_org`/`hf_token` params — always uses account defaults | `907b979b` | HF push always targets Trelis org, fails | Download VTT+WAV directly via signed S3 URLs from re-process job config |
 
 ---
