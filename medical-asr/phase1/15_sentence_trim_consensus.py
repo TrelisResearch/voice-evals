@@ -234,20 +234,43 @@ print(f"  {len(trimmed_rows)} trimmed sentences")
 
 # ── Step 2: Push trimmed clips to HF ─────────────────────────────
 print(f"\nStep 2: Pushing {len(trimmed_rows)} trimmed clips to {TEMP_DATASET}...")
-hf_rows = []
-for r in trimmed_rows:
-    hf_rows.append({
-        'audio': {'array': r['audio_array'], 'sampling_rate': r['sr']},
-        'text': r['whisper_sentence'],  # used as reference by Studio eval
-        'source_file': r['source_file'],
-        'whisper_chunk': r['whisper_chunk'],
-        'duration': r['duration'],
-    })
+import pyarrow as pa
+import pyarrow.parquet as pq
+import tempfile
 
-temp_ds = Dataset.from_list(hf_rows).cast_column('audio', Audio(sampling_rate=16000))
+audio_bytes_list, texts, source_files, whisper_chunks, durations = [], [], [], [], []
+for r in trimmed_rows:
+    audio_bytes_list.append(array_to_wav_bytes(r['audio_array'], r['sr']))
+    texts.append(r['whisper_sentence'])
+    source_files.append(r['source_file'])
+    whisper_chunks.append(r['whisper_chunk'])
+    durations.append(r['duration'])
+
+audio_struct = pa.array(
+    [{'bytes': b, 'path': p} for b, p in zip(audio_bytes_list, source_files)],
+    type=pa.struct([pa.field('bytes', pa.binary()), pa.field('path', pa.string())])
+)
+table = pa.table({
+    'audio': audio_struct,
+    'text': pa.array(texts),
+    'source_file': pa.array(source_files),
+    'whisper_chunk': pa.array(whisper_chunks),
+    'duration': pa.array(durations, type=pa.float32()),
+})
+
+with tempfile.NamedTemporaryFile(suffix='.parquet', delete=False) as f:
+    pq.write_table(table, f.name)
+    parquet_path = f.name
+
 api.create_repo(TEMP_DATASET, repo_type='dataset', private=True, exist_ok=True)
-temp_ds.push_to_hub(TEMP_DATASET, split='test', token=HF_TOKEN, private=True)
-print(f"  Pushed {len(temp_ds)} rows")
+api.upload_file(
+    path_or_fileobj=parquet_path,
+    path_in_repo='data/test-00000-of-00001.parquet',
+    repo_id=TEMP_DATASET,
+    repo_type='dataset',
+    token=HF_TOKEN,
+)
+print(f"  Pushed {len(trimmed_rows)} rows")
 
 # ── Step 3: Studio eval with gemini-2.5-pro ───────────────────────
 print(f"\nStep 3: Studio eval with google/gemini-2.5-pro...")
@@ -255,7 +278,7 @@ r = requests.post(f'{BASE}/evaluation/jobs', headers=HEADERS, json={
     'model_id': 'google/gemini-2.5-pro',
     'dataset_id': TEMP_DATASET,
     'split': 'test',
-    'num_samples': len(temp_ds),
+    'num_samples': len(trimmed_rows),
     'normalizer': 'generic',
     'language': 'en',
     'push_results': True,
