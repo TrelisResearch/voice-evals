@@ -105,8 +105,20 @@ def find_clean_sentences(text, word_timestamps):
                 end_idx = i
                 break
 
-        start_sec = wts[start_idx]['start']
-        end_sec = wts[end_idx]['end']
+        if start_idx > 0:
+            gap = wts[start_idx]['start'] - wts[start_idx - 1]['end']
+            pad_start = min(gap / 2, 0.2)
+        else:
+            pad_start = 0.3
+
+        if end_idx < len(wts) - 1:
+            gap = wts[end_idx + 1]['start'] - wts[end_idx]['end']
+            pad_end = min(gap / 2, 0.2)
+        else:
+            pad_end = 0.3
+
+        start_sec = max(0.0, wts[start_idx]['start'] - pad_start)
+        end_sec = wts[end_idx]['end'] + pad_end
         duration = end_sec - start_sec
 
         if duration < MIN_DURATION or duration > MAX_DURATION:
@@ -129,9 +141,8 @@ def trim_audio_array(audio_dict, start_sec, end_sec):
         array, sr = sf.read(io.BytesIO(raw))
         if array.ndim > 1:
             array = array.mean(axis=1)
-        pad = int(0.05 * sr)
-        s = max(0, int(start_sec * sr) - pad)
-        e = min(len(array), int(end_sec * sr) + pad)
+        s = max(0, int(start_sec * sr))
+        e = min(len(array), int(end_sec * sr))
         return array[s:e].astype(np.float32), sr
     except Exception:
         return None, None
