@@ -285,11 +285,16 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 
 ### Studio Bugs Encountered (Phase 1D)
 
-| Bug | Feedback ID | Impact | Workaround |
-|-----|------------|--------|------------|
-| Router eval broken (`RouterEvaluation.run()` unexpected kwarg `output_target`) | `8788af6d` | All Studio ASR router models fail since ~10:30 UTC 2026-04-03 | Direct Gemini 2.5 Pro API |
-| HF dataset import very slow + fails (`Input aborted`) | `2bef1bbf` | MultiMed 4,751-row import aborted after ~2h | Blocked; EKA-only path for now |
-| Process step ignores `output_org`/`hf_token` params — always uses account defaults | `907b979b` | HF push always targets Trelis org, fails | Download VTT+WAV directly via signed S3 URLs from re-process job config |
+| Bug | Feedback ID | Status | Impact | Workaround |
+|-----|------------|--------|--------|------------|
+| Router eval broken (`RouterEvaluation.run()` unexpected kwarg `output_target`) | `8788af6d` | **Fixed** (2026-04-03 later) | Draft-transcribe with `router_model` completed without error in re-test; job used `openai/whisper-large-v3` as source (unclear if `fireworks/whisper-v3` routed correctly or silently fell back) | Direct Gemini 2.5 Pro API (no longer needed) |
+| HF dataset import very slow + fails (`Input aborted`) | `2bef1bbf` | Open | MultiMed 4,751-row import aborted after ~2h | Blocked; EKA-only path for now |
+| Process step ignores `output_org`/`hf_token` params — always uses account defaults | `907b979b` | **Fixed** (2026-04-03 later) | Re-test confirmed: process step pushed to `ronanarraig/studio-test-hf-push` without any `output_org` param — account default is now ronanarraig | No longer needed |
+
+**Notes on re-test (2026-04-03):**
+- Correct poll URL for draft-transcribe/process jobs: `GET /api/v1/data-prep/jobs/{job_id}` (not `/file-stores/{id}/draft-transcribe/{job_id}`)
+- Correct upload URL field from batch upload response: `files[].upload_url` (not `upload_urls`)
+- Process step takes ~90s for 3 files
 
 ---
 
@@ -303,9 +308,9 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 | Add Gemini 2.5 Flash | `a205d9fc` | Filed |
 | Add OpenAI gpt-4o-transcribe | `d1877c02` | Filed |
 | GET /evaluation/jobs: ?status= filter not applied server-side | `a5c4c486` | Filed |
-| Router eval broken — `RouterEvaluation.run()` unexpected kwarg `output_target` | `8788af6d` | Filed 2026-04-03 |
-| HF dataset import slow (~2h for 4,751 rows) | `2bef1bbf` | Filed 2026-04-03 |
-| Process step ignores `output_org`/`hf_token` | `907b979b` | Filed 2026-04-03 |
+| Router eval broken — `RouterEvaluation.run()` unexpected kwarg `output_target` | `8788af6d` | **Fixed** 2026-04-03 |
+| HF dataset import slow (~2h for 4,751 rows) + aborts | `2bef1bbf` | Open |
+| Process step ignores `output_org`/`hf_token` | `907b979b` | **Fixed** 2026-04-03 |
 
 ---
 
