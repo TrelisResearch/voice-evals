@@ -1,7 +1,7 @@
 # Medical ASR — Phase 1 Report
 
-**Status:** Complete (2026-04-02)
-**Goal:** Landscape survey of existing medical ASR datasets + baseline model evaluation
+**Status:** Phase 1A–1C complete; Phase 1D in progress (2026-04-03)
+**Goal:** Landscape survey + baseline model eval + curated hard eval set construction
 
 ---
 
@@ -146,6 +146,10 @@ Prosody is flat and stress patterns on polysyllabic drug names are wrong (e.g. "
 
 Qwen3-ASR-1.7B returns 1.000 WER/CER on all datasets — likely empty output or Chinese characters. Studio bug filed (`5eb76bfc`). Moonshine-tiny dtype mismatch in Studio — bug filed (`77aef1bb`). Both need fixing before Phase 3 fine-tuning targets can be evaluated.
 
+### Finding 6: Model rankings are consistent across datasets
+
+The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Canary bottom). This is a positive sign — suggests our Phase 2 dataset doesn't need to be very large to produce stable rankings.
+
 ### Finding 7: EKA high-CER rows are valid difficulty signal, not noise
 
 Manual inspection of EKA rows around the Otsu threshold (0.589) revealed these are legitimate hard cases — short drug name narrations where Whisper hallucinates phonetically plausible English words:
@@ -160,11 +164,7 @@ Manual inspection of EKA rows around the Otsu threshold (0.589) revealed these a
 | 0.571 | Arm bag | I'm back. |
 | 0.588 | Triglimisave Ls 2 | Strike, let me save, LS2. |
 
-High CER here is an artefact of short utterance length (one wrong word = high CER), not bad audio. **Implication for EKA curation: filter by minimum token/character length rather than CER ceiling.** Short single-word narrations like "Abbott" (CER 0.500, Whisper: "bot") are valid hard rows but inflate CER stats — length-based filtering preserves them while removing low-content rows. Decision pending user review.
-
-### Finding 6: Model rankings are consistent across datasets
-
-The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Canary bottom). This is a positive sign — suggests our Phase 2 dataset doesn't need to be very large to produce stable rankings.
+High CER here is an artefact of short utterance length (one wrong word = high CER), not bad audio. **Implication for EKA curation: filter by minimum token/character length rather than CER ceiling.** Short single-word narrations like "Abbott" (CER 0.500, Whisper: "bot") are valid hard rows but inflate CER stats — length-based filtering preserves them while removing low-content rows.
 
 ---
 
@@ -191,78 +191,103 @@ The EKA and United rankings correlate well (Gemini/AssemblyAI top, Deepgram/Cana
 
 ---
 
-## 1f. Curated Baselines — Learnings and Next Run
+## 1e. MultiMed Sentence Extraction Pipeline (Phase 1C)
 
-### What we'd do differently
+**Goal:** Extract clean sentence-level medical clips from MultiMed with Gemini 2.5 Pro ground truth transcripts.
 
-**EKA: pre-filter to sentence-length rows before sampling.**
-The current EKA hard-100 is dominated by single-word and short-phrase narrations (individual drug names, single symptoms). These are valid difficulty signal but less useful as a benchmark — CER is inflated by length artefact, and the rows don't reflect realistic clinical speech. A stronger test set would focus on full clinical sentences where entities appear in context. Next run: filter EKA to rows with ≥ 5 tokens / ≥ 60 chars before drawing the 500-row sample. This will surface more interesting failure modes (in-context entity errors, not just isolated recall) and make the final split more representative.
-
-**MultiMed: reference quality not fully solvable by CER filtering.**
-Even at 30% CER ceiling, some rows have speaker labels and misaligned captions that can't be distinguished from hard transcription errors by CER alone. Longer-term: re-source from CC-BY licensed YouTube medical content and process through Trelis Studio. Standard YouTube is not fair use for ML eval data.
-
-### Final Datasets — Current Run
-
-
-
-**Pipeline applied:**
-1. Sample 500 rows each (EKA: stratified by recording_context; MultiMed: random, duration ≥ 3s)
-2. Whisper CER filter — EKA: Otsu ceiling (0.588) + len ≥ 10 chars + 5% floor → 176 rows; MultiMed: 30% hard ceiling + 5% floor → 174 rows
-3. Difficulty filter — Canary 1B v2 + Voxtral Mini 3B evals; rank by median CER across 3 models; top 100 kept per dataset
-4. Entity extraction on top 100 only (EKA: reformat existing annotations; MultiMed: dual-LLM Gemini+Claude, agreed-only)
-5. Split 50 public + 50 private with entity deduplication
-
-**Results:**
-
-| Dataset | Rows | CER range (median) | Entity overlap | HF slug |
-|---------|------|--------------------|----------------|---------|
-| EKA hard public | 50 | 0.238–0.900 | — | `ronanarraig/eka-hard-public` |
-| EKA hard private | 50 | 0.121–0.235 | 3 entities w/ public | `ronanarraig/eka-hard-private` |
-| MultiMed hard public | 50 | 0.152–0.387 | — | `ronanarraig/multimed-hard-public` |
-| MultiMed hard private | 50 | 0.102–0.288 | 2 entities w/ public | `ronanarraig/multimed-hard-private` |
-
-Entity extraction stats: EKA 145 context templates extracted; MultiMed 80 agreed entities, 80 templates. Combined 140 unique context templates saved to `tmp/context_templates.json` for Phase 2 seeding.
-
-**Note on entity CER for difficulty ranking:** Studio per-sample eval results do not include entity-level CER (only aggregate). Difficulty ranking used overall CER as proxy for both datasets. For EKA this is a reasonable approximation since entity terms dominate CER failure modes.
-
----
-
-## 1c. MultiMed Sentence Extraction Pipeline
-
-**Goal:** Extract clean sentence-level medical clips from MultiMed with Gemini 3 Flash ground truth transcripts.
+**Status: Complete — 12 high-density rows extracted from 501 MultiMed chunks**
 
 ### Pipeline
 
-1. Filter MultiMed test (4,751 rows) to duration ≥5s + text ≥60 chars → sample 500 → `multimed-sentences-500`
-2. Trelis Studio draft-transcribe (Whisper large-v3) → word timestamps → `multimed-sentences-transcribed` (501 rows)
-3. NLTK sentence detection on Whisper text → trim audio via word timestamps → clean sentence clips
-4. Gemini 3 Flash combined call: trimmed audio + full Whisper chunk context → `transcript` + `is_medical` + `medical_density` + `entities` in single JSON response
-5. Keep `medical_density == high` rows
-6. Review UI (human inspect/correct)
+1. Filter MultiMed test (4,751 rows) to duration ≥5s + text ≥60 chars → sample 500 → Studio draft-transcribe → 501 rows with Whisper word timestamps
+2. NLTK sentence detection on Whisper text → trim audio via word timestamps → clean sentence clips
+3. Contextual audio padding: `min(gap/2, 0.2)s` when adjacent word exists, `0.3s` at boundaries
+4. Gemini 2.5 Pro direct API: transcribe trimmed audio → ground-truth `transcript`
+5. Completeness check: transcript must end with sentence-final punctuation
+6. Gemini 2.5 Flash combined call: `is_medical`, `medical_density`, `entities`, `medical_entities` in single JSON response
+7. Keep `medical_density == high` rows → 12 rows exported to review UI
 
-### Drop log (prototype on 45 high-density rows from earlier pipeline)
+### Drop log (full 501-row run)
 
 | Step | In | Out | Dropped | Reason |
 |------|----|-----|---------|--------|
-| NLTK sentence trim | 45 | 28 sentences (26 rows) | 19 rows (42%) | No clean inner sentence found |
-| Multiple sentences | 2 rows | 4 sentences | — | 2 rows yielded 2 sentences each (kept all) |
+| NLTK sentence trim | 501 | ~280 sentences | ~220 rows | No clean inner sentence found |
+| Completeness check | ~280 | ~200 | ~80 | Hallucinated/incomplete endings |
+| Medical density filter | ~200 | 12 | ~188 | medium/low/none density |
 
-Note: the 45-row prototype used an earlier Gemini 2.5 Flash tagging step; the revised pipeline (Phase 1C final) combines tagging + consensus into one Gemini 3 Flash call and runs on the full filtered dataset.
+**Note:** MultiMed is lecture/podcast content — low medical density is expected. 12 high-density rows from 501 source rows is ~2.4% yield. The 73% high-density yield on EKA (see Phase 1D) confirms EKA is a much better source for medical content density.
 
 ### Key design decisions
 
 - YT captions not passed to Gemini (not sentence-aligned after trimming)
-- Full Whisper chunk passed as surrounding context, trimmed sentence identified within it
-- Tagging (is_medical, entities, medical_density) combined with consensus in one call
+- Full Whisper chunk passed as surrounding context for Gemini Pro transcription
+- Tagging (is_medical, entities, medical_density) combined in one Gemini Flash call
 - All sentences from multi-sentence chunks kept — treated as independent data points
-
-### Status
-
-Prototype complete. Full pipeline script (`15_sentence_trim_consensus.py`) pending final run and user inspection.
+- Studio router eval broken (bug `8788af6d`) → switched to direct Gemini 2.5 Pro API
 
 ---
 
-## 1e. Studio Bugs Filed
+## 1f. Hard Eval Set Construction (Phase 1D)
+
+**Goal:** Build `eka-hard` and `multimed-hard` baseline eval sets — 50 manually-reviewed rows each, difficulty-filtered using 3 open-source model median CER.
+
+### Architecture Decisions
+
+- **EKA:** no NLTK sentence trimming (rows already sentence-level); filter audio ≥1s + text ≥10 chars
+- **MultiMed:** NLTK sentence trimming (lecture chunks need sentence extraction); use test split only (train split reserved for training)
+- **Training data:** MultiMed train split + synthetic TTS — EKA NOT used for training (leakage risk; used for eval)
+- **Ground truth:** Gemini 2.5 Pro direct API (not Studio router — broken since ~10:30 UTC 2026-04-03)
+- **Difficulty filter:** 3 open-source models (Whisper large-v3, Canary 1B v2, Voxtral Mini) → median CER vs Gemini transcript → top-100 → manual review/drop → finalise at 50
+- **Review UI:** `/tools/review/server.py` + `review.html` — Accept/Skip/Drop per row, green/purple/red dot status in nav
+
+### Pipeline
+
+1. Load source dataset → filter (audio len + text len)
+2. Studio from-hf-dataset import → poll until complete → draft-transcribe (Whisper large-v3) → poll
+3. Download VTT+WAV via signed S3 URLs from re-process job config (workaround for Studio HF push bug)
+4. (MultiMed only) NLTK sentence trim via word timestamps → contextual audio padding
+5. Gemini 2.5 Pro ASR → ground-truth `gemini_text`
+6. Completeness check (sentence-final punctuation)
+7. Gemini 2.5 Flash tagging: `is_medical`, `medical_density`, `entities`, `medical_entities`
+8. Keep high-density rows → export to review dir
+9. Difficulty filter: 3 models → median CER → top-100 (pending)
+10. Manual review in UI → drop to 50 rows (pending)
+
+### EKA Results (Complete)
+
+- **Source:** `ekacare/eka-medical-asr-evaluation-dataset` — 1,444 rows after audio+text filter
+- **Studio import + draft-transcribe:** ~6 min download, 1,441 rows processed
+- **Gemini 2.5 Pro ASR:** 1,257 complete, 184 dropped (incomplete/no sentence-final punct), 1 failed API call; ~21 min (20 threads)
+- **Flash tagging:** 1,257 rows, ~5 min (100 threads)
+- **Density breakdown:**
+
+| Density | Rows | % |
+|---------|------|---|
+| high | 920 | 73% |
+| medium | 330 | 26% |
+| low | 4 | <1% |
+| none | 3 | <1% |
+
+- **Output:** 920 high-density rows exported to `tools/review/data-eka/` (~32 min total)
+- **Next:** run 3-model difficulty filter → top-100 → manual review in UI
+
+### MultiMed Results (In Progress)
+
+- **Source:** `leduckhai/MultiMed` test split — 4,751 rows
+- **Studio HF import:** ~2h estimated (1,400/4,751 complete at last check — still running)
+- **Next:** draft-transcribe → NLTK trim → Gemini Pro ASR → tag → export
+
+### Studio Bugs Encountered (Phase 1D)
+
+| Bug | Feedback ID | Impact | Workaround |
+|-----|------------|--------|------------|
+| Router eval broken (`RouterEvaluation.run()` unexpected kwarg `output_target`) | `8788af6d` | All Studio ASR router models fail since ~10:30 UTC 2026-04-03 | Direct Gemini 2.5 Pro API |
+| HF dataset import very slow (~2h for 4,751 rows) | `2bef1bbf` | Blocks pipeline start | Wait; filed suggestion for bulk upload |
+| Process step ignores `output_org`/`hf_token` params — always uses account defaults | `907b979b` | HF push always targets Trelis org, fails | Download VTT+WAV directly via signed S3 URLs from re-process job config |
+
+---
+
+## 1g. Studio Bugs Filed (All Phases)
 
 | Bug | Feedback ID | Status |
 |-----|------------|--------|
@@ -272,6 +297,9 @@ Prototype complete. Full pipeline script (`15_sentence_trim_consensus.py`) pendi
 | Add Gemini 2.5 Flash | `a205d9fc` | Filed |
 | Add OpenAI gpt-4o-transcribe | `d1877c02` | Filed |
 | GET /evaluation/jobs: ?status= filter not applied server-side | `a5c4c486` | Filed |
+| Router eval broken — `RouterEvaluation.run()` unexpected kwarg `output_target` | `8788af6d` | Filed 2026-04-03 |
+| HF dataset import slow (~2h for 4,751 rows) | `2bef1bbf` | Filed 2026-04-03 |
+| Process step ignores `output_org`/`hf_token` | `907b979b` | Filed 2026-04-03 |
 
 ---
 
@@ -284,6 +312,9 @@ Prototype complete. Full pipeline script (`15_sentence_trim_consensus.py`) pendi
 | Dual-LLM entity extraction (100 rows × 2 models) | ~5 min |
 | HF push (3 datasets) | ~2 min |
 | Eval job submission + completion (30 jobs × 50 rows) | ~15 min |
+| MultiMed 501-row sentence extraction (Phase 1C) | ~45 min |
+| EKA 1,444-row pipeline (download + Gemini ASR + tagging) | ~32 min |
+| MultiMed HF import (4,751 rows) | ~2h (est.) |
 
 ## Costs
 
@@ -291,3 +322,5 @@ Prototype complete. Full pipeline script (`15_sentence_trim_consensus.py`) pendi
 |------|------|
 | 30 eval jobs × 1.0 credit each | ~30 credits |
 | LLM entity extraction (Gemini 2.5 Flash + Claude Sonnet) | ~$0.10 |
+| Gemini 2.5 Pro ASR — EKA 1,257 rows | ~$0.50 est. |
+| Gemini 2.5 Flash tagging — 1,257 rows | ~$0.10 est. |
