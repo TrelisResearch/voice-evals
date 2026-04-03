@@ -25,6 +25,8 @@
     .dot { width: 9px; height: 9px; border-radius: 50%; background: #ccc; flex-shrink: 0; }
     .dot.done { background: #43a047; }
     .dot.edited { background: #8e24aa; }
+    .dot.dropped { background: #e53935; }
+    .nav-row.dropped-row { opacity: 0.4; }
     textarea.form-control { font-size: 0.95rem; line-height: 1.7; resize: vertical; }
     .cer-badge { font-size: 0.75rem; }
     .entity-pill { font-size: 0.72rem; background: #e8eaf6; color: #3949ab; border-radius: 1rem; padding: 0.15rem 0.55rem; }
@@ -94,6 +96,7 @@
           <div class="d-flex gap-2">
             <button class="btn btn-primary btn-sm px-4" id="btnAccept">Accept</button>
             <button class="btn btn-outline-secondary btn-sm" id="btnSkip">Skip</button>
+            <button class="btn btn-outline-danger btn-sm" id="btnDrop">Drop</button>
             <span class="small text-muted align-self-center ms-2" id="saveStatus"></span>
           </div>
 
@@ -111,10 +114,15 @@ const state = {};  // id -> { consensus_text, reviewed, edited }
 async function load() {
   const resp = await fetch('/rows.json');
   ROWS = await resp.json();
-  ROWS.forEach(r => { state[r.id] = { consensus_text: r.consensus_text || r.transcript || '', reviewed: r.reviewed || false }; });
-  document.getElementById('subtitle').textContent = ROWS.length + ' row' + (ROWS.length !== 1 ? 's' : '');
+  ROWS.forEach(r => { state[r.id] = { consensus_text: r.consensus_text || r.transcript || '', reviewed: r.reviewed || false, dropped: r.dropped || false }; });
+  updateSubtitle();
   renderNav();
   showRow(0);
+}
+
+function updateSubtitle() {
+  const kept = ROWS.filter(r => !state[r.id].dropped).length;
+  document.getElementById('subtitle').textContent = `${ROWS.length} rows — ${kept} kept`;
 }
 
 function renderNav() {
@@ -125,7 +133,8 @@ function renderNav() {
     el.className = 'nav-row d-flex align-items-center gap-2' + (i === current ? ' active' : '');
     const dot = document.createElement('div');
     const s = state[r.id];
-    dot.className = 'dot' + (s.reviewed ? (s.edited ? ' edited' : ' done') : '');
+    dot.className = 'dot' + (s.dropped ? ' dropped' : s.reviewed ? (s.edited ? ' edited' : ' done') : '');
+    if (s.dropped) el.classList.add('dropped-row');
     const info = document.createElement('div');
     info.className = 'small';
     const cerLabel = r.gemini_cer != null ? `CER ${r.gemini_cer.toFixed(3)}` : (r.duration != null ? `${r.duration.toFixed(1)}s` : '');
@@ -197,6 +206,20 @@ async function save(advance) {
 
 document.getElementById('btnAccept').addEventListener('click', () => save(true));
 document.getElementById('btnSkip').addEventListener('click', () => {
+  if (current < ROWS.length - 1) showRow(current + 1);
+});
+document.getElementById('btnDrop').addEventListener('click', async () => {
+  const r = ROWS[current];
+  state[r.id] = { ...state[r.id], dropped: true, reviewed: true };
+  document.getElementById('saveStatus').textContent = 'saving…';
+  await fetch('/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: r.id, dropped: true }),
+  });
+  document.getElementById('saveStatus').textContent = '✗ dropped';
+  updateSubtitle();
+  renderNav();
   if (current < ROWS.length - 1) showRow(current + 1);
 });
 

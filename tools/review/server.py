@@ -61,8 +61,13 @@ class ReviewHandler(http.server.SimpleHTTPRequestHandler):
             # Update matching row by id
             for row in rows:
                 if row['id'] == body['id']:
-                    row['consensus_text'] = body['consensus_text']
-                    row['reviewed'] = True
+                    if body.get('dropped'):
+                        row['dropped'] = True
+                        row['reviewed'] = True
+                    else:
+                        row['consensus_text'] = body['consensus_text']
+                        row['reviewed'] = True
+                        row['dropped'] = False
                     break
             rows_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
             self._json(200, {'ok': True})

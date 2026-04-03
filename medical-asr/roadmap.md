@@ -140,26 +140,30 @@ Based on evals:
 - Decide audio source: Orpheus TTS vs user-recorded vs hybrid
 - Set target row count per split (likely 30–50 given entity diversity needed)
 
-### 1f. Curated baselines: EKA-hard and MultiMed-hard
+### 1d. EKA-hard + MultiMed-hard baseline eval sets
 
-Build permanent public + private benchmark splits from EKA and MultiMed using the same difficulty-filtering approach as ai-terms v2. Target: 50 public + 50 private rows per dataset.
+Build two public benchmark splits using an identical pipeline, so results are directly comparable on the leaderboard. Target: 50 public rows each. Private splits deferred.
 
-**Key lesson from Phase 1 run:** EKA contains a large proportion of single-word and short-phrase narrations (single drug names, single symptoms). These inflate CER artifically and are less interesting than sentence-level utterances — a model getting "carbetocin" wrong tells you less than a model getting it wrong in a clinical sentence. **Next run should pre-filter EKA to sentence-length rows before sampling 500**, to ensure the pool reflects realistic clinical speech rather than isolated term narrations. This will also reveal broader model failure modes (not just drug name recall but in-context transcription errors).
+**Datasets:**
+- EKA: full 3,619 rows (`ekacare/eka-medical-asr-evaluation-dataset`)
+- MultiMed: **test split only** (4,751 rows) — train split reserved for fine-tuning data
 
-**Revised pipeline (next run):**
+**Pipeline (identical for both):**
 
-1. **Pre-filter EKA to sentence-length rows** — filter the full 3,619-row EKA pool to proper sentences before sampling. Heuristic: ≥ 5 tokens AND length ≥ 60 chars. Sample 500 from this filtered pool (stratified by recording_context). Single-word/short-phrase narrations excluded upfront, not post-hoc.
-2. **CER filter + floor** — Whisper CER on the 500. Otsu ceiling + 5% floor. No char-length floor needed since pool is already sentence-filtered.
-3. **Difficulty filter before entity extraction** — Canary 1B v2 + Voxtral Mini 3B; median CER across 3 models; top 100. Open-source only. Saves ~70% LLM cost vs extracting on full filtered set.
-4. **Entity extraction** — dual-LLM (Gemini 2.5 Flash + Claude Sonnet, agreed-only) on top 100 only.
-5. **Split 50 public + 50 private** — entity deduplication across splits.
-6. **Push to HF** — `ronanarraig/eka-hard-public`, `ronanarraig/eka-hard-private`
+1. **Sentence filter** — keep rows with duration ≥ 3s AND text len ≥ 60 chars
+2. **Draft-transcribe via Studio** — Whisper large-v3 router (Fireworks) → word timestamps
+3. **NLTK sentence detection + audio trim** — find clean inner sentences, contextual padding (half inter-word gap, cap 0.2s; 0.3s at boundaries), drop clips < 3s or < 40 chars
+4. **Gemini 2.5 Pro ASR** — audio only, no text context → completeness check → drop incomplete
+5. **Gemini Flash tagging** — `is_medical`, `medical_density`, `entities` → keep `medical_density == high` only
+6. **Difficulty filtering** — run Whisper large-v3, Canary 1B v2, Voxtral Mini via Studio → median CER vs Gemini transcript → take top-100 by median CER
+7. **Manual review** — review UI with drop functionality; reviewer drops rows until 50 remain; correct any ground truth errors
+8. **Push** — `ronanarraig/eka-hard-public`, `ronanarraig/multimed-hard-public`
 
-**MultiMed: dropped.** Reference quality not reliably fixable via CER filtering — auto-caption misalignment and speaker labels persist. Standard YouTube content is not fair use for ML eval data.
+**Difficulty metric rationale:** Gemini 2.5 Pro used as pseudo-ground-truth (best available reference). Filter models are open-source only. Gemini errors are invisible to the CER signal but caught by manual review on the final top-100.
 
-**Second real-speech source (to find):** audit CC-BY audio sources — medical YouTube CC-BY channels, open courseware (MIT, Johns Hopkins), CC-BY medical podcasts. Pick 1–2 that have natural clinical speech, reliable transcripts, and clean licences. Process through Trelis Studio.
+**Review tool:** drop button added to review UI — reviewer works through top-100, drops low-quality or borderline rows, finalises at 50.
 
-**Private split rules:** open-source models only. Never submit private splits to proprietary APIs (Gemini, Speechmatics, Deepgram, etc.).
+**Private split rules:** open-source models only. Never submit private splits to proprietary APIs.
 
 ### 1g. Phase 1 report
 
