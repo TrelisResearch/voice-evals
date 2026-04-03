@@ -37,6 +37,8 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 api = HfApi(token=HF_TOKEN)
 
 N_TAG_THREADS = 100
+N_ASR_THREADS = 20
+ASR_PROMPT = "Transcribe this audio. Output ONLY the transcription."
 MIN_DURATION = 3.0
 MIN_CHARS = 40
 MAX_DURATION = 25.0
@@ -156,22 +158,31 @@ def is_complete_transcript(text):
     return True
 
 
-# ── Studio eval polling ───────────────────────────────────────────
+# ── Gemini Pro ASR ────────────────────────────────────────────────
 
-def poll_eval_job(job_id, interval=15):
-    while True:
-        r = requests.get(f'{BASE}/evaluation/jobs/{job_id}', headers=HEADERS)
-        data = r.json()
-        status = data.get('status')
-        if status == 'completed':
-            print(f"  Eval job complete")
-            return data
-        elif status == 'failed':
-            print(f"  Eval job FAILED: {data.get('error','')[:100]}")
-            return None
-        else:
-            print(f"  {status}... waiting {interval}s")
-            time.sleep(interval)
+def transcribe_with_gemini_pro(idx, audio_bytes):
+    """Upload audio to Gemini Files API and transcribe with 2.5 Pro."""
+    for attempt in range(3):
+        f = None
+        try:
+            f = client.files.upload(
+                file=io.BytesIO(audio_bytes),
+                config=gentypes.UploadFileConfig(mime_type='audio/wav', display_name=f'row_{idx}')
+            )
+            response = client.models.generate_content(
+                model='gemini-2.5-pro',
+                contents=[gentypes.Part.from_uri(file_uri=f.uri, mime_type='audio/wav'), ASR_PROMPT],
+                config=gentypes.GenerateContentConfig(temperature=0.0),
+            )
+            return idx, response.text.strip()
+        except Exception as e:
+            if attempt == 2:
+                return idx, None
+            time.sleep(2 ** attempt)
+        finally:
+            if f:
+                try: client.files.delete(name=f.name)
+                except: pass
 
 
 # ── Gemini tagging ────────────────────────────────────────────────
@@ -272,40 +283,31 @@ api.upload_file(
 )
 print(f"  Pushed {len(trimmed_rows)} rows")
 
-# ── Step 3: Studio eval with gemini-2.5-pro ───────────────────────
-print(f"\nStep 3: Studio eval with google/gemini-2.5-pro...")
-r = requests.post(f'{BASE}/evaluation/jobs', headers=HEADERS, json={
-    'model_id': 'google/gemini-2.5-pro',
-    'dataset_id': TEMP_DATASET,
-    'split': 'test',
-    'num_samples': len(trimmed_rows),
-    'normalizer': 'generic',
-    'language': 'en',
-    'push_results': True,
-})
-data = r.json()
-job_id = data.get('job_id') or data.get('id')
-print(f"  Job: {job_id}")
+# ── Step 3: Gemini 2.5 Pro ASR (direct API, audio only) ──────────
+# Note: Studio router model eval broken as of 2026-04-03 (bug filed: 8788af6d)
+print(f"\nStep 3: Transcribing {len(trimmed_rows)} clips with Gemini 2.5 Pro ({N_ASR_THREADS} threads)...")
+asr_results = [None] * len(trimmed_rows)
 
-job_data = poll_eval_job(job_id)
-if not job_data:
-    raise SystemExit("Eval job failed")
+with ThreadPoolExecutor(max_workers=N_ASR_THREADS) as executor:
+    futures = {executor.submit(transcribe_with_gemini_pro, i, array_to_wav_bytes(r['audio_array'], r['sr'])): i
+               for i, r in enumerate(trimmed_rows)}
+    done = 0
+    for future in as_completed(futures):
+        i, text = future.result()
+        asr_results[i] = text
+        done += 1
+        if done % 20 == 0 or done == len(trimmed_rows):
+            print(f"  {done}/{len(trimmed_rows)}")
 
-results_ds = load_dataset(job_data['result']['pushed_dataset_id'], split='test', token=HF_TOKEN)
-results_ds = results_ds.cast_column('audio', results_ds.features['audio'].__class__(decode=False))
-print(f"  Results: {len(results_ds)} rows, columns: {results_ds.column_names}")
-
-# Map whisper_sentence → gemini prediction
-ref_col = 'reference' if 'reference' in results_ds.column_names else 'text'
-ref_to_pred = {row[ref_col]: row['prediction'] for row in results_ds}
+n_asr_failed = sum(1 for t in asr_results if not t)
+print(f"  {n_asr_failed} failed ASR calls")
 
 # ── Step 4: Post-NLTK completeness check ─────────────────────────
 print(f"\nStep 4: Post-NLTK completeness check...")
 complete_rows = []
 n_incomplete = 0
 
-for r in trimmed_rows:
-    prediction = ref_to_pred.get(r['whisper_sentence'])
+for r, prediction in zip(trimmed_rows, asr_results):
     if not prediction:
         n_incomplete += 1
         continue
@@ -315,7 +317,7 @@ for r in trimmed_rows:
     r['gemini_transcript'] = prediction
     complete_rows.append(r)
 
-print(f"  {n_incomplete} dropped (incomplete Gemini output)")
+print(f"  {n_incomplete} dropped (no prediction or incomplete Gemini output)")
 print(f"  {len(complete_rows)} complete transcripts")
 
 # ── Step 5: Tag with Gemini Flash ────────────────────────────────
