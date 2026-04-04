@@ -178,79 +178,75 @@ Document in `reports/phase1.md`:
 
 ## Phase 2 — Our Medical ASR Test Set
 
-**Goal:** Build our own vocabulary-difficulty medical speech benchmark — difficulty-filtered, entity-annotated, three-tier.
+**Goal:** Build a small (50-row) but high-quality, hard, vocabulary-difficulty medical speech benchmark — entity-annotated, difficulty-filtered, good breadth across medical domains.
 
-**Name:** Decided at end of Phase 1. Working assumption: `ronanarraig/medical-terms-{public,semi-private,private}`.
+**Name:** `ronanarraig/medical-terms-{public,semi-private,private}`
 
-### 2a. Spoken form rules (before any TTS)
+**Philosophy:** quality over volume. Inspect data at every step. Start with ~100 candidate rows, filter to 50 that are hard and representative.
 
-Medical text requires more normalisation than ai-terms before TTS will render it correctly:
+---
 
-| Pattern | Example | Spoken form |
-|---------|---------|-------------|
-| Drug dosages | `10mg`, `250mcg` | "ten milligrams", "two hundred fifty micrograms" |
-| Latin abbreviations | `q.d.`, `b.i.d.`, `p.r.n.` | "once daily", "twice daily", "as needed" |
-| Medical acronyms | `T2DM`, `CBC`, `BP` | "type two diabetes mellitus", "complete blood count", "blood pressure" |
-| Lab values | `HbA1c 7.2%` | "HbA1c seven point two percent" |
-| ICD codes | leave out or spell context | handle case by case |
+### 2a. Define categories + mine (keyword, context) pairs
 
-Build `spoken_form_rules.md` (parallel to tricky-tts) before generating any audio.
+**Step 1 — Define high-level categories (~6–8):**
+e.g. cardiology, oncology, neurology, pharmacology (drugs/dosing), infectious disease, surgery/procedures, anatomy, metabolic/endocrinology.
 
-### 2b. Entity seed lists
+**Step 2 — Identify 2–3 key sources per category:**
+For each category, find active-use sources where medical terminology appears in natural clinical context. Examples:
+- Drug formularies, FDA drug labels (pharmacology)
+- Clinical practice guidelines (cardiology, oncology, etc.)
+- PubMed abstracts, open case reports
+- Surgical procedure coding descriptions (CPT)
+- Medical textbook excerpts (public domain)
 
-Build entity lists from public domain sources — no licence concerns:
+**Step 3 — Mine (keyword, context) pairs:**
+From each source, extract pairs: `{keyword, context_sentence, category, source}`. The context sentence is a real sentence from the source where the keyword appears naturally. Target ~15–20 pairs per category, ~100–150 total.
 
-| Entity type | Source | Notes |
-|-------------|--------|-------|
-| Drugs (approved) | FDA Orange Book + NDC database | Generic + brand names; bias toward rare/novel |
-| Pipeline drugs | Pharmaceutical earnings call transcripts (names only — not copyrightable) | Novel Phase 2/3 drugs not yet in FDA labels; hardest for models |
-| Conditions | ICD-10 code descriptions | Systematic; sample across specialties |
-| Procedures | CPT code descriptions | Surgical, diagnostic, imaging |
-| Anatomy | Standard anatomical terms | Gray's Anatomy out of copyright |
-| Organisations | Public hospital/pharma/regulator lists | FDA, NICE, named hospital systems |
+Inspect pairs before proceeding — check they represent real active use, not definition lists.
 
-Target ~300–500 candidate entities total (need buffer since most will be filtered out as too easy).
+---
 
-### 2c. Context seed library
+### 2b. LLM sentence generation
 
-**Why context diversity matters:** uniform sentence templates make the benchmark gameable and unrepresentative. Entities should appear in varied clinical registers.
+For each `(keyword, context)` pair, prompt an LLM to generate a fresh clinical sentence featuring the keyword naturally in context. Use the mined context sentence as a style anchor (not a template). Vary clinical register across rows (prescription note, discharge summary, radiology report, referral letter, clinical trial description).
 
-**Approach: mine entity + context together from the same source.**
+Constraints per sentence: 1–2 entities, at least one rare/difficult term, ≤ 30s when spoken.
 
-Slot-filling templates (entity replaced with `[DRUG]` etc.) are not useful unless the replacement term is semantically compatible with the surrounding sentence — "particularly the [ANATOMY] information as Otitis media impacts the middle ear" filled with "femur" is nonsense. The Phase 1 context templates extracted from EKA/MultiMed are retained as **register examples only** (to show the LLM what clinical language looks like), not as fill-in-the-blank templates.
+Inspect a sample (~20 rows) before full run.
 
-**Actual approach:** when building the entity seed list (step 2b), simultaneously mine real example sentences containing each entity from public-domain sources (FDA drug labels, PubMed abstracts, open case reports). Each seed entry = `{entity, category, example_sentence}`. The example sentence provides natural context specific to that entity. LLM generation in step 2d then uses the example sentence as a style anchor for that entity, rather than a generic template.
+---
 
-This ensures context is always semantically coherent with the entity.
+### 2c. TTS audio — Kokoro via Studio
 
-### 2d. Text corpus generation
+**Quick test first:** generate audio for 5–10 sentences, listen to output — check pronunciation of drug names, Latin terms, acronyms. Apply spoken form normalisation beforehand where needed (dosages, abbreviations, acronyms).
 
-Generate ~150–200 candidate utterances using LLM, one per seed entity:
-- For each entity: use its mined example sentence as context anchor
-- LLM generates a fresh clinical utterance in a similar register, with the entity naturally embedded
-- Vary clinical register across rows (prescription, discharge summary, radiology, referral, etc.) by instruction in the prompt
-- Each utterance: 1–2 entities, at least one rare/difficult term, ≤ 30s when spoken
-- Entity distribution: 40% drugs, 30% procedures, 20% conditions, 10% anatomy
+**Full run:** evenly distribute rows across all Kokoro voices supported by Studio (not random — even allocation per voice). This gives speaker diversity without bias.
 
-### 2e. TTS audio generation
+Inspect a sample per voice before proceeding to difficulty filtering.
 
-Orpheus 3B / tara via Studio. Apply spoken form rules before generation. Audit 5–10 samples per entity category before full run (check pronunciation of drug names, Latin terms).
+---
 
-### 2f. Difficulty filtering
+### 2d. Difficulty calibration
 
-Median entity CER ≥ threshold across 3 filter models. Threshold calibrated from Phase 1 findings (may differ from ai-terms' 0.045).
+Run 3 open-source models (Whisper large-v3, Canary 1B v2, Voxtral Mini) via Studio on all ~100 rows. Compute median entity CER per row vs ground-truth text. Inspect distribution — check hard rows are hard for the right reasons (entity errors, not garbled audio). Set threshold; keep top ~50 by median entity CER.
 
-### 2g. Split assignment + leakage check
+---
 
-30–50 rows per split after filtering. Entity deduplication across splits. N-gram overlap check.
+### 2e. Manual review
 
-### 2h. Full benchmark evaluation
+Review UI — inspect each of the ~50 hard rows. Drop any with TTS pronunciation failures, awkward generated text, or borderline entity difficulty. Correct any ground truth errors.
 
-~15–20 models on final splits. Publish leaderboard.
+---
 
-### 2i. Phase 2 report
+### 2f. Proprietary model spot-check
 
-Document in `reports/phase2.md`.
+Once 50 rows are finalised, run 1–2 top proprietary models (e.g. Gemini 2.5 Pro + AssemblyAI Universal 3 Pro) via Studio. Report overall CER and entity CER per category. This gives a quick benchmark anchor before full leaderboard evaluation.
+
+---
+
+### 2g. Phase 2 report
+
+Document in `reports/phase2.md`: sources used, (keyword, context) mining approach, TTS voice distribution, difficulty calibration results, proprietary model spot-check, drop log at each step.
 
 ---
 
