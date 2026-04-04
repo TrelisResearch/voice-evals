@@ -1,6 +1,6 @@
 # Medical ASR — Phase 1 Report
 
-**Status:** Phase 1A–1C complete; Phase 1D in progress (2026-04-03)
+**Status:** Phase 1A–1C complete; Phase 1D blocked on Studio parquet upload (2026-04-04)
 **Goal:** Landscape survey + baseline model eval + curated hard eval set construction
 
 ---
@@ -277,10 +277,20 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 - **Studio HF import:** Previously failed after ~2h (`Input aborted - not reschedulable` at ~1,400/4,751 rows). Fix confirmed 2026-04-04: 10-row test import completed in ~35s — root cause was missing `config='English'` param (MultiMed is multi-language; Studio now requires config to be explicit). Full 4,751-row import pending.
 - **Status:** Unblocked. Can now run the full MultiMed pipeline once EKA-hard-50 is complete.
 
-### EKA Next Steps (Pending)
+### EKA Next Steps (Pending — blocked on Studio parquet upload)
 
 9. Difficulty filter: run Whisper large-v3, Canary 1B v2, Voxtral Mini on 920 high-density rows → median CER vs Gemini transcript → top-100
 10. Manual review in UI (`tools/review/server.py`) → drop to 50 rows → `eka-hard-public`
+
+**Blocker (2026-04-04):** `datasets 4.7.0` unconditionally imports `torch`/`torchcodec` in `Audio.encode_example`, even for pass-through bytes. `torch` is not installed in this environment. All attempts to push audio WAV files from disk to HuggingFace fail at the encoding step. Diagnosis confirmed by mini pipeline test (`test_mini_pipeline.py` — 5 rows): HF push fails with `ImportError: To support encoding audio data, please install 'torchcodec'`.
+
+Workaround attempted: use `cast_column` via `cast_storage` (which doesn't need torch). Blocked mid-test when user paused to let Studio team add a direct parquet upload endpoint to eval jobs.
+
+`cast_storage` route: builds PyArrow table with `bytes`/`path` struct → `Dataset(table).cast_column('audio', Audio(..., decode=False))` → `push_to_hub`. This avoids `encode_example` entirely. Eval job then fails server-side with `KeyError: 'array'` — Studio's eval worker tries `sample['audio']['array']` directly rather than letting HF decode. **This will be resolved by the Studio parquet upload endpoint.**
+
+**Why not install torch?** Heavy dependency (~2GB), not needed for anything else in the pipeline. Studio providing a direct parquet upload route is the right fix.
+
+Note: `ronanarraig/eka-hard-public` that already exists on HF (50 rows, `median_cer` 0.24–0.90) was built by an earlier pipeline run against the original EKA dataset columns — not our Gemini ground-truth pipeline. It will be replaced once 1D completes.
 
 ### Studio Bugs Encountered (Phase 1D)
 
@@ -326,6 +336,7 @@ Full pipeline: `from-hf-dataset` → `process` → HF push. Tested with 10 rows 
 | Router eval broken — `RouterEvaluation.run()` unexpected kwarg `output_target` | `8788af6d` | **Fixed** 2026-04-03 |
 | HF dataset import slow (~2h for 4,751 rows) + aborts | `2bef1bbf` | **Fixed** 2026-04-04 |
 | Process step ignores `output_org`/`hf_token` | `907b979b` | **Fixed** 2026-04-03 |
+| Eval jobs fail with `KeyError: 'array'` when audio parquet lacks decoded Audio format | — | **Pending fix** — Studio to add direct parquet upload endpoint for eval; workaround blocked by missing torch |
 
 ---
 
