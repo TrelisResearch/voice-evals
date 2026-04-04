@@ -271,20 +271,13 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 - **Output:** 920 high-density rows exported to `tools/review/data-eka/` (~32 min total)
 - **Next:** run 3-model difficulty filter → top-100 → manual review in UI
 
-### MultiMed Results (Phase 1D Complete)
+### MultiMed Results (Phase 1D — In Progress)
 
-- **Source:** `ronanarraig/multimed-hard-100` (100 rows, 3-model difficulty-filtered from ~500 high-CER MultiMed rows)
-- **Input CER range:** 0.102–0.387 (3-model median), all from `leduckhai/MultiMed` test split
-- **Gemini Flash tagging (2026-04-04):** 100 rows tagged, ~1 min
+**Previous attempt (2026-04-04):** Used Phase 1C `multimed-hard-100` (Otsu-filtered from ~500 heuristic-selected rows). Skipped NLTK sentence trimming, Gemini ground truth, and proper medical density filtering. Produced `multimed-hard-public` but quality is insufficient — no sentence trimming, no Gemini ASR ground truth, heuristic rather than NLTK sentence extraction.
 
-| Density | Rows | % |
-|---------|------|---|
-| high | 26 | 26% |
-| medium | 53 | 53% |
-| none | 21 | 21% |
+**Correct approach (2026-04-04, rewrite):** Use Studio `from-hf-dataset` directly on `leduckhai/MultiMed` (config=English, split=test). This avoids loading 3.4GB locally — Studio imports server-side with zero local memory. Then draft-transcribe for word timestamps → download VTT+WAV via signed URLs → NLTK sentence trim → Gemini 2.5 Pro ASR → Flash tagging → high-density filter → difficulty filter → top-50.
 
-- **Note:** Low high-density yield (~26%) reflects MultiMed lecture/podcast style. Top-50 selection used all 26 high-density + 24 medium-density rows (ranked by median CER).
-- **Output:** `ronanarraig/multimed-hard-public` — 50 rows, CER range 0.153–0.376
+**Key architectural fix:** the original script 16 loaded the full dataset locally (3.4GB), filtered, pushed to HF, then had Studio re-import — OOM-killed on VPS. Direct `from-hf-dataset` eliminates the local load+push entirely.
 
 ### EKA Results (Phase 1D Complete)
 

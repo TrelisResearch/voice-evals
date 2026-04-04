@@ -148,31 +148,39 @@ Build two public benchmark splits using an identical pipeline, so results are di
 - EKA: full 3,619 rows (`ekacare/eka-medical-asr-evaluation-dataset`)
 - MultiMed: **test split only** (4,751 rows) — train split reserved for fine-tuning data. **Note:** pass `config='English'` when importing via Studio `from-hf-dataset` (multi-language dataset; config param required).
 
-**Studio data-prep flow for HF-sourced datasets (confirmed 2026-04-04):**
+**Studio data-prep flow for MultiMed (use `from-hf-dataset` directly — no local load):**
 ```
-POST /file-stores/from-hf-dataset  (+ config='English' for multi-config datasets)
-  → poll until completed            (creates file store with source='upload', format=parquet)
-POST /file-stores/{id}/process     ← go straight here; skip draft-transcribe
-  → poll until completed
+POST /file-stores/from-hf-dataset  (dataset_id=leduckhai/MultiMed, config='English', split='test')
+  → poll until completed            (Studio imports server-side, zero local memory)
+POST /file-stores/{id}/draft-transcribe  (language='en')
+  → poll until completed            (Whisper large-v3 → word timestamps in VTT)
+Download VTT+WAV via signed URLs from job config
+  → local: filter + NLTK trim + Gemini ASR + tagging
 ```
-`draft-transcribe` is only for file stores with raw audio + no transcripts (source='upload', audio files).
-HF datasets already have transcripts embedded in parquet → `process` reads them directly.
+**Important:** Do NOT load MultiMed locally then push to HF — 3.4GB dataset OOM-kills VPS. Studio's `from-hf-dataset` handles the data entirely server-side.
+
+`from-hf-dataset` requires `config` param for multi-config datasets (e.g. `'English'` for MultiMed) — omitting causes immediate failure.
 Full 10-row test: 11s import + 78s process = ~90s total → `ronanarraig/multimed-pipe-test`.
 
 **Status (2026-04-04):**
-- EKA pipeline complete — 920 high-density rows in `tools/review/data-eka/`. Next: run `17_difficulty_filter_eka.py` (push to HF + 3-model eval + rank top-100).
-- MultiMed unblocked — full pipeline confirmed working. Proceed after EKA-hard-50 is done.
+- EKA pipeline **complete** — `ronanarraig/eka-hard-public` pushed (50 rows, CER 0.074–0.280, 3-model median, Gemini ground truth).
+- MultiMed pipeline **in progress** — rewritten to use `from-hf-dataset` directly (avoids OOM).
 
-**Pipeline (identical for both):**
+**Pipeline:**
 
-1. **Sentence filter** — keep rows with duration ≥ 3s AND text len ≥ 60 chars
-2. **Draft-transcribe via Studio** — Whisper large-v3 router (Fireworks) → word timestamps
-3. **NLTK sentence detection + audio trim** — find clean inner sentences, contextual padding (half inter-word gap, cap 0.2s; 0.3s at boundaries), drop clips < 3s or < 40 chars
-4. **Gemini 2.5 Pro ASR** — audio only, no text context → completeness check → drop incomplete
-5. **Gemini Flash tagging** — `is_medical`, `medical_density`, `entities` → keep `medical_density == high` only
-6. **Difficulty filtering** — run Whisper large-v3, Canary 1B v2, Voxtral Mini via Studio → median CER vs Gemini transcript → take top-100 by median CER
-7. **Manual review** — review UI with drop functionality; reviewer drops rows until 50 remain; correct any ground truth errors
-8. **Push** — `ronanarraig/eka-hard-public`, `ronanarraig/multimed-hard-public`
+**EKA (complete):** rows already sentence-level → no NLTK trim needed → Gemini ASR → Flash tag → 920 high-density rows → 3-model eval → top-50 pushed.
+
+**MultiMed:**
+1. **Studio import** — `from-hf-dataset` on `leduckhai/MultiMed` (config=English)
+2. **Draft-transcribe via Studio** — Whisper large-v3 → word timestamps in VTT files
+3. **Download** — VTT+WAV via signed URLs from job config (small batches, low memory)
+4. **Filter** — keep rows with duration ≥ 3s AND text len ≥ 60 chars
+5. **NLTK sentence detection + audio trim** — extract clean inner sentences from lecture chunks; contextual padding (half inter-word gap, cap 0.2s; 0.3s at boundaries); drop clips < 3s or < 40 chars
+6. **Gemini 2.5 Pro ASR** — audio only, no text context → completeness check → drop incomplete
+7. **Gemini Flash tagging** — `is_medical`, `medical_density`, `entities` → keep `medical_density == high` only
+8. **Difficulty filtering** — push high-density rows to HF → run Whisper large-v3, Canary 1B v2, Voxtral Mini via Studio → median CER vs Gemini transcript → take top-100
+9. **Manual review** — review UI; drop to 50 rows; correct ground truth errors
+10. **Push** — `ronanarraig/multimed-hard-public`
 
 **Difficulty metric rationale:** Gemini 2.5 Pro used as pseudo-ground-truth (best available reference). Filter models are open-source only. Gemini errors are invisible to the CER signal but caught by manual review on the final top-100.
 

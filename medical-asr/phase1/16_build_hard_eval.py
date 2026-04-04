@@ -274,6 +274,7 @@ tick('1_filter')
 
 # ── Step 2: Push filtered rows to HF ─────────────────────────────
 print(f"\nStep 2: Pushing {len(filtered)} rows to {TEMP_DATASET}...")
+from datasets import Dataset as HFDataset, Audio as HFAudio
 
 audio_bytes_list, texts, source_files, durations = [], [], [], []
 for r in filtered:
@@ -282,29 +283,16 @@ for r in filtered:
     source_files.append(r['audio'].get('path') or r.get('file_name') or '')
     durations.append(float(r.get('duration') or 0))
 
-audio_struct = pa.array(
-    [{'bytes': b, 'path': p} for b, p in zip(audio_bytes_list, source_files)],
-    type=pa.struct([pa.field('bytes', pa.binary()), pa.field('path', pa.string())])
-)
+# Use the working approach: binary audio → cast_column(Audio) → push_to_hub
+audio_col = pa.array(audio_bytes_list, type=pa.binary())
 table = pa.table({
-    'audio': audio_struct,
+    'audio': audio_col,
     'text': pa.array(texts),
     'source_file': pa.array(source_files),
     'duration': pa.array(durations, type=pa.float32()),
 })
-
-with tempfile.NamedTemporaryFile(suffix='.parquet', delete=False) as f:
-    pq.write_table(table, f.name)
-    parquet_path = f.name
-
-api.create_repo(TEMP_DATASET, repo_type='dataset', private=True, exist_ok=True)
-api.upload_file(
-    path_or_fileobj=parquet_path,
-    path_in_repo='data/test-00000-of-00001.parquet',
-    repo_id=TEMP_DATASET,
-    repo_type='dataset',
-    token=HF_TOKEN,
-)
+push_ds = HFDataset(table).cast_column('audio', HFAudio(sampling_rate=16000))
+push_ds.push_to_hub(TEMP_DATASET, split='test', private=True, token=HF_TOKEN)
 print(f"  Pushed {len(filtered)} rows")
 tick('2_hf_push')
 
@@ -443,7 +431,8 @@ if APPLY_NLTK_TRIM:
         wts_map = {row.get('source_file',''): row.get('word_timestamps','[]') for row in wts_ds}
         for c in chunks:
             c['word_timestamps'] = wts_map.get(c['source_file'], '[]')
-        print(f"  Merged word_timestamps for {sum(1 for c in chunks if c[\"word_timestamps\"] != \"[]\")}/{len(chunks)} chunks")
+        n_wts = sum(1 for c in chunks if c['word_timestamps'] != '[]')
+        print(f"  Merged word_timestamps for {n_wts}/{len(chunks)} chunks")
     else:
         print(f"  Process step did not push to HF (known bug) — NLTK trim will be skipped")
         APPLY_NLTK_TRIM_EFFECTIVE = False
