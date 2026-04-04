@@ -59,7 +59,7 @@ table = pa.table({
     'duration': pa.array(durations, type=pa.float32()),
 })
 # cast_column uses cast_storage which handles bytes struct without torch
-ds = Dataset(table).cast_column('audio', Audio(sampling_rate=16000, decode=False))
+ds = Dataset(table).cast_column('audio', Audio(sampling_rate=16000))  # decode=True so Studio gets array
 print(f'  features: {ds.features}')
 ds.push_to_hub(HF_DATASET, split='test', private=True, token=HF_TOKEN)
 print(f'  [{elapsed()}] pushed')
