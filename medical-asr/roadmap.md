@@ -146,7 +146,22 @@ Build two public benchmark splits using an identical pipeline, so results are di
 
 **Datasets:**
 - EKA: full 3,619 rows (`ekacare/eka-medical-asr-evaluation-dataset`)
-- MultiMed: **test split only** (4,751 rows) — train split reserved for fine-tuning data
+- MultiMed: **test split only** (4,751 rows) — train split reserved for fine-tuning data. **Note:** pass `config='English'` when importing via Studio `from-hf-dataset` (multi-language dataset; config param required).
+
+**Studio data-prep flow for HF-sourced datasets (confirmed 2026-04-04):**
+```
+POST /file-stores/from-hf-dataset  (+ config='English' for multi-config datasets)
+  → poll until completed            (creates file store with source='upload', format=parquet)
+POST /file-stores/{id}/process     ← go straight here; skip draft-transcribe
+  → poll until completed
+```
+`draft-transcribe` is only for file stores with raw audio + no transcripts (source='upload', audio files).
+HF datasets already have transcripts embedded in parquet → `process` reads them directly.
+Full 10-row test: 11s import + 78s process = ~90s total → `ronanarraig/multimed-pipe-test`.
+
+**Status (2026-04-04):**
+- EKA pipeline complete — 920 high-density rows in `tools/review/data-eka/`. Next: run `17_difficulty_filter_eka.py` (push to HF + 3-model eval + rank top-100).
+- MultiMed unblocked — full pipeline confirmed working. Proceed after EKA-hard-50 is done.
 
 **Pipeline (identical for both):**
 

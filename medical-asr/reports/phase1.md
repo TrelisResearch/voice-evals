@@ -271,12 +271,11 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 - **Output:** 920 high-density rows exported to `tools/review/data-eka/` (~32 min total)
 - **Next:** run 3-model difficulty filter → top-100 → manual review in UI
 
-### MultiMed Results (Blocked — HF import failed)
+### MultiMed Results (Unblocked — HF import now working)
 
 - **Source:** `leduckhai/MultiMed` test split — 4,751 rows
-- **Studio HF import:** Failed after ~2h with `Input aborted - not reschedulable` at ~1,400/4,751 rows
-- **Status:** Blocked pending Studio fix. EKA-only path sufficient for initial 50-row eval set.
-- **Decision:** Proceed with EKA-hard-50 only for now. Resume MultiMed once Studio HF import is reliable.
+- **Studio HF import:** Previously failed after ~2h (`Input aborted - not reschedulable` at ~1,400/4,751 rows). Fix confirmed 2026-04-04: 10-row test import completed in ~35s — root cause was missing `config='English'` param (MultiMed is multi-language; Studio now requires config to be explicit). Full 4,751-row import pending.
+- **Status:** Unblocked. Can now run the full MultiMed pipeline once EKA-hard-50 is complete.
 
 ### EKA Next Steps (Pending)
 
@@ -288,13 +287,29 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 | Bug | Feedback ID | Status | Impact | Workaround |
 |-----|------------|--------|--------|------------|
 | Router eval broken (`RouterEvaluation.run()` unexpected kwarg `output_target`) | `8788af6d` | **Fixed** (2026-04-03 later) | Draft-transcribe with `router_model` completed without error in re-test; job used `openai/whisper-large-v3` as source (unclear if `fireworks/whisper-v3` routed correctly or silently fell back) | Direct Gemini 2.5 Pro API (no longer needed) |
-| HF dataset import very slow + fails (`Input aborted`) | `2bef1bbf` | Open | MultiMed 4,751-row import aborted after ~2h | Blocked; EKA-only path for now |
+| HF dataset import very slow + fails (`Input aborted`) | `2bef1bbf` | **Fixed** 2026-04-04 | Root cause: missing `config` param for multi-config datasets. 10-row test completed in ~35s. | Pass `config='English'` when importing MultiMed |
 | Process step ignores `output_org`/`hf_token` params — always uses account defaults | `907b979b` | **Fixed** (2026-04-03 later) | Re-test confirmed: process step pushed to `ronanarraig/studio-test-hf-push` without any `output_org` param — account default is now ronanarraig | No longer needed |
 
 **Notes on re-test (2026-04-03):**
 - Correct poll URL for draft-transcribe/process jobs: `GET /api/v1/data-prep/jobs/{job_id}` (not `/file-stores/{id}/draft-transcribe/{job_id}`)
 - Correct upload URL field from batch upload response: `files[].upload_url` (not `upload_urls`)
 - Process step takes ~90s for 3 files
+
+**HF data-prep pipeline test (2026-04-04):**
+
+Full pipeline: `from-hf-dataset` → `process` → HF push. Tested with 10 rows of `leduckhai/MultiMed`.
+
+| Step | Time (10 rows) | Notes |
+|------|---------------|-------|
+| `from-hf-dataset` | 11s | Stores as parquet (`data/test.parquet` + `dataset_info.json`) |
+| `process` | 78s | Ran forced alignment + HF push; 10 samples, 116s audio total |
+| **Total** | **~90s** | Output: `ronanarraig/multimed-pipe-test` (test split, 10 rows) |
+
+**Key findings:**
+- **Correct flow:** `from-hf-dataset` → `process` directly. The API docs explicitly say: *"Returns a `file_store_id` to pass to `POST /file-stores/{id}/process`"*. The resulting file store has `source: "upload"` which is exactly what `process` accepts.
+- **Skip `draft-transcribe`:** `draft-transcribe` is for file stores containing raw audio files without transcripts. HF datasets already include transcripts in the parquet; `draft-transcribe` would fail with `NO_FILES` since there are no raw audio files — only `data/test.parquet`.
+- `from-hf-dataset` requires `config` param for multi-config datasets (e.g. `'English'` for MultiMed) — omitting it causes immediate failure with a helpful error listing valid configs.
+- At 10-row rate, full 4,751-row MultiMed: import ~87min, process time likely sub-linear (parallelised). Actual scale not yet tested.
 
 ---
 
@@ -309,7 +324,7 @@ High CER here is an artefact of short utterance length (one wrong word = high CE
 | Add OpenAI gpt-4o-transcribe | `d1877c02` | Filed |
 | GET /evaluation/jobs: ?status= filter not applied server-side | `a5c4c486` | Filed |
 | Router eval broken — `RouterEvaluation.run()` unexpected kwarg `output_target` | `8788af6d` | **Fixed** 2026-04-03 |
-| HF dataset import slow (~2h for 4,751 rows) + aborts | `2bef1bbf` | Open |
+| HF dataset import slow (~2h for 4,751 rows) + aborts | `2bef1bbf` | **Fixed** 2026-04-04 |
 | Process step ignores `output_org`/`hf_token` | `907b979b` | **Fixed** 2026-04-03 |
 
 ---
